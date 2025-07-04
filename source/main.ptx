@@ -9,7 +9,7 @@
     <subtitle>Runestone Version 1</subtitle>
 
     <!-- Include frontmatter -->
-    <!--xi:include href="./frontmatter.ptx" / -->
+    <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
     <xi:include href="./ch1-about-data.ptx" />
@@ -25,6 +25,11 @@
     <xi:include href="./ch11-popularity-contest.ptx" />
     <xi:include href="./ch12-string-theory.ptx" />
     <xi:include href="./ch13-word-perfect.ptx" />
+    <xi:include href="./ch14-storage-wars.ptx" />
+    <xi:include href="./ch15-map-mashup.ptx" />
+    <xi:include href="./ch16-line-up-please.ptx" />
+    <xi:include href="./ch17-data-mining.ptx" />
+    <xi:include href="./ch18-vectors.ptx" />
 
     <!-- Include backmatter -->
     <!-- xi:include href="./backmatter.ptx" /-->
@@ -33,6 +38,6 @@
     <index-list/>
   </index>
 
-
+    <xi:include href="./ap-installations.ptx" />
   </book>
 </pretext>

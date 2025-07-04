@@ -3,7 +3,7 @@
 <chapter xml:id="ch3-r-rstudio-rmarkdown" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>R, RStudio, and R-Markdown</title>
 
-      <subsubsection xml:id="the-r-language">
+      <subsection xml:id="the-r-language">
     <title>The R Language</title>
         <introduction>
 				<p>
@@ -26,9 +26,9 @@
 					Joseph J. Allaire is an entrepreneur, software engineer, and the originator of some remarkable software products including "ColdFusion," which was later sold to the web media tools giant Macromedia and Windows Live Writer, a Microsoft blogging tool. Starting in 2009, Allaire began working with a small team to develop an open source program that enhances the usability and power of R. It is called R-Studio.
 				</p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="r-studio">
+			<subsection xml:id="r-studio">
 				<title>R-studio </title>
 
 				<p>
@@ -43,9 +43,9 @@
 					It is way too easy to make a mistake to create what computer scientists refer to as a bug if you are doing every little task via the console. Using an IDE, we can easily build reusable pieces of code. The IDE gives us the capability to open up the process of creation, to peer into the component parts when we need to, and to close the hood and hide them when we don’t. Because we are working with data, we also need a way of closely inspecting the data, both its contents and its structure. It can get pretty tedious doing this at the R console, where almost every piece of output is a chunk of text and longer chunks scroll off the screen before you can see them. As an IDE for R, R-Studio allows us to control and monitor both our code and our text in a way that supports the creation of reusable elements.
 				</p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="r-markdown">
+			<subsection xml:id="r-markdown">
 				<title>R Markdown</title>
 
 				<p>
@@ -56,14 +56,14 @@
 					R-Markdown files have an .Rmd extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="video-what-is-r-markdown-what-is-r-markdown">
+			<subsection xml:id="video-what-is-r-markdown-what-is-r-markdown">
 				<title><url href="https://vimeo.com/178485416"><image source='media/image34.png'/></url><!-- linebreak --><url href="https://vimeo.com/178485416">What is R-Markdown</url></title>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="using-r-in-r-studio-cloud">
+			<subsection xml:id="using-r-in-r-studio-cloud">
 				<title>Using R in R-Studio Cloud</title>
 
 				<p>
@@ -226,9 +226,9 @@
 					In the next chapter we will move forward a step or two by starting to work with text and by combining our list of family ages with the names of the family members and some other information about them.
 				</p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="chapter-challenge-1">
+			<subsection xml:id="chapter-challenge-1">
 				<title>Chapter Challenge </title>
 
 				<p>
@@ -239,9 +239,9 @@
 					Write and test a new function called MySamplingDistribution() that creates a sampling distribution of means from a numeric input vector. You will need to integrate your knowledge of creating new functions from this chapter with your knowledge of creating sampling distributions from the previous chapter in order to create a working function. Make sure to give careful thought about the parameters you will need to pass to your function and what kind of data object your function will return.
 				</p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="ch3-sources">
+			<subsection xml:id="ch3-sources">
 				<title>Sources </title>
 
 				<p><ul>
@@ -327,9 +327,9 @@
 
 				</ul></p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="ch3-questions">
+			<subsection xml:id="ch3-questions">
 				<title>Questions</title>
 
 				<p>
@@ -417,9 +417,9 @@
 					</li>
 
 				</ul></p>
-</subsubsection>
+</subsection>
 
-      <subsubsection xml:id="ch3-terms">
+      <subsection xml:id="ch3-terms">
         <title>Terms</title>
 
         <p><ul>
@@ -457,6 +457,6 @@
 
         </ul></p>
 
-      </subsubsection>
+      </subsection>
 
 </chapter>

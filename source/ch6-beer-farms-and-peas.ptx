@@ -5,7 +5,7 @@
 
 
 
-  <subsubsection xml:id="beer-farms-and-peas">
+  <subsection xml:id="beer-farms-and-peas">
     <title>Beer, Farms, and Peas</title>
   <introduction>
   <figure xml:id="peas-on-x-y-axes">
@@ -568,9 +568,9 @@
 
 				</ul></p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="r-functions-used-in-this-chapter-1">
+			<subsection xml:id="r-functions-used-in-this-chapter-1">
 				<title>R Functions Used in This Chapter </title>
 
 				<p><ul>
@@ -624,9 +624,9 @@
 
 				</ul></p>
 
-			</subsubsection>
+			</subsection>
 
-			<subsubsection xml:id="if-all-else-fails">
+			<subsection xml:id="if-all-else-fails">
 				<title>If All Else Fails </title>
 
 				<p>
@@ -679,6 +679,6 @@
 					</li>
 
 				</ol></p>
-      </subsubsection>
+      </subsection>
 
 </chapter>

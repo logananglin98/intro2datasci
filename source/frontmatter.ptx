@@ -47,15 +47,15 @@
     
 			</p>
    <p> 
-      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College student interns, Elijah Babayemi, Colin Flaherty, Austin Gatewood, and Tristan Razote, who served as the first editors of this work and who helped to make this version more interactive. You can see their contibutions as well as those of others at <url href="https://github.com/pearcej/comp-sys-sec/forks">github.com/pearcej/comp-sys-sec/forks</url>.
+      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College student interns, Elijah Babayemi, Colin Flaherty, Austin Gatewood, and Tristan Razote, who served as the first editors of this work and who helped to make this version more interactive. You can see their contibutions as well as those of others at <url href="https://github.com/pearcej/intro2datasci/forks">github.com/pearcej/intro2datasci/forks</url>.
     </p>
 
     <p>
-      I would like to thank Rob Beezer for the creation of <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> which is the authoring platform of this text and for his amazing level of responsiveness in the PreTeXt support channel. Additionally, I am very grateful to Oscar Levin both for his responsiveness in the Runestone Discord channels and for work in the creation of PreText converter for <url href="https://pandoc.org/" visual="pandoc.org">Pandoc</url> which made adaption much less time consuming.
+      I would like to thank Dr. Rob Beezer for the creation of <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> which is the authoring platform of this text and for his amazing level of responsiveness in the PreTeXt support channel. Additionally, I am very grateful to Dr. Oscar Levin both for his responsiveness in the Runestone Discord channels and for work in the creation of PreText converter for <url href="https://pandoc.org/" visual="pandoc.org">Pandoc</url> which made adaption much less time consuming.
       </p>
 
       <p>
-      Brad Miller deserves a hearty thanks for his work in creating <url href="https://runestone.academy/" visual="runestone.academy">Runestone Academy</url> where this book is hosted, and for his collaborative work with the <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> authoring group.
+      Dr. Brad Miller deserves a wholehearted thanks for his work in creating <url href="https://runestone.academy/" visual="runestone.academy">Runestone Academy</url> where this book is hosted, and for his collaborative work with the <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> authoring group.
     </p>
     <p>
       Finally, I would like to thank my husband, Bob Fairchild, for his patience and for being my best friend.
@@ -71,7 +71,7 @@
 <p>	
 </p>
 					<p>
-						The original version of this book was developed for the Certificate of Data Science program at Syracuse University’s School of Information Studies by the original author, Jeffrey Stanton. The original authors thanked Ashish Verma for help with revisions to the chapter on Twitter (now X). A PDF version of version 3 of this book and code examples used in version 3 of the book were once available at: <url href="http://jsresearch.net/wiki/projects/teachdatascience">http://jsresearch.net/wiki/projects/teachdatascience</url>. These were forked by Dr. Jan Pearce to create a previous version of this book which was used in the summer of 2020 to teach on online Introduction to Data Science course at Berea College. The Runestone version of this book was created in 2025.</p>
+						The original version of this book was developed for the Certificate of Data Science program at Syracuse University’s School of Information Studies by the original author, Dr. Jeffrey Stanton. The original authors thanked Ashish Verma for help with revisions to the chapter on Twitter (now X). A PDF version of version 3 of this book and code examples used in version 3 of the book were once available at: <url href="http://jsresearch.net/wiki/projects/teachdatascience">http://jsresearch.net/wiki/projects/teachdatascience</url>. These were forked by Dr. Jan Pearce to create a previous version of this book which was used in the summer of 2020 to teach on online Introduction to Data Science course at Berea College. The Runestone version of this book was created in 2025.</p>
 
 <p>The material provided in this book is provided "as is" with no warranty or guarantees with respect to its accuracy or suitability for any purpose. 
 					</p>

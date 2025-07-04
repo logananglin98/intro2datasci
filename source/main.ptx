@@ -5,7 +5,7 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="intro2datasci">
-    <title>Introduction to Data Science</title>
+    <title>Introduction to Data Science Using R</title>
     <subtitle>Runestone Version 1</subtitle>
 
     <!-- Include frontmatter -->
@@ -21,6 +21,11 @@
     <xi:include href="./ch7-sample-in-jar.ptx" />
     <xi:include href="./ch8-big-data-big-deal.ptx" />
     <xi:include href="./ch9-onward-with-rstudio.ptx" />
+    <xi:include href="./ch10-tweet-tweet.ptx" />
+    <xi:include href="./ch11-popularity-contest.ptx" />
+    <xi:include href="./ch12-string-theory.ptx" />
+    <xi:include href="./ch13-word-perfect.ptx" />
+
     <!-- Include backmatter -->
     <!-- xi:include href="./backmatter.ptx" /-->
       <index>

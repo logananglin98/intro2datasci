@@ -1,0 +1,64 @@
+INFO    : Building target web
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Generating any needed assets.
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/pretext-enhanced-source.xsl
+INFO    : Finished generating assets.
+
+INFO    : Preparing to build into /home/pearcej/books/intro2datasci/output/web.
+WARNING : Node version must be at least 18 to build CSS files.  Please update node.js and npm.
+ Will try to use prebuilt CSS files instead.
+INFO    : discovering source file's directory name: /home/pearcej/books/intro2datasci/source
+INFO    : verifying and expanding input directory: /home/pearcej/books/intro2datasci/source/../generated-assets
+INFO    : input directory expanded to absolute path: /home/pearcej/books/intro2datasci/generated-assets
+INFO    : verifying and expanding input directory: /home/pearcej/books/intro2datasci/source/../images
+INFO    : input directory expanded to absolute path: /home/pearcej/books/intro2datasci/images
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/utilities/report-publisher-variables.xsl
+INFO    : Downloading rs services file from https://runestone.academy/cdn/runestone/latest/webpack_static_imports.xml.
+INFO    : Runestone Services via online CDN query: version 7.8.4
+INFO    : Downloading Runestone Services, version 7.8.4
+INFO    : Extracting Runestone Services from archive file
+INFO    : CSSBuilder packages not installed. Relying on prebuilt default-modern. To fix this, run 'npm install' in the pretext/script/cssbuilder directory. https://pretextbook.org/doc/guide/html/node-and-npm.html
+INFO    : Using prebuilt CSS theme: default-modern with options: {'options': {'primary-color': '#195684', 'secondary-color': '#932c1c'}, 'contrast-checks': {'primary-color': '#fff', 'secondary-color': '#fff', 'primary-color-dark': '#23241f'}}
+INFO    : converting /home/pearcej/books/intro2datasci/source/main.ptx to HTML in /tmp/ptx-36hic5j2
+INFO    : XSL conversion of /home/pearcej/books/intro2datasci/source/main.ptx by /home/pearcej/.ptx/2.18.0/core/xsl/pretext-html.xsl
+INFO    : messages from the log for XSL processing:
+INFO    : * PTX:INFO:   checking ONLY the last TWO YEARS of element deprecations.
+Rerun with the string parameter "author.deprecations.all" set to "yes" to check your source against all deprecations.
+WARNING : * PTX:WARNING: In a section containing subsections, any content that is not inside a subsection needs to be inside an <introduction> and/or  <conclusion>.
+INFO    : *              located within: "combining-bytes-into-larger-structures" (xml:id), "Combining Bytes into Larger Structures " (title)
+INFO    : successful application of /home/pearcej/.ptx/2.18.0/core/xsl/pretext-html.xsl
+INFO    : Removing temporary directory /tmp/ptx-36hic5j2
+INFO    : Removing temporary directory /tmp/ptx-lfw8rsdf
+INFO    : 
+Success! Run `pretext view web` to see the results.
+
+INFO    : 

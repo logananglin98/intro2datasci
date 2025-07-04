@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-rows-and-columns" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Rows and Columns</title>
+
+      <section xml:id="rows-and-columns">
+    <title>Rows and Columns</title>
+      <introduction>
+
+  				<p>
+					<image source='image38.png'/><em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
+				</p>
+  </introduction>
+				<p>
+					Although we live in a three dimensional world, where a box of cereal has height, width, and depth, it is a sad fact of modern life that pieces of paper, chalkboards, whiteboards, and computer screens are still only two dimensional. As a result, most of the statisticians, accountants, computer scientists, and engineers who work with lots of numbers tend to organize them in rows and columns. There’s really no good reason for this other than it makes it easy to fill a rectangular piece of paper with numbers. Rows and columns can be organized any way that you want, but the most common way is to have the rows be "cases" or "instances" and the columns be "attributes" or "variables." Take a look at this nice, two dimensional representation of rows and columns:
+				</p>
+
+				<table>
+					<title></title>
+					<tabular>
+					<row header="yes">
+						<cell halign="left"><term>NAME</term></cell>
+						<cell halign="left"><term>AGE</term></cell>
+						<cell halign="left"><term>GENDER</term></cell>
+						<cell halign="left"><term>WEIGHT</term></cell>
+					</row>
+					<row class="odd">
+						<cell halign="left">Dad</cell>
+						<cell halign="left">43</cell>
+						<cell halign="left">Male</cell>
+						<cell halign="left">188</cell>
+					</row>
+					<row class="even">
+						<cell halign="left">Mom</cell>
+						<cell halign="left">42</cell>
+						<cell halign="left">Female</cell>
+						<cell halign="left">136</cell>
+					</row>
+					<row class="odd">
+						<cell halign="left">Sis</cell>
+						<cell halign="left">12</cell>
+						<cell halign="left">Female</cell>
+						<cell halign="left">83</cell>
+					</row>
+					<row class="even">
+						<cell halign="left">Bro</cell>
+						<cell halign="left">8</cell>
+						<cell halign="left">Male</cell>
+						<cell halign="left">61</cell>
+					</row>
+					<row class="odd">
+						<cell halign="left">Dog</cell>
+						<cell halign="left">5</cell>
+						<cell halign="left">Female</cell>
+						<cell halign="left">44</cell>
+					</row>
+					</tabular>
+				</table>
+
+				<p>
+					Pretty obvious what’s going on, right? The top line, in bold, is not really part of the data. Instead, the top line contains the attribute or variable names. Note that computer scientists tend to call them attributes while statisticians call them variables. Either term is OK. For example, age is an attribute that every living thing has, and you could count it in minutes, hours, days, months, years, or other units of time. Here we have the Age attribute calibrated in years. Technically speaking, the variable names in the top line are "meta data" or what you could think of as data about data. Imagine how much more difficult it would be to understand what was going on in that table without the metadata. There’s a lot of different kinds of metadata: variable names are just one simple type of metadata.
+				</p>
+
+				<p>
+					So if you ignore the top row, which contains the variable names, each of the remaining rows is an instance or a case. Again, computer scientists may call them instances, and statisticians may call them cases, but either term is fine. The important thing is that each row refers to an actual thing. In this case all of our things are living creatures in a family. You could think of the Name column as "case labels" in that each one of these labels refers to one and only one row in our data. Most of the time when you are working with a large dataset, there is a number used for the case label, and that number is unique for each case (in other words, the same number would never appear in more than one row). Computer scientists sometimes refer to this column of unique numbers as a "<term>key</term>." A key is very useful particularly for matching things up from different data sources, and we will run into this idea again a bit later. For now, though, just take note that the "Dad" row can be distinguished from the "Bro" row, even though they are both Male. Even if we added an "Uncle" row that had the same Age, Gender, and Weight as "Dad" we would still be able to tell the two rows apart because one would have the name "Dad" and the other would have the name "Uncle."
+				</p>
+
+				<p>
+					One other important note: Look how each column contains the same kind of data all the way down. For example, the Age column is all numbers. There’s nothing in the Age column like "Old" or "Young." This is a really valuable way of keeping things organized. After all, we could not run the mean() function on the Age column if it contained a little piece of text, like "Old" or "Young." On a related note, every cell (that is an intersection of a row and a column, for example, Sis’s Age) contains just one piece of information. Although a spreadsheet or a word processing program might allow us to put more than one thing in a cell, a real data handling program will not. Finally, see that every column has the same number of entries, so that the whole forms a nice rectangle. When statisticians and other people who work with databases work with a dataset, they expect this rectangular arrangement.
+				</p>
+
+				<p>
+					Now let’s figure out how to get these rows and columns into R. One thing you will quickly learn about R is that there is almost always more than one way to accomplish a goal. Sometimes the quickest or most efficient way is not the easiest to understand. In this case we will build each column one by one and then join them together into a single data frame. This is a bit labor intensive, and not the usual way that we would work with a data set, but it is easy to understand. First, run this command to make the column of names:
+				</p>
+
+				<p>
+					myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")
+				</p>
+
+				<p>
+					One thing you might notice is that every name is placed within double quotes. This is how you signal to R that you want it to treat something as a string of characters rather than the name of a storage location. If we had asked R to use Dad instead of "Dad" it would have looked for a storage location (a data object) named Dad. Another thing to notice is that the commas separating the different values are outside of the double quotes. If you were writing a regular sentence this is not how things would look, but for computer programming the comma can only do its job of separating the different values if it is not included inside the quotes. Once you have typed the line above, remember that you can check the contents of myFamName by typing it on the next command line:
+				</p>
+
+				<p>
+					myFamName
+				</p>
+
+				<p>
+					The output should look like this:
+				</p>
+
+				<p>
+					[1] "Dad" "Mom" "Sis" "Bro" "Dog"
+				</p>
+
+				<p>
+					Next, you can create a vector of the ages of the family members, like this:
+				</p>
+
+				<p>
+					myFamAge &lt;- c(43, 42, 12, 8, 5)
+				</p>
+
+				<p>
+					Note that this is exactly the same command we used in the last chapter, so if you have kept R running between then and now you would not even have to retype this command because myFamAge would still be there. Actually, if you closed R since working the examples from the last chapter you will have been prompted to "save the workspace" and if you did so, then R restored all of the data objects you were using in the last session. You can always check by typing myFamAge on a blank command line. The output should look like this:
+				</p>
+
+				<p>
+					[1] 43 42 12 8 5
+				</p>
+
+				<p>
+					Hey, now you have used the c() function and the assignment arrow to make myFamName and myFamAge. If you look at the data table earlier in the chapter you should be able to figure out the commands for creating myFamGend and myFamWeight. In case you run into trouble, these commands also appear on the next page, but you should try to figure them out for yourself before you turn the page. In each case after you type the command to create the new data object, you should also type the name of the data object at the command line to make sure that it looks the way it should. Four variables, each one with five values in it. Two of the variables are character data and two of the variables are integer data. Here are those two extra commands in case you need them:
+				</p>
+
+				<p>
+					myFamGend &lt;- c("Male","Female","Female","Male","Female")
+				</p>
+
+				<p>
+					myFamWeight &lt;- c(188,136,83,61,44)
+				</p>
+
+				<p>
+					Now we are ready to tackle the data.frame. In R, a data.frame is a list of columns, where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
+				</p>
+
+				<p>
+					myFam &lt;- data.frame(myFamName, +
+				</p>
+
+				<p>
+					myFamAge, myFamGend, myFamWeight)
+				</p>
+
+				<p>
+					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the data.frame() function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
+				</p>
+
+				<p>
+					myFamName myFamAge myFamGend myFamWeight
+				</p>
+
+				<p>
+					1 Dad 43 Male 188
+				</p>
+
+				<p>
+					2 Mom 42 Female 136
+				</p>
+
+				<p>
+					3 Sis 12 Female 83
+				</p>
+
+				<p>
+					4 Bro 8 Male 61
+				</p>
+
+				<p>
+					5 Dog 5 Female 44
+				</p>
+
+				<figure>
+	<image source="media/image59.png"/>
+					<caption>This is an example of a created Data Frame in the console that is printed after running the name of the data frame in teh command line.</caption>
+</figure>
+
+				<p>
+					This looks great. Notice that R has put row numbers in front of each row of our data. These are different from the output line numbers we saw in brackets before, because these are actual "indices" into the data frame. In other words, they are the row numbers that R uses to keep track of which row a particular piece of data is in.
+				</p>
+
+				<p>
+					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s str() method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
+				</p>
+
+				<figure>
+	<image source="media/image30.png"/>
+					<caption>This is an example of what is output in the console after str function was performed on the existing dataframe.</caption>
+</figure>
+
+				<p>
+					&gt; str(myFam)
+				</p>
+
+				<p>
+					'data.frame': 5 obs. of 4 variables:
+				</p>
+
+				<p>
+					$ myFamName : Factor w/ 5 levels "Bro","Dad","Dog",..: 2 4 5 1 3
+				</p>
+
+				<p>
+					$ myFamAge : num 43 42 12 8 5
+				</p>
+
+				<p>
+					$ myFamGend: Factor w/ 2 levels
+				</p>
+
+				<p>
+					"Female","Male": 2 1 1 2 1
+				</p>
+
+				<p>
+					$ myFamWeight: num 188 136 83 61 44
+				</p>
+
+				<p>
+					Take note that for the first time, the example shows the command prompt "&gt;" in order to differentiate the command from the output that follows. You don’t need to type this: R provides it whenever it is ready to receive new input. From now on in the book, there will be examples of R commands and output that are mixed together, so always be on the lookout for "&gt;" because the command after that is what you have to type.
+				</p>
+
+				<p>
+					OK, so the function "str()" reveals the structure of the data object that you name between the parentheses. In this case we pretty well knew that myFam was a data frame because we just set that up in a previous command. In the future, however, we will run into many situations where we are not sure how R has created a data object, so it is important to know str() so that you can ask R to report what an object is at any time.
+				</p>
+
+				<p>
+					In the first line of output we have the confirmation that myFam is a data frame as well as an indication that there are five observations ("obs." which is another word that statisticians use instead of cases or instances) and four variables. After that first line of output, we have four sections that each begin with "$". For each of the four variables, these sections describe the component columns of the myFam dataframe object.
+				</p>
+
+				<p>
+					Each of the four variables has a "mode" or type that is reported by R right after the colon on the line that names the variable:
+				</p>
+
+				<p>
+					$ myFamGend<term>:</term> Factor w/ 2 levels
+				</p>
+
+				<p>
+					For example, myFamGend is shown as a "Factor." In the terminology that R uses, Factor refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamGend we see that there are two "levels," meaning that there are two different options: female and male.
+				</p>
+
+				<p>
+					R assigns a number, starting with one, to each of these levels, so every case that is "Female" gets assigned a 1 and every case that is "Male" gets assigned a 2 (because Female comes before Male in the alphabet, so Female is the first Factor label, so it gets a 1). If you have your thinking cap on, you may be wondering why we started out by typing in small strings of text, like "Male," but then R has gone ahead and converted these small pieces of text into numbers that it calls "Factors." The reason for this lies in the statistical origins of R. For years, researchers have done things like calling an experimental group "Exp" and a control group "Ctl" without intending to use these small strings of text for anything other than labels. So R assumes, unless you tell it otherwise, that when you type in a short string like "Male" that you are referring to the label of a group, and that R should prepare for the use of Male as a "Level" of a "Factor." When you don’t want this to happen you can instruct R to stop doing this with an option on the data.frame() function: stringsAsFactors=FALSE. We will look with more detail at options and defaults a little later on.
+				</p>
+
+				<p>
+					Phew, that was complicated! By contrast, our two numeric variables, myFamAge and myFamWeight, are very simple. You can see that after the colon the mode is shown as "num" (which stands for numeric) and that the first few values are reported:
+				</p>
+
+				<p>
+					$ myFamAge : num 43 42 12 8 5
+				</p>
+
+				<p>
+					Putting it all together, we have pretty complete information about the myFam dataframe and we are just about ready to do some more work with it. We have seen firsthand that R has some pretty cryptic labels for things as well as some obscure strategies for converting this to that. R was designed for experts, rather than novices, so we will just have to take our lumps so that one day we can be experts too.
+				</p>
+
+				<p>
+					Next, we will examine another very useful function called summary()which provides some overlapping information to str() but also goes a little bit further, particularly with numeric variables.
+				</p>
+
+				<p>
+					Here’s what we get:
+				</p>
+
+				<p>
+					&gt; summary(myFam)
+				</p>
+
+				<p>
+					myFamName myFamAge
+				</p>
+
+				<p>
+					Bro: 1 Min. : 5
+				</p>
+
+				<p>
+					Dad: 1 1st Qu. : 8
+				</p>
+
+				<p>
+					Dog: 1 Median : 12
+				</p>
+
+				<p>
+					Mom: 1 Mean : 22
+				</p>
+
+				<p>
+					Sis: 1 3rd Qu. : 42
+				</p>
+
+				<p>
+					myFamGend myFamWeight
+				</p>
+
+				<p>
+					Female : 3 Min. : 44
+				</p>
+
+				<p>
+					Male : 2 1st Qu. : 61.0
+				</p>
+
+				<blockquote>
+									<p>
+					Median : 83.0
+				</p>
+
+				<p>
+					Mean : 102.4
+				</p>
+
+				<p>
+					3rd Qu. : 136.0
+				</p>
+
+				<p>
+					Max : 188.0
+				</p>
+				</blockquote>
+
+				<figure>
+	<image source="media/image5.png"/>
+					<caption>This is an example of what the console outputs when Summmary function is performed on an existing data frame.</caption>
+</figure>
+
+				<p>
+					In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that "Bro: 1" and "Min." happen to be on the same line of output). Notice, as with str(), that the output is quite different depending upon whether we are talking about a Factor, like myFamName or myFamGend, versus a numeric variable like myFamAge and myFamWeight. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that are coded with that factor. So for instance, under myFamGend it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
+				</p>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										"Min." refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										"1st Qu." refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations.
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+				<table>
+					<title></title>
+					<tabular>
+					<row header="yes">
+						<cell halign="left"><term>1ST QUARTILE</term></cell>
+						<cell halign="left"><term>2ND QUARTILE</term></cell>
+						<cell halign="left"><term>3RD QUARTILE</term></cell>
+						<cell halign="left"><term>4TH QUARTILE</term></cell>
+					</row>
+					<row class="odd">
+						<cell halign="left">25% of cases with the smallest values here</cell>
+						<cell halign="left">25% of cases just below the median here</cell>
+						<cell halign="left">25% of cases just above the mean here</cell>
+						<cell halign="left">25% of cases with the largest values here</cell>
+					</row>
+					</tabular>
+				</table>
+
+				<p>
+					Just like a number line, the smallest cases would be on the left with the largest on the right. If we’re looking at myFamAge, the leftmost group, which contains one quarter of all the cases, would start with five on the low end (the dog) and would have eight on the high end (Bro). So the "first quartile" is the value of age (or another variable) that divides the first quarter of the cases from the other three quarters. Note that if we don’t have a number of cases that divides evenly by four, the value is an approximation.
+				</p>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										<term>Median</term> refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										<term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										• "<term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these quartiles and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										Finally, "<term>Max</term>" is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+				<p>
+					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "$" to connect the two labels like this:
+				</p>
+
+				<p>
+					&gt; myFam$myFamAge
+				</p>
+
+				<p>
+					[1] 43 42 12 8 5
+				</p>
+
+				<p>
+					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we <term>copied</term> all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
+				</p>
+
+				<p>
+					&gt; myFamAge &lt;- c(myFamAge, 11)
+				</p>
+
+				<p>
+					&gt; myFamAge
+				</p>
+
+				<p>
+					[1] 43 42 12 8 5 11
+				</p>
+
+				<p>
+					&gt; myFam$myFamAge
+				</p>
+
+				<p>
+					[1] 43 42 12 8 5
+				</p>
+
+				<figure>
+	<image source="media/image14.png"/>
+					<caption>This is an example that showcases a new value being added to an independent variable named myFamAge. After, the example prints both myFamAge and myFamAge that was stored in the data frame. The variable have differing values.</caption>
+</figure>
+
+				<p>
+					Look very closely at the five lines above. In the first line, we use the c() command to add the value 11 to the original list of ages that we had stored in myFamAge (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamAge now contains. Dutifully, on the third line above, R reports that myFamAge now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFam$myFamAge, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.
+				</p>
+
+				<p>
+					Here’s a puzzle that follows on from this question. We have a nice dataframe with five observations and four variables. This is a rectangular shaped data set, as we discussed at the beginning of the chapter. What if we tried to add on a new piece of data on the end of one of the variables? In other words, what if we tried something like this command:
+				</p>
+
+				<p>
+					myFam$myFamAge &lt;- c(myFam$myFamAge, 11)
+				</p>
+
+				<p>
+					If this worked, we would have a pretty weird situation: The variable in the dataframe that contained the family members’ ages would all of a sudden have one more observation than the other variables: no more perfect rectangle! Try it out and see what happens. The result helps to illuminate how R approaches situations like this.
+				</p>
+
+				<p>
+					So what new skills and knowledge do we have at this point? Here are a few of the key points from this chapter:
+				</p>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										In R, as in other programs, a vector is a list of elements/things that are all of the same kind, or what R refers to as a mode. For example, a vector of mode "numeric" would contain only numbers.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										Statisticians, database experts and others like to work with rectangular datasets where the rows are cases or instances and the columns are variables or attributes.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										In R, one of the typical ways of storing these rectangular structures is in an object known as a dataframe. Technically speaking a dataframe is a list of vectors where each vector has the exact same number of elements as the others (making a nice rectangle).
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										In R, the data.frame() function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data is copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using "$" to connect the name of the dataframe to the name of the variable/column.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										• The str() and summary() functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The str() function shows the structure of a data object, while summary() provides numerical summaries of numeric variables and overviews of non-numeric variables.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										A <term>factor</term> is a labeling system often used to organize groups of cases or observations. In R, as well as in many other software programs, a factor is represented internally with a numeric ID number, but factors also typically have labels like "Male" and "Female" or "Experiment" and "Control." Factors always have "levels," and these are the different groups that the factor signifies. For example, if a factor variable called Gender codes all cases as either "Male" or "Female" or "Other" then that factor has exactly three levels.
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										<term>Quartiles</term> are a division of a sorted vector into four evenly sized groups. The first quartile contains the lowest-valued elements, for example the lightest weights, whereas the fourth quartile contains the highest-valued items. Because there are four groups, there are three dividing lines that separate them. The middle dividing line that splits the vector exactly in half is the median. The term "first quartile" often refers to the dividing line to the left of the median that splits up the lower two quarters and the value of the first quartile is the value of the element of the vector that sits right at that dividing line. Third quartile is the same idea, but to the right of the median and splitting up the two higher quarters.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										<term>Min</term> and <term>max</term> are often used as abbreviations for minimum and maximum and these are the terms used for the highest and lowest values in a vector. Bonus: The "range" of a set of numbers is the maximum minus the minimum.
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										The <term>mean</term> is the same thing that most people think of as the average. Bonus: The mean and the median are both measures of what statisticians call "central tendency."
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+			</section>
+
+			<section xml:id="chapter-challenge-2">
+				<title>Chapter Challenge </title>
+
+				<p>
+					Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the summary() function on myFam to get descriptive information on your new variable.
+				</p>
+
+				<p>
+					<term>Sources</term>
+				</p>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Central_tendency">Central Tendency</url>
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Median">Median</url>
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Relational_model">Relational Model</url>
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										<url href="http://www.burns-stat.com/pages/Tutor/hints_R_begin.html">Impatient R Translation</url>
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+			</section>
+
+			<section xml:id="r-functions-used-in-this-chapter">
+				<title>R Functions Used in This Chapter </title>
+
+				<p><ul>
+					<li>
+									<blockquote>
+														<p>
+										c() Concatenates data elements together to create a vector
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										&lt;- Assignment arrow
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										data.frame() Makes a dataframe from separate vectors
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										str() Reports the structure of a data object
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										summary() Reports data modes/types and a data overview
+									</p>
+									</blockquote>
+					</li>
+
+				</ul></p>
+
+				<p>
+					<term>Question:</term> What is the name of the data object that R uses to store a rectangular dataset of cases and variables?
+				</p>
+
+				<p><ol>
+					<li>
+									<blockquote>
+														<p>
+										A list
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										A mode
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										A vector
+									</p>
+									</blockquote>
+					</li>
+
+					<li>
+									<blockquote>
+														<p>
+										A dataframe
+									</p>
+									</blockquote>
+					</li>
+
+				</ol></p>
+      </section>
+</chapter>

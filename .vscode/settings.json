@@ -1,9 +1,0 @@
-{
-    "cSpell.languageSettings": [],
-    "xml.fileAssociations": [
-        {
-            "pattern": "**/source/**.ptx",
-            "systemId": "/home/pearcej/.vscode-server/extensions/oscarlevin.pretext-tools-0.32.2/assets/schema/pretext.rng"
-        }
-    ]
-}

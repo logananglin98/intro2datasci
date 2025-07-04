@@ -18,6 +18,9 @@
     <xi:include href="./ch4-follow-the-data.ptx" />
     <xi:include href="./ch5-rows-and-columns.ptx" />
     <xi:include href="./ch6-beer-farms-and-peas.ptx" />
+    <xi:include href="./ch7-sample-in-jar.ptx" />
+    <xi:include href="./ch8-big-data-big-deal.ptx" />
+    <xi:include href="./ch9-onward-with-rstudio.ptx" />
     <!-- Include backmatter -->
     <!-- xi:include href="./backmatter.ptx" /-->
       <index>

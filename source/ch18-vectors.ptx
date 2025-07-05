@@ -387,7 +387,7 @@
 				</p>
 
 				<p>
-					Training error : 0.008803<!-- linebreak -->Cross validation error : 0.085424
+					Training error : 0.008803 Cross validation error : 0.085424
 				</p>
 
 				<p>
@@ -395,7 +395,7 @@
 				</p>
 
 				<p>
-					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened:<!-- linebreak --><image source='media/image8.png'/>
+					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='media/image8.png'/>
 				</p>
 
 				<p>

@@ -59,7 +59,7 @@
 				</p>
 
 				<p>
-					<image source='media/image18.png'/><!-- linebreak -->In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
+					<image source='media/image18.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
 				</p>
 
 				<p>
@@ -856,7 +856,7 @@
 			</subsection>
 
 			<subsection xml:id="r-script-create-vector-of-probabilities-from-delay-times">
-				<title><!-- linebreak --><term>R Script Create Vector of Probabilities From Delay Times</term> </title>
+				<title> <term>R Script Create Vector of Probabilities From Delay Times</term> </title>
 
 				<p>
 					# Like ArrivalProbability, but works with unsorted list

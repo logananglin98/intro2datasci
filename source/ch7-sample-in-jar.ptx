@@ -54,7 +54,7 @@
 				</table>
 
 				<p>
-					<term><!-- linebreak --></term>Notice that the left column is just counting up the number of sample draws we have done. The right column is the interesting one because it is the count of the number of red gumballs in each particular sample draw. In this example, things are all over the place. In sample draw 4 we only have two red gumballs, but in sample draw 3 we have 6 red gumballs. But the most interesting part of this example is that if you <em>average</em> the number of red gumballs over all of the draws, the average comes out to <em>exactly four red gumballs</em> per draw, which is what we would expect in a jar that is half and half. Now this is a contrived example and we won’t always get such a perfect result so quickly, but if you did four thousand draws instead of four, you would get pretty close to the perfect result.
+					<term> </term>Notice that the left column is just counting up the number of sample draws we have done. The right column is the interesting one because it is the count of the number of red gumballs in each particular sample draw. In this example, things are all over the place. In sample draw 4 we only have two red gumballs, but in sample draw 3 we have 6 red gumballs. But the most interesting part of this example is that if you <em>average</em> the number of red gumballs over all of the draws, the average comes out to <em>exactly four red gumballs</em> per draw, which is what we would expect in a jar that is half and half. Now this is a contrived example and we won’t always get such a perfect result so quickly, but if you did four thousand draws instead of four, you would get pretty close to the perfect result.
 				</p>
 
 				<p>
@@ -74,7 +74,7 @@
 				</p>
 
 				<p>
-					[8] 5029196<!-- linebreak --><!-- linebreak -->As a matter of practice, note that we called the sample() function with three arguments. The first argument was the data source. For the second and third arguments, rather than rely on the order in which we specify the arguments, we have used "named arguments" to make sure that R does what we wanted. The size=16 argument asks R to draw a sample of 16 state data values. The replace=TRUE argument specifies a style of sampling which statisticians use very often to simplify the mathematics of their proofs. For us, sampling with or without replacement does not usually have any practical effects, so we will just go with what the statisticians typically do.
+					[8] 5029196  As a matter of practice, note that we called the sample() function with three arguments. The first argument was the data source. For the second and third arguments, rather than rely on the order in which we specify the arguments, we have used "named arguments" to make sure that R does what we wanted. The size=16 argument asks R to draw a sample of 16 state data values. The replace=TRUE argument specifies a style of sampling which statisticians use very often to simplify the mathematics of their proofs. For us, sampling with or without replacement does not usually have any practical effects, so we will just go with what the statisticians typically do.
 				</p>
 
 				<p>
@@ -231,7 +231,7 @@
 				</p>
 
 				<p>
-					Min. 1st Qu. Median Mean 3rd Qu. Max.<!-- linebreak -->799100 3853000 5370000 6065000 7622000 25030000
+					Min. 1st Qu. Median Mean 3rd Qu. Max. 799100 3853000 5370000 6065000 7622000 25030000
 				</p>
 
 				<p>

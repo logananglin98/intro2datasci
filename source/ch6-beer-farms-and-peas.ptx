@@ -593,7 +593,7 @@
 					<li>
 									<blockquote>
 														<p>
-										mode() Tells the data type/mode of a data object.<term><!-- linebreak -->Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
+										mode() Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
 									</p>
 									</blockquote>
 					</li>

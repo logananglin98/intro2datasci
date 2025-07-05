@@ -80,7 +80,7 @@
 				</p>
 
 				<p>
-					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot:<!-- linebreak --><image source='media/image19.png'/>
+					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='media/image19.png'/>
 				</p>
 
 				<p>

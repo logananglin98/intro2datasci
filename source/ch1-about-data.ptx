@@ -8,6 +8,9 @@
       <introduction>
 				<p>
 					<em>Data comes from the Latin word, "datum," meaning a "thing given." Although the term "data" has been used since as early as the 1500s, modern usage started in the 1940s and 1950s as practical electronic computers began to input, process, and output data. This chapter discusses the nature of data and introduces key concepts for newcomers without computer science experience.</em>
+
+	<image source="data-in-workbook.png" decorative="yes"/>
+
 				</p>
   </introduction>
     
@@ -23,30 +26,30 @@
 					Once we are comfortable with the idea of a "bit" as the most basic unit of information, either "yes" or "no," we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of "no" we will start using zero, and instead of "yes" we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word "bit," which is a squashed down version of the phrase "Binary digIT." A single binary digit can be 0 or 1, and that would give us just two options like “yes” or “no” but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
 				</p>
 
-				<table>
-					<title></title>
+				<table xml:id="two-bit-binary-codebook">
+					<title>Two Bit Binary Codebook</title>
 					<tabular>
 					<row header="yes">
 						<cell halign="left"><term>MEANING</term></cell>
 						<cell halign="left"><term>2ND DIGIT</term></cell>
 						<cell halign="left"><term>1ST DIGIT</term></cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">No</cell>
 						<cell halign="left">0</cell>
 						<cell halign="left">0</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Maybe</cell>
 						<cell halign="left">0</cell>
 						<cell halign="left">1</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Probably</cell>
 						<cell halign="left">1</cell>
 						<cell halign="left">0</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Definitely</cell>
 						<cell halign="left">1</cell>
 						<cell halign="left">1</cell>
@@ -122,66 +125,66 @@
 
 			<p><ul>
 				<li>
-							<blockquote>
+							
 											<p>
 								In the heart of the computer, all data are represented in binary. One binary digit, or bit, is the smallest chunk of data that we can send from one place to another.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Although all data are at heart binary, computers and software help to represent data in more convenient forms for people to see. Three important representations are: "character" for representing text, "integer" for representing numbers with no digits after the decimal point, and "floating point" for numbers that may have digits after the decimal point. The list of numbers in our tiny data set just above are integers.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Numbers and text can be collected into lists, which the open source program "R" calls vectors. A vector has a length, which is the number of items in it, and a "mode" which is the type of data stored in the vector. The vector we were just working on has a length of 5 and a mode of integer.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name "myFamAge." Some people might refer to this named list as a "variable," because the value of it varies, depending upon which member of the list you are examining.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								If we gather together one or more variables into a sensible group, we can refer to them together as a "data set." Usually, it doesn’t make sense to refer to something with just one variable as a data set, so usually we need at least two variables. Technically, though, even our very simple "myFamAge" counts as a data set, albeit a very tiny one.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Later in the book we will install and run the open source "R" data program and learn more about how to create data sets, summarize the information in those data sets, and perform some simple calculations and transformations on those data sets.
 							</p>
-							</blockquote>
+							
 				</li>
 
 			</ul></p>
 
-
-			<subsection xml:id="chapter-challenge">
+		</section>
+			<section xml:id="chapter-challenge">
 				<title>Chapter Challenge </title>
 
 				<p>
 					Discover the meaning of "Boolean Logic" and the rules for "and", "or", "not", and "exclusive or". Once you have studied this for a while, write down on a piece of paper, without looking, all of the binary operations that demonstrate these rules.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-1">
+			<section xml:id="ch1-sources">
 				<title>Sources </title>
 
 				<p><ul>
@@ -223,42 +226,55 @@
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="test-yourself">
-				<title>Test Yourself</title>
+	<section xml:id="test-yourself">
+	<title>Test Yourself</title>
 
-				<p>
-					<term>Question:</term> The smallest unit of information commonly in use in today’s computers is called:
-				</p>
+		<exercise label="mc-smallest-unit" xml:id="mc-smallest-unit">
+        <statement>
 
-				<p><ol>
-					<li>
-									<p>
-										A Bit
-									</p>
-					</li>
+        <p>The smallest unit of information commonly in use in today’s computers is called:</p>
 
-					<li>
-									<p>
-										A Byte
-									</p>
-					</li>
+        </statement>
+		<choices>
 
-					<li>
-									<p>
-										A Nibble
-									</p>
-					</li>
+            <choice correct ="yes">
+                <statement>
+                    <p>A Bit</p>
+                </statement>
+                <feedback>
+                    <p> Right!
+                    </p>
+                </feedback>
+            </choice>
+			<choice>
+                <statement>
+                    <p>A Byte</p>
+                </statement>
+                <feedback>
+                    <p>No, that is 8 times larger.</p>
+                </feedback>
+            </choice>
+						<choice>
+                <statement>
+                    <p>A Nibble</p>
+                </statement>
+                <feedback>
+                    <p>No, that is 4 times larger.</p>
+                </feedback>
+            </choice>
+						<choice>
+                <statement>
+                    <p>An Integer</p>
+                </statement>
+                <feedback>
+                    <p>No, that is a whole bunch larger!</p>
+                </feedback>
+            </choice>
+	</choices>
+    </exercise>
 
-					<li>
-									<p>
-										An Integer
-									</p>
-					</li>
-
-				</ol></p>
-      </subsection>
-      </section>
+    </section>
 
 </chapter>

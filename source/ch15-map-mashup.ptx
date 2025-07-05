@@ -137,7 +137,7 @@
 				</p>
 
 				<p>
-					<image source='media/image50.png'/><!-- linebreak -->So now we have some map data stored away and ready to use. The PBSmapping package gives us the capability of adding points to an existing map. For now, let’s demonstrate this with a made up point somewhere in Texas:
+					<image source='media/image50.png'/> So now we have some map data stored away and ready to use. The PBSmapping package gives us the capability of adding points to an existing map. For now, let’s demonstrate this with a made up point somewhere in Texas:
 				</p>
 
 				<p>
@@ -770,7 +770,7 @@
 			</subsection>
 
 			<subsection xml:id="sources-10">
-				<title><!-- linebreak -->Sources </title>
+				<title> Sources </title>
 
 				<p><ul>
 					<li>

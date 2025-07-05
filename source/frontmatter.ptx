@@ -18,14 +18,14 @@
     </date>
 
     <website>
-      <url href="https://github.com/pearcej/intro2datasci">Repository on Gibhub</url>
+      <url href="https://github.com/pearcej/intro2datasci">Repository on Github</url>
     </website>
 
     <copyright>
       <year>2025<ndash />present</year>
       <holder>Dr. Jan Pearce, Editor</holder>
       <shortlicense> This work is licensed under the Creative Commons Non-Commercial Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="https://creativecommons.org/licenses/by-nc-sa/4.0/" visual="creativecommons.org/licenses/by-nc-sa/4.0/"> CreativeCommons.org</url>. All product names, logos, and brands are property of their respective owners. All company, product and service names used in this text are for identification purposes only. Use of these names, logos, and brands does not imply endorsement. 
-		Many images used in this text are created by the original author, Ryan Tolboom, and licensed under CC-BY-NC-SA except where otherwise noted.
+		Many images used in this text are created by the original author and licensed under CC-BY-NC-SA except where otherwise noted.
 	
       </shortlicense>
     </copyright>
@@ -92,49 +92,51 @@
 
 			<p><ol>
 				<li>
-							<blockquote>
+							<paragraphs>
 											<p>
 								Data science includes data analysis as an important component of the skill set required for many jobs in this area, but is not the only necessary skill.
 							</p>
-							</blockquote>
+							</paragraphs>
 				</li>
 
 				<li>
-							<blockquote>
+							<paragraphs>
 											<p>
 								A brief case study of a supermarket point of sale system illustrates the many challenges involved in data science work.
 							</p>
-							</blockquote>
+							</paragraphs>
 				</li>
 
 				<li>
-							<blockquote>
+							<paragraphs>
 											<p>
 								Data scientists play active roles in the design and implementation work of four related areas: data architecture, data acquisition, data analysis, and data archiving.
 							</p>
-							</blockquote>
+							</paragraphs>
 				</li>
 
 				<li>
-							<blockquote>
+							<paragraphs>
 											<p>
 								Key skills highlighted by the brief case study include communication skills, data analysis skills, and ethical reasoning skills.
 							</p>
-							</blockquote>
+							</paragraphs>
 				</li>
 
 			</ol></p>
+						<p>
+	<figure>
+		<caption><idx>Pareto graph</idx><idx>bar graph</idx> Word frequencies from the definitions in a Shakespeare glossary in a <term>bar graph</term> format (aka a <term>Pareto graph</term> ) format where the height of the bar indicates the word frequency.</caption>
+	<image source="pareto-words.png"/>
+	</figure>
 
-			<p>
-				<em>Word frequencies from the definitions in a Shakespeare glossary in a bar graph format aka a Pareto graph format where the height of the bar indicates the word frequency.</em><image source='media/image48.png'/>
-			</p>
+	<figure>
+	<caption>A world cloud of the words in this textbook created by Dr. Jan Pearce on May 7, 2020 at <url href="https://wordart.com/">https://wordart.com/</url>.</caption>
+	<image source="data-text-cloud.png"/>
+				
+	</figure>
 
-			<figure>
-	<image source="media/image20.png"/>
-				<caption>A world cloud of the words in this textbook created by Jan Pearce on May 7, 2020 at https://wordart.com/</caption>
-</figure>
 
-			<p>
 				<em>Word frequencies of this text book in a word cloud format where the relative size of the word indicates its frequency. While professional data scientists do need skills with mathematics and statistics, much of the data in the world is unstructured and non-numeric.</em>
 			</p>
 
@@ -174,72 +176,51 @@
 				All in all, our cereal box and grocery store example helps to highlight where data scientists get involved and the skills they need. Here are some of the skills that the example suggested:
 			</p>
 
-			<p><ul>
-				<li>
-							<blockquote>
-											<p>
-								<term>Learning the application domain</term><!-- linebreak -->The data scientist must quickly learn how the data will be used in a particular context.
-							</p>
-							</blockquote>
-				</li>
+			<paragraphs>
+					<title>Learning the application domain</title>
+					<p>
+						The data scientist must quickly learn how the data will be used in a particular context.
+					</p>
 
-				<li>
-							<blockquote>
-											<p>
-								<term>Communicating with data users<!-- linebreak --></term>A data scientist must possess strong skills for learning the needs and preferences of users. Translating back and forth between the technical terms of computing and statistics and the vocabulary of the application domain is a critical skill.
-							</p>
-							</blockquote>
-				</li>
+				</paragraphs>
 
-				<li>
-							<blockquote>
-											<p>
-								<term>Seeing the big picture of a complex system</term><!-- linebreak -->After developing an understanding of the application domain, the data scientist must imagine how data will move around among all of the relevant systems and people.
+				
+							<paragraphs>
+								<title>
+									Communicating with data users</title>
+								<p>A data scientist must possess strong skills for learning the needs and preferences of users. Translating back and forth between the technical terms of computing and statistics and the vocabulary of the application domain is a critical skill.
 							</p>
-							</blockquote>
-				</li>
+							</paragraphs>
+				
 
-				<li>
-							<blockquote>
-											<p>
-								<term>Knowing how data can be represented</term><!-- linebreak -->Data scientists must have a clear understanding about how data can be stored and linked, as well as about "metadata" (data that describes how other data are arranged).
+							<paragraphs>
+								<title>Seeing the big picture of a complex system</title><p>After developing an understanding of the application domain, the data scientist must imagine how data will move around among all of the relevant systems and people.
 							</p>
-							</blockquote>
-				</li>
+							</paragraphs>
 
-				<li>
-							<blockquote>
-											<p>
-								<term>Data transformation and analysis</term><!-- linebreak -->When data becomes available for the use of decision makers, data scientists must know how to transform, summarize, and make inferences from the data. As noted above, being able to communicate the results of analyses to users is also a critical skill here.
+							<paragraphs>
+								<title>Knowing how data can be represented</title><p>Data scientists must have a clear understanding about how data can be stored and linked, as well as about "metadata" (data that describes how other data are arranged).
 							</p>
-							</blockquote>
-				</li>
-
-				<li>
-							<blockquote>
-											<p>
-								<term>Visualization and presentation</term><!-- linebreak -->Although numbers often have the edge in precision and detail, a good data display (e.g., a bar chart) can often be a more effective means of communicating results to data users.
+							</paragraphs>
+							<paragraphs>
+								<title>Data transformation and analysis</title><p>When data becomes available for the use of decision makers, data scientists must know how to transform, summarize, and make inferences from the data. As noted above, being able to communicate the results of analyses to users is also a critical skill here.
 							</p>
-							</blockquote>
-				</li>
+							</paragraphs>
+							<paragraphs>
 
-				<li>
-							<blockquote>
-											<p>
-								<term>Attention to quality<!-- linebreak --></term>No matter how good a set of data may be, there is no such thing as perfect data. Data scientists must know the limitations of the data they work with, know how to quantify its accuracy, and be able to make suggestions for improving the quality of the data in the future.
+								<title>Visualization and presentation</title><p>Although numbers often have the edge in precision and detail, a good data display (e.g., a bar chart) can often be a more effective means of communicating results to data users.
 							</p>
-							</blockquote>
-				</li>
-
-				<li>
-							<blockquote>
-											<p>
-								<term>Ethical reasoning<!-- linebreak --></term>If data are important enough to collect, they are often important enough to affect people’s lives. Data scientists must understand important ethical issues such as privacy, and must be able to communicate the limitations of data to try to prevent misuse of data or analytical results.
+							</paragraphs>
+							<paragraphs>
+								<title>Attention to quality</title><p>No matter how good a set of data may be, there is no such thing as perfect data. Data scientists must know the limitations of the data they work with, know how to quantify its accuracy, and be able to make suggestions for improving the quality of the data in the future.
 							</p>
-							</blockquote>
-				</li>
+							</paragraphs>
 
-			</ul></p>
+							<paragraphs>
+
+								<title>Ethical reasoning</title><p>If data are important enough to collect, they are often important enough to affect people’s lives. Data scientists must understand important ethical issues such as privacy, and must be able to communicate the limitations of data to try to prevent misuse of data or analytical results.
+							</p>
+							</paragraphs>
 
 			<p>
 				The skills and capabilities noted above are just the tip of the iceberg, of course, but notice what a wide range is represented here. While a keen understanding of numbers and mathematics is important, particularly for data analysis, the data scientist also needs to have excellent communication skills, be a great systems thinker, have a good eye for visual displays, and be highly capable of thinking critically about how data will be used to make decisions and affect people’s lives. Of course there are very few people who are good at all of these things, so some of the people interested in data will specialize in one area, while others will become experts in another area. This highlights the importance of teamwork, as well.

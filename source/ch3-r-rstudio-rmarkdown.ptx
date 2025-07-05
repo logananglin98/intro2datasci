@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<chapter xml:id="ch3-r-rstudio-rmarkdown" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>R, RStudio, and R-Markdown</title>
+<chapter xml:id="ch3-r-and-rmarkdown" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>R and R-Markdown</title>
 
       <section xml:id="the-r-language">
     <title>The R Language</title>
@@ -9,11 +9,13 @@
 				<p>
 					<em>"R" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.</em>
 				</p>
-  </introduction>
- 				<p>
-					<em>As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text. The cloud-based version of R-Studio is located at <url href="https://rstudio.cloud/">https://rstudio.cloud/</url>.</em>
-				</p>
 
+ 				<p>
+					<em>As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text. </em>
+
+	<image source="graph-unclear.png" decorative="yes"/>
+				</p>
+  </introduction>
 				<p>
 					If you are new to computers, programming, and/or data science, welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The "R" open source data analysis programming language is immensely powerful, flexible, and especially "extensible" (meaning that people can create new capabilities for it quite easily). At the same time, R is "command line" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
@@ -29,7 +31,7 @@
 			</section>
 
 			<section xml:id="r-studio">
-				<title>R-studio </title>
+				<title>R-Studio </title>
 
 				<p>
 					R-Studio is an Integrated Development Environment, abbreviated as IDE. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier.
@@ -56,55 +58,12 @@
 					R-Markdown files have an .Rmd extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
-<figure xml:id="">
-	<caption>What is R-Markdown?</caption>
-	<image source='rmarkdown.png'/><url href="https://vimeo.com/178485416">What is R-Markdown</url>
-</figure>
 			</section>
 
-			<section xml:id="using-r-in-r-studio-cloud">
-				<title>Using R in R-Studio Cloud</title>
+			<section xml:id="using-r-in-rstudio">
+				<title>Using R in R-Studio</title>
 
-				<p>
-					Let’s get started. Your instructor has created an R-Studio classroom <url href="https://rstudio.cloud/spaces/64575/join?access_code=UcuTmD93NDctYYHzsy92hCw3EvsBllPiI3d9Wc8V">R-Studio Cloud CSC100S Intro to Data Science</url>. Please follow this link and sign up using your Berea email and your real name.
-				</p>
 
-				<p>
-					<image source='media/image62.png'/><image source='media/image22.png'/>
-				</p>
-
-				<figure>
-	<image source="media/image31.png"/>
-					<caption>Main screen with IntroToDataScience tab open. The window open read Welcome to IntroToDataScience.</caption>
-</figure>
-
-				<figure>
-	<image source="media/image32.png"/>
-					<caption>The Console is open with the "greater than" sign highlighted in red at the bottom of the generic R Version text.</caption>
-</figure>
-
-				<figure>
-	<image source="media/image43.png"/>
-					<caption></caption>
-</figure>
-
-				<p>
-					Notice near the bottom of the screenshot a greater than ("&gt;") symbol. This is the command prompt: When R is running and it is the active application on your desktop, if you type a command it appears after the "&gt;" symbol. If you press the "enter" or "return" key, the command is sent to R for processing. When the processing is done, a result may appear just under the "&gt;." When R is done processing, another command prompt ("&gt;") appears and R is ready for your next command.
-				</p>
-
-				<figure>
-	<image source="media/image42.png"/>
-					<caption>The example of a console screen use with the comman line reading 1 + 1 expression and outputting [1] 2 in the next line.</caption>
-</figure>
-
-				<p>
-					In the screenshot, the user has typed "1+1" and pressed the enter key. The formula 1+1 is used by elementary school students everywhere to insult each other’s math skills, but R dutifully reports the result as 2. If you are a careful observer, you will notice that just before the 2 there is a "1" in brackets, like this: [1]. That [1] is a line number that helps to keep track of the results that R displays. Pretty pointless when only showing one line of results, but R likes to be consistent, so we will see quite a lot of those numbers in brackets as we dig deeper.
-				</p>
-
-				<figure>
-	<image source="media/image7.png"/>
-					<caption>Example includes a console with a data set assigned to a variable myFamilyAges on which different methods are performed, including mean, sum, and range.</caption>
-</figure>
 
 				<p>
 					Remember the list of ages of family members from the About Data chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. We mentioned that this was a list of items, all of the same mode, namely "integer." Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. Recalling that “c” stands for concatenate, we can create a vector of integers in r using the "c()" command. Take a look at the screenshot just above.
@@ -115,7 +74,7 @@
 				</p>
 
 				<p>
-					c(43, 42, 12, 8, 5)
+					<c>c(43, 42, 12, 8, 5)</c>
 				</p>
 
 				<p>
@@ -123,7 +82,7 @@
 				</p>
 
 				<p>
-					myFamAge &lt;- c(43, 42, 12, 8, 5)
+					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
 				</p>
 
 				<p>
@@ -131,27 +90,17 @@
 				</p>
 
 				<p>
-					<sub>sum(myFamAge)</sub>
+					<c>sum(myFamAge)</c>
 				</p>
 
 				<p>
 					This command asks R to add together all of the numbers in
-				</p>
-
-				<p>
 					myFamAge, which turns out to be 110 (you can check it yourself
-				</p>
-
-				<p>
 					if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the "mean" (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called "range," shows the lowest and highest ages in the list. Finally, just for fun, we tried to issue the command "fish(myFamAge)". Pretty much as you might expect, R does not contain a "fish()" function and so we received an error message to that effect. This shows another important principle for working with R: You can freely try things out at any time without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want.
 				</p>
 
 				<p>
-					Let’s take stock for a moment. First, you should definitely try all of the commands noted above on your own computer. You can read about the commands in this book all you want, but you will learn a lot more if you actually try things out. Second, if you try a command that is shown in these pages and it does not work for some reason, you should try to figure out why. Begin by checking your spelling and punctuation, because R is very persnickety about how commands are typed. Remember that capitalization matters in R: myFamAge is not the same as myFamAge. If you verify that you have typed a command just as you see in the book and it still does not work, try to go online and look for some help. There’s lots of help at <url href="http://stackoverflow.com">Stack Overflow</url>, at <url href="https://stat.ethz.ch">Zürich Seminar for Statistics</url>, and also at <url href="http://www.statmethods.net/">Quick-R</url>. If you can figure out what
-				</p>
-
-				<p>
-					went wrong on your own and you will probably learn something very valuable about working with R. Third, you should take a moment to experiment a bit with each new set of commands that you learn. For example, just using the commands discussed earlier in the chapter you could do this totally new thing:
+					Let’s take stock for a moment. First, you should definitely try all of the commands noted above on your own computer. You can read about the commands in this book all you want, but you will learn a lot more if you actually try things out. Second, if you try a command that is shown in these pages and it does not work for some reason, you should try to figure out why. Begin by checking your spelling and punctuation, because R is very persnickety about how commands are typed. Remember that capitalization matters in R: myFamAge is not the same as myFamAge. If you verify that you have typed a command just as you see in the book and it still does not work, try to go online and look for some help. There’s lots of help at <url href="http://stackoverflow.com">Stack Overflow</url>, at <url href="https://stat.ethz.ch">Zürich Seminar for Statistics</url>, and also at <url href="http://www.statmethods.net/">Quick-R</url>. If you can figure out what went wrong on your own and you will probably learn something very valuable about working with R. Third, you should take a moment to experiment a bit with each new set of commands that you learn. For example, just using the commands discussed earlier in the chapter you could do this totally new thing:
 				</p>
 
 				<p>
@@ -166,7 +115,7 @@
 					<li>
 									<blockquote>
 														<p>
-										How to use R in R blocks within R-Studio Cloud.
+										How to use R in R blocks within R-Studio.
 									</p>
 									</blockquote>
 					</li>

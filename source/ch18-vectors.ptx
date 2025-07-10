@@ -248,11 +248,7 @@
 				</p>
 
 				<p>
-					Using automatic sigma estimation (sigest) for RBF or laplace kernel
-				</p>
-
-				<p>
-					Let’s examine this command in some detail. The first argument, "type ~ .", specifies the model we want to test. Using the word "type" in this expression means that we want to have the "type" variable (i.e., whether the message is spam or non-spam) as the outcome variable that our model predicts. The <idx>tilde character</idx><term>tilde character</term> ("~") in an R expression simply separates the left hand side of the expression from the right hand side. Finally, the dot character (".") is a shorthand that tell R to us all of the other variables in the dataframe to try to predict "type."
+					Using automatic sigma estimation (sigest) for RBF or laplace kernel let’s examine this command in some detail. The first argument, "type ~ .", specifies the model we want to test. Using the word "type" in this expression means that we want to have the "type" variable (i.e., whether the message is spam or non-spam) as the outcome variable that our model predicts. The <idx>tilde character</idx><term>tilde character</term> ("~") in an R expression simply separates the left hand side of the expression from the right hand side. Finally, the dot character (".") is a shorthand that tell R to us all of the other variables in the dataframe to try to predict "type."
 				</p>
 
 				<p>
@@ -340,7 +336,7 @@
 				</p>
 
 				<figure>
-	<image source="/intro2datasci/images/histogram-alpha-svmOutput-1.png"/>
+	<image source="histogram-alpha-svmOutput-1.png"/>
 					<caption>Histogram of alpha(svmOutput)[[1]]</caption>
 </figure>
 
@@ -397,7 +393,7 @@
 				</p>
 
 				<p>
-					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='/intro2datasci/image/histogram-alpha-svmOutput-10.png'/>
+					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='histogram-alpha-svmOutput-10.png'/>
 				</p>
 
 				<p>

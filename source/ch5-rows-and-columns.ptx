@@ -66,7 +66,7 @@
 				</p>
 
 				<p>
-					One other important note: Look how each column contains the same kind of data all the way down. For example, the Age column is all numbers. There’s nothing in the Age column like "Old" or "Young." This is a really valuable way of keeping things organized. After all, we could not run the mean() function on the Age column if it contained a little piece of text, like "Old" or "Young." On a related note, every cell (that is an intersection of a row and a column, for example, Sis’s Age) contains just one piece of information. Although a spreadsheet or a word processing program might allow us to put more than one thing in a cell, a real data handling program will not. Finally, see that every column has the same number of entries, so that the whole forms a nice rectangle. When statisticians and other people who work with databases work with a dataset, they expect this rectangular arrangement.
+					One other important note: Look how each column contains the same kind of data all the way down. For example, the Age column is all numbers. There’s nothing in the Age column like "Old" or "Young." This is a really valuable way of keeping things organized. After all, we could not run the <c>mean()</c> function on the Age column if it contained a little piece of text, like "Old" or "Young." On a related note, every cell (that is an intersection of a row and a column, for example, Sis’s Age) contains just one piece of information. Although a spreadsheet or a word processing program might allow us to put more than one thing in a cell, a real data handling program will not. Finally, see that every column has the same number of entries, so that the whole forms a nice rectangle. When statisticians and other people who work with databases work with a dataset, they expect this rectangular arrangement.
 				</p>
 
 				<p>
@@ -74,7 +74,7 @@
 				</p>
 
 				<p>
-					myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")
+					<c>myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")</c>
 				</p>
 
 				<p>
@@ -82,7 +82,7 @@
 				</p>
 
 				<p>
-					myFamName
+					<c>myFamName</c>
 				</p>
 
 				<p>
@@ -90,7 +90,7 @@
 				</p>
 
 				<p>
-					[1] "Dad" "Mom" "Sis" "Bro" "Dog"
+					<c>[1] "Dad" "Mom" "Sis" "Bro" "Dog"</c>
 				</p>
 
 				<p>
@@ -98,7 +98,7 @@
 				</p>
 
 				<p>
-					myFamAge &lt;- c(43, 42, 12, 8, 5)
+					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
 				</p>
 
 				<p>
@@ -106,19 +106,19 @@
 				</p>
 
 				<p>
-					[1] 43 42 12 8 5
+					<c>[1] 43 42 12 8 5</c>
 				</p>
 
 				<p>
-					Hey, now you have used the c() function and the assignment arrow to make myFamName and myFamAge. If you look at the data table earlier in the chapter you should be able to figure out the commands for creating myFamGend and myFamWeight. In case you run into trouble, these commands also appear on the next page, but you should try to figure them out for yourself before you turn the page. In each case after you type the command to create the new data object, you should also type the name of the data object at the command line to make sure that it looks the way it should. Four variables, each one with five values in it. Two of the variables are character data and two of the variables are integer data. Here are those two extra commands in case you need them:
+					Hey, now you have used the <c>c()</c> function and the assignment arrow to make myFamName and myFamAge. If you look at the data table earlier in the chapter you should be able to figure out the commands for creating myFamGend and myFamWeight. In case you run into trouble, these commands also appear on the next page, but you should try to figure them out for yourself before you turn the page. In each case after you type the command to create the new data object, you should also type the name of the data object at the command line to make sure that it looks the way it should. Four variables, each one with five values in it. Two of the variables are character data and two of the variables are integer data. Here are those two extra commands in case you need them:
 				</p>
 
 				<p>
-					myFamGend &lt;- c("Male","Female","Female","Male","Female")
+					<c>myFamGend &lt;- c("Male","Female","Female","Male","Female")</c>
 				</p>
 
 				<p>
-					myFamWeight &lt;- c(188,136,83,61,44)
+					<c>myFamWeight &lt;- c(188,136,83,61,44)</c>
 				</p>
 
 				<p>
@@ -126,39 +126,25 @@
 				</p>
 
 				<p>
-					myFam &lt;- data.frame(myFamName, +
+					<pre>
+						myFam &lt;- data.frame(myFamName, +
+						myFamAge, myFamGend, myFamWeight)
+					</pre>
 				</p>
 
 				<p>
-					myFamAge, myFamGend, myFamWeight)
+					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the <c>data.frame()</c> function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
 				</p>
 
 				<p>
-					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the data.frame() function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
-				</p>
-
-				<p>
-					myFamName myFamAge myFamGend myFamWeight
-				</p>
-
-				<p>
-					1 Dad 43 Male 188
-				</p>
-
-				<p>
-					2 Mom 42 Female 136
-				</p>
-
-				<p>
-					3 Sis 12 Female 83
-				</p>
-
-				<p>
-					4 Bro 8 Male 61
-				</p>
-
-				<p>
-					5 Dog 5 Female 44
+					<pre>
+						  myFamName myFamAge myFamGend myFamWeight					
+						1       Dad       43      Male         188					
+						2       Mom       42    Female         136					
+						3       Sis       12    Female          83					
+						4       Bro        8      Male          61
+						5       Dog        5    Female          44
+					</pre>
 				</p>
 
 				<figure>
@@ -171,7 +157,7 @@
 				</p>
 
 				<p>
-					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s str() method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
+					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s <c>str()</c> method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
 				</p>
 
 				<figure>
@@ -180,31 +166,15 @@
 </figure>
 
 				<p>
+					<pre>
 					&gt; str(myFam)
-				</p>
-
-				<p>
 					'data.frame': 5 obs. of 4 variables:
-				</p>
-
-				<p>
 					$ myFamName : Factor w/ 5 levels "Bro","Dad","Dog",..: 2 4 5 1 3
-				</p>
-
-				<p>
 					$ myFamAge : num 43 42 12 8 5
-				</p>
-
-				<p>
-					$ myFamGend: Factor w/ 2 levels
-				</p>
-
-				<p>
-					"Female","Male": 2 1 1 2 1
-				</p>
-
-				<p>
+					$ myFamGend: Factor w/ 2 levels			
+					"Female","Male": 2 1 1 2 1			
 					$ myFamWeight: num 188 136 83 61 44
+					</pre>
 				</p>
 
 				<p>
@@ -212,7 +182,7 @@
 				</p>
 
 				<p>
-					OK, so the function "str()" reveals the structure of the data object that you name between the parentheses. In this case we pretty well knew that myFam was a data frame because we just set that up in a previous command. In the future, however, we will run into many situations where we are not sure how R has created a data object, so it is important to know str() so that you can ask R to report what an object is at any time.
+					OK, so the function "str()" reveals the structure of the data object that you name between the parentheses. In this case we pretty well knew that myFam was a data frame because we just set that up in a previous command. In the future, however, we will run into many situations where we are not sure how R has created a data object, so it is important to know <c>str()</c> so that you can ask R to report what an object is at any time.
 				</p>
 
 				<p>
@@ -224,7 +194,7 @@
 				</p>
 
 				<p>
-					$ myFamGend<term>:</term> Factor w/ 2 levels
+					<c>$ myFamGend<term>:</term> Factor w/ 2 levels</c>
 				</p>
 
 				<p>
@@ -232,7 +202,7 @@
 				</p>
 
 				<p>
-					R assigns a number, starting with one, to each of these levels, so every case that is "Female" gets assigned a 1 and every case that is "Male" gets assigned a 2 (because Female comes before Male in the alphabet, so Female is the first Factor label, so it gets a 1). If you have your thinking cap on, you may be wondering why we started out by typing in small strings of text, like "Male," but then R has gone ahead and converted these small pieces of text into numbers that it calls "Factors." The reason for this lies in the statistical origins of R. For years, researchers have done things like calling an experimental group "Exp" and a control group "Ctl" without intending to use these small strings of text for anything other than labels. So R assumes, unless you tell it otherwise, that when you type in a short string like "Male" that you are referring to the label of a group, and that R should prepare for the use of Male as a "Level" of a "Factor." When you don’t want this to happen you can instruct R to stop doing this with an option on the data.frame() function: stringsAsFactors=FALSE. We will look with more detail at options and defaults a little later on.
+					R assigns a number, starting with one, to each of these levels, so every case that is "Female" gets assigned a 1 and every case that is "Male" gets assigned a 2 (because Female comes before Male in the alphabet, so Female is the first Factor label, so it gets a 1). If you have your thinking cap on, you may be wondering why we started out by typing in small strings of text, like "Male," but then R has gone ahead and converted these small pieces of text into numbers that it calls "Factors." The reason for this lies in the statistical origins of R. For years, researchers have done things like calling an experimental group "Exp" and a control group "Ctl" without intending to use these small strings of text for anything other than labels. So R assumes, unless you tell it otherwise, that when you type in a short string like "Male" that you are referring to the label of a group, and that R should prepare for the use of Male as a "Level" of a "Factor." When you don’t want this to happen you can instruct R to stop doing this with an option on the <c>data.frame()</c> function: stringsAsFactors=FALSE. We will look with more detail at options and defaults a little later on.
 				</p>
 
 				<p>
@@ -240,7 +210,7 @@
 				</p>
 
 				<p>
-					$ myFamAge : num 43 42 12 8 5
+					<c>$ myFamAge : num 43 42 12 8 5</c>
 				</p>
 
 				<p>
@@ -248,7 +218,7 @@
 				</p>
 
 				<p>
-					Next, we will examine another very useful function called summary()which provides some overlapping information to str() but also goes a little bit further, particularly with numeric variables.
+					Next, we will examine another very useful function called <c>summary()</c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
 				</p>
 
 				<p>
@@ -256,62 +226,17 @@
 				</p>
 
 				<p>
+				<pre>
 					&gt; summary(myFam)
+						myFamName   myFamAge       myFamGend   myFamWeight   
+						Bro:1      Min.   : 5.0   Female:3     Min.   : 44.0  
+						Dad:1      1st Qu.: 8.0   Male  :2     1st Qu.: 61.0  
+						Dog:1      Median :12.0                Median : 83.0  
+						Mom:1      Mean   :22.0                Mean   :102.4  
+						Sis:1      3rd Qu.:42.0                3rd Qu.:136.0  
+							   Max.   :43.0                Max.   :188.0 
+				</pre>
 				</p>
-
-				<p>
-					myFamName myFamAge
-				</p>
-
-				<p>
-					Bro: 1 Min. : 5
-				</p>
-
-				<p>
-					Dad: 1 1st Qu. : 8
-				</p>
-
-				<p>
-					Dog: 1 Median : 12
-				</p>
-
-				<p>
-					Mom: 1 Mean : 22
-				</p>
-
-				<p>
-					Sis: 1 3rd Qu. : 42
-				</p>
-
-				<p>
-					myFamGend myFamWeight
-				</p>
-
-				<p>
-					Female : 3 Min. : 44
-				</p>
-
-				<p>
-					Male : 2 1st Qu. : 61.0
-				</p>
-
-				<blockquote>
-									<p>
-					Median : 83.0
-				</p>
-
-				<p>
-					Mean : 102.4
-				</p>
-
-				<p>
-					3rd Qu. : 136.0
-				</p>
-
-				<p>
-					Max : 188.0
-				</p>
-				</blockquote>
 
 				<figure>
 	<image source="media/image5.png"/>
@@ -319,7 +244,7 @@
 </figure>
 
 				<p>
-					In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that "Bro: 1" and "Min." happen to be on the same line of output). Notice, as with str(), that the output is quite different depending upon whether we are talking about a Factor, like myFamName or myFamGend, versus a numeric variable like myFamAge and myFamWeight. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that are coded with that factor. So for instance, under myFamGend it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
+					In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that "Bro: 1" and "Min." happen to be on the same line of output). Notice, as with <c>str()</c>, that the output is quite different depending upon whether we are talking about a Factor, like myFamName or myFamGend, versus a numeric variable like myFamAge and myFamWeight. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that are coded with that factor. So for instance, under myFamGend it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
 				</p>
 
 				<p><ul>
@@ -403,11 +328,10 @@
 				</p>
 
 				<p>
-					&gt; myFam$myFamAge
-				</p>
-
-				<p>
-					[1] 43 42 12 8 5
+					<pre>
+						&gt; myFam$myFamAge
+						[1] 43 42 12 8 5
+					</pre>
 				</p>
 
 				<p>
@@ -415,23 +339,13 @@
 				</p>
 
 				<p>
-					&gt; myFamAge &lt;- c(myFamAge, 11)
-				</p>
-
-				<p>
-					&gt; myFamAge
-				</p>
-
-				<p>
-					[1] 43 42 12 8 5 11
-				</p>
-
-				<p>
-					&gt; myFam$myFamAge
-				</p>
-
-				<p>
-					[1] 43 42 12 8 5
+					<pre>
+						&gt; myFamAge &lt;- c(myFamAge, 11)
+						&gt; myFamAge
+						[1] 43 42 12 8 5 11
+						&gt; myFam$myFamAge
+						[1] 43 42 12 8 5
+					</pre>
 				</p>
 
 				<figure>
@@ -440,7 +354,7 @@
 </figure>
 
 				<p>
-					Look very closely at the five lines above. In the first line, we use the c() command to add the value 11 to the original list of ages that we had stored in myFamAge (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamAge now contains. Dutifully, on the third line above, R reports that myFamAge now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFam$myFamAge, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.
+					Look very closely at the five lines above. In the first line, we use the <c>c()</c> command to add the value 11 to the original list of ages that we had stored in myFamAge (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamAge now contains. Dutifully, on the third line above, R reports that myFamAge now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFam$myFamAge, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.
 				</p>
 
 				<p>
@@ -448,7 +362,7 @@
 				</p>
 
 				<p>
-					myFam$myFamAge &lt;- c(myFam$myFamAge, 11)
+					<c>myFam$myFamAge &lt;- c(myFam$myFamAge, 11)</c>
 				</p>
 
 				<p>
@@ -487,7 +401,7 @@
 					<li>
 									<blockquote>
 														<p>
-										In R, the data.frame() function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data is copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using "$" to connect the name of the dataframe to the name of the variable/column.
+										In R, the <c>data.frame()</c> function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data is copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using "$" to connect the name of the dataframe to the name of the variable/column.
 									</p>
 									</blockquote>
 					</li>
@@ -495,7 +409,7 @@
 					<li>
 									<blockquote>
 														<p>
-										• The str() and summary() functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The str() function shows the structure of a data object, while summary() provides numerical summaries of numeric variables and overviews of non-numeric variables.
+										The <c>str()</c> and <c>summary()</c> functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The <c>str()</c> function shows the structure of a data object, while <c>summary()</c> provides numerical summaries of numeric variables and overviews of non-numeric variables.
 									</p>
 									</blockquote>
 					</li>
@@ -543,7 +457,7 @@
 				<title>Chapter Challenge </title>
 
 				<p>
-					Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the summary() function on myFam to get descriptive information on your new variable.
+					Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the <c>summary()</c> function on myFam to get descriptive information on your new variable.
 				</p>
 
 				<p>
@@ -594,7 +508,7 @@
 					<li>
 									<blockquote>
 														<p>
-										c() Concatenates data elements together to create a vector
+										<c>c()</c> Concatenates data elements together to create a vector
 									</p>
 									</blockquote>
 					</li>
@@ -610,7 +524,7 @@
 					<li>
 									<blockquote>
 														<p>
-										data.frame() Makes a dataframe from separate vectors
+										<c>data.frame()</c> Makes a dataframe from separate vectors
 									</p>
 									</blockquote>
 					</li>
@@ -618,7 +532,7 @@
 					<li>
 									<blockquote>
 														<p>
-										str() Reports the structure of a data object
+										<c>str()</c> Reports the structure of a data object
 									</p>
 									</blockquote>
 					</li>
@@ -626,7 +540,7 @@
 					<li>
 									<blockquote>
 														<p>
-										summary() Reports data modes/types and a data overview
+										<c>summary()</c> Reports data modes/types and a data overview
 									</p>
 									</blockquote>
 					</li>

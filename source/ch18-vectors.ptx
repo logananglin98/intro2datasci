@@ -8,13 +8,12 @@
 
   <introduction>
     				<p><em>
-					From the previous chapter you may remember that data mining techniques fall into two large categories: supervised learning techniques and unsupervised learning techniques. The association rules mining examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
+					From the previous chapter you may remember that <idx>data mining</idx> <term>data mining</term> techniques fall into two large categories: <idx>supervised learning</idx> <term>supervised learning</term> techniques and <idx>unsupervised learning</idx> <term>unsupervised learning</term> techniques. The <idx>association rules mining</idx> <term>association rules mining</term> examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
             </em></p>
   </introduction>
 
-
 				<p>
-					In the present chapter we will examine a supervised learning technique called "support vector machines." Why the technique is called this we will examine shortly. The reason this is considered a supervised learning technique is that we "train" the algorithm on an initial set of data (the "supervised" phase) and then we test it out on a brand new set of data. If the training we accomplished worked well, then the algorithm should be able to predict the right outcome most of the time in the test data.
+					In the present chapter we will examine a supervised learning technique called "support vector machines." Why the technique is called this we will examine shortly. The reason this is considered a supervised learning technique is that we "train the algorithm on an initial set of data (the "supervised" phase) and then we test it out on a brand new set of data. If the training we accomplished worked well, then the algorithm should be able to predict the right outcome most of the time in the test data.
 				</p>
 
 				<p>
@@ -22,19 +21,15 @@
 				</p>
 
 				<p>
-					This is the basic strategy of supervised machine learning: Have a substantial number of training cases that the algorithm can use to
+					This is the basic strategy of supervised machine learning: Have a substantial number of <idx>training cases</idx><term>training cases</term> that the algorithm can use to discover and mimic the underlying pattern and then use the results of that process on a <idx>test data set</idx><term>test data set</term> in order to find out how well the algorithm and parameters perform in a "cross validation." <idx>Cross validation</idx><term>Cross validation</term>, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
 				</p>
 
 				<p>
-					discover and mimic the underlying pattern and then use the results of that process on a test data set in order to find out how well the algorithm and parameters perform in a "cross validation." Cross validation, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
+					In this chapter, we will develop a "<idx>support vector machine</idx><term>support vector machine</term>" (SVM) to classify emails into spam or not spam. An SVM maps a low dimensional problem into a higher dimensional space with the goal of being able to describe geometric boundaries between different regions. The input data (the independent variables) from a given case are processed through a "mapping" algorithm called a <idx>kernel</idx><term>kernel</term> (the kernel is simply a formula that is run on each case’s vector of input data), and the resulting kernel output determines the position of that case in multidimensional space.
 				</p>
 
 				<p>
-					In this chapter, we will develop a "support vector machine" (SVM) to classify emails into spam or not spam. An SVM maps a low dimensional problem into a higher dimensional space with the goal of being able to describe geometric boundaries between different regions. The input data (the independent variables) from a given case are processed through a "mapping" algorithm called a kernel (the kernel is simply a formula that is run on each case’s vector of input data), and the resulting kernel output determines the position of that case in multidimensional space.
-				</p>
-
-				<p>
-					A simple 2D-3D mapping example illustrates how this works: Imagine looking at a photograph of a snow-capped mountain photographed from high above the earth such that the mountain looks like a small, white circle completely surrounded by a region of green trees. Using a pair of scissors, there is no way of cutting the photo on a straight line so that all of the white snow is on one side of the cut and all of the green trees are on the other. In other words there is no simple linear separation function that could correctly separate or classify the white and green points given their 2D position on the photograph.
+					A simple 2D-3D mapping example illustrates how this works: Imagine looking at a photograph of a snow-capped mountain photographed from high above the earth such that the mountain looks like a small, white circle completely surrounded by a region of green trees. Using a pair of scissors, there is no way of cutting the photo on a straight line so that all of the white snow is on one side of the cut and all of the green trees are on the other. In other words there is no simple <idx>linear separation function</idx><term>linear separation function</term> that could correctly separate or classify the white and green points given their 2D position on the photograph.
 				</p>
 
 				<p>
@@ -42,9 +37,12 @@
 				</p>
 
 				<p>
-					The position of that piece of cardboard is the planar separation function that divides white points from green points. A support vector machine analysis of this scenario would take the original two dimensional point data and search for a projection into three dimensions that would maximize the spacing between green points and white points. The result of the analysis would be a mathematical description of the position and orientation of the cardboard plane. Given inputs describing a novel data point, the SVM could then map the data into the higher dimensional space and then report whether the point was above the cardboard (a white point) or below the cardboard (a green point). The so called support vectors contain the coefficients that map the input data for each case into the high dimensional space.
+					The position of that piece of cardboard is the <idx>planar separation function</idx><term>planar separation function</term> that divides white points from green points. A support vector machine analysis of this scenario would take the original two dimensional point data and search for a projection into three dimensions that would maximize the spacing between green points and white points. The result of the analysis would be a mathematical description of the position and orientation of the cardboard plane. Given inputs describing a novel data point, the SVM could then map the data into the higher dimensional space and then report whether the point was above the cardboard (a white point) or below the cardboard (a green point). The so called <idx>support vectors</idx><term>support vectors</term> contain the coefficients that map the input data for each case into the high dimensional space.
 				</p>
+			</subsection>
 
+<subsection xml:id="ch18-data-prep">
+        <title>Preparing the Data</title>
 				<p>
 					To get started with support vector machines, we can load one of the R packages that supports this technique. We will use the "kernlab" package. Use the commands below:
 				</p>
@@ -130,7 +128,7 @@
 				</p>
 
 				<p>
-					The dim() function shows the "dimensions" of the data structure. The output of this dim() function shows that the spam data structure has 4601 rows and 58 columns. If you inspect a few of the column names that emerged from the str() command, you may see that each email is coded with respect to its contents. There is lots of information available about the data set here:
+					The <idx>dim() </idx><term> dim() </term> function shows the "dimensions" of the data structure. The output of this dim() function shows that the spam data structure has 4601 rows and 58 columns. If you inspect a few of the column names that emerged from the <idx>str() </idx><term> str() </term> command, you may see that each email is coded with respect to its contents. There is lots of information available about the data set here:
 				</p>
 
 				<p>
@@ -138,7 +136,7 @@
 				</p>
 
 				<p>
-					For example, just before "type" at the end of the output of the str() command on the previous page, we see a variable called "capitalTotal." This is the total number of capital letters in the whole email. Right after that is the criterion variable, "type," that indicates whether an email was classified as spam by human experts. Let’s explore this variable a bit more:
+					For example, just before "type" at the end of the output of the str() command on the previous page, we see a variable called "capitalTotal." This is the total number of capital letters in the whole email. Right after that is the <idx>criterion variable</idx><term>criterion variable</term>, "type," that indicates whether an email was classified as spam by human experts. Let’s explore this variable a bit more:
 				</p>
 
 				<p>
@@ -218,9 +216,13 @@
 				</p>
 
 				<p>
-					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the floor() function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
+					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx>floor()</idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
 				</p>
+				</subsection>
 
+
+<subsection xml:id="ch18-model-training">
+        <title>Training and Evaluating the Model</title>
 				<p>
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
 				</p>
@@ -250,7 +252,7 @@
 				</p>
 
 				<p>
-					Let’s examine this command in some detail. The first argument, "type ~ .", specifies the model we want to test. Using the word "type" in this expression means that we want to have the "type" variable (i.e., whether the message is spam or non-spam) as the outcome variable that our model predicts. The tilde character ("~") in an R expression simply separates the left hand side of the expression from the right hand side. Finally, the dot character (".") is a shorthand that tell R to us all of the other variables in the dataframe to try to predict "type."
+					Let’s examine this command in some detail. The first argument, "type ~ .", specifies the model we want to test. Using the word "type" in this expression means that we want to have the "type" variable (i.e., whether the message is spam or non-spam) as the outcome variable that our model predicts. The <idx>tilde character</idx><term>tilde character</term> ("~") in an R expression simply separates the left hand side of the expression from the right hand side. Finally, the dot character (".") is a shorthand that tell R to us all of the other variables in the dataframe to try to predict "type."
 				</p>
 
 				<p>
@@ -258,7 +260,7 @@
 				</p>
 
 				<p>
-					The next parameter is an interesting one: kernel="rbfdot". You will remember from the earlier discussion that the kernel is the customizable part of the SVM algorithm that lets us project the low dimensional problem into higher dimensional space. In this case, the rbfdot designation refers to the "radial basis function." One simple way of thinking about the radial basis function is that if you think of a point on a regular x,y coordinate system the distance from the origin to the point is like a radius of a circle. The "dot" in the name refers to the mathematical idea of a "dot product," which is a way of multiplying vectors together to come up with a single number such as a distance value. In simplified terms, the radial basis function kernel takes the set of inputs from each row in a dataset and calculates a distance value based on the combination of the many variables in the row. The weighting of the different variables in the row is adjusted by the algorithm in order to get the maximum separation of distance between the spam cases and the non-spam cases.
+					The next parameter is an interesting one: kernel=">rbfdot". You will remember from the earlier discussion that the kernel is the customizable part of the SVM algorithm that lets us project the low dimensional problem into higher dimensional space. In this case, the rbfdot designation refers to the "<idx>radial basis function</idx><term>radial basis function</term>." One simple way of thinking about the radial basis function is that if you think of a point on a regular x,y coordinate system the distance from the origin to the point is like a radius of a circle. The "dot" in the name refers to the mathematical idea of a "dot product," which is a way of multiplying vectors together to come up with a single number such as a distance value. In simplified terms, the radial basis function kernel takes the set of inputs from each row in a dataset and calculates a distance value based on the combination of the many variables in the row. The weighting of the different variables in the row is adjusted by the algorithm in order to get the maximum separation of distance between the spam cases and the non-spam cases.
 				</p>
 
 				<p>
@@ -266,11 +268,11 @@
 				</p>
 
 				<p>
-					The C argument refers to the so called "cost of constraints." Remember back to our example of the the white top on the green mountain? When we put the piece of cardboard (the planar separation function) through the mountain, what if we happen to get one green point on the white side or one white point on the green side? This is a kind of mistake that influences how the algorithm places the piece of cardboard. We can force these mistakes to be more or less "costly," and thus to have more influence on the position of our piece of cardboard and the margin of separation that it defines. We can get a large margin of separation but possibly with a few mistakes by specifying a small value of C. If we specify a large value of C we may possibly get fewer mistakes, but on at the cost of having the cardboard cut a very close margin between the green and white points the cardboard might get stuck into the mountain at a very weird angle just to make sure that all of the green points and white points are separated. On the other hand if we have a low value of C we will get a generalizable model, but one that makes more classification mistakes.
+					The C argument refers to the so called "<idx>cost of constraints</idx><term>cost of constraints</term>." Remember back to our example of the the white top on the green mountain? When we put the piece of cardboard (the planar separation function) through the mountain, what if we happen to get one green point on the white side or one white point on the green side? This is a kind of mistake that influences how the algorithm places the piece of cardboard. We can force these mistakes to be more or less "costly," and thus to have more influence on the position of our piece of cardboard and the <idx>margin of separation</idx><term>margin of separation</term> that it defines. We can get a large margin of separation but possibly with a few mistakes by specifying a small value of C. If we specify a large value of C we may possibly get fewer mistakes, but on at the cost of having the cardboard cut a very close margin between the green and white points the cardboard might get stuck into the mountain at a very weird angle just to make sure that all of the green points and white points are separated. On the other hand if we have a low value of C we will get a generalizable model, but one that makes more classification mistakes.
 				</p>
 
 				<p>
-					In the next argument, we have specified "cross=3." Cross refers to the cross validation model that the algorithm uses. In this case, our choice of the final parameter, "prob.model=TRUE," dictates that we use a so called three-fold cross validation in order to generate the probabilities associate with whether a message is or isn’t a spam message. Cross validation is important for avoiding the problem of overfitting. In theory, many of the algorithms used in data mining can be pushed to the point where they essentially memorize the input data and can perfectly replicate the outcome data in the training set. The only problem with this is that the model base don the memorization of the training data will almost never generalize to other data sets. In effect, if we push the algorithm too hard, it will become too specialized to the training data and we won’t be able to use it anywhere else. By using k-fold (in this case three fold) crossvalidation, we can rein in the fitting function so that it does not work so hard and so that it does creat a model that is more likely to generalize to other data.
+					In the next argument, we have specified "cross=3." Cross refers to the cross validation model that the algorithm uses. In this case, our choice of the final parameter, "prob.model=TRUE," dictates that we use a so called three-fold cross validation in order to generate the probabilities associate with whether a message is or isn’t a spam message. Cross validation is important for avoiding the problem of overfitting. In theory, many of the algorithms used in data mining can be pushed to the point where they essentially memorize the input data and can perfectly replicate the outcome data in the training set. The only problem with this is that the model base don the memorization of the training data will almost never generalize to other data sets. In effect, if we push the algorithm too hard, it will become too specialized to the training data and we won’t be able to use it anywhere else. By using <idx>k-fold</idx><term>k-fold</term> (in this case three fold) cross validation, we can rein in the fitting function so that it does not work so hard and so that it does creat a model that is more likely to generalize to other data.
 				</p>
 
 				<p>
@@ -338,7 +340,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image35.png"/>
+	<image source="/intro2datasci/images/histogram-alpha-svmOutput-1.png"/>
 					<caption>Histogram of alpha(svmOutput)[[1]]</caption>
 </figure>
 
@@ -351,7 +353,7 @@
 				</p>
 
 				<p>
-					&gt; svmOutput &lt;ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",<term>C=50</term>,cross=3,pro b.model=TRUE)
+					&gt; svmOutput &lt; ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",<term>C=50</term>,cross=3,pro b.model=TRUE)
 				</p>
 
 				<p>
@@ -387,7 +389,7 @@
 				</p>
 
 				<p>
-					Training error : 0.008803 Cross validation error : 0.085424
+					Training error : 0.008803 Cross validation error: 0.085424
 				</p>
 
 				<p>
@@ -395,7 +397,7 @@
 				</p>
 
 				<p>
-					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='media/image8.png'/>
+					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='/intro2datasci/image/histogram-alpha-svmOutput-10.png'/>
 				</p>
 
 				<p>
@@ -415,7 +417,7 @@
 				</p>
 
 				<p>
-					This monster of a command is not as bad as it looks. We are tapping into a new part of the svmOutput object, this time using the alphaindex() accessor function. Remember that we have 850 support vectors in this output. Now imagine two lists of 850 right next to each other: the first is the list of support vectors themselves, we get at that list with the alpha() accessor function. The second list, lined right up next to the first list, is a set of indices into the original training dataset, trainData. The left hand part of the expression in the command above let’s us access these indices. The right hand part of the expression, where it says alpha(svmOutput)[[1]]&lt;0.05, is a conditional expression that let’s us pick from the index list just those cases with a very small support vector value. You can see the output above, just underneat the command: about 15 indices were returned. Just pick off the first one, 90, and take a look at the individual case it refers to:
+					This monster of a command is not as bad as it looks. We are tapping into a new part of the svmOutput object, this time using the <idx>alphaindex()</idx><term>alphaindex()</term> accessor function. Remember that we have 850 support vectors in this output. Now imagine two lists of 850 right next to each other: the first is the list of support vectors themselves, we get at that list with the alpha() accessor function. The second list, lined right up next to the first list, is a set of indices into the original training dataset, trainData. The left hand part of the expression in the command above let’s us access these indices. The right hand part of the expression, where it says alpha(svmOutput)[[1]]&lt;0.05, is a conditional expression that let’s us pick from the index list just those cases with a very small support vector value. You can see the output above, just underneat the command: about 15 indices were returned. Just pick off the first one, 90, and take a look at the individual case it refers to:
 				</p>
 
 				<p>
@@ -481,6 +483,9 @@
 				<p>
 					This particular record did not have many suspicious keywords, but it did have long strings of capital letters that made it hard to classify (it was a non-spam case, by the way). You can check out a few of them to see if you can spot why each case may have been difficult for the classifier to place.
 				</p>
+</subsection>
+<subsection xml:id="ch18-model-testing">
+        <title>Testing the Model</title>
 
 				<p>
 					The real acid test for our support vector model, however, will be to use the support vectors we generated through this training process to predict the outcomes in a novel data set. Fortunately, because we prepared carefully, we have the testData training set ready to go. The following commands with give us some output known as a "confusion matrix:"
@@ -540,7 +545,7 @@
 				<title>Chapter Challenge </title>
 
 				<p>
-					Look up the term "confusion matrix" and then follow-up on some other terms such as Type I error, Type II error, sensitivity, and specificity. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
+					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>Type I error</idx><term>Type I error</term>, <idx>Type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
 				</p>
 
 				<p>

@@ -52,11 +52,7 @@
                 </p>
 
                 <p>
-                    Australian Rules Football is the most popular sport to have been developed in Australia. The object is to kick the ball through the larger goal posts, scoring six points. If the ball is touched before it crosses the line under the large posts, or instead passes through the
-                </p>
-
-                <p>
-                    smaller posts on either side of the large goal posts, a single point is scored. The rules ensure that possession of the ball is always changing. There is full body tackling and possession is turned over frequently. This leads to continuous and exciting on-field action.
+                    Australian Rules Football is the most popular sport to have been developed in Australia. The object is to kick the ball through the larger goal posts, scoring six points. If the ball is touched before it crosses the line under the large posts, or instead passes through the smaller posts on either side of the large goal posts, a single point is scored. The rules ensure that possession of the ball is always changing. There is full body tackling and possession is turned over frequently. This leads to continuous and exciting on-field action.
                 </p>
 
                 <p>
@@ -71,7 +67,7 @@
   <subsection xml:id="subsec-ch16-data-prep">
       <title>Getting and Exploring the Data in R</title>
                 <p>
-                    The data are available from OzDasl, a website which provides public domain data sets for analysis, and the MCG attendance data has its own page at <url href="http://www.statsci.org/data/oz/afl.html">http://www.statsci.org/data/oz/afl.html</url>.
+                    The data is available from OzDasl, a website which provides public domain data sets for analysis, and the MCG attendance data has its own page at <url href="http://www.statsci.org/data/oz/afl.html">http://www.statsci.org/data/oz/afl.html</url>.
                 </p>
 
                 <p>
@@ -103,11 +99,7 @@
                 </p>
 
                 <p>
-                    Once we've read the data into R, we can examine some plots of the data. With many techniques in data science, it can be quite valuable to visualize the data before undertaking a more detailed analysis. One of the variables we might consider is the combined mem
-                </p>
-
-                <p>
-                    bership of the two teams playing, a proxy for the popularity of the teams playing.
+                    Once we've read the data into R, we can examine some plots of the data. With many techniques in data science, it can be quite valuable to visualize the data before undertaking a more detailed analysis. One of the variables we might consider is the combined membership of the two teams playing, a proxy for the popularity of the teams playing.
                 </p>
 
                 <p>
@@ -223,7 +215,7 @@
                 </p>
 
                 <p>
-                    While the line of best fit seems to fit the points in the middle, the points on the lower right hand side and also some points towards the top of the graph, appear to be a long way from the line of best fit. <image source='combined-membership-MCG'/>
+                    While the line of best fit seems to fit the points in the middle, the points on the lower right hand side and also some points towards the top of the graph, appear to be a long way from the line of best fit. <image source='combined-membership-MCG.png'/>
                 </p>
   </subsection>
   
@@ -322,11 +314,7 @@
                 </p>
 
                 <p>
-                    How can you tell if these slopes or B-weights are actually important contributors to the prediction? You can divide the unstandardized B-weight by its standard error to create a "t value". The lm() command has done this for you and it is reported in the output above. This "t" is the Student's t-test, described in a previous chapter. As a rule of thumb, if this t value has an absolute value (i.e., ignoring the minus sign if there is one) that is larger than about 2, you can be assured that the independent/predictor variable we are talking about is contributing to the prediction of the dependent
-                </p>
-
-                <p>
-                    variable. In this example we can see that Members has a humongous t value of 21.257, showing that it is very important in the prediction. The away.inter variable has a somewhat more modest, but still important value of -4.545 (again, don't worry about the minus sign when judging the magnitude of the t value).
+                    How can you tell if these slopes or B-weights are actually important contributors to the prediction? You can divide the unstandardized B-weight by its standard error to create a "t value". The lm() command has done this for you and it is reported in the output above. This "t" is the Student's t-test, described in a previous chapter. As a rule of thumb, if this t value has an absolute value (i.e., ignoring the minus sign if there is one) that is larger than about 2, you can be assured that the independent/predictor variable we are talking about is contributing to the prediction of the dependent variable. In this example we can see that Members has a humongous t value of 21.257, showing that it is very important in the prediction. The away.inter variable has a somewhat more modest, but still important value of -4.545 (again, don't worry about the minus sign when judging the magnitude of the t value).
                 </p>
   </subsection>
   
@@ -360,9 +348,11 @@
                     In general, a simple model is a good model, and will keep us from thinking that we are better than we really are. However, there are times when we will want to find as many dependent variables as possible. Contrast the needs of a manager trying to forecast sales to set inventory with an engineer or scientist trying to select parameters for further experimentation. In the first case, the manager needs to avoid a falsely precise estimate which could lead her to be overconfident in the forecast, and either order too much stock or too little. The manager wants to be conservative about deciding that particular variables make a difference to prediction variable. On the other hand the experimenter wants to find as many variables as possible for future research, so is prepared to be optimistic about whether different parameters affect the variables of interest.
                 </p>
 
-                <p>
-                    <term>Chapter Challenge</term>
-                </p>
+                
+
+            </subsection>
+<subsection xml:id="subsec-ch16-chapter-challenge">
+                <title>Chapter Challenge </title>
 
                 <p>
                     We intentionally ignored some of the output of these regression models, for the sake of simplicity. It would be quite valuable for you to understand those missing parts, however. In particular, we ignored the "p-values" associated with the t-tests on the slope/Bweight estimates and we also ignored the overall F-statistic reported at the very bottom of the output. There are tons of great resources on the web for explaining what these are.
@@ -372,8 +362,7 @@
                     For a super bonus, you could also investigate the meaning of the "Adjusted" r-squared that appears in the output.
                 </p>
 
-            </subsection>
-
+				</subsection>	
             <subsection xml:id="sources-11">
                 <title>Sources </title>
 

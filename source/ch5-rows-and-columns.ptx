@@ -73,9 +73,11 @@
 					Now let’s figure out how to get these rows and columns into R. One thing you will quickly learn about R is that there is almost always more than one way to accomplish a goal. Sometimes the quickest or most efficient way is not the easiest to understand. In this case we will build each column one by one and then join them together into a single data frame. This is a bit labor intensive, and not the usual way that we would work with a data set, but it is easy to understand. First, run this command to make the column of names:
 				</p>
 
-				<p>
+				<sage language="r">
+					<input>
 					<c>myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")</c>
-				</p>
+					</input>
+				</sage>
 
 				<p>
 					One thing you might notice is that every name is placed within double quotes. This is how you signal to R that you want it to treat something as a string of characters rather than the name of a storage location. If we had asked R to use Dad instead of "Dad" it would have looked for a storage location (a data object) named Dad. Another thing to notice is that the commas separating the different values are outside of the double quotes. If you were writing a regular sentence this is not how things would look, but for computer programming the comma can only do its job of separating the different values if it is not included inside the quotes. Once you have typed the line above, remember that you can check the contents of myFamName by typing it on the next command line:
@@ -97,9 +99,11 @@
 					Next, you can create a vector of the ages of the family members, like this:
 				</p>
 
-				<p>
+				<sage language="r">
+					<input>
 					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
-				</p>
+					</input>
+				</sage>
 
 				<p>
 					Note that this is exactly the same command we used in the last chapter, so if you have kept R running between then and now you would not even have to retype this command because myFamAge would still be there. Actually, if you closed R since working the examples from the last chapter you will have been prompted to "save the workspace" and if you did so, then R restored all of the data objects you were using in the last session. You can always check by typing myFamAge on a blank command line. The output should look like this:
@@ -131,6 +135,17 @@
 						myFamAge, myFamGend, myFamWeight)
 					</pre>
 				</p>
+
+				<sage language="r">
+					<input>
+						myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+						myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+						myFamWeight &lt;- c(188, 136, 83, 61, 44)
+						myFam &lt;- data.frame(myFamName, + 
+						myFamAge, myFamGend, myFamWeight)
+					</input>
+				</sage>
 
 				<p>
 					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the <c>data.frame()</c> function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:

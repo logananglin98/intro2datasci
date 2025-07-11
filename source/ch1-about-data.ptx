@@ -24,7 +24,7 @@
 				</p>
 
 				<p>
-					Once we are comfortable with the idea of a "<idx>bit</idx><term>bit</term>" as the most basic unit of information, either "yes" or "no," we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of "no" we will start using zero, and instead of "yes" we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word "bit," which is a squashed down version of the phrase "Binary digIT." A single binary digit can be 0 or 1, and that would give us just two options like “yes” or “no” but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
+					Once we are comfortable with the idea of a "<idx>Bit</idx><term>Bit</term>" as the most basic unit of information, either "yes" or "no," we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of "no" we will start using zero, and instead of "yes" we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word "bit," which is a squashed down version of the phrase "Binary digIT." A single binary digit can be 0 or 1, and that would give us just two options like “yes” or “no” but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
 				</p>
 
 				<table xml:id="two-bit-binary-codebook">
@@ -63,7 +63,11 @@
 				</p>
 
 				<p>
-					When we get up to eight bits which provides 256 different combinations we finally have something of a reasonably useful size to work with.Eight bits is commonly referred to as a "<idx>byte</idx><term>Byte</term>" this term probably started out as a play on words with the word bit. (Try looking up the word "nibble" online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. There is an old rulebook called "ASCII" the American Standard Code for Information Interchange which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, <url href="http://www.asciitable.com/">http://www.asciitable.com/</url>) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, some people find it fun to practice converting between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s <url href="https://www.youtube.com/watch?v=OCYZTg3jahU">Binary Hand Dance</url> video in which she and her family count in binary on their fingers.
+					When we get up to eight bits which provides 256 different combinations we finally have something of a reasonably useful size to work with.Eight bits is commonly referred to as a "<idx>Byte</idx><term>Byte</term>" this term probably started out as a play on words with the word bit. (Try looking up the word "nibble" online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. 
+				</p>
+
+				<p>
+					There is an old rulebook called "ASCII" the American Standard Code for Information Interchange which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, <url href="http://www.asciitable.com/">http://www.asciitable.com/</url>) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, some people find it fun to practice converting between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s <url href="https://www.youtube.com/watch?v=OCYZTg3jahU">Binary Hand Dance</url> video in which she and her family count in binary on their fingers.
 				</p>
 
 				<p>
@@ -93,11 +97,14 @@
 			</p>
 
 			<p>
-				...we can be certain that inside the computer there is a long list of zeroes and ones that represent the text that we just stored. By the way, in order to be able to get our piece of text back later on, we have made a kind of storage label for it (the word "myText" above). Anytime that we want to remember our piece of text or use it for something else, we can use the label "myText" to open up the chunk of computer memory where we have put that long list of binary digits that represent our text. The left-pointing arrow made up out of the less-than character ("&lt;") and the dash character ("-") gives R the command to take what is on the right hand side (the quoted text) and put it into what is on the left hand side (the storage area we have labeled "myText"). Some people call this the assignment arrow and it is used in some computer languages to make it clear to the human who writes or reads it which direction the information is flowing.
+				...we can be certain that inside the computer there is a long list of zeroes and ones that represent the text that we just stored. By the way, in order to be able to get our piece of text back later on, we have made a kind of storage label for it (the word "myText" above). Anytime that we want to remember our piece of text or use it for something else, we can use the label "myText" to open up the chunk of computer memory where we have put that long list of binary digits that represent our text. The left-pointing arrow made up out of the less-than character ("&lt;") and the dash character ("-") gives R the command to take what is on the right hand side (the quoted text) and put it into what is on the left hand side (the storage area we have labeled "myText"). Some people call this the <idx>Assignment Arrow</idx><term>Assignment Arrow</term> and it is used in some computer languages to make it clear to the human who writes or reads it which direction the information is flowing.
 			</p>
 
 			<p>
-				From the computer’s standpoint, it is even simpler to store, remember, and manipulate numbers instead of text. Remember that an eight bit byte can hold 256 combinations, so just using that very small amount we could store the numbers from 0 to 255. (Of course, we could have also done 1 to 256, but much of the counting and numbering that goes on in computers starts with zero instead of one.) Really, though, 255 is not much to work with. We couldn’t count the number of houses in most towns or the number of cars in a large parking garage unless we can count higher than 255. If we put together two bytes to make 16 bits we can count from zero up to 65,535, but that is still not enough for some of the really big numbers in the world today (for example, there are more than 200 million cars in the U.S. alone). Most of the time, if we want to be flexible in representing an integer (a number with no decimals), we use four bytes stuck together. Four bytes stuck together is a total of 32 bits, and that allows us to store an integer as high as 4,294,967,295.
+				From the computer’s standpoint, it is even simpler to store, remember, and manipulate numbers instead of text. Remember that an eight bit byte can hold 256 combinations, so just using that very small amount we could store the numbers from 0 to 255. (Of course, we could have also done 1 to 256, but much of the counting and numbering that goes on in computers starts with zero instead of one.) Really, though, 255 is not much to work with. We couldn’t count the number of houses in most towns or the number of cars in a large parking garage unless we can count higher than 255. If we put together two bytes to make 16 bits we can count from zero up to 65,535, but that is still not enough for some of the really big numbers in the world today (for example, there are more than 200 million cars in the U.S. alone). 
+			</p>
+			<p>
+				Most of the time, if we want to be flexible in representing an <idx>Integer</idx><term>Integer</term> (a number with no decimals), we use four bytes stuck together. Four bytes stuck together is a total of 32 bits, and that allows us to store an integer as high as 4,294,967,295.
 			</p>
 
 			<p>
@@ -105,20 +112,32 @@
 			</p>
 
 			<p>
-				So far we have mainly looked at how to store one thing at a time, like one number or one letter, but when we are solving problems with data we often need to store a group of related things together. The simplest place to start is with a list of things that are all stored in the same way. For example, we could have a list of integers, where each thing in the list is the age of a person in your family. The list might look like this: 43, 42, 12, 8, 5. The first two numbers are the ages of the parents and the last three numbers are the ages of the kids. Naturally, inside the computer each number is stored in binary, but fortunately we don’t have to type them in that way or look at them that way. Because there are no decimal points, these are just plain integers and a 32 bit integer (4 bytes) is more than enough to store each one. This list contains items that are all the same "type" or "mode." In R, "<term>vector</term>" is an ordered list of data elements of the same data type (e.g. all integers or all strings, etc). We can create a vector with R very easily by listing the data elements, separated by commas and inside parentheses:
+				So far we have mainly looked at how to store one thing at a time, like one number or one letter, but when we are solving problems with data we often need to store a group of related things together. The simplest place to start is with a list of things that are all stored in the same way. For example, we could have a list of integers, where each thing in the list is the age of a person in your family. The list might look like this: 43, 42, 12, 8, 5. The first two numbers are the ages of the parents and the last three numbers are the ages of the kids. Naturally, inside the computer each number is stored in binary, but fortunately we don’t have to type them in that way or look at them that way. Because there are no decimal points, these are just plain integers and a 32 bit integer (4 bytes) is more than enough to store each one. This list contains items that are all the same "type" or "mode." 
 			</p>
-
+			
 			<p>
-				c(43, 42, 12, 8, 5)
+				In R, a "<idx>Vector</idx><term>Vector</term>" is an ordered list of data elements of the same data type (e.g. all integers or all strings, etc). We can create a vector with R very easily by listing the data elements, separated by commas and inside parentheses: 
+				<ul marker="">
+					<li>
+						<p>
+							c(43, 42, 12, 8, 5)
+						</p>
+					</li>
+				</ul>
 			</p>
 
 			<p>
 				The letter "c" in front of the opening parenthesis stands for concatenate, which means to join things together. We can also put in some of what we learned above to store our vector in a named location:
+
+				<ul marker="">
+					<li>
+						<p>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+						</p>
+					</li>
+				</ul>
 			</p>
 
-			<p>
-				myFamAge &lt;- c(43, 42, 12, 8, 5)
-			</p>
 
 			<p>
 				When we learn to run our code, we will have just created our first "data set." It is very small, for sure, only five items, but also very useful for illustrating several major concepts about data. Here’s a recap:
@@ -152,7 +171,7 @@
 				<li>
 							
 											<p>
-								In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name "myFamAge." Some people might refer to this named list as a "variable," because the value of it varies, depending upon which member of the list you are examining.
+								In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name "myFamAge." Some people might refer to this named list as a "<idx>Variable</idx><term>Variable</term>," because the value of it varies, depending upon which member of the list you are examining.
 							</p>
 							
 				</li>

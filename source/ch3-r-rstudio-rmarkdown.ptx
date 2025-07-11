@@ -7,7 +7,7 @@
     <title>The R Language</title>
         <introduction>
 				<p>
-					<em>"R" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.</em>
+					<em>"<idx>R</idx><term>R</term>" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.</em>
 				</p>
 
  				<p>
@@ -17,7 +17,11 @@
 				</p>
   </introduction>
 				<p>
-					If you are new to computers, programming, and/or data science, welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The "R" open source data analysis programming language is immensely powerful, flexible, and especially "extensible" (meaning that people can create new capabilities for it quite easily). At the same time, R is "command line" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
+					If you are new to computers, programming, and/or data science, welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The "R" open source data analysis programming language is immensely powerful, flexible, and especially "extensible" (meaning that people can create new capabilities for it quite easily). 
+				</p>
+				
+				<p>
+					At the same time, R is "command line" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>Syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
 
 				<p>

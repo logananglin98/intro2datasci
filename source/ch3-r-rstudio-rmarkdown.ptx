@@ -38,11 +38,7 @@
 				<title>R-Studio </title>
 
 				<p>
-					R-Studio is an Integrated Development Environment, abbreviated as IDE. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier.
-				</p>
-
-				<p>
-					Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
+					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>Integrated Development Environment (IDE)</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
 				</p>
 
 				<p>

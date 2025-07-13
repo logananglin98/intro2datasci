@@ -66,11 +66,11 @@
 
 
 				<p>
-					Remember the list of ages of family members from the About Data chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. We mentioned that this was a list of items, all of the same mode, namely "integer." Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. Recalling that “c” stands for concatenate, we can create a vector of integers in r using the "c()" command. Take a look at the screenshot just above.
+					Remember the list of ages of family members from the About Data chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. We mentioned that this was a list of items, all of the same mode, namely "integer." Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. Recalling that “c” stands for concatenate, we can create a vector of integers in R using the "c()" command. Take a look at the screenshot just above.
 				</p>
 
 				<p>
-					This is just about the last time that the whole screenshot from the R console will appear in the book. From here on out we will just look at commands and output.The first command line in the screenshot is exactly what appeared in an earlier chapter:
+					This is just about the last time that the whole screenshot from the R console will appear in the book. From here on out we will just look at commands and output. The first command line in the screenshot is exactly what appeared in an earlier chapter:
 				</p>
 
 				<p>
@@ -94,9 +94,11 @@
 				</p>
 
 				<p>
-					This command asks R to add together all of the numbers in
-					myFamAge, which turns out to be 110 (you can check it yourself
-					if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the "mean" (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called "range," shows the lowest and highest ages in the list. Finally, just for fun, we tried to issue the command "fish(myFamAge)". Pretty much as you might expect, R does not contain a "fish()" function and so we received an error message to that effect. This shows another important principle for working with R: You can freely try things out at any time without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want.
+					The <idx>sum</idx><term>sum</term> command asks R to add together all of the numbers in myFamAge, which turns out to be 110 (you can check it yourself if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the "<idx>mean</idx><term>mean</term>" (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called "<idx>range</idx><term>range</term>," shows the lowest and highest ages in the list. 
+				</p>	
+				
+				<p>
+					Finally, just for fun, we tried to issue the command "fish(myFamAge)". Pretty much as you might expect, R does not contain a "fish()" function and so we received an <idx>error message</idx><term>error message</term> to that effect. This shows another important principle for working with R: You can freely try things out at any time without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want.
 				</p>
 
 				<p>

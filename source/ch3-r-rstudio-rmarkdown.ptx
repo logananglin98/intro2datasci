@@ -7,12 +7,14 @@
     <title>The R Language</title>
         <introduction>
 				<p>
-					<em>"<idx>R</idx><term>R</term>" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.</em>
+					"<idx>R</idx><term>R</term>" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.
 				</p>
 
  				<p>
-					<em>As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text. </em>
+					As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text.
+				</p>
 
+				<p>
 	<image source="graph-unclear.png" decorative="yes"/>
 				</p>
   </introduction>
@@ -21,7 +23,7 @@
 				</p>
 				
 				<p>
-					At the same time, R is "command line" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>Syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
+					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>Syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
 
 				<p>

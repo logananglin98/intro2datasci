@@ -93,7 +93,7 @@
 			</p>
 
 			<p>
-				myText &lt;- "this is a piece of text"
+				<c>myText &lt;- "this is a piece of text"</c>
 			</p>
 
 			<p>

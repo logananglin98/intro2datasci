@@ -104,7 +104,7 @@
 				</p>
 
 				<p>
-					myRange &lt;- range(myFamAge)
+					<c>myRange &lt;- range(myFamAge)</c>
 				</p>
 
 				<p>

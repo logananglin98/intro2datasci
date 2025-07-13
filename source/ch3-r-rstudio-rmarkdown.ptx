@@ -50,12 +50,12 @@
 			<section xml:id="r-markdown">
 				<title>R Markdown</title>
 
-				<p><em>
-					R Markdown is a language that many consider to be a key authoring framework for data science. You can use a single R Markdown file to save and execute code as well as to create high quality reports. It can be used to actually run the code and embed the results in your report right alongside the text that you write.</em>
+				<p>
+					<idx>R Markdown</idx><term>R Markdown</term> is a language that many consider to be a key authoring framework for data science. You can use a single R Markdown file to save and execute code as well as to create high quality reports. It can be used to actually run the code and embed the results in your report right alongside the text that you write.
 				</p>
 
 				<p>
-					R-Markdown files have an .Rmd extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
+					R-Markdown files have an <idx>.Rmd</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
 			</section>

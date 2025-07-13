@@ -9,7 +9,7 @@
     <title>Beer, Farms, and Peas</title>
   <introduction>
   <figure xml:id="peas-on-x-y-axes">
-          <image source="image66.png"/>
+          <image source="peas-graph.png"/>
           <caption>Peas on x-y axes</caption>
   </figure>
 
@@ -259,7 +259,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image29.png"/>
+	<image source="dropdown-general.png" width="60%" height="60%"/>
 					<caption></caption>
 </figure>
 
@@ -268,7 +268,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image21.png"/>
+	<image source="numbers.png"/>
 					<caption></caption>
 </figure>
 
@@ -277,7 +277,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image26.png"/>
+	<image source="R-window.png"/>
 					<caption></caption>
 </figure>
 
@@ -294,7 +294,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image45.png"/>
+	<image source="import-excel.png"/>
 					<caption></caption>
 </figure>
 
@@ -303,7 +303,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image17.png"/>
+	<image source="readxl.png"/>
 					<caption></caption>
 </figure>
 
@@ -399,7 +399,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image23.png"/>
+	<image source="histogram-US-pop.png"/>
 					<caption>Histogram of USstatePops$V1</caption>
 </figure>
 
@@ -428,7 +428,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image25.png"/>
+	<image source="histogram-US-pops.png"/>
 					<caption>Histogram of USstatePops$V1 </caption>
 </figure>
 
@@ -445,7 +445,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image4.png"/>
+	<image source="histogram-rnorm.png"/>
 					<caption>Histogram of rnorm(51, 6053834, 6823984) </caption>
 </figure>
 

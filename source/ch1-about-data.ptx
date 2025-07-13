@@ -127,7 +127,7 @@
 			</p>
 
 			<p>
-				The letter "c" in front of the opening parenthesis stands for concatenate, which means to join things together. We can also put in some of what we learned above to store our vector in a named location:
+				The letter "c" in front of the opening parenthesis stands for <idx>concatenate</idx><term>concatenate</term>, which means to join things together. We can also put in some of what we learned above to store our vector in a named location:
 
 				<ul marker="">
 					<li>

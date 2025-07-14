@@ -9,7 +9,11 @@
 
 
 				<p>
-					<image source='image13.png'/><em>An old adage in detective work is to, "follow the money." In data science, one key to success is to "follow the data." In most cases, a data scientist will not help to design an information system from scratch. Instead, there will be several or many legacy systems where data resides; a big part of the challenge to the data scientist lies in integrating those systems.</em>
+					<image source='image13.png'/>
+				</p>
+				
+				<p>
+					An old adage in detective work is to, "follow the money." In data science, one key to success is to "follow the data." In most cases, a data scientist will not help to design an information system from scratch. Instead, there will be several or many legacy systems where data resides; a big part of the challenge to the data scientist lies in integrating those systems.
 				</p>
   </introduction>
 
@@ -22,11 +26,7 @@
 				</p>
 
 				<p>
-					Where do these procedure data go? What other kinds of data (such as patient account information) may get attached to them in a subsequent step? What kinds of networks do these linked data travel over, and what kind of security do they have? How many steps are there in processing the data before they get to the insurance company? How does the insurance company process and analyze the data before issuing the reimbursement? How is the money "trans
-				</p>
-
-				<p>
-					mitted" once the insurance company’s systems have given approval to the reimbursement? These questions barely scratch the surface: there are dozens or hundreds of processing steps that we haven’t yet imagined.
+					Where do these procedure data go? What other kinds of data (such as patient account information) may get attached to them in a subsequent step? What kinds of networks do these linked data travel over, and what kind of security do they have? How many steps are there in processing the data before they get to the insurance company? How does the insurance company process and analyze the data before issuing the reimbursement? How is the money "transmitted" once the insurance company’s systems have given approval to the reimbursement? These questions barely scratch the surface: there are dozens or hundreds of processing steps that we haven’t yet imagined.
 				</p>
 
 				<p>
@@ -38,11 +38,11 @@
 				</p>
 
 				<p>
-					Fortunately there is an extensive area of study and practice called "data modeling" that provides theories, strategies, and tools to help with the data scientist’s goal of following the data. These ideas started in earnest in the 1970s with the introduction by computer scientist Ed Yourdon of a methodology called Data Flow Diagrams. A more contemporary approach, that is strongly linked with the practice of creating relational databases, is called the entity relationship model. Professionals using this model develop Entity Relationship Diagrams (ERDs) that describe the structure and movement of data in a system.
+					Fortunately there is an extensive area of study and practice called "<idx>data modeling</idx><term>data modeling</term>" that provides theories, strategies, and tools to help with the data scientist’s goal of following the data. These ideas started in earnest in the 1970s with the introduction by computer scientist Ed Yourdon of a methodology called Data Flow Diagrams. A more contemporary approach, that is strongly linked with the practice of creating relational databases, is called the entity relationship model. Professionals using this model develop <idx>Entity Relationship Diagrams (ERDs)</idx><term>Entity Relationship Diagrams (ERDs)</term> that describe the structure and movement of data in a system.
 				</p>
 
 				<p>
-					Entity-relationship modeling occurs at different levels ranging from an abstract conceptual level to a physical storage level. At the conceptual level an entity is an object or thing, usually something in the real world. In the doctor’s office example, one important "object" is the patient. Another entity is the doctor. The patient and the doctor are linked by a relationship: in modern health care lingo this is the "provider" relationship. If the patient is Mr. X and the doctor is Dr. Y, the provider relationship provides a bidirectional link:
+					<idx>Entity-relationship modeling</idx><term>Entity-relationship modeling</term> occurs at different levels ranging from an abstract conceptual level to a physical storage level. At the conceptual level an entity is an object or thing, usually something in the real world. In the doctor’s office example, one important "object" is the patient. Another entity is the doctor. The patient and the doctor are linked by a relationship: in modern health care lingo this is the "provider" relationship. If the patient is Mr. X and the doctor is Dr. Y, the provider relationship provides a bidirectional link:
 				</p>
 
 				<p><ul>
@@ -73,11 +73,7 @@
 				</p>
 
 				<p>
-					In an application area like health care, there are so many choices for different ways of designing the data that it requires some experience and possibly some "art" to create a workable system. Part of
-				</p>
-
-				<p>
-					the art lies in understanding the users’ current information needs and anticipating how those needs may change in the future. If an organization is redesigning a system, adding to a system, or creating brand new systems, they are doing so in the expectation of a future benefit. This benefit may arise from greater efficiency, reduction of errors/inaccuracies, or the hope of providing a new product or service with the enhanced information capabilities.
+					In an application area like health care, there are so many choices for different ways of designing the data that it requires some experience and possibly some "art" to create a workable system. Part of the art lies in understanding the users’ current information needs and anticipating how those needs may change in the future. If an organization is redesigning a system, adding to a system, or creating brand new systems, they are doing so in the expectation of a future benefit. This benefit may arise from greater efficiency, reduction of errors/inaccuracies, or the hope of providing a new product or service with the enhanced information capabilities.
 				</p>
 
 				<p>

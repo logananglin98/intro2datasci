@@ -10,7 +10,7 @@
 
 
 				<figure>
-	<image source="image53.png"/>
+	<image source="jelly-belly.png" width="40%"/>
 					<caption></caption>
 </figure>
 
@@ -146,7 +146,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image12.png"/>
+	<image source="graph-replicate.png"/>
 					<caption>Histogram of replicate(4000, mean(sample(USstatePops$V1, size = 16, replace = TRUE)), simplify = = TRUE) </caption>
 </figure>
 

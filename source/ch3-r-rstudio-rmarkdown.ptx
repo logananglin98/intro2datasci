@@ -74,7 +74,11 @@
 				</p>
 
 				<p>
-					<c>c(43, 42, 12, 8, 5)</c>
+				<sage language="r">
+					<input>
+					c(43, 42, 12, 8, 5)
+					</input>
+				</sage>
 				</p>
 
 				<p>
@@ -82,15 +86,27 @@
 				</p>
 
 				<p>
-					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
+				<sage language="r">
+					<input>
+					myFamAge &lt;- c(43, 42, 12, 8, 5)
+					</input>
+				</sage>
 				</p>
-
+					
 				<p>
 					We have typed in the same list of numbers, but this time we have assigned it, using the left pointing arrow, into a storage area that we have named "myFamAge." This time, R responds just with an empty command prompt. That’s why the third command line requests a report of what myFamAge contains (Look after the yellow "&gt;". The text in blue is what you should type.) This is a simple but very important tool. Any time you want to know what is in a data object in R, just type the name of the object and R will report it back to you. In the next command we begin to see the power of R:
 				</p>
 
 				<p>
 					<c>sum(myFamAge)</c>
+				</p>
+				<p>
+					<sage language="r">
+						<input>
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+						sum(myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -105,6 +121,15 @@
 
 				<p>
 					<c>myRange &lt;- range(myFamAge)</c>
+				</p>
+				
+				<p>
+					<sage language="r">
+						<input>
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+						myRange &lt;- range(myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>

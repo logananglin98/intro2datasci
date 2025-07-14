@@ -42,7 +42,7 @@
 				</p>
 
 				<p>
-					<idx>Entity-relationship modeling</idx><term>Entity-relationship modeling</term> occurs at different levels ranging from an abstract conceptual level to a physical storage level. At the conceptual level an entity is an object or thing, usually something in the real world. In the doctor’s office example, one important "object" is the patient. Another entity is the doctor. The patient and the doctor are linked by a relationship: in modern health care lingo this is the "provider" relationship. If the patient is Mr. X and the doctor is Dr. Y, the provider relationship provides a bidirectional link:
+					<idx>entity-relationship modeling</idx><term>Entity-relationship modeling</term> occurs at different levels ranging from an abstract conceptual level to a physical storage level. At the conceptual level an entity is an object or thing, usually something in the real world. In the doctor’s office example, one important "object" is the patient. Another entity is the doctor. The patient and the doctor are linked by a relationship: in modern health care lingo this is the "provider" relationship. If the patient is Mr. X and the doctor is Dr. Y, the provider relationship provides a bidirectional link:
 				</p>
 
 				<p><ul>

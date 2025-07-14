@@ -8,7 +8,11 @@
       <introduction>
 
   				<p>
-					<image source='image38.png'/><em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
+					<image source='image38.png'/>
+				</p>
+				
+				<p>
+					One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.
 				</p>
   </introduction>
 				<p>
@@ -62,7 +66,11 @@
 				</p>
 
 				<p>
-					So if you ignore the top row, which contains the variable names, each of the remaining rows is an instance or a case. Again, computer scientists may call them instances, and statisticians may call them cases, but either term is fine. The important thing is that each row refers to an actual thing. In this case all of our things are living creatures in a family. You could think of the Name column as "case labels" in that each one of these labels refers to one and only one row in our data. Most of the time when you are working with a large dataset, there is a number used for the case label, and that number is unique for each case (in other words, the same number would never appear in more than one row). Computer scientists sometimes refer to this column of unique numbers as a "<term>key</term>." A key is very useful particularly for matching things up from different data sources, and we will run into this idea again a bit later. For now, though, just take note that the "Dad" row can be distinguished from the "Bro" row, even though they are both Male. Even if we added an "Uncle" row that had the same Age, Gender, and Weight as "Dad" we would still be able to tell the two rows apart because one would have the name "Dad" and the other would have the name "Uncle."
+					So if you ignore the top row, which contains the variable names, each of the remaining rows is an <idx>instance</idx><term>instance</term> or a case. Again, computer scientists may call them instances, and statisticians may call them cases, but either term is fine. The important thing is that each row refers to an actual thing. In this case all of our things are living creatures in a family. You could think of the Name column as "case labels" in that each one of these labels refers to one and only one row in our data. Most of the time when you are working with a large dataset, there is a number used for the case label, and that number is unique for each case (in other words, the same number would never appear in more than one row). 
+				</p>	
+				
+				<p>
+					Computer scientists sometimes refer to this column of unique numbers as a "<term>key</term>." A key is very useful particularly for matching things up from different data sources, and we will run into this idea again a bit later. For now, though, just take note that the "Dad" row can be distinguished from the "Bro" row, even though they are both Male. Even if we added an "Uncle" row that had the same Age, Gender, and Weight as "Dad" we would still be able to tell the two rows apart because one would have the name "Dad" and the other would have the name "Uncle."
 				</p>
 
 				<p>
@@ -148,7 +156,7 @@
 				</sage>
 
 				<p>
-					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The + at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the <c>data.frame()</c> function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
+					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The <idx>+</idx><term>+</term> at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the <c>data.frame()</c> function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
 				</p>
 
 				<p>
@@ -172,7 +180,7 @@
 				</p>
 
 				<p>
-					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s <c>str()</c> method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
+					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s <c>str()</c> method stands for <idx>structure</idx><term>structure</term> and compactly reveals the type of "structure" that R has used to store a data object.
 				</p>
 
 				<figure>
@@ -201,7 +209,7 @@
 				</p>
 
 				<p>
-					In the first line of output we have the confirmation that myFam is a data frame as well as an indication that there are five observations ("obs." which is another word that statisticians use instead of cases or instances) and four variables. After that first line of output, we have four sections that each begin with "$". For each of the four variables, these sections describe the component columns of the myFam dataframe object.
+					In the first line of output we have the confirmation that myFam is a data frame as well as an indication that there are five <idx>observations</idx><term>observations</term> ("obs." which is another word that statisticians use instead of cases or instances) and four variables. After that first line of output, we have four sections that each begin with "$". For each of the four variables, these sections describe the component columns of the myFam dataframe object.
 				</p>
 
 				<p>
@@ -209,11 +217,11 @@
 				</p>
 
 				<p>
-					<c>$ myFamGend<term>:</term> Factor w/ 2 levels</c>
+					<c>$ myFamGend: Factor w/ 2 levels</c>
 				</p>
 
 				<p>
-					For example, myFamGend is shown as a "Factor." In the terminology that R uses, Factor refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamGend we see that there are two "levels," meaning that there are two different options: female and male.
+					For example, myFamGend is shown as a "<idx>factor</idx><term>Factor</term>." In the terminology that R uses, Factor refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamGend we see that there are two "levels," meaning that there are two different options: female and male.
 				</p>
 
 				<p>
@@ -221,7 +229,7 @@
 				</p>
 
 				<p>
-					Phew, that was complicated! By contrast, our two numeric variables, myFamAge and myFamWeight, are very simple. You can see that after the colon the mode is shown as "num" (which stands for numeric) and that the first few values are reported:
+					Phew, that was complicated! By contrast, our two numeric variables, myFamAge and myFamWeight, are very simple. You can see that after the colon the mode is shown as "<idx>num</idx><term>num</term>" (which stands for numeric) and that the first few values are reported:
 				</p>
 
 				<p>

@@ -15,7 +15,8 @@
 </figure>
 
 				<p>
-					<em>Sampling distributions are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
+					<idx>sampling distributions</idx>
+					<term>sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
 				</p>
   </introduction>
   
@@ -58,11 +59,14 @@
 				</p>
 
 				<p>
-					This process of repeatedly drawing a subset from a "population" is called "Sampling," and the end result of doing lots of sampling is a Sampling Distribution. Note that we are using the word population in the previous sentence in its statistical sense to refer to the totality of units from which a sample can be drawn. It is just a coincidence that our dataset contains the number of people in each state and that this value is also referred to as "population." Next we will get R to help us draw lots of samples from our U.S. state dataset.
+					<idx>population</idx>
+					<idx>sampling</idx>
+					This process of repeatedly drawing a subset from a "<term>population</term>" is called "<term>Sampling</term>," and the end result of doing lots of sampling is a Sampling Distribution. Note that we are using the word population in the previous sentence in its statistical sense to refer to the totality of units from which a sample can be drawn. It is just a coincidence that our dataset contains the number of people in each state and that this value is also referred to as "population." Next we will get R to help us draw lots of samples from our U.S. state dataset.
 				</p>
 
 				<p>
-					Conveniently, R has a function called sample(), that will draw a random sample from a data set with just a single call. We can try it now with our state data:
+					<idx>sample()</idx>
+					Conveniently, R has a function called <term>sample()</term>, that will draw a random sample from a data set with just a single call. We can try it now with our state data:
 				</p>
 
 				<p>
@@ -159,7 +163,9 @@
 				</p>
 
 				<p>
-					This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, "the law of large numbers" and the "central limit theorem" that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384.
+					<idx>the law of large numbers</idx>
+					<idx>central limit theorem</idx>
+					This is a great moment to take a deep breath. We’ve just covered a couple hundred years of statistical thinking in just a few pages. In fact, there are two big ideas, "<term>the law of large numbers</term>" and the "<term>central limit theorem</term>" that we have just partially demonstrated. These two ideas literally took mathematicians like Gerolamo Cardano (1501-1576) and Jacob Bernoulli (1654-1705) several centuries to figure out. If you look these ideas up, you may find a lot of bewildering mathematical details, but for our purposes, there are two really important take-away messages. First, if you run a statistical process a large number of times, it will converge on a stable result. For us, we knew what the average population was of the 50 states plus the District of Columbia. These 51 observations were our population, and we wanted to know how many smaller subsets, or samples, of size n=16 we would have to draw before we could get a good approximation of that true value. We learned that drawing one sample provided a poor result. Drawing 400 samples gave us a mean that was off by 1.5%. Drawing 4000 samples gave us a mean that was off by less than 1%. If we had kept going to 40,000 or 400,000 repetitions of our sampling process, we would have come extremely close to the actual average of 6,053,384.
 				</p>
 
 				<p>
@@ -247,7 +253,8 @@
 				</p>
 
 				<p>
-					There is a slightly different way of getting the same information from R that will prove more flexible for us in the long run. The quantile() function can show us the same information as the median and the quartiles, like this:
+					<idx>quantile()</idx>
+					There is a slightly different way of getting the same information from R that will prove more flexible for us in the long run. The <term>quantile()</term> function can show us the same information as the median and the quartiles, like this:
 				</p>
 
 				<p>
@@ -367,7 +374,8 @@
 				</p>
 
 				<p>
-					This shows us the standard deviation of the distribution of sampling means. Statisticians call this the "standard error of the mean." This chewy phrase would have been clearer, although longer, if it had been something like this: "the standard deviation of the distribution of sample means for samples drawn from a population." Unfortunately, statisticians are not known for giving things clear labels. Suffice to say that when we are looking at a distribution and each data point in that distribution is itself a representation of a sample (for example, a mean), then the standard deviation is referred to as the standard error.
+					<idx>standard error of the mean</idx>
+					This shows us the standard deviation of the distribution of sampling means. Statisticians call this the "<term>standard error of the mean</term>." This chewy phrase would have been clearer, although longer, if it had been something like this: "the standard deviation of the distribution of sample means for samples drawn from a population." Unfortunately, statisticians are not known for giving things clear labels. Suffice to say that when we are looking at a distribution and each data point in that distribution is itself a representation of a sample (for example, a mean), then the standard deviation is referred to as the standard error.
 				</p>
 
 				<p>

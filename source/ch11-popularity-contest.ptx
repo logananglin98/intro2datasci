@@ -814,44 +814,63 @@
 
 				</ul></p>
 
-				<p>
-					<term>Question:</term> The Poisson distribution has a characteristic shape that would be described as:
-				</p>
-
-				<p><ol>
-					<li>
-									<blockquote>
-														<p>
-										Negatively (left) skewed
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										Positively (right) skewed
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										Symmetric (not skewed)
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										None of these
-									</p>
-									</blockquote>
-					</li>
-
-				</ol></p>
+				<exercise label="mc-poisson-shape" xml:id="mc-poisson-shape">
+					<statement>
+						<p>
+							The Poisson distribution has a characteristic shape that would be described as:
+						</p>
+					</statement>
+					<choices>
+						<choice>
+							<statement>
+								<p>
+									Negatively (left) skewed
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Not quite. Think about where the tail would be when events are rare.
+								</p>
+							</feedback>
+						</choice>
+						<choice correct ="yes">
+							<statement>
+								<p>
+									Positively (right) skewed
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Correct! The Poisson distribution is typically positively skewed, especially when the mean (λ) is small. As λ increases, the distribution becomes more symmetric, but it still retains a slight right skew.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									Symmetric (not skewed)
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									No, the Poisson distribution is not symmetric, particularly when the mean is small. Only when the mean becomes large does the distribution approach symmetry, resembling a normal distribution.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									None of these
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Not quite. One of the listed options correctly describes the typical shape of the Poisson distribution, especially when the mean is low. Consider the direction of skewness in the distribution.
+								</p>
+							</feedback>
+						</choice>
+					</choices>
+				</exercise>
 
 			</subsection>
 

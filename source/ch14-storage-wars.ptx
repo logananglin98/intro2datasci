@@ -151,7 +151,7 @@
 
 					'data.frame': 65 obs. of 10 variables:
 
-					$ <sub>table.with.row.headers.in.column.A.and.column.hea</sub> ders.in.rows.3.through.4...leading.dots.indicate. sub.parts.: Factor w/ 65 levels "",".Alabama",..: 62 53 1 64 55 54 60 65 2 3 ...
+					$ table.with.row.headers.in.column.A.and.column.headers.in.rows.3.through.4...leading.dots.indicate. sub.parts.: Factor w/ 65 levels "",".Alabama",..: 62 53 1 64 55 54 60 65 2 3 ...
 
 					$ X : Factor w/ 60 levels "","1,052,567",..: 1 59 60 27 38 47 10 49 32 50 ...
 
@@ -205,7 +205,8 @@
 				</pre>
 
 				<pre>
-					In the same vein, the tail() function shows us that the last few rows just contained some census bureau notes:
+					In the same vein, the tail() function 
+					shows us that the last few rows just contained some census bureau notes:
 				</pre>
 
 				<pre>
@@ -257,39 +258,39 @@
 				</p>
 
 			<pre>
-			# Numberize() Gets rid of commas and other junk and
+# Numberize() Gets rid of commas and other junk and
 
-			# converts to numbers
+# converts to numbers
 
-			# Assumes that the inputVector is a list of data that
+# Assumes that the inputVector is a list of data that
 
-			# can be treated as character strings
+# can be treated as character strings
 
-			Numberize &lt;- function(inputVector) {
+Numberize &lt;- function(inputVector) {
 
-			# Get rid of commas
+# Get rid of commas
 
-			inputVector&lt;-str_replace_all(inputVector,",","")
-		
-			# Get rid of spaces
+inputVector&lt;-str_replace_all(inputVector,",","")
 
-			inputVector&lt;-str_replace_all(inputVector," ","") return(as.numeric(inputVector))
+# Get rid of spaces
 
-			}
+inputVector&lt;-str_replace_all(inputVector," ","") return(as.numeric(inputVector))
+
+}
 			</pre>
 
 				<p>
 					This function is flexible in that it will deal with both unwanted commas and spaces, and will convert strings into numbers whether they are integers or not (i.e., possibly with digits after the decimal point). So we can now run this a few times to create new vectors on the dataframe that contain the numeric values we wanted:
 				</p>
 
-			<pre>
-			testFrame$april10census &lt;-Numberize(testFrame$X)
+		<pre>
+testFrame$april10census &lt;-Numberize(testFrame$X)
 
-			testFrame$april10base &lt;-Numberize(testFrame$X.1)
+testFrame$april10base &lt;-Numberize(testFrame$X.1)
 
-			testFrame$july10pop &lt;-Numberize(testFrame$X.2)
-		
-			testFrame$july11pop &lt;-Numberize(testFrame$X.3)
+testFrame$july10pop &lt;-Numberize(testFrame$X.2)
+
+testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 		</pre>
 
 				<p>

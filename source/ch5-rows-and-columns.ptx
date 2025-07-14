@@ -159,19 +159,8 @@
 					Look out! We’re starting to get commands that are long enough that they break onto more than one line. The <idx>+</idx><term>+</term> at the end of the first line tells R to wait for more input on the next line before trying to process the command. If you want to, you can type the whole thing as one line in R, but if you do, just leave out the plus sign. Anyway, the <c>data.frame()</c> function makes a dataframe from the four vectors that we previously typed in. Notice that we have also used the assignment arrow to make a new stored location where R puts the data frame. This new data object, called myFam, is our dataframe. Once you have gotten that command to work, type myFam at the command line to get a report back of what the data frame contains. Here’s the output you should see:
 				</p>
 
-				<p>
-					<pre>
-						  myFamName myFamAge myFamGend myFamWeight					
-						1       Dad       43      Male         188					
-						2       Mom       42    Female         136					
-						3       Sis       12    Female          83					
-						4       Bro        8      Male          61
-						5       Dog        5    Female          44
-					</pre>
-				</p>
-
 				<figure>
-	<image source="media/image59.png"/>
+	<image source="myFamTable.png"/>
 					<caption>This is an example of a created Data Frame in the console that is printed after running the name of the data frame in teh command line.</caption>
 </figure>
 
@@ -184,21 +173,9 @@
 				</p>
 
 				<figure>
-	<image source="media/image30.png"/>
+	<image source="str-myFam.png"/>
 					<caption>This is an example of what is output in the console after str function was performed on the existing dataframe.</caption>
 </figure>
-
-				<p>
-					<pre>
-					&gt; str(myFam)
-					'data.frame': 5 obs. of 4 variables:
-					$ myFamName : Factor w/ 5 levels "Bro","Dad","Dog",..: 2 4 5 1 3
-					$ myFamAge : num 43 42 12 8 5
-					$ myFamGend: Factor w/ 2 levels			
-					"Female","Male": 2 1 1 2 1			
-					$ myFamWeight: num 188 136 83 61 44
-					</pre>
-				</p>
 
 				<p>
 					Take note that for the first time, the example shows the command prompt "&gt;" in order to differentiate the command from the output that follows. You don’t need to type this: R provides it whenever it is ready to receive new input. From now on in the book, there will be examples of R commands and output that are mixed together, so always be on the lookout for "&gt;" because the command after that is what you have to type.
@@ -246,19 +223,6 @@
 
 				<p>
 					Here’s what we get:
-				</p>
-
-				<p>
-				<pre>
-					&gt; summary(myFam)
-						myFamName   myFamAge       myFamGend   myFamWeight   
-						Bro:1      Min.   : 5.0   Female:3     Min.   : 44.0  
-						Dad:1      1st Qu.: 8.0   Male  :2     1st Qu.: 61.0  
-						Dog:1      Median :12.0                Median : 83.0  
-						Mom:1      Mean   :22.0                Mean   :102.4  
-						Sis:1      3rd Qu.:42.0                3rd Qu.:136.0  
-							   Max.   :43.0                Max.   :188.0 
-				</pre>
 				</p>
 
 				<figure>
@@ -358,7 +322,7 @@
 				</p>
 
 				<p>
-					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we copied all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
+					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we <term>copied</term> all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
 				</p>
 
 				<p>
@@ -372,7 +336,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image14.png"/>
+	<image source="myFamAge.png"/>
 					<caption>This is an example that showcases a new value being added to an independent variable named myFamAge. After, the example prints both myFamAge and myFamAge that was stored in the data frame. The variable have differing values.</caption>
 				</figure>
 

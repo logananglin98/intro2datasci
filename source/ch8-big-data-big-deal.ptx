@@ -8,7 +8,7 @@
 
   <introduction>
 				<p>
-					<em>The technology press contains many headlines about big data. What makes data big, and why is this bigness important? In this chapter, we discuss some of the real issues behind these questions. Armed with information from the previous chapter concerning sampling, we can give more thought to how the size of a data set affects what we do with the data.</em>
+					The technology press contains many headlines about big data. What makes data big, and why is this bigness important? In this chapter, we discuss some of the real issues behind these questions. Armed with information from the previous chapter concerning sampling, we can give more thought to how the size of a data set affects what we do with the data.
 				</p>
   </introduction>
 
@@ -19,7 +19,7 @@
 				</p>
 
 				<p>
-					Business analyst Doug Laney suggested that three characteristics make "big data" different from what came before: volume, velocity, and variety. Volume refers to the sheer amount of data. Velocity focuses on how quickly data arrives as well as how quickly those data become "stale." Finally, Variety reflects the fact that there may be many different kinds of data. Together, these three characteristics are often referred to as the "three Vs" model of big data. Note, however, that even before the dawn of the computer age we’ve had a variety of data, some of which arrives quite quickly, and that can add up to quite a lot of total storage over time (think, for example, of the large variety and volume of data that has arrived annually at Library of Congress since the 1800s!). So it is difficult to tell, just based on someone saying that they have a high volume, high velocity, and high variety data problem, that big data is fundamentally a brand new thing.
+					Business analyst Doug Laney suggested that three characteristics make "big data" different from what came before: volume, velocity, and variety. <idx>volume</idx><term>Volume</term> refers to the sheer amount of data. <idx>velocity</idx><term>Velocity</term> focuses on how quickly data arrives as well as how quickly those data become "stale." Finally, <idx>variety</idx><term>Variety</term> reflects the fact that there may be many different kinds of data. Together, these three characteristics are often referred to as the "<idx>three Vs</idx><term>three Vs</term>" model of big data. Note, however, that even before the dawn of the computer age we’ve had a variety of data, some of which arrives quite quickly, and that can add up to quite a lot of total storage over time (think, for example, of the large variety and volume of data that has arrived annually at Library of Congress since the 1800s!). So it is difficult to tell, just based on someone saying that they have a high volume, high velocity, and high variety data problem, that big data is fundamentally a brand new thing.
 				</p>
 
 				<p>
@@ -109,11 +109,7 @@
 				</p>
 
 				<p>
-					On the other hand, if we are looking for needles in haystacks, it makes sense to look (as efficiently as possible) through the biggest
-				</p>
-
-				<p>
-					possible haystack we can find, because it is much more likely that a big haystack will contain at least one needle and maybe more. Keeping in mind the advances in machine learning that have occurred over recent years, we begin to have an idea that good tools together with big data and interesting questions about unusual patterns could indeed provide some powerful new insights.
+					On the other hand, if we are looking for needles in haystacks, it makes sense to look (as efficiently as possible) through the biggest possible haystack we can find, because it is much more likely that a big haystack will contain at least one needle and maybe more. Keeping in mind the advances in machine learning that have occurred over recent years, we begin to have an idea that good tools together with big data and interesting questions about unusual patterns could indeed provide some powerful new insights.
 				</p>
 
 				<p>
@@ -129,7 +125,7 @@
 				</p>
 
 				<p>
-					Putting this all together, we can take a sensible position that <term>high quality</term> data, in abundance, together with tools used by intelligent analysts in a secure environment, may provide worthwhile benefits in the commercial sector, in education, in government, and in other areas. The focus of our efforts as data scientists, however, should not be on achieving the largest possible data sets, but rather on getting the right data and the right amount of data for the purpose we intend. There is no special virtue in having a lot of data if those data are unsuitable to the conclusions that we want to draw. Likewise, simply getting data more quickly does not guarantee that what we get will be highly relevant to our problems. Finally, although it is said that variety is the spice of life, complexity is often a danger to reliability and trustworthiness: the more complex the linkages among our data the more likely it is that problems may crop up in making use of those data or keeping them safe.
+					Putting this all together, we can take a sensible position that high quality data, in abundance, together with tools used by intelligent analysts in a secure environment, may provide worthwhile benefits in the commercial sector, in education, in government, and in other areas. The focus of our efforts as data scientists, however, should not be on achieving the largest possible data sets, but rather on getting the right data and the right amount of data for the purpose we intend. There is no special virtue in having a lot of data if those data are unsuitable to the conclusions that we want to draw. Likewise, simply getting data more quickly does not guarantee that what we get will be highly relevant to our problems. Finally, although it is said that variety is the spice of life, complexity is often a danger to reliability and trustworthiness: the more complex the linkages among our data the more likely it is that problems may crop up in making use of those data or keeping them safe.
 				</p>
 
 			</subsection>

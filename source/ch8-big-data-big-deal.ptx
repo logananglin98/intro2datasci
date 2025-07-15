@@ -138,11 +138,11 @@
 			</p>
 
 			<p>
-				The single most popular and powerful tool, outside of R, is a proprietary statistical system called SAS (pronounced "sass"). SAS contains a powerful programming language that provides access to many data types, functions, and language features. Learning SAS is arguably as difficult (or as easy, depending upon your perspective) as learning R, but SAS is used by many large corporations because, unlike R, there is extensive technical and product support offered. Of course, this support does not come cheap, so most SAS users work in large organizations that have sufficient resources to purchase the necessary licenses and support plans.
+				The single most popular and powerful tool, outside of R, is a proprietary statistical system called <idx>SAS</idx><term>SAS</term> (pronounced "sass"). SAS contains a powerful programming language that provides access to many data types, functions, and language features. Learning SAS is arguably as difficult (or as easy, depending upon your perspective) as learning R, but SAS is used by many large corporations because, unlike R, there is extensive technical and product support offered. Of course, this support does not come cheap, so most SAS users work in large organizations that have sufficient resources to purchase the necessary licenses and support plans.
 			</p>
 
 			<p>
-				Next in line in the statistics realm is SPSS, a package used by many scientists (the acronym used to stand for Statistical Package for the Social Sciences). SPSS is much friendlier than SAS, in the opinion of many analysts, but not quite as flexible and powerful.
+				Next in line in the statistics realm is <idx>SPSS</idx><term>SPSS</term>, a package used by many scientists (the acronym used to stand for Statistical Package for the Social Sciences). SPSS is much friendlier than SAS, in the opinion of many analysts, but not quite as flexible and powerful.
 			</p>
 
 			<p>

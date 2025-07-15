@@ -15,7 +15,7 @@
 
 
 				<p>
-					MarketWatch (a Wall Street Journal Service) published an article with the title, "Big Data Equals Big Business Opportunity Say Global IT and Business Professionals," and the subtitle, "70 Percent of Organizations Now Considering, Planning or Running Big Data Projects According to New Global Survey." The technology news has been full of similar articles for several years. Given the number of such articles it is hard to resist the idea that "big data" represents some kind of revolution that has turned the whole world of information and technology topsy-turvy. But is this really true? Does "big data" change everything?
+					MarketWatch (a Wall Street Journal Service) published an article with the title, "Big Data Equals Big Business Opportunity Say Global IT and Business Professionals," and the subtitle, "70 Percent of Organizations Now Considering, Planning or Running Big Data Projects According to New Global Survey." The technology news has been full of similar articles for several years. Given the number of such articles it is hard to resist the idea that "<idx>big data</idx><term>big data</term>" represents some kind of revolution that has turned the whole world of information and technology topsy-turvy. But is this really true? Does "big data" change everything?
 				</p>
 
 				<p>
@@ -146,7 +146,7 @@
 			</p>
 
 			<p>
-				R, SPSS, and SAS grew up as statistics packages, but there are also many general purpose programming languages that incorporate features valuable to data scientists. One very exciting development in programming languages has the odd name of "Processing." Processing is a programming language specifically geared toward creating data visualizations. Like R, Processing is an open source project, so it is freely available at <url href="http://processing.org/">http://processing.org/</url>. Also like R, Processing is a cross-platform program, so it will run happily on Mac, Windows, and Linux. There are lots of books available for learning Processing and the website contains lots of examples for getting started. Besides R, Processing might be one of the most important tools in the data scientist’s toolbox, at least for those who need to use data to draw conclusions and communicate with others.
+				R, SPSS, and SAS grew up as statistics packages, but there are also many general purpose programming languages that incorporate features valuable to data scientists. One very exciting development in programming languages has the odd name of "Processing." <idx>processing</idx><term>Processing</term> is a programming language specifically geared toward creating data visualizations. Like R, Processing is an open source project, so it is freely available at <url href="http://processing.org/">http://processing.org/</url>. Also like R, Processing is a cross-platform program, so it will run happily on Mac, Windows, and Linux. There are lots of books available for learning Processing and the website contains lots of examples for getting started. Besides R, Processing might be one of the most important tools in the data scientist’s toolbox, at least for those who need to use data to draw conclusions and communicate with others.
 			</p>
 
     </subsection>

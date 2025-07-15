@@ -260,7 +260,7 @@
 
 				<figure>
 	<image source="dropdown-general.png" width="60%" height="60%"/>
-					<caption></caption>
+					<caption>Excel interface showing how to change cell formatting to 'General' to remove commas from population data.</caption>
 </figure>
 
 				<p>
@@ -269,7 +269,7 @@
 
 				<figure>
 	<image source="numbers.png"/>
-					<caption></caption>
+					<caption>Spreadsheet displaying U.S. state population data in numeric format without labels or commas, ready for import into R.</caption>
 </figure>
 
 				<p>
@@ -278,7 +278,7 @@
 
 				<figure>
 	<image source="R-window.png"/>
-					<caption></caption>
+					<caption>R Studio interface highlighting the Upload button in the Files pane for uploading datasets.</caption>
 </figure>
 
 				<p>
@@ -295,7 +295,7 @@
 
 				<figure>
 	<image source="import-excel.png"/>
-					<caption></caption>
+					<caption>Import Excel Data window in R Studio, showing settings for importing state population data as a dataframe.</caption>
 </figure>
 
 				<p>
@@ -304,7 +304,7 @@
 
 				<figure>
 	<image source="readxl.png"/>
-					<caption></caption>
+					<caption>R Studio import screen showing the final setup before importing the USstatePops dataset using the readxl package.</caption>
 </figure>
 
 				<p>

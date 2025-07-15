@@ -566,7 +566,7 @@
 
 			<pre>
 			&gt; mean(as.integer(diff(created)))
->
+
 			[1] 41.12826
 			</pre>
 

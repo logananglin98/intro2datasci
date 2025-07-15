@@ -273,7 +273,7 @@
 			</p>
 
 			<p>
-				For Windows users, depending upon which version of operating system software you are using as well as your upgrade history, it may be necessary to provide new SSL certificates. Certificates help to maintain secure communications across the Internet, and most computers keep an up-to-date copy on file, but not all of them do. If you encounter any problems using R to access the Internet, you may need new tokens.
+				For Windows users, depending upon which version of operating system software you are using as well as your upgrade history, it may be necessary to provide new <idx>SSL certificates</idx><term>SSL certificates</term>. Certificates help to maintain secure communications across the Internet, and most computers keep an up-to-date copy on file, but not all of them do. If you encounter any problems using R to access the Internet, you may need new tokens.
 			</p>
 
 			<p>
@@ -377,11 +377,7 @@
 			</p>
 
 			<p>
-				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "hashtags" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specify
-			</p>
-
-			<p>
-				ing the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
+				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "<idx>hashtags</idx><term>hashtags</term>" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specifying the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
 			</p>
 
 			<p>
@@ -409,7 +405,7 @@
 			</p>
 
 			<p>
-				Hmm, this is a type of object that we have not encountered before. In R, a list is an object that contains other data objects, and those objects may be a variety of different modes/types. Contrast this definition with a vector: A vector is also a kind of list, but with the requirement that all of the elements in the vector must be in the same mode/type. Actually, if you dig deeply into the definitions of R data objects, you may realize that we have already encountered one type of list: the dataframe. Remember that the dataframe is a list of vectors, where each vector is exactly the same length. So a dataframe is a particular kind of list, but in general lists do not have those two restrictions that dataframes have (i.e., that each element is a vector and that each vector is the same length).
+				Hmm, this is a type of object that we have not encountered before. In R, a <idx>list</idx><term>list</term> is an object that contains other data objects, and those objects may be a variety of different modes/types. Contrast this definition with a vector: A vector is also a kind of list, but with the requirement that all of the elements in the vector must be in the same mode/type. Actually, if you dig deeply into the definitions of R data objects, you may realize that we have already encountered one type of list: the dataframe. Remember that the dataframe is a list of vectors, where each vector is exactly the same length. So a dataframe is a particular kind of list, but in general lists do not have those two restrictions that dataframes have (i.e., that each element is a vector and that each vector is the same length).
 			</p>
 
 			<p>
@@ -421,7 +417,7 @@
 			</p>
 
 			<p>
-				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the head() function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
+				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the <idx>head()</idx><term>head()</term> function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
 			</p>
 
 			<p>
@@ -434,19 +430,15 @@
 </figure>
 
 			<p>
-				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "status" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
+				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "<idx>status</idx><term>status</term>" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
 			</p>
 
 			<p>
-				So, for example, the first field, called "text" is of type "chr" (which means character/text data) and the field contains the string that starts with, "Get the real facts on gas prices." You can look through the other fields and see if you can make sense of them. There are two other data types in there: "logi" stands for logical and that is the same as TRUE/FALSE; "POSIXct" is a format for storing the calendar date and time. (If you’re curious, POSIX is an old unix style operating system, where the current date and time were stored as the number of seconds elapsed since 12 midnight on January 1, 1970.) You can see in the "created" field that this particular tweet was created on April 5, 2012 one second after 2:10 PM. It does not
+				So, for example, the first field, called "text" is of type "chr" (which means character/text data) and the field contains the string that starts with, "Get the real facts on gas prices." You can look through the other fields and see if you can make sense of them. There are two other data types in there: "<idx>logi</idx><term>logi</term>" stands for logical and that is the same as TRUE/FALSE; "<idx>POSIXct</idx><term>POSIXct</term>" is a format for storing the calendar date and time. (If you’re curious, POSIX is an old unix style operating system, where the current date and time were stored as the number of seconds elapsed since 12 midnight on January 1, 1970.) You can see in the "created" field that this particular tweet was created on April 5, 2012 one second after 2:10 PM. It does not show what time zone, but a little detective work shows that all Twitter postings are coded with "coordinated universal time" or what is usually abbreviated with UTC.
 			</p>
 
 			<p>
-				show what time zone, but a little detective work shows that all Twitter postings are coded with "coordinated universal time" or what is usually abbreviated with UTC.
-			</p>
-
-			<p>
-				One last thing to peek at in this data structure is about seven lines from the end, where it says, "and 33 methods..." In computer science lingo a "method" is an operation/activity/ procedure that works on a particular data object. The idea of a method is at the heart of so-called "object oriented programming." One way to think of it is that the data object is the noun, and the methods are all of the verbs that work with that noun. For example you can see the method "getCreated" in the list: If you use the method getCreated() on a reference object of class ‘status’, the method will return the creation time of the tweet.
+				One last thing to peek at in this data structure is about seven lines from the end, where it says, "and 33 methods..." In computer science lingo a "<idx>method</idx><term>method</term>" is an operation/activity/procedure that works on a particular data object. The idea of a method is at the heart of so-called "object oriented programming." One way to think of it is that the data object is the noun, and the methods are all of the verbs that work with that noun. For example you can see the method "getCreated" in the list: If you use the method getCreated() on a reference object of class ‘status’, the method will return the creation time of the tweet.
 			</p>
 
 			<p>

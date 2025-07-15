@@ -16,11 +16,7 @@
 				</p>
 
 				<p>
-					Here’s where the natural extensibility of R comes in. An individual named Jeff Gentry who, at this writing, seems to be a data professional in the financial services industry, created an add-on package for R called twitteR (not sure how it is pronounced, but "twit-are" seems pretty close). The twitteR package provides an extremely simple interface for downloading a list of tweets directly from the Twitter service into R. Using the interface functions in twitteR, it is possible to search through Twitter to obtain a list of tweets on a specific topic. Every tweet contains the text of the posting that the author wrote as well as lots of other useful information such as the time of day when a tweet was posted. Put it all together and
-				</p>
-
-				<p>
-					it makes a fun way of getting up-to-the-minute data on what people are thinking about a wide variety of topics.
+					Here’s where the natural extensibility of R comes in. An individual named Jeff Gentry who, at this writing, seems to be a data professional in the financial services industry, created an add-on package for R called  twitteR(not sure how it is pronounced, but "twit-are" seems pretty close). The twitteR package provides an extremely simple interface for downloading a list of tweets directly from the Twitter service into R. Using the interface functions in twitteR, it is possible to search through Twitter to obtain a list of tweets on a specific topic. Every tweet contains the text of the posting that the author wrote as well as lots of other useful information such as the time of day when a tweet was posted. Put it all together and it makes a fun way of getting up-to-the-minute data on what people are thinking about a wide variety of topics.
 				</p>
 
 				<p>
@@ -37,7 +33,7 @@
 			</p>
 
 			<p>
-				In 2013, Twitter completed a transition to a new version of their application programming interface, or API. This new API requires the use of a technique for authorization, a way of proving to Twitter that you are who you are when you search for (or post) tweets from a software application. The folks at Twitter adopted an industry standard for this process known as OAuth. OAuth provides a method for obtaining two pieces of information: a "secret" and a "key" without which it will be difficult if not downright impossible to work with Twitter (as well as twitteR). Here are the steps:
+				In 2013, Twitter completed a transition to a new version of their application programming interface, or API. This new API requires the use of a technique for authorization, a way of proving to Twitter that you are who you are when you search for (or post) tweets from a software application. The folks at Twitter adopted an industry standard for this process known as OAuth. <idx>OAuth</idx><term>OAuth</term> provides a method for obtaining two pieces of information: a "secret" and a "key" without which it will be difficult if not downright impossible to work with Twitter (as well as twitteR). Here are the steps:
 			</p>
 
 			<p><ol>

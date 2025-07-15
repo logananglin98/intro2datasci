@@ -59,7 +59,7 @@
 				</p>
 
 				<p>
-					<image source='media/image18.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
+					<image source='histogram-rpois-3.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
 				</p>
 
 				<p>
@@ -91,7 +91,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image28.png"/>
+	<image source="histogram-rpois-10.png"/>
 					<caption>Histogram of hist(rpois(1000,10))</caption>
 </figure>
 
@@ -132,7 +132,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image16.png"/>
+	<image source="graph-delay-probability.png"/>
 					<caption>&gt; plot(DelayProbability(rpois(100,10),1,20), col=2) &gt; points(DelayProbability(rpois(100,3),1,20), col=3) </caption>
 </figure>
 
@@ -161,7 +161,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image33.png"/>
+	<image source="delay-probability-multiples.png"/>
 					<caption>plot using for loop</caption>
 </figure>
 
@@ -206,7 +206,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image2.png"/>
+	<image source="graph-logistic.png"/>
 					<caption></caption>
 </figure>
 
@@ -495,7 +495,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image37.png"/>
+	<image source="gaga-oprah.png"/>
 					<caption>Gaga vs Obra Tweets</caption>
 </figure>
 

@@ -128,45 +128,21 @@
 				Open the X assignment. R-studio will respond by showing a clean console screen and most importantly an R "workspace" that does not contain any of the old variables and data that we created in previous chapters. In order to use twitteR, we need to load several packages that it depends upon. These are called, in order "bitops", "RCurl", "RJSONIO", and once these are all in place "twitteR" itself. Rather than doing all of this by hand with the menus, let’s create some functions that will assist us and make the activity more repeatable. First, here is a function that takes as input the name of a package. It tests whether the package has been downloaded "installed" from the R code repository. If it has not yet been downloaded/installed, the function takes care of this. Then we use a new function, called require(), to prepare the package for further use. Let’s call our function "EnsurePackage" because it ensures that a package is ready for us to use. If you don’t recall this step from the previous chapter, you should click the "File" menu and then click "New" to create a new file of R script. Then, type or copy/paste the following code:
 			</p>
 
-			<p>
-				EnsurePackage&lt;-function(x)
-			</p>
+			
+			<pre>
+			EnsurePackage&lt;-function(x) {
 
-			<p>
-				{
-			</p>
-
-			<p>
 				x &lt;- as.character(x)
-			</p>
 
-			<p>
-				if (!require(x,character.only=TRUE))
-			</p>
-
-			<p>
-				{
-			</p>
-
-			<p>
-				install.packages(pkgs=x,
-			</p>
-
-			<p>
-				repos="http://cran.r-project.org")
-			</p>
-
-			<p>
-				require(x,character.only=TRUE)
-			</p>
-
-			<p>
+				if (!require(x,character.only=TRUE)) {
+					install.packages(pkgs=x,
+					repos="http://cran.r-project.org")
+					require(x,character.only=TRUE)			
 				}
-			</p>
-
-			<p>
-				}
-			</p>
+				
+			}
+			</pre>
+			
 
 			<p>
 				On Windows machines, the folder where new R packages are stored has to be configured to allow R to put new files there (“write” permissions). In Windows Explorer, you can right click on the folder and choose “Properties-&gt;Security” then choose your username and user group, click Edit, enable all permissions, and click OK. If you run into trouble, check out the Windows FAQ at CRAN by searching or using this web address: <url href="http://cran.r-project.org/bin/windows/base/rw-FAQ.html">R for Windows FAQ</url>.
@@ -184,37 +160,15 @@
 				Now we are ready to put EnsurePackage() to work on the packages we need for twitteR. We’ll make a new function, "PrepareTwitter," that will load up all of our packages for us. Here’s the code:
 			</p>
 
-			<p>
-				PrepareTwitter&lt;-function()
-			</p>
-
-			<p>
-				{
-			</p>
-
-			<p>
+			<pre>
+			PrepareTwitter&lt;-function() {
 				EnsurePackage("bitops")
-			</p>
-
-			<p>
 				EnsurePackage("RCurl")
-			</p>
-
-			<p>
 				EnsurePackage("RJSONIO")
-			</p>
-
-			<p>
 				EnsurePackage("twitteR")
-			</p>
-
-			<p>
 				EnsurePackage("ROAuth")
-			</p>
-
-			<p>
-				}
-			</p>
+			}
+			</pre>
 
 			<p>
 				This code is quite straightforward: it calls the EnsurePackage() function we created before five times, once to load each of the packages we need. You may get some warning messages and these generally won’t cause any harm. If you are on Windows and you get errors about being able to write to your library remember to check the Windows FAQ as noted above.
@@ -224,33 +178,31 @@
 				Make sure to save your script file once you have typed this new function in. You can give it any file name that makes sense to you, such as "twitterSupport." Now is also a good time to start the habit of commenting: Comments are human readable messages that software developers leave for themselves and for others, so that everyone can remember what a piece of code is supposed to do. All computer languages have at least one "comment character" that sets off the human readable stuff from the rest of the code. In R, the comment character is #. For now, just put one comment line above each function you created, briefly describing it, like this:
 			</p>
 
-			<p>
-				# EnsurePackage(x) Installs and loads a package
-			</p>
+			<pre>
+			# EnsurePackage(x) Installs and loads a package
 
-			<p>
-				# if necessary
-			</p>
+			# if necessary
+
+			</pre>
 
 			<p>
 				and this:
 			</p>
 
-			<p>
-				# PrepareTwitter() Load packages for working
-			</p>
+			<pre>
+			# PrepareTwitter() Load packages for working
 
-			<p>
-				# with twitteR
-			</p>
+			# with twitteR
+
+			</pre>
 
 			<p>
 				Later on we will do a better job of commenting, but this gives us the bare minimum we need to keep going with this project. Before we move on, you should run the PrepareTwitter() function on the console command line to actually load the packages we need:
 			</p>
 
-			<p>
-				&gt; <term>PrepareTwitter()</term>
-			</p>
+			<pre>
+			&gt;PrepareTwitter()	
+			</pre>
 
 			<p>
 				Note the parentheses after the function name, even though there is no argument to this function. What would happen if you left out the parentheses? Try it later to remind yourself of some basic R syntax rules.
@@ -276,13 +228,11 @@
 				For Windows users, depending upon which version of operating system software you are using as well as your upgrade history, it may be necessary to provide new SSL certificates. Certificates help to maintain secure communications across the Internet, and most computers keep an up-to-date copy on file, but not all of them do. If you encounter any problems using R to access the Internet, you may need new tokens.
 			</p>
 
-			<p>
+			<pre>
 				download.file(url="http://curl.haxx.se/ca/cacert.pem",+
-			</p>
 
-			<p>
 				destfile="cacert.pem")
-			</p>
+			</pre>
 
 			<p>
 				This statement needs to be run before the R tries to contact Twitter for authentication. This is because twitteR uses RCurl which in turn employs SSL security whenever “https” appears in a URL. The command above downloads new certificates and saves them within the current working directory for R. You may need to use cacert.pem for many or most of the function calls to twitteR by adding the argument cainfo="cacert.pem".
@@ -300,9 +250,9 @@
 				Begin this process by getting a credential from ROAuth. Remember that in the command below where I have put "lettersAndNumbers" you have to substitute in your ConsumerKey and your ConsumerSecret that you got from Twitter. The ConsumerKey is a string of upper and lowercase letters and digits about 22 characters long. The ConsumerSecret is also letters and digits and it is about twice as long as the ConsumerKey. Make sure to keep these private, especially the ConsumerSecret, and don’t share them with others. Here’s the command:
 			</p>
 
-			<p>
-				&gt; credential &lt;OAuthFactory$new(consumerKey="lettersAndNumbers", +cons
-			</p>
+			<pre>
+			&gt; credential &lt;OAuthFactory$new(consumerKey="lettersAndNumbers", +cons
+			</pre>
 
 			<p>
 				umerSecret="lettersAndNumbers", +requestURL="https://api.twitter.com/oauth/request_token", +accessURL="https://api.twitter.com/oauth/access_token", +authURL="https://api.twitter.com/oauth/authorize")
@@ -312,45 +262,39 @@
 				This looks messy but is really very simple. If you now type:
 			</p>
 
-			<p>
-				&gt; credential
-			</p>
+			<pre>
+			&gt; credential
+			</pre>
 
 			<p>
 				You will find that the credential data object is just a conglomeration of the various fields that you specified in the arguments to the OAuthFactory$new method. We have to put that data structure to work now with the following function call:
 			</p>
 
-			<p>
-				&gt; credential$handshake()
-			</p>
+			<pre>
+			&gt; credential$handshake()
+			</pre>
 
 			<p>
 				Or, if you have downloaded new certificates:
 			</p>
 
-			<p>
-				&gt; credential$handshake(cainfo="cacert.pem")
-			</p>
+			<pre>
+			&gt; credential$handshake(cainfo="cacert.pem")
+			</pre>
 
 			<p>
 				You will get a response back that looks like this:
 			</p>
 
-			<p>
-				When complete, record the PIN given to you and provide it here:
-			</p>
+			<pre>
+			When complete, record the PIN given to you and provide it here:
 
-			<p>
-				<em>To enable the connection, please direct your web browser to:</em>
-			</p>
+			To enable the connection, please direct your web browser to:
 
-			<p>
-				<em><url href="https://api.twitter.com/oauth/authorize?oauth_token=">https://api.twitter.com/oauth/authorize?oauth_token=</url>...</em>
-			</p>
-
-			<p>
-				<em>When complete, record the PIN given to you and provide it here:</em>
-			</p>
+			<url href="https://api.twitter.com/oauth/authorize?oauth_token=">https://api.twitter.com/oauth/authorize?oauth_token=</url>...
+			
+			When complete, record the PIN given to you and provide it here:
+			</pre>
 
 			<p>
 				This will be followed by a long string of numbers. Weirdly, you have to go to a web browser and type in exactly what you see in the R-Studio output window (the URL and the long string of numbers). While typing the URL to be redirected to twitter, be sure that you type http:// instead of https:// otherwise Twitter will not entertain the request because the Twitter server invokes SSL security itself. If you type the URL correctly, Twitter will respond in your browser window with a big button that says "Authorize App." Go ahead and click on that and you will receive a new screen with a PIN on it (my PIN had seven digits). Take those seven digits and type them into the R-Studio console window (the credential$handshake() function will be waiting for them). Type the digits in front of “When complete, record the PIN given to you and provide it here:” Hit Enter and, assuming you get no errors, you are fully authorized! Hooray! What a crazy process! Thankfully, you should not have to do any of this again as long as you save the credential data object and restore it into future sessions. The credential object, and all of the other active data, will be stored in the default workspace when you exit R-Studio.
@@ -364,49 +308,41 @@
 				Now let’s get some data from Twitter. First, tell the twitteR package that you want to use your shiny new credentials:
 			</p>
 
-			<p>
-				&gt; registerTwitterOAuth(credential)
-			</p>
-
-			<p>
-				[1] TRUE
-			</p>
+			<pre>
+			&gt; registerTwitterOAuth(credential)
+			
+			[1] TRUE
+			</pre>
 
 			<p>
 				The return value of TRUE shows that the credential is working and ready to help you get data from Twitter. Subsequent commands using the twitteR package will pass through the authorized application interface.
 			</p>
 
 			<p>
-				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "hashtags" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specify
+				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "hashtags" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specifying the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
 			</p>
 
-			<p>
-				ing the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
-			</p>
-
-			<p>
-				tweetList &lt;searchTwitter("#climate", n=500)
-			</p>
+			<pre>
+			tweetList &lt;searchTwitter("#climate", n=500)
+			</pre>
 
 			<p>
 				As above, if you are on Windows, and you had to get new certificates, you may have to use this command:
 			</p>
 
-			<p>
-				tweetList &lt;searchTwitter("#climate", n=500, cainfo="cacert.pem")
-			</p>
+			<pre>
+			tweetList &lt;searchTwitter("#climate", n=500, cainfo="cacert.pem")
+			</pre>
 
 			<p>
 				Depending upon the speed of your Internet connection and the amount of traffic on Twitter’s servers, this command may take a short while for R to process. Now we have a new data object, tweetList, that presumably contains the tweets we requested. But what is this data object? Let’s use our R diagnostics to explore what we have gotten:
 			</p>
 
-			<p>
-				&gt; mode(tweetList)
-			</p>
+			<pre>
+			&gt; mode(tweetList)
 
-			<p>
-				[1] "list"
-			</p>
+			[1] "list"
+			</pre>
 
 			<p>
 				Hmm, this is a type of object that we have not encountered before. In R, a list is an object that contains other data objects, and those objects may be a variety of different modes/types. Contrast this definition with a vector: A vector is also a kind of list, but with the requirement that all of the elements in the vector must be in the same mode/type. Actually, if you dig deeply into the definitions of R data objects, you may realize that we have already encountered one type of list: the dataframe. Remember that the dataframe is a list of vectors, where each vector is exactly the same length. So a dataframe is a particular kind of list, but in general lists do not have those two restrictions that dataframes have (i.e., that each element is a vector and that each vector is the same length).
@@ -416,22 +352,22 @@
 				So we know that tweetList is a list, but what does that list contain? Let’s try using the str() function to uncover the structure of the list:
 			</p>
 
-			<p>
-				&gt; str(tweetList)
-			</p>
+			<pre>
+			&gt; str(tweetList)
+			</pre>
 
 			<p>
 				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the head() function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
 			</p>
 
-			<p>
-				str(head(tweetList,1)  This output is also long, but not quite as long.
-			</p>
+			<pre>
+			str(head(tweetList,1)  This output is also long, but not quite as long.
+			</pre>
 
 			<figure>
-	<image source="media/image54.png"/>
+				<image source="media/image54.png"/>
 				<caption>output from str(head(tweetList,1)</caption>
-</figure>
+			</figure>
 
 			<p>
 				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "status" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
@@ -453,17 +389,17 @@
 				If you try running the command:
 			</p>
 
-			<p>
-				str(head(tweetList,2))
-			</p>
+			<pre>
+			str(head(tweetList,2))
+			</pre>
 
 			<p>
 				you will find that the second item in the tweetList list is structured exactly like the first time, with the only difference being the specific contents of the fields. You can also run:
 			</p>
 
-			<p>
-				length(tweetList)
-			</p>
+			<pre>
+			length(tweetList)
+			</pre>
 
 			<p>
 				to find out how many items are in your list. The list obtained for this exercise was a full 500 items long. Se we have 500 complex items in our list, but every item had exactly the same structure, with 10 fields in it and a bunch of other stuff too. That raises a thought: tweetList could be thought of as a 500 row structure with 10 columns! That means that we could treat it as a dataframe if we wanted to (and we do, because this makes handling these data much more convenient as you found in the "Rows and Columns" chapter).
@@ -473,13 +409,11 @@
 				Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: as(), lapply(), rbind(), and do.call(). The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function "binds" together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
 			</p>
 
-			<p>
-				tweetDF &lt;- do.call("rbind", lapply(tweetList, +
-			</p>
-
-			<p>
-				as.data.frame))
-			</p>
+			<pre>
+			tweetDF &lt;- do.call("rbind", lapply(tweetList, +
+			
+			as.data.frame))
+			</pre>
 
 			<p>
 				You might wonder a few things about this command. One thing that looks weird is "rbind" in double quotes. This is the required method of supplying the name of the function to do.call(). You might also wonder why we needed do.call() at all. Couldn’t we have just called rbind() directly from the command line? You can try it if you want, and you will find that it does provide a result, but not the one you want. The difference is in how the arguments to rbind() are supplied to it: if you call it directly, lapply() is evaluated first, and it forms a single list that is then supplied to rbind(). In contrast, by using do.call(), all 500 of the results of lapply() are supplied to rbind() as individual arguments, and this allows rbind() to create the nice rectangular dataset that we will need. The advantage of do.call() is that it will set up a function call with a variable number of arguments in cases where we don’t know how many arguments will be supplied at the time when we write the code.
@@ -489,33 +423,15 @@
 				If you run the command above, you should see in the upper right hand pane of R-studio a new entry in the workspace under the heading of "Data." For the example we are running here, the entry says, "500 obs. of 10 variables." This is just what we wanted, a nice rectangular data set, ready to analyze. Later on, we may need more than one of these data sets, so let’s create a function to accomplish the commands we just ran:
 			</p>
 
-			<p>
-				# TweetFrame() Return a dataframe based on a # search of Twitter
-			</p>
+			<pre>
+			# TweetFrame() Return a dataframe based on a # search of Twitter
 
-			<p>
-				TweetFrame&lt;-function(searchTerm, maxTweets)
-			</p>
-
-			<p>
-				{
-			</p>
-
-			<p>
+			TweetFrame&lt;-function(searchTerm, maxTweets) {
 				twtList&lt;searchTwitter(searchTerm,n=maxTweets)
-			</p>
-
-			<p>
 				return(do.call("rbind",+
-			</p>
-
-			<p>
 				lapply(twtList,as.data.frame)))
-			</p>
-
-			<p>
-				}
-			</p>
+			}
+			</pre>
 
 			<p>
 				There are three good things about putting this code in a function. First, because we put a comment at the top of the function, we will remember in the future what this code does. Second, if you test this function you will find out that the variable twtList that is created in the code above does not stick around after the function is finished running. This is the result of what computer scientists call "variable scoping." The variable twtList only exists while the TweetFrame() function is running. Once the function is done, twtList evaporates as if it never existed. This helps us to keep our workspace clean and avoid collecting lots of intermediate variables that are not reused.
@@ -525,17 +441,20 @@
 				The last and best thing about this function is that we no longer have to remember the details of the method for using do.call(), rbind(), lapply(), and as.data.frame() because we will not have to retype these commands again: we can just call the function whenever we need it. And we can always go back and look at the code later. In fact, this would be a good reason to put in a comment just above the return() function. Something like this:
 			</p>
 
-			<p>
-				# as.data.frame() coerces each list element into a row # lapply() applies this to all of the elements in twtList # rbind() takes all of the rows and puts them together # do.call() gives rbind() all the rows as individual elements
-			</p>
+			<pre>
+			# as.data.frame() coerces each list element into a row 
+			# lapply() applies this to all of the elements in twtList 
+			# rbind() takes all of the rows and puts them together 
+			# do.call() gives rbind() all the rows as individual elements
+			</pre>
 
 			<p>
 				Now, whenever we want to create a new data set of tweets, we can just call TweetFrame from the R console command line like this:
 			</p>
 
-			<p>
-				lgData &lt;- TweetFrame("#ladygaga", 250)
-			</p>
+			<pre>
+			lgData &lt;- TweetFrame("#ladygaga", 250)
+			</pre>
 
 			<p>
 				This command would give us a new dataframe "lgData" all ready to analyze, based on the supplied search term and maximum number of tweets.
@@ -545,40 +464,38 @@
 				Let’s start to play with the tweetDF dataset that we created before. First, as a matter of convenience, let’s learn the attach() function. The attach() function saves us some typing by giving one particular dataframe priority over any others that have the same variable names. Normally, if we wanted to access the variables in our dataframe, we would have to use the $ notation, like this:
 			</p>
 
-			<p>
-				tweetDF$created
-			</p>
+			<pre>
+			tweetDF$created
+			</pre>
 
 			<p>
 				But if we run attach(tweetDF) first, we can then refer to created directly, without having to type the tweetDF$ before it:
 			</p>
 
-			<p>
-				&gt; attach(tweetDF)
-			</p>
+			<pre>
+			&gt; attach(tweetDF)
 
-			<p>
-				&gt; head(created,4)
-			</p>
+			&gt; head(created,4)
 
-			<p>
-				[1] "2012-04-05 14:10:01 UTC" "2012-04-05 14:09:21 UTC"
-			</p>
+			[1] "2012-04-05 14:10:01 UTC" "2012-04-05 14:09:21 UTC"
 
-			<p>
-				[3] "2012-04-05 14:08:15 UTC" "2012-04-05 14:07:12 UTC"
-			</p>
+			[3] "2012-04-05 14:08:15 UTC" "2012-04-05 14:07:12 UTC"
+			</pre>
 
 			<p>
 				Let’s visualize the creation time of the 500 tweets in our dataset. When working with time codes, the hist() function requires us to specify the approximate number of categories we want to see in the histogram:
 			</p>
 
+			<pre>
+			hist(created, breaks=15, freq=TRUE)
+			</pre>
+
 			<p>
-				hist(created, breaks=15, freq=TRUE)
+				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. 
 			</p>
 
 			<p>
-				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. <image source='media/image51.png'/>
+				<image source='media/image51.png'/>
 			</p>
 
 			<p>
@@ -593,9 +510,9 @@
 				As mentioned briefly in the previous chapter, in R, square brackets allow "indexing" into a list, vector, or data frame. For example, myList[3] would give us the third element of myList. Keeping in mind that a dataframe is a rectangular structure, really a two dimensional structure, we can address any element of a dataframe with both a row and column designator: myFrame[4,1] would give the fourth row and the first column. A shorthand for taking the whole column of a dataframe is to leave the row index empty: myFrame[ , 6] would give every row in the sixth column. Likewise, a shorthand for taking a whole row of a dataframe is to leave the column index empty: myFrame[10, ] would give every column in the tenth row. We can also supply a list of rows instead of just one row, like this: myFrame[ c(1,3,5), ] would return rows 1, 3, 5 (including the data for all columns, because we left the column index blank). We can use this feature to reorder the rows, using the order() function. We tell order() which variable we want to sort on, and it will give back a list of row indices in the order we requested. Putting it all together yields this command:
 			</p>
 
-			<p>
-				tweetDF[order(as.integer(created)), ]
-			</p>
+			<pre>
+			tweetDF[order(as.integer(created)), ]
+			</pre>
 
 			<p>
 				Working our way from the inside to the outside of the expression above, we want to sort in the order that the tweets were created. We first coerce the variable "created" to integer it will then truly be expressed in the number of seconds since 1970 just in case there are operating system differences in how POSIX dates are sorted. We wrap this inside the order() function. The order() function will provide a list of row indices that reflects the time ordering we want. We use the square brackets notation to address the rows in tweetDF, taking all of the columns by leaving the index after the comma empty.
@@ -605,21 +522,19 @@
 				We have a choice of what to do with the dataframe that is returned from this command. We could assign it back to tweetDF, which would overwrite our original dataframe with the sorted version. Or we could create a new sorted dataframe and leave the original data alone, like so:
 			</p>
 
-			<p>
-				sortweetDF &lt;- tweetDF[order(as.integer(created)), ]
-			</p>
+			<pre>
+			sortweetDF &lt;- tweetDF[order(as.integer(created)), ]
+			</pre>
 
 			<p>
 				If you choose this method, make sure to detach() tweetDF and attach() sortweetDF so that later commands will work smoothly with the sorted dataframe:
 			</p>
 
-			<p>
-				&gt; detach(tweetDF)
-			</p>
+			<pre>
+			&gt; detach(tweetDF)
 
-			<p>
-				&gt; attach(sortweetDF)
-			</p>
+			&gt; attach(sortweetDF)
+			</pre>
 
 			<p>
 				Another option, which seems better than creating a new dataframe, would be to build the sorting into the TweetFrame() function that we developed at the beginning of the chapter. Let’s leave that to the chapter challenge. For now, we can keep working with sortweetDF.
@@ -629,45 +544,44 @@
 				Technically, what we have with our created variable now is a time series, and because statisticians like to have convenient methods for dealing with time series, R has a built-in function, called diff(), that allows us to easily calculate the difference in seconds between each pair of neighboring values. Try it:
 			</p>
 
-			<p>
-				<sub>&gt; diff(created)</sub>
-			</p>
+			<pre>
+			&gt; diff(created)
+			</pre>
 
 			<p>
 				You should get a list of time differences, in seconds, between neighboring tweets. The list will show quite a wide range of intervals, perhaps as long as several minutes, but with many intervals near or at zero. You might notice that there are only 499 values and not 500: This is because you cannot calculate a time difference for the very first tweet, because we have no data on the prior tweet. Let’s visualize these data and see what we’ve got:
 			</p>
 
+			<pre>
+			&gt; hist(as.integer(diff(created))) 
+			</pre>
+
 			<p>
-				&gt; hist(as.integer(diff(created))) <image source='media/image27.png'/>
+				<image source='media/image27.png'/>
 			</p>
 
 			<p>
 				As with earlier commands, we use as.integer() to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
 			</p>
 
-			<p>
-				&gt; mean(as.integer(diff(created)))
-			</p>
-
-			<p>
-				[1] 41.12826
-			</p>
+			<pre>
+			&gt; mean(as.integer(diff(created)))
+>
+			[1] 41.12826
+			</pre>
 
 			<p>
 				We have to be careful though, in using measures of central tendency on this positively skewed distribution, that the value we get from the mean() is a sensible representation of central tendency. Remembering back to the previous chapter, and our discussion of the statistical mode (the most frequently occurring value), we learn that the mean and the mode are very different:
 			</p>
 
-			<p>
-				&gt; library("modeest")
-			</p>
+			<pre>
+			&gt; library("modeest")
 
-			<p>
-				&gt; mfv(as.integer(diff(created)))
-			</p>
+			&gt; mfv(as.integer(diff(created)))
 
-			<p>
-				[1] 0
-			</p>
+			[1] 0
+			
+			</pre>
 
 			<p>
 				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the mfv() function show that the most commonly occurring time interval between neighboring tweets is zero!
@@ -677,13 +591,12 @@
 				Likewise the median shows that half of the tweets have arrival times of under half a minute:
 			</p>
 
-			<p>
-				&gt; median(as.integer(diff(created)))
-			</p>
+			<pre>
+			&gt; median(as.integer(diff(created)))
 
-			<p>
-				[1] 28
-			</p>
+			[1] 28
+
+			</pre>
 
 			<p>
 				In the next chapter we will delve more deeply into what it means when a set of data are shaped like a Poisson distribution and what that implies about making use of the mean.
@@ -693,29 +606,20 @@
 				One last way of looking at these data before we close this chapter. If we choose a time interval, such as 10 seconds, or 30 seconds, or 60 seconds, we can ask the question of how many of our tweet arrivals occurred within that time interval. Here’s code that counts the number of arrivals that occur within certain time intervals:
 			</p>
 
-			<p>
+			<pre>
 				&gt; sum((as.integer(diff(created)))&lt;60)
-			</p>
 
-			<p>
 				[1] 375
-			</p>
 
-			<p>
 				&gt; sum((as.integer(diff(created)))&lt;30)
-			</p>
 
-			<p>
 				[1] 257
-			</p>
 
-			<p>
 				&gt; sum((as.integer(diff(created)))&lt;10)
-			</p>
 
-			<p>
 				[1] 145
-			</p>
+
+			</pre>
 
 			<p>
 				You could also think of these as ratios, for example 145/500 = 0.29.

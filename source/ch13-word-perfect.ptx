@@ -3,7 +3,7 @@
 <chapter xml:id="ch13-word-perfect" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Word Perfect</title>
 
-  <subsection xml:id="word-clouds-and-r-packages">
+  <section xml:id="word-clouds-and-r-packages">
     <title>Word Clouds and R Packages</title>
 
   <introduction>
@@ -22,7 +22,10 @@
 				<p>
 					In this chapter we will use some new R packages to extend our abilities to work with text and to build our own word cloud from data retrieved from Twitter. If you have not worked on the chapter "String Theory" that precedes this chapter, you should probably do so before continuing, as we build on the skills developed there.
 				</p>
+      </section>
 
+      <subsection xml:id="ch13-data-prep">
+    <title>Preparing Tweet Data for Analysis</title>
 				<p>
 					Depending upon where you left off after the previous chapter, you will need to retrieve and pre-process a set of tweets, using some of the code you already developed, as well as some new code. At the end of the previous chapter, we have provided sample code for the TweetFrame() function, that takes a search term and a maximum tweet limit and returns a time-sorted dataframe containing tweets. Although there are a number of comments in that code, there are really only three lines of functional code thanks to the power of the twitteR package to retrieve data from Twitter for us. For the activities below, we are still working with the dataframe that we retrieved in the previous chapter using this command:
 				</p>
@@ -82,7 +85,10 @@
 				<p>
 					Note that we used our "cleanText" data object in the first command above as both the source and the destination. This is an old computer science trick for cutting down on the number of temporary variables that need to be used. In this case it will do exactly what we want, first evaluating the right hand side of the expression by running our CleanTweets() function with the cleanText object as input and then taking the result that is returned by CleanTweets() and assigning it back into cleanText, thus overwriting the data that was in there originally. Remember that we have license to do whatever we want to cleanText because it is a copy of our original data, and we have left the original data intact (i.e., the text column inside the tweetDF dataframe).
 				</p>
+</subsection>
 
+  <subsection xml:id="ch13-text-mining-tm">
+    <title>Text Mining with the tm Package</title>
 				<p>
 					The head() command should now show a short list of tweets with much of the extraneous junk filtered out. If you have followed these steps, cleanText is now a vector of character strings (in this example exactly 100 strings) ready for use in the rest of our work below. We will now use the "tm" package to process our texts. The "tm" in this case refers to "text mining," and is a popular choice among the many text analysis packages available in R. By the way, text mining refers to the practice of extracting useful analytic information from corpora of text (corpora is the plural of corpus). Although some people use text mining and natural language processing interchangeably, there are probably a couple subtle differences worth considering. First, the "mining" part of text mining refers to an area of practice that looks for unexpected patterns in large data sets, or what some people refer to as knowledge discovery in databases. In contrast, natural language processing reflects a more general interest in understanding how machines can be programmed (or learn on their own) how to digest and make sense of human language. In a similar vein, text mining often focuses on statistical approaches to analyzing text data, using strategies such as counting word frequencies in a corpus. In natural language processing, one is more likely to hear consideration given to linguistics, and therefore to the processes of breaking text into its component grammatical pieces such as nouns and verbs. In the case of the "tm" addon package for R, we are definitely in the statistical camp, where the main process is to break down a corpus into sequences of words and then to tally-up the different words and sequences we have found.
 				</p>
@@ -130,7 +136,10 @@
 				<p>
 					The stop words deserve a little explanation. Researchers who developed the early search engines for electronic databases found that certain words interfered with how well their search algorithms worked. Words such as "the," "a," and "at" appeared so commonly in so many different parts of the text that they were useless for differentiating between documents. The unique and unusual nouns, verbs, and adjectives that appeared in a document did a much better job of setting a document apart from other documents in a corpus, such that researchers decided that they should filter out all of the short, commonly used words. The term "stop words" seems to have originated in the 1960s to signify words that a computer processing system would throw out or "stop using" because they had little meaning in a data processing task. To simplify the removal of stop words, the tm package contains lists of such words for different languages. In the last command on the previous page we requested the removal of all of the common stop words.
 				</p>
+</subsection>
 
+  <subsection xml:id="ch13-from-corpus-to-cloud">
+    <title>From Corpus to Cloud</title>
 				<p>
 					At this point we have processed our corpus into a nice uniform "bag of words" that contains no capital letters, punctuation, or stop words. We are now ready to conduct a kind of statistical analysis of the corpus by creating what is known as a "term-document matrix." The following command from the tm package creates the matrix:
 				</p>
@@ -168,11 +177,7 @@
 				</p>
 
 				<p>
-					The statistics reported when we ask for tweetTDM on the command line give us an overview of the results. The TermDocumentMatrix() function extracted 375 different terms from the 100 tweets. The resulting matrix mainly consists of zeros: Out of 37,500 cells in the matrix, only 610 contain non-zero entries, while 36,890 contain zeros. A zero in a cell means that that particular term did not appear in that particular document. The maximal term length was 21 words, which an inspection of the input tweets indicates is also the maximum word length of the input tweets. Finally, the last line, starting with "Weighting" indicates what kind of statistic was stored in the term-document matrix. In this case we used the default, and simplest, option which simply records the count of the number of times a term appears across all of the documents in the
-				</p>
-
-				<p>
-					corpus. You can peek at what the term-document matrix contains by using the inspect function:
+					The statistics reported when we ask for tweetTDM on the command line give us an overview of the results. The TermDocumentMatrix() function extracted 375 different terms from the 100 tweets. The resulting matrix mainly consists of zeros: Out of 37,500 cells in the matrix, only 610 contain non-zero entries, while 36,890 contain zeros. A zero in a cell means that that particular term did not appear in that particular document. The maximal term length was 21 words, which an inspection of the input tweets indicates is also the maximum word length of the input tweets. Finally, the last line, starting with "Weighting" indicates what kind of statistic was stored in the term-document matrix. In this case we used the default, and simplest, option which simply records the count of the number of times a term appears across all of the documents in the corpus. You can peek at what the term-document matrix contains by using the inspect function:
 				</p>
 
 				<p>
@@ -231,10 +236,10 @@
 				<p>
 					If you recall the Twitter search that we used to retrieve those tweets (#solar) it makes perfect sense that "solar" is the most frequent term (even though we filtered out all of the hashtags. The next most popular term is "energy" and after that there are a variety of related words such as "independence," "green," "wind," and "metering."
 				</p>
+</subsection>
 
-				<p>
-					<term>Chapter Challenge</term>
-				</p>
+  <subsection xml:id="ch13-chapter-challenge">
+    <title>Chapter Challenge</title>
 
 				<p>
 					Develop a function that builds upon previous functions we have developed, such as TweetFrame() and CleanTweets(), to take a search term, conduct a Twitter search, clean up the resulting texts, formulate a term-document matrix, and submit resulting term frequencies to the wordcloud() function. Basically this would be a "turnkey" package that would take a Twitter search term and produce a word cloud from it, much like the Jason Davies site described at the beginning of this chapter.

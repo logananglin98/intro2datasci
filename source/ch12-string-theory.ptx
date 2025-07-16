@@ -8,6 +8,7 @@
     
 
   <introduction>
+    <image source="string-ball.png"> </image>
 				<p><em>
 					Text is, of course, one of the most common forms of human communication, hence the label that researchers use sometimes: natural language. When we say natural language text we mean words created by humans and for humans. With our cool computer technology, we have collectively built lots of ways of dealing with natural language text. At the most basic level, we have a great system for representing individual characters of text inside of computers called "Unicode." Among other things Unicode provides for a binary representation of characters in most of the world’s written languages, over 110,000 characters in all. Unicode supersedes ASCII (the American Standard Code for Information Interchange), which was one of the most popular standards (especially in the U.S.) for representing characters from the dawn of the computer age.
         </em></p>
@@ -42,10 +43,7 @@
 					This command should return a data frame containing about 100 tweets, mainly having to do with solar energy. You can choose any topic you like all of the string techniques we examine in this chapter are widely applicable to any text strings. We should get oriented by taking a look at what we retrieved. The head() function can return the first entries in any vector or list:
 				</p>
 
-				<figure>
-	<image source="media/image41.png"/>
-					<caption>head(tweetDF1)</caption>
-</figure>
+	<image source="head-tweerDF.png"/>
 
 				<p>
 					We provide a screenshot from R-Studio here just to preserve the formatting of this output. In the left hand margin, the number 97 represents R’s indexing of the original order in which the tweet
@@ -80,7 +78,7 @@
 				</p>
 
 				<p>
-					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='media/image19.png'/>
+					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='twitter-observations.png'/>
 				</p>
 
 				<p>
@@ -411,10 +409,7 @@
 					table(as.factor(rt))
 				</p>
 
-				<figure>
-	<image source="media/image52.png"/>
-					<caption>table(as.factor(rt))</caption>
-</figure>
+	<image source="table-as-factor-rt.png"/>
 
 				<p>
 					The as.factor() function is a type/mode coercion and just a new one in a family we have seen before. In previous chapters we used as.integer() and as.character() to perform other conversions. In R a factor is a collection of descriptive labels and corresponding unique identifying numbers. The identifying numbers are not usually visible in outputs. Factors are often used for dividing up a dataset into categories. In a survey, for instance, if you had a variable containing the gender of a participant, the variable would frequently be in the form of a factor with (at least) two distinct categories (or what statisticians call levels), male and female. Inside R, each of these categories would be represented as a number, but the corresponding label would usually be the only thing you would see as output. As an experiment, try running this command:

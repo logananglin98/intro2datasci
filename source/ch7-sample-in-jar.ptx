@@ -8,11 +8,7 @@
 
   <introduction>
 
-
-				<figure>
-	<image source="jelly-belly.png" width="40%"/>
-					<caption></caption>
-</figure>
+	<image source="jelly-belly.png" width="40%" decorative="yes"/>
 
 				<p>
 					<idx>sampling distributions</idx>

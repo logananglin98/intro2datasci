@@ -3,7 +3,7 @@
 <chapter xml:id="ch12-string-theory" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>String Theory</title>
 
-  <subsection xml:id="string-manipulation-functions">
+  <section xml:id="string-manipulation-functions">
     <title>String Manipulation Functions</title>
     
 
@@ -41,6 +41,10 @@
 				<p>
 					This command should return a data frame containing about 100 tweets, mainly having to do with solar energy. You can choose any topic you like all of the string techniques we examine in this chapter are widely applicable to any text strings. We should get oriented by taking a look at what we retrieved. The head() function can return the first entries in any vector or list:
 				</p>
+        </section>
+
+  <subsection xml:id="ch12-exploring-data">
+    <title>Exploring and Preparing the Tweet Data</title>
 
 				<figure>
 	<image source="media/image41.png"/>
@@ -48,11 +52,7 @@
 </figure>
 
 				<p>
-					We provide a screenshot from R-Studio here just to preserve the formatting of this output. In the left hand margin, the number 97 represents R’s indexing of the original order in which the tweet
-				</p>
-
-				<p>
-					was received. The tweets were re-sorted into arrival order by our enhanced TweetFrame() function (see the end of the chapter for code). So this is the first element in our dataframe, but internally R has numbered it as 97 out of the 100 tweets we obtained. On the first line of the output, R has placed the label "text" and this is the field name of the column in the dataframe that contains the texts of the tweets. Other dataframe fields that we will not be using in this chapter include: "favorited," "replyToSN," and "truncated." You may also recognize the field name "created" which contains the POSIX format time and date stamp that we used in previous chapters.
+					We provide a screenshot from R-Studio here just to preserve the formatting of this output. In the left hand margin, the number 97 represents R’s indexing of the original order in which the tweet was received. The tweets were re-sorted into arrival order by our enhanced TweetFrame() function (see the end of the chapter for code). So this is the first element in our dataframe, but internally R has numbered it as 97 out of the 100 tweets we obtained. On the first line of the output, R has placed the label "text" and this is the field name of the column in the dataframe that contains the texts of the tweets. Other dataframe fields that we will not be using in this chapter include: "favorited," "replyToSN," and "truncated." You may also recognize the field name "created" which contains the POSIX format time and date stamp that we used in previous chapters.
 				</p>
 
 				<p>
@@ -76,11 +76,7 @@
 				</p>
 
 				<p>
-					An even better way to look at these data, including the text and the other fields is to use the data browser that is built into R-Studio. If you look in the upper right hand pane of R-Studio, and make sure that the Workspace tab is clicked, you should see a list of available
-				</p>
-
-				<p>
-					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='media/image19.png'/>
+					An even better way to look at these data, including the text and the other fields is to use the data browser that is built into R-Studio. If you look in the upper right hand pane of R-Studio, and make sure that the Workspace tab is clicked, you should see a list of available dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='media/image19.png'/>
 				</p>
 
 				<p>
@@ -114,7 +110,10 @@
 				<p>
 					These commands should yield no additional output. If you get any messages about "The following object(s) are masked from..." you should run search() again and look for other dataframes that should be detached before proceeding. Once you can run attach("tweetDF") without any warnings, you can be sure that the fields in this dataframe are ready to use without interference.
 				</p>
+</subsection>
 
+  <subsection xml:id="ch12-basic-string-ops">
+    <title>Basic String Operations: Length, Counting, and Replacing</title>
 				<p>
 					The first and most basic thing to do with strings is to see how long they are. The stringr package gives us the str_length() function to accomplish this task:
 				</p>
@@ -258,7 +257,10 @@
 				<p>
 					In this last command, we’ve asked R to report the mean value of the vector of word counts, and we learn that on average a tweet in our dataset has about 14 words in it.
 				</p>
+</subsection>
 
+  <subsection xml:id="ch12-parsing-retweets">
+    <title>Parsing with Regular Expressions: Extracting Retweets</title>
 				<p>
 					Next, let’s do a bit of what computer scientists (and others) call "parsing." Parsing is the process of dividing a larger unit, like a sentence, into smaller units, like words, based on some kind of rule. In many cases, parsing requires careful use of pattern matching. Most computer languages accomplish pattern matching through the use of a strategy called "regular expressions." A regular expression is a set of symbols used to match patterns. For example, [a-z] is used to match any lowercase letter and the asterisk is used to represent a sequence of zero or more characters. So the regular expression "[az]*" means, "match a sequence of zero or more lowercase characters.
 				</p>
@@ -402,7 +404,10 @@
 				<p>
 					You may also have noticed the very last command. It seems that one of our steps, probably the use of str_match() must have "matrix-ized" our data again, so we use the column trick that appeared earlier in this chapter to flatten the matrix back to a single column of string data.
 				</p>
+</subsection>
 
+  <subsection xml:id="ch12-summarizing-patterns">
+    <title>Summarizing Patterns with Contingency Tables</title>
 				<p>
 					This would be a good point to visualize what we have obtained. Here we introduce two new functions, one which should seem familiar and one that is quite new:
 				</p>
@@ -433,11 +438,7 @@
 				</p>
 
 				<p>
-					The screenshot shows the command and the output. There are about 15 unique screennames of Twitter users who were retweeted. The highest number of times that a screenname appeared was three, in the case of SEIA. The table() function is used more commonly to create two-way (two dimensional) contingency
-				</p>
-
-				<p>
-					tables. We could demonstrate that here if we had two factors, so let’s create another factor.
+					The screenshot shows the command and the output. There are about 15 unique screennames of Twitter users who were retweeted. The highest number of times that a screenname appeared was three, in the case of SEIA. The table() function is used more commonly to create two-way (two dimensional) contingency tables. We could demonstrate that here if we had two factors, so let’s create another factor.
 				</p>
 
 				<p>
@@ -627,11 +628,7 @@
 				</p>
 
 				<p>
-					Confusing? Let’s go at it from a different angle. Look at the output under the [[7]] above. As we noted a few paragraphs ago, some of those tweets have multiple URLs in them. The str_match_all() function handles this by creating, <em>for every single row in the tweet data</em>, a data object that itself contains exactly one column but one or possibly more than one row one row for each URL that appears in the
-				</p>
-
-				<p>
-					tweet. So, just as we saw earlier in the chapter, we are getting back from a string function a complex matrix-like data object that requires careful handling if we are to make proper use of it.
+					Confusing? Let’s go at it from a different angle. Look at the output under the [[7]] above. As we noted a few paragraphs ago, some of those tweets have multiple URLs in them. The str_match_all() function handles this by creating, <em>for every single row in the tweet data</em>, a data object that itself contains exactly one column but one or possibly more than one row one row for each URL that appears in the tweet. So, just as we saw earlier in the chapter, we are getting back from a string function a complex matrix-like data object that requires careful handling if we are to make proper use of it.
 				</p>
 
 				<p>
@@ -735,11 +732,7 @@
 				</p>
 
 				<p>
-					Here you see that double bracket notation again, used as an index into each "chunk" of data, where the chunk itself may have some
-				</p>
-
-				<p>
-					internal complexity. In the case of element [[1]] above, there is one row, and therefore one URL. For element [[5]] above, we see a zero, which means that length() is telling us that this element has no rows in it at all. Finally, for element [[7]] we see 2, meaning that this element contains two rows, and therefore two URLs.
+					Here you see that double bracket notation again, used as an index into each "chunk" of data, where the chunk itself may have some internal complexity. In the case of element [[1]] above, there is one row, and therefore one URL. For element [[5]] above, we see a zero, which means that length() is telling us that this element has no rows in it at all. Finally, for element [[7]] we see 2, meaning that this element contains two rows, and therefore two URLs.
 				</p>
 
 				<p>
@@ -777,7 +770,10 @@
 				<p>
 					[1] 1 1 1 1 0 1 2 1 1 1
 				</p>
+</subsection>
 
+  <subsection xml:id="ch12-final-analysis">
+    <title>Solving the Mystery: Data Analysis with String Metrics</title>
 				<p>
 					Excellent! We now have a new field on tweetDF that counts up the number of URLs. As a last step in examining our tweet data, let’s look at a contingency table that looks at the number of URLs together with the flag indicating an extra long tweet. Earlier in the chapter, we mentioned that the table() function takes factors as its input. In the command below we have supplied the numurls field to the table() function without coercing it to a factor. Fortunately, the table() function has some built in intelligence that will coerce a numeric variable into a factor. In this case because numurls only takes on the values of 0, 1, or 2, it makes good sense to allow table() to perform this coercion:
 				</p>
@@ -937,7 +933,10 @@
 				<p>
 					<term>Chapter Challenges</term>
 				</p>
+</subsection>
 
+  <subsection xml:id="ch12-chapter-challenges">
+    <title>Chapter Challenges</title>
 				<p>
 					Create a function that takes as input a dataframe of tweets and returns as output a list of all of the retweet screennames. As an extra challenge, see if you can reduce that list of screennames to a unique set (i.e., no duplicates) while also generating a count of the number of times that each retweet screenname appeared.
 				</p>

@@ -18,24 +18,18 @@
 </figure>
 
 				<p>
-					The upper left hand "pane" (another name for a sub-window) displays a blank space under the tab title "Untitled1." Click in that pane and type the following:
+				The upper left hand "pane" (another name for a sub-window) displays a blank space under the tab title "Untitled1." Click in that pane and type the following:
 				</p>
+				
+				<pre>
+				MyMode &lt;- function(myVector)
 
-				<p>
-					MyMode &lt;- function(myVector)
-				</p>
+				{
 
-				<p>
-					{
-				</p>
+				return(myVector)
 
-				<p>
-					return(myVector)
-				</p>
-
-				<p>
-					}
-				</p>
+				}
+				</pre>
 
 				<p>
 					You have just created your first "function" in R. A function is a block of R code that can be used over and over again without having to retype it. Other programming languages also have functions. Other words for function are "procedure" and "subroutine," although these terms can have a slightly different meaning in other languages. We have called our function "MyMode." You may remember from a couple of chapters that the basic setup of R does not have a statistical mode function in it, even though it does have functions for the two other other common central tendency statistics, mean() and median(). We’re going to fix that problem by creating our own mode function. Recall that the mode function should count up how many of each value is in a list and then return the value that occurs most frequently. That is the definition of the statistical mode: the most frequently occurring item in a vector of numbers.

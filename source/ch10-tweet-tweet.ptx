@@ -6,6 +6,10 @@
     <subsection xml:id="intro-to-x">
     <title>Introduction to X</title>
   <introduction>
+	<figure xml:id="ch10-twitter-bird">
+		<image source="twitter-bird.png" decorative = 'yes' width = '50%'/>
+		
+	</figure>
         <p>
 					<em>We’ve come a long way already: Basic skills in controlling R, some exposure to R-studio, knowledge of how to manage add-on packages, experience creating a function, essential descriptive statistics, and a start on sampling distributions and inferential statistics. In this chapter, we use the social media service Twitter to grab some up-to-the minute data and begin manipulating it.</em>
 				</p>
@@ -84,8 +88,23 @@
 				<li>
 							<blockquote>
 											<p>
-								Check the checkbox specified to allow your application should be set so that it can be used to sign in with Twitter. <image source='media/image60.png'/>
+								Check the checkbox specified to allow your application should be set so that it can be used to sign in with Twitter.
 							</p>
+							<figure xml:id="ch10-twitter-enabling">
+								<image source="twitter-enabling.png" width = '100%'>
+								<shortdescription>
+									<p>
+										checkbox to "allow this aplication to be used to sign in with twitter" checked yes.
+									</p>
+								</shortdescription>
+								<description>
+									<p>
+										this image shows a checkbox marked yes with the sentence "allow this aplication to be used to sign in with twitter" next to it. below the checkbox it says "When enabled you application can be used to 'Sign in with Twitter'."
+									</p>
+								</description>
+								</image>
+							</figure>
+
 							</blockquote>
 				</li>
 
@@ -425,13 +444,27 @@
 			</p>
 
 			<p>
-				str(head(tweetList,1)  This output is also long, but not quite as long.
+				str(head(tweetList,1) 
+			</p>
+			<p> 
+				This output is also long, but not quite as long.
 			</p>
 
-			<figure>
-	<image source="media/image54.png"/>
-				<caption>output from str(head(tweetList,1)</caption>
-</figure>
+			<figure xml:id="ch10-str-head-tweetList">
+				<image source="str-head-tweetList.png" width = '100%'>
+					<shortdescription>
+						<p>
+							The image displays a console output showing the structure of a single tweet object. It details various fields within the tweet, such as text, favorited status, creation date, and screen name, along with associated methods.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+								The image is a screenshot of a console window, likely an R console, displaying the output of the command str(head(tweetlist,1)). This command is used to show the structure of the first element from a list named tweetlist, which appears to contain tweet data. The output indicates that the element is a "Reference class 'status' [package 'twitterR']" object, possessing 10 fields. These fields are text, favorited, replyToSN, created, truncated, replyToSID, id, replyToUID, statusSource, and screenName.
+								Below the fields, a list of 33 methods is shown, with 22 of them highlighted as "possibly relevant." These methods include common operations such as getCreated, getFavorited, getId, getText, getScreenName, and toDataFrame, suggesting functions to access or manipulate the tweet object's data. 
+						</p>
+					</description>
+				</image>
+			</figure>
 
 			<p>
 				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "status" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
@@ -578,8 +611,23 @@
 			</p>
 
 			<p>
-				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. <image source='media/image51.png'/>
+				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. 
+				
 			</p>
+			<figure xml:id="ch10-histogram-created">
+				<image source="histogram-created.png" width = '100%'>
+					<shortdescription>
+						<p>
+							this is a histogram showing the number of tweets made with the hashtag climate between 4:20am and 10:10am.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+							this image is a histogram of tweets containing te hashtag #climate over time from 4:20 AM to 10:10 AM. there are 22 bars representing roughly a quarter of an hour. the distrobution has no real shape, but may show some growth towards the end.
+						</p> 
+					</description>
+					</image>
+			</figure>
 
 			<p>
 				Take note of something very important about these data: It doesn’t make much sense to work with a measure of central tendency. Remember a couple of chapters ago when we were looking at the number of people who resided in different U.S. states? In that case it made sense to say that if State A had one million people and State B had three million people, then the average of these two states was two million people. When you’re working with timestamps, it doesn’t make a whole lot of sense to say that one tweet arrived at 7 AM and another arrived at 9 AM so the average is 8 AM. Fortunately, there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "Poisson Distribution" (named after Simeon Denis Poisson, who published it about half a century before von Bortkiewicz found a use for it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
@@ -638,8 +686,22 @@
 			</p>
 
 			<p>
-				&gt; hist(as.integer(diff(created))) <image source='media/image27.png'/>
+				&gt; hist(as.integer(diff(created)))
 			</p>
+			<figure xml:id="ch10-histogram-as-integer">
+				<image source="histogram-as-integer.png" width = '100%'>
+					<shortdescription>
+						<p>
+							this is a histogram showing the trend of time between 500 tweets.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+							this histogram shows the difference in time between 500 tweets over time, and the data follows an exponential decrease showing that as more tweets are made the gap betweeen tem decreases.
+						</p> 
+					</description>
+					</image>
+			</figure>
 
 			<p>
 				As with earlier commands, we use as.integer() to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
@@ -722,8 +784,17 @@
 			</p>
 
 			<p>
-				And where we have a ratio, we often can think about it as a probability: There is a 29% probability that the next tweet will arrive in 10 seconds or less. You could make a function to create a whole list of these probabilities. Some sample code for such a function appears at the end of the chapter. Some new scripting skills that we have not yet covered (for example, the "for loop") appear in this function, but try making sense out of it to stretch your brain. Output from this function created the plot that appears below. <image source='media/image39.png'/>
+				And where we have a ratio, we often can think about it as a probability: There is a 29% probability that the next tweet will arrive in 10 seconds or less. You could make a function to create a whole list of these probabilities. Some sample code for such a function appears at the end of the chapter. Some new scripting skills that we have not yet covered (for example, the "for loop") appear in this function, but try making sense out of it to stretch your brain. Output from this function created the plot that appears below. 
 			</p>
+			<figure xml:id="ch10-graph-plist">
+				<image source="graph-plist.png" width = '100%'>
+					<shortdescription>
+						<p>
+							explained in the following paragraph
+						</p>
+					</shortdescription>
+					</image>
+			</figure>
 
 			<p>
 				This is a classic Poisson distribution of arrival probabilities. The x-axis contains 10 second intervals (so by the time you see the number 5 on the x-axis, we are already up to 50 seconds). This is called a cumulative probability plot and you read it by talking about the probability that the next tweet will arrive in the amount of time indicated on the x-axis or less. For example, the number five on the x-axis corresponds to about a 60% probability on the y-axis, so there is a 60% probability that the next tweet will arrive in 50 seconds or less. Remember that this estimate applies only to the data in this sample!

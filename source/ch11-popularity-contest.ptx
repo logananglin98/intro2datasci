@@ -877,80 +877,35 @@
 			<subsection xml:id="r-script-create-vector-of-probabilities-from-delay-times">
 				<title> <term>R Script Create Vector of Probabilities From Delay Times</term> </title>
 
-				<p>
-					# Like ArrivalProbability, but works with unsorted list
-				</p>
+					<p>
+					<sage language="r">
+						<input>
+							&#35; Like ArrivalProbability, but works with unsorted list of delay times
+							DelayProbability &lt;- function(delays, increment, max) &#123;
+							&#35; Initialize an empty vector
+							plist &lt;- NULL
 
-				<p>
-					# of delay times
-				</p>
+							&#35; Probability is defined over the size of this sample of arrival times
+							delayLen &lt;- length(delays)
 
-				<p>
-					DelayProbability&lt;-function(delays, increment, max)
-				</p>
+							&#35; May not be necessary, but checks for input mistake
+							if (increment &gt; max) &#123;
+								return(NULL)
+							&#125;
 
-				<p>
-					{
-				</p>
+							for (i in seq(increment, max, by = increment)) &#123;
+								&#35; logical test &lt;= i provides list of TRUEs and FALSEs
+								&#35; of length = timeLen, then sum() counts the TRUEs
+								plist &lt;- c(plist, (sum(delays &lt;= i) / delayLen))
+							&#125;
 
-				<p>
-					# Initialize an empty vector
-				</p>
+							return(plist)
+							&#125;
+						</input>
+					</sage>
+					</p>
 
-				<p>
-					plist &lt;- NULL
-				</p>
 
-				<p>
-					# Probability is defined over the size of this sample
-				</p>
 
-				<p>
-					# of arrival times
-				</p>
-
-				<p>
-					delayLen &lt;- length(delays)
-				</p>
-
-				<p>
-					# May not be necessary, but checks for input mistake
-				</p>
-
-				<p>
-					if (increment&gt;max) {return(NULL)}
-				</p>
-
-				<p>
-					for (i in seq(increment, max, by=increment))
-				</p>
-
-				<p>
-					{
-				</p>
-
-				<p>
-					# logical test &lt;=i provides list of TRUEs and FALSEs
-				</p>
-
-				<p>
-					# of length = timeLen, then sum() counts the TRUEs
-				</p>
-
-				<p>
-					plist&lt;-c(plist,(sum(delays&lt;=i)/delayLen))
-				</p>
-
-				<p>
-					}
-				</p>
-
-				<p>
-					return(plist)
-				</p>
-
-				<p>
-					}
-				</p>
-      </subsection>
+      		</subsection>
 </chapter>

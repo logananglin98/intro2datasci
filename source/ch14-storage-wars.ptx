@@ -46,18 +46,11 @@
 					Of course, we skipped ahead a bit here because we assumed that an appropriate file of data was available. It might be useful to see some examples of human readable data:
 				</p>
 
-				<p>
-					Name Age Gender
-				</p>
-
-				<p>
-					"Fred" 22 "M"
-				</p>
-
-				<p>
-					"Ginger" 21 "F"
-				</p>
-
+				<pre>
+						Name Age Gender
+						"Fred" 22 "M"
+						"Ginger" 21 "F"
+				</pre>
 				<p>
 					Of course you can’t see the tab characters on the screen, but there is one tab character in between each pair of values. In each case, for both command tab-delimited, one line equals one row. The end of a line is marked, invisibly, with a so-called "newline" character. On occasion you may run into differences between different operating systems on how this end of line designation is encoded.
 				</p>
@@ -65,18 +58,11 @@
 				<p>
 					The above is a very simple example of a comma-delimited file where the first row contains a "header," i.e. the information about the names of variables. The second and subsequent rows contain actual data. Each field is separated by a comma, and the text strings are enclosed in double quotes. The same file tab-delimited might look like this:
 				</p>
-
-				<p>
+			<pre>
 					Name Age Gender
-				</p>
-
-				<p>
 					"Fred" 22 "M"
-				</p>
-
-				<p>
 					"Ginger" 21 "F"
-				</p>
+			</pre>
 
 				<p>
 					Files containing comma or tab delimited data are ubiquitous across the Internet, but sometimes we would like to gain direct access to binary files in other formats. There are a variety of packages that one might use to access binary data. A comprehensive access list appears here:
@@ -107,39 +93,22 @@
 				</p>
 
 				<p>
-					Begin by using install.package() and library() functions to prepare the gdata package for use:
+					Begin by using <c>install.package()</c> and <c>library()</c> functions to prepare the gdata package for use:
+				</p>
+				<pre>
+						&gt; install.packages("gdata")
+						# ... lots of output here
+						&gt; library("gdata")
+						gdata: read.xls support for 'XLS' (Excel 97-2004) files
+						gdata: ENABLED.
+						gdata: read.xls support for 'XLSX' (Excel 2007+) files ENABLED.
+				</pre>
+				<p>
+					Of course, you could also use the <c>EnsurePackage()</c> function that we developed in an earlier chapter, but it was important here to see the output from the <c>library()</c> function. Note that the gdata package reported some diagnostics about the different versions of Excel data that it supports. Note that this is one of the major drawbacks of binary data formats, particularly proprietary ones: you have to make sure that you have the right software to access the different versions of data that you might encounter. In this case it looks like we are covered for the early versions of Excel (97-2004) as well as later versions of Excel (2007+). We must always be on the lookout, however, for data that is stored in even newer versions of Excel that may not be supported by gdata or other packages.
 				</p>
 
 				<p>
-					&gt; install.packages("gdata")
-				</p>
-
-				<p>
-					# ... lots of output here
-				</p>
-
-				<p>
-					&gt; library("gdata")
-				</p>
-
-				<p>
-					gdata: read.xls support for 'XLS' (Excel 97-2004) files
-				</p>
-
-				<p>
-					gdata: ENABLED.
-				</p>
-
-				<p>
-					gdata: read.xls support for 'XLSX' (Excel 2007+) files ENABLED.
-				</p>
-
-				<p>
-					Of course, you could also use the EnsurePackage() function that we developed in an earlier chapter, but it was important here to see the output from the library() function. Note that the gdata package reported some diagnostics about the different versions of Excel data that it supports. Note that this is one of the major drawbacks of binary data formats, particularly proprietary ones: you have to make sure that you have the right software to access the different versions of data that you might encounter. In this case it looks like we are covered for the early versions of Excel (97-2004) as well as later versions of Excel (2007+). We must always be on the lookout, however, for data that is stored in even newer versions of Excel that may not be supported by gdata or other packages.
-				</p>
-
-				<p>
-					Now that gdata is installed, we can use the read.xls() function that it provides. The documentation for the gdata package and the read.xls() function is located here:
+					Now that gdata is installed, we can use the <c>read.xls()</c> function that it provides. The documentation for the gdata package and the <c>read.xls()</c> function is located here:
 				</p>
 
 				<p>
@@ -151,33 +120,16 @@
 				</p>
 
 				<p>
-					a very early chapter in this book, you may remember that we accessed some census data that had population counts for all the different U.S. states. For this example, we are going to read the Excel file containing that data directly into a dataframe using the read.xls() function:
+					a very early chapter in this book, you may remember that we accessed some census data that had population counts for all the different U.S. states. For this example, we are going to read the Excel file containing that data directly into a dataframe using the <c>read.xls()</c> function:
 				</p>
-
-				<p>
-					&gt; testFrame&lt;-read.xls( + "http://www.census.gov/popest/data/state/totals/2011/ tables/NST-EST2011-01.xls")
-				</p>
-
-				<p>
-					trying URL 'http://www.census.gov/popest/data/state/totals/2011/ tables/NST-EST2011-01.xls'
-				</p>
-
-				<p>
-					Content type 'application/vnd.ms-excel' length 31232 bytes (30 Kb)
-				</p>
-
-				<p>
-					opened URL
-				</p>
-
-				<p>
-					==================================================
-				</p>
-
-				<p>
-					downloaded 30 Kb
-				</p>
-
+				<pre>
+						&gt; testFrame&lt;-read.xls( + "http://www.census.gov/popest/data/state/totals/2011/ tables/NST-EST2011-01.xls")
+						trying URL 'http://www.census.gov/popest/data/state/totals/2011/ tables/NST-EST2011-01.xls'
+						Content type 'application/vnd.ms-excel' length 31232 bytes (30 Kb)
+						opened URL
+						==================================================
+						downloaded 30 Kb
+				</pre>
 				<p>
 					The command in the first three lines above provides the URL of the Excel file to the read.xls() function. The subsequent lines of output show the function attempting to open the URL, succeeding, and downloading 30 kilobytes of data.
 				</p>
@@ -186,81 +138,59 @@
 					Next, let’s take a look at what we got back. In R-Studio we can click on the name of the dataframe in the upper right hand data pane or we can use this command:
 				</p>
 
-				<p>
+				<pre>
 					&gt; View(testFrame)
-				</p>
+				</pre>
 
 				<p>
-					Either method will show the contents of the dataframe in the upper left hand window of R-Studio. Alternatively, we could use the str() function to create a summary of the structure of testFrame:
+					Either method will show the contents of the dataframe in the upper left hand window of R-Studio. Alternatively, we could use the <c>str()</c> function to create a summary of the structure of testFrame:
 				</p>
 
-				<p>
+				<pre>
 					&gt; str(testFrame)
-				</p>
 
-				<p>
 					'data.frame': 65 obs. of 10 variables:
-				</p>
 
-				<p>
-					$ <sub>table.with.row.headers.in.column.A.and.column.hea</sub> ders.in.rows.3.through.4...leading.dots.indicate. sub.parts.: Factor w/ 65 levels "",".Alabama",..: 62 53 1 64 55 54 60 65 2 3 ...
-				</p>
+					$ table.with.row.headers.in.column.A.and.column.headers.in.rows.3.through.4...leading.dots.indicate. sub.parts.: Factor w/ 65 levels "",".Alabama",..: 62 53 1 64 55 54 60 65 2 3 ...
 
-				<p>
 					$ X : Factor w/ 60 levels "","1,052,567",..: 1 59 60 27 38 47 10 49 32 50 ...
-				</p>
 
-				<p>
 					$ X.1 : Factor w/ 59 levels "","1,052,567",..: 1 1 59 27 38 47 10 49 32 50 ...
-				</p>
 
-				<p>
 					$ X.2 : Factor w/ 60 levels "","1,052,528",..: 1 60 21 28 39 48 10 51 33 50 ...
-				</p>
 
-				<p>
 					$ X.3 : Factor w/ 59 levels "","1,051,302",..: 1 1 21 28 38 48 10 50 33 51 ...
-				</p>
 
-				<p>
 					$ X.4 : logi NA NA NA NA NA NA ...
-				</p>
 
-				<p>
 					$ X.5 : logi NA NA NA NA NA NA ...
-				</p>
 
-				<p>
 					$ X.6 : logi NA NA NA NA NA NA ...
-				</p>
 
-				<p>
 					$ X.7 : logi NA NA NA NA NA NA ...
-				</p>
 
-				<p>
 					$ X.8 : logi NA NA NA NA NA NA ...
-				</p>
+				</pre>
 
 				<p>
 					The last few lines are reminiscent of that late 60s song entitled, ""Na Na Hey Hey Kiss Him Goodbye." Setting aside all the NA NA NA NAs, however, the overall structure is 65 observations of 10 variables, signifying that the spreadsheet contained 65 rows and 10 columns of data. The variable names that follow are pretty bizarre. The first variable name is: "table.with.row.headers.in.column.A.and.column.headers.in.rows. 3.through.4...leading.dots.indicate.sub.parts."
 				</p>
 
 				<p>
-					What a mess! It is clear that read.xls() treated the upper leftmost cell as a variable label, but was flummoxed by the fact that this was really just a note to human users of the spreadsheet (the variable labels, such as they are, came on lower rows of the spreadsheet). Subsequent variable names include X, X.1, and X.2: clearly the read.xls() function did not have an easy time getting the variable names out of this file.
+					What a mess! It is clear that <c>read.xls()</c> treated the upper leftmost cell as a variable label, but was flummoxed by the fact that this was really just a note to human users of the spreadsheet (the variable labels, such as they are, came on lower rows of the spreadsheet). Subsequent variable names include X, X.1, and X.2: clearly the read.xls() function did not have an easy time getting the variable names out of this file.
 				</p>
 
 				<p>
-					The other worrisome finding from str() is that all of our data are "factors." This indicates that R did not see the incoming data as numbers, but rather as character strings that it interpreted as factor data. Again, this is a side effect of the fact that some of the first cells that read.xls() encountered were text rather than numeric. The numbers came much later in the sheet. This also underscores the idea that it is much better to export a data set in a more regular, structured format such as CSV rather than in the original spreadsheet format. Clearly we have some work to do if we are to make use of these data as numeric population values.
+					The other worrisome finding from <c>str()</c> is that all of our data are "factors." This indicates that R did not see the incoming data as numbers, but rather as character strings that it interpreted as factor data. Again, this is a side effect of the fact that some of the first cells that read.xls() encountered were text rather than numeric. The numbers came much later in the sheet. This also underscores the idea that it is much better to export a data set in a more regular, structured format such as CSV rather than in the original spreadsheet format. Clearly we have some work to do if we are to make use of these data as numeric population values.
 				</p>
 
 				<p>
 					First, we will use an easy trick to get rid of stuff we don’t need. The Census bureau put in three header rows that we can eliminate like this:
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame&lt;-testFrame[-1:-3,]
-				</p>
+				</pre>
 
 				<p>
 					The minus sign used inside the square brackets refers to the index of rows that should be eliminated from the dataframe. So the notation -1:-3 gets rid of the first three rows. We also leave the column designator empty so that we can keep all columns for now. So the interpretation of all of the notation within the square brackets is that rows 1 through 3 should be dropped, all other rows should be included, and all columns should be included. We assign the result back to the same data object thereby replacing the original with our new, smaller, cleaner version.
@@ -270,121 +200,98 @@
 					Next, we know that of the ten variables we got from read.xls(), only the first five are useful to us (the last five seem to be blank). So this command keeps the first five columns of the dataframe:
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame&lt;-testFrame[,1:5]
-				</p>
+				</pre>
 
-				<p>
-					In the same vein, the tail() function shows us that the last few rows just contained some census bureau notes:
-				</p>
+				<pre>
+					In the same vein, the tail() function 
+					shows us that the last few rows just contained some census bureau notes:
+				</pre>
 
-				<p>
+				<pre>
 					&gt; tail(testFrame,5)
-				</p>
+				</pre>
 
 				<p>
 					So we can safely eliminate those like this:
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame&lt;-testFrame[-58:-62,]
-				</p>
+				</pre>
 
 				<p>
 					If you’re alert you will notice that we could have combined some of these commands, but for the sake of clarity we have done each operation individually. The result (which you can check in the upper right hand pane of R-Studio) is a dataframe with 57 rows and five observations. Now we are ready to perform a couple of data transformations. Before we start these, let’s give our first column a more reasonable name:
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame$region &lt;- testFrame[,1]
-				</p>
+				</pre>
 
 				<p>
 					We’ve used a little hack here to avoid typing out the ridiculously long name of that first variable/column. We’ve used the column notation in the square brackets on the right hand side of the expression to refer to the first column (the one with the ridiculous name) and simply copied the data into a new column entitled "region." Let’s also remove the offending column with the stupid name so that it does not cause us problems later on:
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame&lt;-testFrame[,-1]
-				</p>
+				</pre>
 
 				<p>
 					Next, we can change formats and data types as needed. We can remove the dots from in front of the state names very easily with str_replace():
 				</p>
 
-				<p>
+				<pre>
 					&gt; testFrame$region &lt;str_replace( +
-				</p>
+				</pre>
 
-				<p>
+				<pre>
 					testFrame$region,"\\.","")
+				</pre>
+
+				<p>
+					Don’t forget that <c>str_replace()</c> is part of the stringr package, and you will have to use install.packages() and library() to load it if it is not already in place. The two backslashes in the string expression above are called "escape characters" and they force the dot that follows to be treated as a literal dot rather than as a wildcard character. The dot on its own is a wildcard that matches one instance of any character.
 				</p>
 
 				<p>
-					Don’t forget that str_replace() is part of the stringr package, and you will have to use install.packages() and library() to load it if it is not already in place. The two backslashes in the string expression above are called "escape characters" and they force the dot that follows to be treated as a literal dot rather than as a wildcard character. The dot on its own is a wildcard that matches one instance of any character.
+					Next, we can use str_replace_all() and <c>as.numeric()</c> to convert the data contained in the population columns to usable numbers. Remember that those columns are now represented as R "factors" and what we are doing is taking apart the factor labels (which are basically character strings that look like this: "308,745,538") and making them into numbers. This is sufficiently repetitive that we could probably benefit by created our own function call to do it:
 				</p>
 
-				<p>
-					Next, we can use str_replace_all() and as.numeric() to convert the data contained in the population columns to usable numbers. Remember that those columns are now represented as R "factors" and what we are doing is taking apart the factor labels (which are basically character strings that look like this: "308,745,538") and making them into numbers. This is sufficiently repetitive that we could probably benefit by created our own function call to do it:
-				</p>
+			<pre>
+# Numberize() Gets rid of commas and other junk and
 
-				<p>
-					# Numberize() Gets rid of commas and other junk and
-				</p>
+# converts to numbers
 
-				<p>
-					# converts to numbers
-				</p>
+# Assumes that the inputVector is a list of data that
 
-				<p>
-					# Assumes that the inputVector is a list of data that
-				</p>
+# can be treated as character strings
 
-				<p>
-					# can be treated as character strings
-				</p>
+Numberize &lt;- function(inputVector) {
 
-				<p>
-					Numberize &lt;- function(inputVector) {
-				</p>
+# Get rid of commas
 
-				<p>
-					# Get rid of commas
-				</p>
+inputVector&lt;-str_replace_all(inputVector,",","")
 
-				<p>
-					inputVector&lt;-str_replace_all(inputVector,",","")
-				</p>
+# Get rid of spaces
 
-				<p>
-					# Get rid of spaces
-				</p>
+inputVector&lt;-str_replace_all(inputVector," ","") return(as.numeric(inputVector))
 
-				<p>
-					inputVector&lt;-str_replace_all(inputVector," ","") return(as.numeric(inputVector))
-				</p>
-
-				<p>
-					}
-				</p>
+}
+			</pre>
 
 				<p>
 					This function is flexible in that it will deal with both unwanted commas and spaces, and will convert strings into numbers whether they are integers or not (i.e., possibly with digits after the decimal point). So we can now run this a few times to create new vectors on the dataframe that contain the numeric values we wanted:
 				</p>
 
-				<p>
-					testFrame$april10census &lt;-Numberize(testFrame$X)
-				</p>
+		<pre>
+testFrame$april10census &lt;-Numberize(testFrame$X)
 
-				<p>
-					testFrame$april10base &lt;-Numberize(testFrame$X.1)
-				</p>
+testFrame$april10base &lt;-Numberize(testFrame$X.1)
 
-				<p>
-					testFrame$july10pop &lt;-Numberize(testFrame$X.2)
-				</p>
+testFrame$july10pop &lt;-Numberize(testFrame$X.2)
 
-				<p>
-					testFrame$july11pop &lt;-Numberize(testFrame$X.3)
-				</p>
+testFrame$july11pop &lt;-Numberize(testFrame$X.3)
+		</pre>
 
 				<p>
 					By the way, the choice of variable names for the new columns in the dataframe was based on an examination of the original data set that was imported by read.xls(). You can (and should) confirm that the new columns on the dataframe are numeric. You can use str() to accomplish this.
@@ -517,100 +424,74 @@
 					Returning to R, use install.packages() and library() to prepare the RMySQL package for use. If everything is working the way it should, you should be able to run the following command from the command line:
 				</p>
 
-				<p>
+				<pre>
 					&gt; con &lt;- dbConnect(dbDriver("MySQL"), dbname = "test")
-				</p>
+				</pre>
 
 				<p>
 					The dbConnect() function establishes a linkage or "connection" between R and the database we want to use. This underscores the point that we are connecting to an "external" resource and we must therefore manage the connection. If there were security controls involved, this is where we would provide the necessary information to establish that we were authorized users of the database. In this case, because we are on a "local server" of MySQL, we don’t need to provide these. The dbDriver() function provided as an argument to dbConnect specifies that we want to use a MySQL client. The database name specified as dbname="test" is just a placeholder at this point. We can use the dbListTables() function to see what tables are accessible to us (for our purposes, a table is just like a dataframe, but it is stored inside the database system):
 				</p>
 
-				<p>
+				<pre>
 					&gt; dbListTables(con)
-				</p>
 
-				<p>
 					character(0)
-				</p>
+				</pre>
 
 				<p>
 					The response "character(0)" means that there is an empty list, so no tables are available to us. This is not surprising, because we just installed MySQL and have not used it for anything yet. Unless you have another database available to import into MySQL, we can just use the census data we obtained earlier in the chapter to create a table in MySQL:
 				</p>
 
-				<p>
+				<pre>
 					&gt; dbWriteTable(con, "census", testFrame, +
-				</p>
 
-				<p>
 					overwrite = TRUE)
-				</p>
 
-				<p>
 					[1] TRUE
+				</pre>
+
+				<p>
+					Take note of the arguments supplied to the <c>dbWriteTable()</c> function. The first argument provides the database connection that we established with the <c>dbConnect()</c> function. The "census" argument gives our new table in MySQL a name. We use testFrame as the source of data as noted above a dataframe and a relational database table are very similar in structure. Finally, we provide the argument overwrite=TRUE, which was not really needed in this case because we know that there were no existing tables but could be important in other operations where we need to make sure to replace any old table that may have been left around from previous work. The function returns the logical value TRUE to signal that it was able to finish the request that we made. This is important in programming new functions because we can use the signal of success or failure to guide subsequent steps and provide error or success messages.
 				</p>
 
 				<p>
-					Take note of the arguments supplied to the dbWriteTable() function. The first argument provides the database connection that we established with the dbConnect() function. The "census" argument gives our new table in MySQL a name. We use testFrame as the source of data as noted above a dataframe and a relational database table are very similar in structure. Finally, we provide the argument overwrite=TRUE, which was not really needed in this case because we know that there were no existing tables but could be important in other operations where we need to make sure to replace any old table that may have been left around from previous work. The function returns the logical value TRUE to signal that it was able to finish the request that we made. This is important in programming new functions because we can use the signal of success or failure to guide subsequent steps and provide error or success messages.
+					Now if we run <c>dbListTables()</c> we should see our new table:
 				</p>
 
-				<p>
-					Now if we run dbListTables() we should see our new table:
-				</p>
-
-				<p>
+				<pre>
 					&gt; dbListTables(con)
-				</p>
 
-				<p>
 					[1] "census"
-				</p>
+				</pre>
 
 				<p>
 					Now we can run an SQL query on our table:
 				</p>
 
-				<p>
+				<pre>
 					&gt; dbGetQuery(con, "SELECT region, july11pop FROM census WHERE july11pop&lt;1000000")
-				</p>
 
-				<p>
 					region july11pop
-				</p>
 
-				<p>
 					1 Alaska 722718
-				</p>
 
-				<p>
 					2 Delaware 907135
-				</p>
 
-				<p>
 					3 District of Columbia 617996
-				</p>
 
-				<p>
 					4 Montana 998199
-				</p>
 
-				<p>
 					5 North Dakota 683932
-				</p>
 
-				<p>
 					6 South Dakota 824082
-				</p>
 
-				<p>
 					7 Vermont 626431
-				</p>
 
-				<p>
 					8 Wyoming 568158
-				</p>
+				</pre>
 
 				<p>
-					Note that the dbGetQuery() call shown above breaks onto two lines, but the string starting with SELECT has to be typed all on one line. The capitalized words in that string are the SQL commands. It is beyond the scope of this chapter to give an SQL tutorial, but, briefly, SELECT chooses a subset of the table and the fields named after select are the ones that will appear in the result. The FROM command choose the table(s) where the data should come from. The WHERE command specified a condition, in this case that we only wanted rows where the July 2011 population was less than one million. SQL is a powerful and flexible language and this just scratches the surface.
+					Note that the <c>dbGetQuery()</c> call shown above breaks onto two lines, but the string starting with SELECT has to be typed all on one line. The capitalized words in that string are the SQL commands. It is beyond the scope of this chapter to give an SQL tutorial, but, briefly, SELECT chooses a subset of the table and the fields named after select are the ones that will appear in the result. The FROM command choose the table(s) where the data should come from. The WHERE command specified a condition, in this case that we only wanted rows where the July 2011 population was less than one million. SQL is a powerful and flexible language and this just scratches the surface.
 				</p>
 
 				<p>
@@ -665,69 +546,49 @@
 					The tutorial example first demonstrates how a repetitive operation is accomplished in R without the use of MapReduce. In prior chapters we have used several variations of the apply() function. The lapply() or list-apply is one of the simplest. You provide an input vector of values and a function to apply to each element, and the lapply() function does the heavy lifting. The example in the RHadoop tutorial squares each integer from one to 10. This first command fills a vector with the input data:
 				</p>
 
-				<p>
+				<pre>
 					&gt; small.ints &lt;1:10
-				</p>
 
-				<p>
 					&gt; small.ints
-				</p>
 
-				<p>
 					[1] 1 2 3 4 5 6 7 8 9 10
-				</p>
+				</pre>
 
 				<p>
 					Next we can apply the "squaring function" (basically just using the ^ operator) to each element of the list:
 				</p>
 
-				<p>
+				<pre>
 					&gt; out &lt;lapply(small.ints, function(x) x^2)
-				</p>
 
-				<p>
 					&gt; out
-				</p>
 
-				<p>
 					[[1]]
-				</p>
 
-				<p>
 					[1] 1
-				</p>
 
-				<p>
 					[[2]]
-				</p>
 
-				<p>
 					[1] 4
-				</p>
 
-				<p>
 					... (shows all of the values up to [[10]] [1] 100)
-				</p>
+				</pre>
 
 				<p>
-					In the first command above, we have used lapply() to perform a function on the input vector small.ints. We have defined the function as taking the value x and returning the value x^2. The result is a list of ten vectors (each with just one element) containing the squares of the input values. Because this is such a small problem, R was able to accomplish it in a tiny fraction of a second.
+					In the first command above, we have used <c>lapply()</c> to perform a function on the input vector small.ints. We have defined the function as taking the value x and returning the value x^2. The result is a list of ten vectors (each with just one element) containing the squares of the input values. Because this is such a small problem, R was able to accomplish it in a tiny fraction of a second.
 				</p>
 
 				<p>
 					After installing both Hadoop and RHadoop which, again, is not an official package, and therefore has to be installed manually we can perform this same operation with two commands:
 				</p>
 
-				<p>
+				<pre>
 					&gt; small.ints &lt;- to.dfs(1:10)
-				</p>
 
-				<p>
 					&gt; out &lt;- mapreduce(input = small.ints, +
-				</p>
 
-				<p>
 					map = function(k,v) keyval(v, v^2))
-				</p>
+				</pre>
 
 				<p>
 					In the first command, we again create a list of integers from one to ten. But rather than simply storing them in a vector, we are using the "distributed file system" or dfs class that is provided by RHadoop. Note that in most cases we would not need to create this ourselves because our large dataset would already exist on the HDFS (Hadoop Distributed FIle System). We would have connected to
@@ -742,7 +603,7 @@
 				</p>
 
 				<p>
-					The keyval() function, for which there is no documentation at this writing, is characterized as a "helper" function in the tutorial. In this case it is clear that the first argument to keyval, "v" is the integer to which the process must be applied, and the second argument, "v^2" is the squaring function that is applied to each argument. The data returned by mapreduce() is functionally equivalent to that returned by lapply(), i.e., a list of the squares of the integers from 1 to 10.
+					The <c>keyval()</c> function, for which there is no documentation at this writing, is characterized as a "helper" function in the tutorial. In this case it is clear that the first argument to keyval, "v" is the integer to which the process must be applied, and the second argument, "v^2" is the squaring function that is applied to each argument. The data returned by mapreduce() is functionally equivalent to that returned by lapply(), i.e., a list of the squares of the integers from 1 to 10.
 				</p>
 
 				<p>

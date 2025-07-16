@@ -59,7 +59,7 @@
 				</p>
 
 				<p>
-					<image source='media/image18.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
+					<image source='histogram-rpois-3.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
 				</p>
 
 				<p>
@@ -91,7 +91,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image28.png"/>
+	<image source="histogram-rpois-10.png"/>
 					<caption>Histogram of hist(rpois(1000,10))</caption>
 </figure>
 
@@ -132,7 +132,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image16.png"/>
+	<image source="graph-delay-probability.png"/>
 					<caption>&gt; plot(DelayProbability(rpois(100,10),1,20), col=2) &gt; points(DelayProbability(rpois(100,3),1,20), col=3) </caption>
 </figure>
 
@@ -161,7 +161,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image33.png"/>
+	<image source="delay-probability-multiples.png"/>
 					<caption>plot using for loop</caption>
 </figure>
 
@@ -206,7 +206,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image2.png"/>
+	<image source="graph-logistic.png"/>
 					<caption></caption>
 </figure>
 
@@ -495,7 +495,7 @@
 				</p>
 
 				<figure>
-	<image source="media/image37.png"/>
+	<image source="gaga-oprah.png"/>
 					<caption>Gaga vs Obra Tweets</caption>
 </figure>
 
@@ -814,124 +814,98 @@
 
 				</ul></p>
 
-				<p>
-					<term>Question:</term> The Poisson distribution has a characteristic shape that would be described as:
-				</p>
-
-				<p><ol>
-					<li>
-									<blockquote>
-														<p>
-										Negatively (left) skewed
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										Positively (right) skewed
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										Symmetric (not skewed)
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										None of these
-									</p>
-									</blockquote>
-					</li>
-
-				</ol></p>
+				<exercise label="mc-poisson-shape" xml:id="mc-poisson-shape">
+					<statement>
+						<p>
+							The Poisson distribution has a characteristic shape that would be described as:
+						</p>
+					</statement>
+					<choices>
+						<choice>
+							<statement>
+								<p>
+									Negatively (left) skewed
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Not quite. Think about where the tail would be when events are rare.
+								</p>
+							</feedback>
+						</choice>
+						<choice correct ="yes">
+							<statement>
+								<p>
+									Positively (right) skewed
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Correct! The Poisson distribution is typically positively skewed, especially when the mean (λ) is small. As λ increases, the distribution becomes more symmetric, but it still retains a slight right skew.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									Symmetric (not skewed)
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									No, the Poisson distribution is not symmetric, particularly when the mean is small. Only when the mean becomes large does the distribution approach symmetry, resembling a normal distribution.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									None of these
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Not quite. One of the listed options correctly describes the typical shape of the Poisson distribution, especially when the mean is low. Consider the direction of skewness in the distribution.
+								</p>
+							</feedback>
+						</choice>
+					</choices>
+				</exercise>
 
 			</subsection>
 
 			<subsection xml:id="r-script-create-vector-of-probabilities-from-delay-times">
 				<title> <term>R Script Create Vector of Probabilities From Delay Times</term> </title>
 
-				<p>
-					# Like ArrivalProbability, but works with unsorted list
-				</p>
+					<p>
+					<sage language="r">
+						<input>
+							&#35; Like ArrivalProbability, but works with unsorted list of delay times
+							DelayProbability &lt;- function(delays, increment, max) &#123;
+							&#35; Initialize an empty vector
+							plist &lt;- NULL
 
-				<p>
-					# of delay times
-				</p>
+							&#35; Probability is defined over the size of this sample of arrival times
+							delayLen &lt;- length(delays)
 
-				<p>
-					DelayProbability&lt;-function(delays, increment, max)
-				</p>
+							&#35; May not be necessary, but checks for input mistake
+							if (increment &gt; max) &#123;
+								return(NULL)
+							&#125;
 
-				<p>
-					{
-				</p>
+							for (i in seq(increment, max, by = increment)) &#123;
+								&#35; logical test &lt;= i provides list of TRUEs and FALSEs
+								&#35; of length = timeLen, then sum() counts the TRUEs
+								plist &lt;- c(plist, (sum(delays &lt;= i) / delayLen))
+							&#125;
 
-				<p>
-					# Initialize an empty vector
-				</p>
+							return(plist)
+							&#125;
+						</input>
+					</sage>
+					</p>
 
-				<p>
-					plist &lt;- NULL
-				</p>
 
-				<p>
-					# Probability is defined over the size of this sample
-				</p>
 
-				<p>
-					# of arrival times
-				</p>
-
-				<p>
-					delayLen &lt;- length(delays)
-				</p>
-
-				<p>
-					# May not be necessary, but checks for input mistake
-				</p>
-
-				<p>
-					if (increment&gt;max) {return(NULL)}
-				</p>
-
-				<p>
-					for (i in seq(increment, max, by=increment))
-				</p>
-
-				<p>
-					{
-				</p>
-
-				<p>
-					# logical test &lt;=i provides list of TRUEs and FALSEs
-				</p>
-
-				<p>
-					# of length = timeLen, then sum() counts the TRUEs
-				</p>
-
-				<p>
-					plist&lt;-c(plist,(sum(delays&lt;=i)/delayLen))
-				</p>
-
-				<p>
-					}
-				</p>
-
-				<p>
-					return(plist)
-				</p>
-
-				<p>
-					}
-				</p>
-      </subsection>
+      		</subsection>
 </chapter>

@@ -8,6 +8,7 @@
     
 
   <introduction>
+    <image source="string-ball.png"> </image>
 				<p><em>
 					Text is, of course, one of the most common forms of human communication, hence the label that researchers use sometimes: natural language. When we say natural language text we mean words created by humans and for humans. With our cool computer technology, we have collectively built lots of ways of dealing with natural language text. At the most basic level, we have a great system for representing individual characters of text inside of computers called "Unicode." Among other things Unicode provides for a binary representation of characters in most of the world’s written languages, over 110,000 characters in all. Unicode supersedes ASCII (the American Standard Code for Information Interchange), which was one of the most popular standards (especially in the U.S.) for representing characters from the dawn of the computer age.
         </em></p>
@@ -46,10 +47,7 @@
   <subsection xml:id="ch12-exploring-data">
     <title>Exploring and Preparing the Tweet Data</title>
 
-				<figure>
-	<image source="media/image41.png"/>
-					<caption>head(tweetDF1)</caption>
-</figure>
+	<image source="head-tweerDF.png"/>
 
 				<p>
 					We provide a screenshot from R-Studio here just to preserve the formatting of this output. In the left hand margin, the number 97 represents R’s indexing of the original order in which the tweet was received. The tweets were re-sorted into arrival order by our enhanced TweetFrame() function (see the end of the chapter for code). So this is the first element in our dataframe, but internally R has numbered it as 97 out of the 100 tweets we obtained. On the first line of the output, R has placed the label "text" and this is the field name of the column in the dataframe that contains the texts of the tweets. Other dataframe fields that we will not be using in this chapter include: "favorited," "replyToSN," and "truncated." You may also recognize the field name "created" which contains the POSIX format time and date stamp that we used in previous chapters.
@@ -80,7 +78,11 @@
 				</p>
 
 				<p>
-					This screenshot confirms what we observed in the command line output, but gives us a much more appealing and convenient way of looking through our data. Before we start to manipulate our strings, let’s <idx>attach()</idx><term>attach()</term> tweetDF so that we don’t have to keep using the $ notation to access the text field. And before that, let’s check what is already attached with the attach() function:
+					dataframes, under the heading "Data." One of these should be "tweetDF." If you click on tweetDF, the data browser will open in the upper left hand pane of R-Studio and you should be able to see the first field or two of the first dozen rows. Here’s a screenshot: <image source='twitter-observations.png'/>
+				</p>
+
+				<p>
+					This screenshot confirms what we observed in the command line output, but gives us a much more appealing and convenient way of looking through our data. Before we start to manipulate our strings, let’s attach() tweetDF so that we don’t have to keep using the $ notation to access the text field. And before that, let’s check what is already attached with the search() function:
 				</p>
 
 				<p>
@@ -416,10 +418,7 @@
 					table(as.factor(rt))
 				</p>
 
-				<figure>
-	<image source="media/image52.png"/>
-					<caption>table(as.factor(rt))</caption>
-</figure>
+	<image source="table-as-factor-rt.png"/>
 
 				<p>
 					The as.factor() function is a type/mode coercion and just a new one in a family we have seen before. In previous chapters we used as.integer() and as.character() to perform other conversions. In R a <idx>factor</idx><term>factor</term> is a collection of descriptive labels and corresponding unique identifying numbers. The identifying numbers are not usually visible in outputs. Factors are often used for dividing up a dataset into categories. In a survey, for instance, if you had a variable containing the gender of a participant, the variable would frequently be in the form of a factor with (at least) two distinct categories (or what statisticians call levels), male and female. Inside R, each of these categories would be represented as a number, but the corresponding label would usually be the only thing you would see as output. As an experiment, try running this command:

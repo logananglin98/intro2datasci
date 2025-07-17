@@ -47,10 +47,12 @@
   <subsection xml:id="ch12-exploring-data">
     <title>Exploring and Preparing the Tweet Data</title>
 
-	<image source="head-tweerDF.png"/>
-	<shortdescription>
-		This image shows a section from an RStudio console displaying the first row of a tweet dataset (tweetDF).
-	</shortdescription>
+	<figure>
+		<image source="head-tweerDF.png"/>
+			<caption>
+				This image shows a section from an RStudio console displaying the first row of a tweet dataset (tweetDF).
+			</caption>
+	</figure>
 
 				<p>
 					We provide a screenshot from R-Studio here just to preserve the formatting of this output. In the left hand margin, the number 97 represents R’s indexing of the original order in which the tweet was received. The tweets were re-sorted into arrival order by our enhanced TweetFrame() function (see the end of the chapter for code). So this is the first element in our dataframe, but internally R has numbered it as 97 out of the 100 tweets we obtained. On the first line of the output, R has placed the label "text" and this is the field name of the column in the dataframe that contains the texts of the tweets. Other dataframe fields that we will not be using in this chapter include: "favorited," "replyToSN," and "truncated." You may also recognize the field name "created" which contains the POSIX format time and date stamp that we used in previous chapters.
@@ -81,10 +83,12 @@
 				</p>
 				
 				<p>
-					<image source='twitter-observations.png'/>
-					<caption>
-						This screenshot shows the data browser in R-Studio with the tweetDF dataframe selected.
-					</caption>
+					<figure>
+						<image source='twitter-observations.png'/>
+							<caption>
+								This screenshot shows the data browser in R-Studio with the tweetDF dataframe selected.
+							</caption>
+					</figure>
 				</p>
 				
 				<p>
@@ -424,7 +428,12 @@
 					table(as.factor(rt))
 				</p>
 
+				<figure>
 	<image source="table-as-factor-rt.png"/>
+	<caption>
+		This image shows the output of the table(as.factor(rt)) command, which summarizes the retweet screennames.
+	</caption>
+</figure>
 
 				<p>
 					The as.factor() function is a type/mode coercion and just a new one in a family we have seen before. In previous chapters we used as.integer() and as.character() to perform other conversions. In R a <idx>factor</idx><term>factor</term> is a collection of descriptive labels and corresponding unique identifying numbers. The identifying numbers are not usually visible in outputs. Factors are often used for dividing up a dataset into categories. In a survey, for instance, if you had a variable containing the gender of a participant, the variable would frequently be in the form of a factor with (at least) two distinct categories (or what statisticians call levels), male and female. Inside R, each of these categories would be represented as a number, but the corresponding label would usually be the only thing you would see as output. As an experiment, try running this command:

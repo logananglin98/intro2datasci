@@ -195,19 +195,37 @@
 				</p>
 
 				<p>
-					&gt; var(myFam$myFamAge)
+					<c>&gt; var(myFam$myFamAge)</c>
 				</p>
 
 				<p>
-					[1] 356.5
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							var(myFam$myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					&gt; sd(myFam$myFamAge)
+					<c>&gt; sd(myFam$myFamAge)</c>
 				</p>
-
+				
 				<p>
-					[1] 18.88121
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							sd(myFam$myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -215,19 +233,37 @@
 				</p>
 
 				<p>
-					&gt; var(c(43,42,12,8,5))
+					<c>&gt; var(c(43,42,12,8,5))</c>
 				</p>
 
 				<p>
-					[1] 356.5
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							var(c(43,42,12,8,5))
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					&gt; sd(c(43,42,12,8,5))
+					<c>&gt; sd(c(43,42,12,8,5))</c>
 				</p>
 
 				<p>
-					[1] 18.88121
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							sd(c(43,42,12,8,5))
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -316,7 +352,7 @@
 				</p>
 
 				<p>
-					This would be a great moment to practice your skills from the previous chapter by using the str() and summary() functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation "V1" or “...1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them "V1" or “...1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous "Rows and Columns" chapter for more information on addressing the columns in a dataframe.
+					This would be a great moment to practice your skills from the previous chapter by using the <c>str()</c> and <c>summary()</c> functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation "V1" or “...1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them "V1" or “...1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous "Rows and Columns" chapter for more information on addressing the columns in a dataframe.
 				</p>
 
 				<p>
@@ -324,43 +360,27 @@
 				</p>
 
 				<p>
-					&gt; mean(USstatePops$...1)
-				</p>
+<pre>
+	&gt; mean(USstatePops$...1)
 
-				<p>
-					[1] 6053834
-				</p>
+	[1] 6053834
 
-				<p>
-					&gt; median(USstatePops$...1)
-				</p>
+	&gt; median(USstatePops$...1)
 
-				<p>
-					[1] 4339367
-				</p>
+	[1] 4339367
 
-				<p>
-					&gt; mode(USstatePops$...1)
-				</p>
+	&gt; mode(USstatePops$...1)
 
-				<p>
-					[1] "numeric"
-				</p>
+	[1] "numeric"
 
-				<p>
-					&gt; var(USstatePops$...1)
-				</p>
+	&gt; var(USstatePops$...1)
 
-				<p>
-					[1] 4.656676e+13
-				</p>
+	[1] 4.656676e+13
 
-				<p>
-					&gt; sd(USstatePops$...1)
-				</p>
+	&gt; sd(USstatePops$...1)
 
-				<p>
-					[1] 6823984
+	[1] 6823984
+</pre>
 				</p>
 
 				<p>
@@ -371,7 +391,7 @@
 					<li>
 									<blockquote>
 														<p>
-										The mode() function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later chapters how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
+										The <c>mode()</c> function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later chapters how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
 									</p>
 									</blockquote>
 					</li>
@@ -391,7 +411,7 @@
 				</p>
 
 				<p>
-					hist(USstatePops$...1)
+					<c>hist(USstatePops$...1)</c>
 				</p>
 
 				<p>
@@ -420,11 +440,11 @@
 				</p>
 
 				<p>
-					The answer is that the hist() function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the "breaks" parameter, like this:
+					The answer is that the <c>hist()</c> function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the "breaks" parameter, like this:
 				</p>
 
 				<p>
-					hist(USstatePops$...1, breaks=20)
+					<c>hist(USstatePops$...1, breaks=20)</c>
 				</p>
 
 				<figure>
@@ -454,19 +474,19 @@
 				</p>
 
 				<p>
-					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s rnorm() function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s <c>rnorm()</c> function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the <c>rnorm()</c> command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
 				</p>
 
 				<p>
-					hist(rnorm(51, 6043834, 6823984))
+					<c>hist(rnorm(51, 6043834, 6823984))</c>
 				</p>
 
 				<p>
-					There are two very important new concepts introduced here. The first is a nested function call: The hist() function that generates the graph "surrounds" the rnorm() function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, rnorm(), is run by R first, with the results of that sent directly and immediately into the hist() function.
+					There are two very important new concepts introduced here. The first is a nested function call: The <c>hist()</c> function that generates the graph "surrounds" the <c>rnorm()</c> function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, <c>rnorm()</c>, is run by R first, with the results of that sent directly and immediately into the <c>hist()</c> function.
 				</p>
 
 				<p>
-					The other important thing is the "arguments that" were "passed" to the rnorm() function. "Argument" is a term used by computer scientists to refer to some extra information that is sent to a function to help it know how to do its job. In this case we passed three arguments to rnorm() that it was expecting in this order: the number of observations to generate in the fake dataset, the mean of the distribution, and the standard deviation of the distribution. The rnorm() function used these three numbers to generate 51 random data points that, roughly speaking, fit the normal distribution. So the data shown in the histogram above are an approximation of what the distribution of state populations might look like if,
+					The other important thing is the "arguments that" were "passed" to the <c>rnorm()</c> function. "Argument" is a term used by computer scientists to refer to some extra information that is sent to a function to help it know how to do its job. In this case we passed three arguments to <c>rnorm()</c> that it was expecting in this order: the number of observations to generate in the fake dataset, the mean of the distribution, and the standard deviation of the distribution. The <c>rnorm()</c> function used these three numbers to generate 51 random data points that, roughly speaking, fit the normal distribution. So the data shown in the histogram above are an approximation of what the distribution of state populations might look like if,
 				</p>
 
 				<p>
@@ -486,7 +506,7 @@
 				</p>
 
 				<p>
-					In this chapter, we used rnorm() to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
+					In this chapter, we used <c>rnorm()</c> to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
 				</p>
 
 				<p>
@@ -577,7 +597,7 @@
 					<li>
 									<blockquote>
 														<p>
-										mean() Calculate arithmetic mean
+										<c>mean()</c> Calculate arithmetic mean
 									</p>
 									</blockquote>
 					</li>
@@ -585,7 +605,7 @@
 					<li>
 									<blockquote>
 														<p>
-										median() Locate the median
+										<c>median()</c> Locate the median
 									</p>
 									</blockquote>
 					</li>
@@ -593,7 +613,7 @@
 					<li>
 									<blockquote>
 														<p>
-										mode() Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
+										<c>mode()</c> Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
 									</p>
 									</blockquote>
 					</li>
@@ -601,7 +621,7 @@
 					<li>
 									<blockquote>
 														<p>
-										var() Calculate the sample variance
+										<c>var()</c> Calculate the sample variance
 									</p>
 									</blockquote>
 					</li>
@@ -609,7 +629,7 @@
 					<li>
 									<blockquote>
 														<p>
-										sd() Calculate the sample standard deviation
+										<c>sd()</c> Calculate the sample standard deviation
 									</p>
 									</blockquote>
 					</li>
@@ -617,7 +637,7 @@
 					<li>
 									<blockquote>
 														<p>
-										hist() Produces a histogram graphic
+										<c>hist()</c> Produces a histogram graphic
 									</p>
 									</blockquote>
 					</li>

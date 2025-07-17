@@ -137,13 +137,16 @@
 					The reason we emphasized the point "for these samples only" is that we know from prior chapters that every sample of data you collect varies by at least a little bit and sometimes by quite a lot. A sample is just a snapshot, after all, and things can and do change from sample to sample. We can illustrate this by running and plotting multiple samples, much as we did in the earlier chapter:
 				</p>
 
-				<pre>
-
-					&gt; plot(DelayProbability(rpois(100,10),1,20))
-								
-				
-					&gt; for (i in 1:15) {points(DelayProbability(rpois(100,10),1,20))}
-				</pre>
+				<sage language="r">
+  					<input>
+    					<xi:include href="../code/delay-probability.r" parse="text"/>
+    
+   						 plot(DelayProbability(rpois(100,10), 1, 20))
+    						for (i in 1:15) {
+      							points(DelayProbability(rpois(100,10), 1, 20))
+    						}
+  					</input>
+				</sage>
 
 				<p>
 					This is the first time we have used the "for loop" in R, so let’s walk through it. A "for loop" is one of the basic constructions that computer scientists use to "iterate" or repeatedly run a chunk of code. In R, a for loop runs the code that is between the curly braces a certain number of times. The number of times R runs the code depends on the expression inside the parentheses that immediately follow the "for."

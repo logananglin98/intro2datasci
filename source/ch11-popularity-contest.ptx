@@ -15,7 +15,7 @@
 
 
 				<p>
-					Recall from the last chapter that there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. Von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "Poisson Distribution" (named after Simeon Denis Poisson, who published it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
+					Recall from the last chapter that there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. Von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<idx>Poisson Distribution</idx><term>Poisson Distribution</term>" (named after Simeon Denis Poisson, who published it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
 				</p>
 
 				<p>
@@ -27,7 +27,7 @@
 				</p>
 
 				<p>
-					Just as we did in the chapter entitled, "Sample in a Jar," we can use a random number generator in R to illustrate these kinds of differences more concretely. The relevant function for the Poisson distribution is <c>rpois()</c>, "random poisson." The rpois() function will generate a stream of random numbers that roughly fit the Poisson distribution. The fit gets better as you ask for a larger and larger sample. The first argument to rpois() is how many random numbers you want to generate and the second number is the average delay between arrivals that you want the random number generator to try to come close to. We can look at a few of these numbers and then use a histogram function to visualize the results:
+					Just as we did in the chapter entitled, "Sample in a Jar," we can use a random number generator in R to illustrate these kinds of differences more concretely. The relevant function for the Poisson distribution is rpois(), "random poisson." The <idx>rpois()</idx><term>rpois()</term> function will generate a stream of random numbers that roughly fit the Poisson distribution. The fit gets better as you ask for a larger and larger sample. The first argument to rpois() is how many random numbers you want to generate and the second number is the average delay between arrivals that you want the random number generator to try to come close to. We can look at a few of these numbers and then use a histogram function to visualize the results:
 				</p>
 
 				<pre>
@@ -47,11 +47,15 @@
 				</pre>
 
 				<p>
-					<image source='histogram-rpois-3.png'/> In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
+					<image source='histogram-rpois-3.png'/> 
+				</p>
+				
+				<p>
+					In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
 				</p>
 
 				<p>
-					This is expected because of the random number generator. In the third command we run yet another sample of 100 random data points, this time analyzing them with the <c>var()</c> function (which calculates the variance; see the chapter entitled "Beer, Farms, and Peas"). It is a curious fact of Poisson distributions that the mean and the variance of the "ideal" (i.e., the theoretical) distribution are the same. In practice, for a small sample, they may be different.
+					This is expected because of the random number generator. In the third command we run yet another sample of 100 random data points, this time analyzing them with the <idx>var()</idx><term>var()</term> function (which calculates the variance; see the chapter entitled "Beer, Farms, and Peas"). It is a curious fact of Poisson distributions that the mean and the variance of the "ideal" (i.e., the theoretical) distribution are the same. In practice, for a small sample, they may be different.
 				</p>
 
 				<p>
@@ -87,9 +91,9 @@
 				</pre>
 
 				<figure>
-	<image source="histogram-rpois-10.png"/>
+					<image source="histogram-rpois-10.png"/>
 					<caption>Histogram of hist(rpois(1000,10))</caption>
-</figure>
+				</figure>
 
 				<p>
 					This command generated 1000 new random numbers, using the Poisson distribution and also with a hoped-for mean of 10, just like in the histogram on the next page. Using the "&lt;=" inequality test and the sum() function, we then counted up how many events were less than or equal to 10, and this turned out to be 597 events. As a fraction of the total of n=1000 data points that rpois() generated, that is 0.597, or 59.7%.
@@ -110,7 +114,7 @@
 				</pre>
 
 				<p>
-					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <c>points()</c> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
+					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <idx>points()</idx><term>points()</term> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
 				</p>
 
 				<pre>
@@ -125,9 +129,9 @@
 				</p>
 
 				<figure>
-	<image source="graph-delay-probability.png"/>
+					<image source="graph-delay-probability.png"/>
 					<caption>&gt; plot(DelayProbability(rpois(100,10),1,20), col=2) &gt; points(DelayProbability(rpois(100,3),1,20), col=3) </caption>
-</figure>
+				</figure>
 
 				<p>
 					This plot clearly shows that the green points have a "steeper" profile. We are more likely to have earlier arrivals for the 3-second delay data than we are for the 10-second data. If these were real tweets, the green tweets would be piling in much faster than the red tweets. Here’s a reminder on how to read this plot: Look at a value on the X-axis, for example "5." Then look where the dot is and trace leftward to the Y-axis. For the red dot, the probability value at time (x) equal 4 is about 0.10. So for the red data there is about a 10% chance that the next event will occur within five time units (we’ve been calling them seconds, but they could really be anything, as long as you use the units consistently throughout the whole example). For the green data there is about a 85% chance that the next event will occur within four time units. The fact that the green curve rises more steeply than the red curve means that <em>for these two samples only</em> the green stuff is arriving <em>much more often</em> than the red stuff.
@@ -149,7 +153,7 @@
 				</sage>
 
 				<p>
-					This is the first time we have used the "for loop" in R, so let’s walk through it. A "for loop" is one of the basic constructions that computer scientists use to "iterate" or repeatedly run a chunk of code. In R, a for loop runs the code that is between the curly braces a certain number of times. The number of times R runs the code depends on the expression inside the parentheses that immediately follow the "for."
+					This is the first time we have used the "for loop" in R, so let’s walk through it. A "<idx>for loop</idx><term>for loop</term>" is one of the basic constructions that computer scientists use to "iterate" or repeatedly run a chunk of code. In R, a for loop runs the code that is between the curly braces a certain number of times. The number of times R runs the code depends on the expression inside the parentheses that immediately follow the "for."
 				</p>
 
 				<p>
@@ -157,9 +161,9 @@
 				</p>
 
 				<figure>
-	<image source="delay-probability-multiples.png"/>
+					<image source="delay-probability-multiples.png"/>
 					<caption>plot using for loop</caption>
-</figure>
+				</figure>
 
 				<p>
 					When you consider the two command lines on the previous page together you can see that we initiate a <c>plot()</c> on the first line of code, using similar parameters to before (random poisson numbers with a mean of 10, fed into our probability calculator, which goes in increments of 1 second up to 20 seconds). In the second line we add more points to the same plot, by running exactly 15 additional copies of the same code. Using rpois() ensures that we have new random numbers each time:
@@ -170,7 +174,7 @@
 				</p>
 
 				<p>
-					This shows why we can’t just rely on one sample for making our judgments. We need to know something about the uncertainty that surrounds a given sample. Fortunately, R gives us additional tools to help us figure this situation out. First of all, even though we had loads of fun programming the DelayProbability() function, there is a quicker way to get information about what we ideally <em>expect</em> from a Poisson distribution. The function ppois() gives us the <em>theoretical</em> probability of observing a certain delay time, given a particular mean. For example:
+					This shows why we can’t just rely on one sample for making our judgments. We need to know something about the uncertainty that surrounds a given sample. Fortunately, R gives us additional tools to help us figure this situation out. First of all, even though we had loads of fun programming the DelayProbability() function, there is a quicker way to get information about what we ideally <em>expect</em> from a Poisson distribution. The function <idx>ppois()</idx><term>ppois()</term> gives us the <em>theoretical</em> probability of observing a certain delay time, given a particular mean. For example:
 				</p>
 
 				<p>
@@ -183,11 +187,7 @@
 
 
 				<p>
-					So you can read this as: There is a 1% chance of observing a delay of 3 or less in a Poisson distribution with mean equal to 10. Note that in statistical terminology, "lambda" is the term used for the mean of a Poisson distribution. We’ve provided the named parameter "lambda=10" in the example above just to make sure that R does not get confused about what parameter we are controlling
-				</p>
-
-				<p>
-					when we say "10." The <c>ppois()</c> function does have other parameters that we have not used here. Now, using a for loop, we could get a list of several of these theoretical probabilities:
+					So you can read this as: There is a 1% chance of observing a delay of 3 or less in a Poisson distribution with mean equal to 10. Note that in statistical terminology, "<idx>lambda</idx><term>lambda</term>" is the term used for the mean of a Poisson distribution. We’ve provided the named parameter "lambda=10" in the example above just to make sure that R does not get confused about what parameter we are controlling when we say "10." The ppois() function does have other parameters that we have not used here. Now, using a for loop, we could get a list of several of these theoretical probabilities:
 				</p>
 
 				<p>
@@ -205,12 +205,12 @@
 				</p>
 
 				<figure>
-	<image source="graph-logistic.png"/>
+					<image source="graph-logistic.png"/>
 					<caption></caption>
-</figure>
+				</figure>
 
 				<p>
-					You may notice that this plot looks a lot like the ones earlier in this chapter as well as somewhat similar to the probability plot in the previous chapter. When we say the "theoretical distribution" we are talking about the ideal Poisson distribution that would be generated by the complex equation that Mr. Poisson invented a couple of centuries ago. Another way to think about it is this: Instead of just having a small sample of points, which we know has a lot of randomness in it, what if we had a truly humongous sample with zillions of data points? The curve in the plot above is just about what we would observe for a truly humongous sample (where most of the biases up or down cancel themselves out because of the large number of points).
+					You may notice that this plot looks a lot like the ones earlier in this chapter as well as somewhat similar to the probability plot in the previous chapter. When we say the "<idx>theoretical distribution</idx><term>theoretical distribution</term>" we are talking about the ideal Poisson distribution that would be generated by the complex equation that Mr. Poisson invented a couple of centuries ago. Another way to think about it is this: Instead of just having a small sample of points, which we know has a lot of randomness in it, what if we had a truly humongous sample with zillions of data points? The curve in the plot above is just about what we would observe for a truly humongous sample (where most of the biases up or down cancel themselves out because of the large number of points).
 				</p>
 
 				<p>
@@ -264,7 +264,7 @@
 				</p>
 
 				<p>
-					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the qpois() function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
+					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx>qpois()</idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
 				</p>
 
 				<p>
@@ -276,7 +276,23 @@
 				</p>
 
 				<p>
-					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the poisson.test() function like this:
+					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the <idx>poisson.test()</idx><term>poisson.test()</term> function like this:
+				</p>
+
+				<p>
+					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx>qpois()</idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
+				</p>
+
+				<p>
+					<sage language="r">
+						<input>
+							qpois(ppois(10, lambda=10), lambda=10)
+						</input>
+					</sage>
+				</p>
+
+				<p>
+					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the <idx>poisson.test()</idx><term>poisson.test()</term> function like this:
 				</p>
 
 				<p>
@@ -486,7 +502,7 @@
 
 
 				<p>
-					The <c>sum()</c> function, above, calculates that only 73 out of Oprah’s sample of 500 tweets arrive in an interval of 31 or less. We use 31, the mean of the Lady Gaga sample, because we need to have a common basis of comparison. So for Oprah, the proportion of events that occur in the 31 second time frame is, 73/500 = 0.146, or about 14.6%. That’s a lot lower than the 66.6% of Lady Gaga tweets, for sure, but we need to look at the confidence interval around that value. So the poisson.test() function just above for Oprah reports that the 95% confidence interval runs from about 11.4% to 18.4%. Note that this confidence interval does not overlap at all with the confidence interval for Lady Gaga, so we have a very strong sense that these two rates are statistically quite distinctive in other words, this is a difference that was not caused by the random influences that sampling always creates. We can make a bar graph to summarize these differences. We’ll use the <c>barplot2()</c> function, which is in a package called <c>gplots()</c>. If you created the <c>EnsurePackage()</c> function a couple of chapters ago, you can use that. Otherwise make sure to load gplots manually:
+					The sum() function, above, calculates that only 73 out of Oprah’s sample of 500 tweets arrive in an interval of 31 or less. We use 31, the mean of the Lady Gaga sample, because we need to have a common basis of comparison. So for Oprah, the proportion of events that occur in the 31 second time frame is, 73/500 = 0.146, or about 14.6%. That’s a lot lower than the 66.6% of Lady Gaga tweets, for sure, but we need to look at the confidence interval around that value. So the poisson.test() function just above for Oprah reports that the 95% confidence interval runs from about 11.4% to 18.4%. Note that this confidence interval does not overlap at all with the confidence interval for Lady Gaga, so we have a very strong sense that these two rates are statistically quite distinctive in other words, this is a difference that was not caused by the random influences that sampling always creates. We can make a bar graph to summarize these differences. We’ll use the <idx>barplot2()</idx><term>barplot2()</term> function, which is in a package called <idx>gplots()</idx><term>gplots()</term>. If you created the EnsurePackage() function a couple of chapters ago, you can use that. Otherwise make sure to load gplots manually:
 				</p>
 
 				<pre>
@@ -506,13 +522,13 @@
 				</pre>
 
 				<p>
-					This is not a particularly efficient way to use the barplots() function, because we are supplying our data by typing it in, using the c() function to create short vectors of values on the command line. On the first line,, we supply a list of the means from the two samples, expressed as proportions. On the next two lines we first provide the lower limits of the confidence intervals and then the upper limits. The plot.ci=TRUE parameter asks barplot2() to put confidence interval whiskers on each bar. The final line provides labels to put underneath the bars. What we get is below.
+					This is not a particularly efficient way to use the barplots() function, because we are supplying our data by typing it in, using the c() function to create short vectors of values on the command line. On the first line, we supply a list of the means from the two samples, expressed as proportions. On the next two lines we first provide the lower limits of the confidence intervals and then the upper limits. The plot.ci=TRUE parameter asks barplot2() to put confidence interval whiskers on each bar. The final line provides labels to put underneath the bars. What we get is below.
 				</p>
 
 				<figure>
-	<image source="gaga-oprah.png"/>
+					<image source="gaga-oprah.png"/>
 					<caption>Gaga vs Obra Tweets</caption>
-</figure>
+				</figure>
 
 				<p>
 					This is not an especially attractive bar plot, but it does represent the information we wanted to display accurately. And with the assistance of this plot, it is easy to see both the substantial difference between the two bars and the fact that the confidence intervals do not overlap.

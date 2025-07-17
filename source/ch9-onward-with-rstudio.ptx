@@ -14,7 +14,7 @@
 
 				<figure>
 	<image source="R-window.png"/>
-					<caption></caption>
+					<caption>Initial view of the RStudio interface, showing the script editor in the upper left, the console in the lower left, the environment and history tabs in the upper right, and the file structure in the lower right.</caption>
 </figure>
 
 				<p>
@@ -481,7 +481,7 @@
 
 				<figure>
 	<image source="install-packages.png"/>
-					<caption></caption>
+					<caption>Installing an R package using the RStudio graphical interface. The "Install Packages" dialog allows users to choose the repository, specify the package name, and install dependencies.</caption>
 </figure>
 
 				<p>

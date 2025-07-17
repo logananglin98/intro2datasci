@@ -192,7 +192,7 @@
 			</p>
 
 			<p>
-				That same line of code also contains another new feature, the <idx>if statement</idx><term>"if" statement</term>. This is what computer scientists call a conditional. It tests the stuff inside the parentheses to see if it evaluates to TRUE or FALSE. If TRUE, the program continues to run the script in between the curly braces (lines 4 and 8). If FALSE, all the stuff in the curly braces is skipped. Also in the third line, in case you are curious, the arguments to the require() function include "x," which is the name of the package that was passed into the function, and "character.only=TRUE" which tells the require() function to expect x to be a character string. Last thing to notice about this third line: there is a "<idx>!</idx><term>!</term>" character that reverses the results of the logical test. Technically, it is the Boolean function NOT. It requires a bit of mental gyration that when require() returns FALSE, the "!" inverts it to TRUE, and that is when the code in the curly braces runs.
+				That same line of code also contains another new feature, the <idx>if statement</idx><term>"if" statement</term>. This is what computer scientists call a conditional. It tests the stuff inside the parentheses to see if it evaluates to TRUE or FALSE. If TRUE, the program continues to run the script in between the curly braces (lines 4 and 8). If FALSE, all the stuff in the curly braces is skipped. Also in the third line, in case you are curious, the arguments to the require() function include "x," which is the name of the package that was passed into the function, and "character.only=TRUE" which tells the require() function to expect x to be a character string. Last thing to notice about this third line: there is a "!" character that reverses the results of the logical test. Technically, it is the Boolean function NOT. It requires a bit of mental gyration that when require() returns FALSE, the "!" inverts it to TRUE, and that is when the code in the curly braces runs.
 			</p>
 
 			<p>
@@ -240,7 +240,7 @@
 			</p>
 
 			<p>
-				Make sure to save your script file once you have typed this new function in. You can give it any file name that makes sense to you, such as "twitterSupport." Now is also a good time to start the habit of commenting: <idx>comments</idx><term>Comments</term> are human readable messages that software developers leave for themselves and for others, so that everyone can remember what a piece of code is supposed to do. All computer languages have at least one "comment character" that sets off the human readable stuff from the rest of the code. In R, the comment character is <idx>#</idx><term>#</term>. For now, just put one comment line above each function you created, briefly describing it, like this:
+				Make sure to save your script file once you have typed this new function in. You can give it any file name that makes sense to you, such as "twitterSupport." Now is also a good time to start the habit of commenting: <idx>comments</idx><term>Comments</term> are human readable messages that software developers leave for themselves and for others, so that everyone can remember what a piece of code is supposed to do. All computer languages have at least one "comment character" that sets off the human readable stuff from the rest of the code. In R, the comment character is #. For now, just put one comment line above each function you created, briefly describing it, like this:
 			</p>
 
 			<p>

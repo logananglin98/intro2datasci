@@ -7,9 +7,9 @@
     <title>Popularity Comparison</title>
 
   <introduction>
-				<p><em>
-					Which topic on Twitter is more popular, Lady Gaga or Oprah Winfrey? This may not seem like an important question, depending upon your view of older popular culture, but if we can make the comparison for these two topics, we can make it for any two topics. Certainly in the case of the next presidential election, or a corruption scandal in the local news, or an international crisis, it could be a worthwhile goal to be able to analyze social media in a systematic way. And on the surface, the answer to the question seems trivial: Just add up who has more tweets. Surprisingly, in order to answer the question in an accurate and reliable way, this won’t work, at least not very well. Instead, one must consider many of the vexing questions that made inferential statistics necessary.
-        </em></p>
+				<p>
+					<image source='twitter-wannabviral.png' decorative="yes"/><em>Which topic on Twitter is more popular, Lady Gaga or Oprah Winfrey? This may not seem like an important question, depending upon your view of older popular culture, but if we can make the comparison for these two topics, we can make it for any two topics. Certainly in the case of the next presidential election, or a corruption scandal in the local news, or an international crisis, it could be a worthwhile goal to be able to analyze social media in a systematic way. And on the surface, the answer to the question seems trivial: Just add up who has more tweets. Surprisingly, in order to answer the question in an accurate and reliable way, this won’t work, at least not very well. Instead, one must consider many of the vexing questions that made inferential statistics necessary.</em>
+				</p>
   </introduction>
 
 
@@ -46,9 +46,10 @@
 					&gt; hist(rpois(1000,3))
 				</pre>
 
-				<p>
-					<image source='histogram-rpois-3.png'/> 
-				</p>
+				<figure>
+					<image source='histogram-rpois-3.png'/>
+					<caption>Histogram of hist(rpois(1000,3))</caption> 
+				</figure>
 				
 				<p>
 					In the first command above, we generate a small sample of n=10 arrival delays, with a hoped-for mean of 3 seconds of delay, just to see what kind of numbers we get. You can see that all of the numbers are small integers, ranging from 0 to 6. In the second command we double check these results with a slightly larger sample of n=100 to see if rpois() will hit the mean we asked for. In that run it came out to 2.99, which was pretty darned close. If you run this command yourself you will find that your result will vary a bit each time: it will sometimes be slightly larger than three and occasionally a little less than three (or whatever mean you specify).
@@ -162,7 +163,7 @@
 
 				<figure>
 					<image source="delay-probability-multiples.png"/>
-					<caption>plot using for loop</caption>
+					<caption>Plot using for loop</caption>
 				</figure>
 
 				<p>
@@ -206,7 +207,7 @@
 
 				<figure>
 					<image source="graph-logistic.png"/>
-					<caption></caption>
+					<caption>Poisson curve showing the chance of an event happening within a certain time.</caption>
 				</figure>
 
 				<p>

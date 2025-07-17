@@ -3,16 +3,13 @@
 <chapter xml:id="ch14-storage-wars" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Storage Wars</title>
 
-  <subsection xml:id="storing-data">
-    <title>Storing Data</title>
-
+  <section xml:id="data-storage-formats">
+        <title>Understanding Data Storage Formats</title>
   <introduction>
       				<p><em>
 					Before now we have only used small amounts of data that we typed in ourselves, or somewhat larger amounts that we extracted from Twitter. The world is full of other sources of data, however, and we need to examine how to get them into R, or at least how to make them accessible for manipulation in R. In this chapter, we examine various ways that data are stored, and how to access them.
               </em></p>
   </introduction>
-
-
 
 				<p>
 					Older technologists who have watched the evolution of technology over recent decades remember a time when storage was expensive and it had to be hoarded like gold. Over the last few years, however, the accelerating trend of <idx>Moore’s Law</idx><term>Moore’s Law</term> has made data storage almost "too cheap to meter" (as they used to predict about nuclear power). Although this opens many opportunities, it also means that people keep data around for a long time, since it doesn’t make sense to delete anything, and they may keep data around in many different formats. As a result, the world is full of different data formats, some of which are proprietary designed and owned by a single company such as SAS and some of which are open, such as the lowly but infinitely useful "comma separated variable," or CSV format.
@@ -23,23 +20,18 @@
 				</p>
 
 				<p>
-					Another dividing line, as mentioned above is between proprietary and open formats. One of the most common ways of storing and sharing small datasets is as Microsoft Excel spreadsheets. Although
-				</p>
-
-				<p>
-					this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the <idx>OpenDocument</idx><term>OpenDocument</term> format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on <idx>XML</idx><term>XML</term>, which stands for <idx>Extensible markup language</idx><term>Extensible markup language</term>. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the <idx>W3C consortium</idx><term>W3C consortium</term>, which is responsible for developing and maintaining the many standards and protocols that support the web.
+					Another dividing line, as mentioned above is between proprietary and open formats. One of the most common ways of storing and sharing small datasets is as Microsoft Excel spreadsheets. Although this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the <idx>OpenDocument</idx><term>OpenDocument</term> format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on <idx>XML</idx><term>XML</term>, which stands for <idx>Extensible markup language</idx><term>Extensible markup language</term>. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the <idx>W3C consortium</idx><term>W3C consortium</term>, which is responsible for developing and maintaining the many standards and protocols that support the web.
 				</p>
 
 				<p>
 					As an open source program with many contributors, R offers a wide variety of methods of connecting with external data sources. This is both a blessing and a curse. There is a solution to almost any data access problem you can imagine with R, but there is also a dizzying array of options available such that it is not always obvious what to choose. We’ll tackle this problem in two different ways. In the first half of this chapter we will look at methods for importing existing datasets. These may exist on a local computer or on the Internet but the characteristic they share in common is that they are contained (usually) within one single file. The main trick here is to choose the right command to import that data into R. In the second half of the chapter, we will consider a different strategy, namely linking to a "source" of data that is not a file. Many data sources, particularly databases, exist not as a single discrete file, but rather as a system. The system provides methods or calls to "query" data from the system, but from the perspective of the user (and of R) the data never really take the form of a file.
 				</p>
+    </section>
 
+<subsection xml:id="importing-text-files">
+        <title>Importing Human-Readable Text Files</title>
 				<p>
-					The first and easiest strategy for getting data into R is to use the data import dialog in R-Studio. In the upper right hand pane of RStudio, the "Workspace" tab gives views of currently available data objects, but also has a set of buttons at the top for managing the work space. One of the choices there is the "Import Dataset" button: This enables a drop down menu where one choice is to import, "From Text File..." If you click this option and choose an appropriate file you will get a screen like this: <image source='import-dataset.png'/> The most important stuff is on the left side. Heading controls whether or not the first line of the text file is treated as containing variable names. The separator drop down gives a choice of different characters that separate the fields/columns in the data. RStudio tries to guess the appropriate choice here based on a scan of
-				</p>
-
-				<p>
-					the data. In this case it guessed right by choosing "<idx>tab-delimited</idx><term>tab-delimited</term>." As mentioned above, tab-delimited and <idx>comma-delimited</idx><term>comma-delimited</term> are the two most common formats used for interchange between data programs.The next drop down is for "Decimal" and this option accounts for the fact the a dot is used in the U.S. while a comma may be used for the decimal point in Europe and elsewhere. Finally, the "Quote" drop down controls which character is used to contain quoted string/text data. The most common method is double quotes.
+					The first and easiest strategy for getting data into R is to use the data import dialog in R-Studio. In the upper right hand pane of RStudio, the "Workspace" tab gives views of currently available data objects, but also has a set of buttons at the top for managing the work space. One of the choices there is the "Import Dataset" button: This enables a drop down menu where one choice is to import, "From Text File..." If you click this option and choose an appropriate file you will get a screen like this: <image source='import-dataset.png'/> The most important stuff is on the left side. Heading controls whether or not the first line of the text file is treated as containing variable names. The separator drop down gives a choice of different characters that separate the fields/columns in the data. RStudio tries to guess the appropriate choice here based on a scan of the data. In this case it guessed right by choosing "<idx>tab-delimited</idx><term>tab-delimited</term>." As mentioned above, tab-delimited and <idx>comma-delimited</idx><term>comma-delimited</term> are the two most common formats used for interchange between data programs.The next drop down is for "Decimal" and this option accounts for the fact the a dot is used in the U.S. while a comma may be used for the decimal point in Europe and elsewhere. Finally, the "Quote" drop down controls which character is used to contain quoted string/text data. The most common method is double quotes.
 				</p>
 
 				<p>
@@ -63,7 +55,10 @@
 					"Fred" 22 "M"
 					"Ginger" 21 "F"
 			</pre>
+</subsection>
 
+    <subsection xml:id="accessing-binary-files">
+        <title>Accessing Binary Files with Packages</title>
 				<p>
 					Files containing comma or tab delimited data are ubiquitous across the Internet, but sometimes we would like to gain direct access to binary files in other formats. There are a variety of packages that one might use to access binary data. A comprehensive access list appears here:
 				</p>
@@ -91,7 +86,10 @@
 				<p>
 					Fortunately, a general purpose data manipulation package called gdata provides essential facilities for importing spreadsheet files. In the example that follows, we will use a function from gdata to read Excel data directly from a website. The gdata package is a kind of "Swiss Army Knife" package containing many different functions for accessing and manipulating data. For example, you may recall that R uses the value "NA" to represent missing data. Frequently, however, it is the case that data sets contain other values, such as 999, to represent missing data. The gdata package has several functions that find and transform these values to be consistent with R’s strategy for handling missing data.
 				</p>
+</subsection>
 
+    <subsection xml:id="cleaning-imported-data">
+        <title>A Practical Example: Cleaning Imported Excel Data</title>
 				<p>
 					Begin by using <c>install.package()</c> and <c>library()</c> functions to prepare the gdata package for use:
 				</p>
@@ -116,11 +114,7 @@
 				</p>
 
 				<p>
-					A review of the documentation reveals that the only required argument to this function is the location of the XLS file, and that this location can be a pathname, a web location with http, or an Internet location with ftp (<idx>file transfer protocol</idx><term>file transfer protocol</term>, a way of sending and receiving files without using a web browser). If you hearken back to
-				</p>
-
-				<p>
-					a very early chapter in this book, you may remember that we accessed some census data that had population counts for all the different U.S. states. For this example, we are going to read the Excel file containing that data directly into a dataframe using the <c>read.xls()</c> function:
+					A review of the documentation reveals that the only required argument to this function is the location of the XLS file, and that this location can be a pathname, a web location with http, or an Internet location with ftp (<idx>file transfer protocol</idx><term>file transfer protocol</term>, a way of sending and receiving files without using a web browser). If you hearken back to a very early chapter in this book, you may remember that we accessed some census data that had population counts for all the different U.S. states. For this example, we are going to read the Excel file containing that data directly into a dataframe using the <c>read.xls()</c> function:
 				</p>
 				<pre>
 						&gt; testFrame&lt;-read.xls( + "http://www.census.gov/popest/data/state/totals/2011/ tables/NST-EST2011-01.xls")
@@ -304,7 +298,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					A related lesson is that it is important and valuable to try to automate as many of these steps as possible. So when we saw that numbers had gotten stored as factor labels, we moved immediately to create a general function that would convert these to numbers. Not only does this save a lot of future typing, it prevents mistakes from creeping into our processes.
 				</p>
+</subsection>
 
+    <subsection xml:id="querying-external-databases">
+        <title>Querying External Databases</title>
 				<p>
 					Now we are ready to consider the other strategy for getting access to data: querying it from external databases. Depending upon your familiarity with computer programming and databases, you may notice that the abstraction is quite a bit different here. Earlier in the chapter we had a file (a rather messy one) that contained a complete copy of the data that we wanted, and we read that file into R and stored it in our local computer’s memory (and possibly later on the hard disk for safekeeping). This is a good and reasonable strategy for small to medium sized datasets, let’s say just for the sake of argument anything up to 100 megabytes.
 				</p>
@@ -399,7 +396,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					</li>
 
 				</ul></p>
+</subsection>
 
+    <subsection xml:id="database-demonstration-mysql">
+        <title>Database Demonstration with RMySQL</title>
 				<p>
 					For demonstration purposes, we will use RMySQL. This requires installing a copy of MySQL on your computer. Use your web browser to go to this page:
 				</p>
@@ -501,7 +501,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					To emphasize a point made above, the normal motivation for accessing data through MySQL or another database system is that a large database exists on a remote server. Rather than having our own complete copy of those data, we can use dbConnect(), dbGetQuery() and other database functions to access the remote data through SQL. We can also use SQL to specify subsets of the data, to preprocess the data with sorts and other operations, and to create summaries of the data. SQL is also particularly well suited to "joining" data from multiple tables to make new combinations. In the present example, we only used one table, it was a very small table, and we had created it ourselves in R from an Excel source, so none of these were very good motivations for storing our data in MySQL, but this was only a demonstration.
 				</p>
+</subsection>
 
+    <subsection xml:id="distributed-computing-hadoop">
+        <title>Distributed Computing with Hadoop and MapReduce</title>
 				<p>
 					The next step beyond remote databases is toward distributed computing across a "<idx>cluster</idx><term>cluster</term>" of computers. This combines the remote
 				</p>
@@ -529,7 +532,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					In short, "map" takes a process that the user specifies and an indication of which data it applies to, and divides the processing into as many separate chunks as possible. As the results of each chunk become available, "reduce" combines them and eventually creates and returns one aggregated result.
 				</p>
+</subsection>
 
+    <subsection xml:id="mapreduce-demonstration-rhadoop">
+        <title>MapReduce Demonstration with RHadoop</title>
 				<p>
 					Recently, an organization called RevolutionAnalytics has developed an R interface or "wrapper" for Hadoop that they call RHadoop. This package is still a work in progress in the sense that it does not appear in the standard CRAN package archive, not because there is anything wrong with it, but rather because RevolutionAnalytics wants to continue to develop it without having to provide stable versions for the R community. There is a nice tutorial here:
 				</p>
@@ -591,11 +597,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</pre>
 
 				<p>
-					In the first command, we again create a list of integers from one to ten. But rather than simply storing them in a vector, we are using the "distributed file system" or dfs class that is provided by RHadoop. Note that in most cases we would not need to create this ourselves because our large dataset would already exist on the HDFS (Hadoop Distributed FIle System). We would have connected to
-				</p>
-
-				<p>
-					HDFS and selected the necessary data much as we did earlier in this chapter with dbConnect().
+					In the first command, we again create a list of integers from one to ten. But rather than simply storing them in a vector, we are using the "distributed file system" or dfs class that is provided by RHadoop. Note that in most cases we would not need to create this ourselves because our large dataset would already exist on the HDFS (Hadoop Distributed FIle System). We would have connected to HDFS and selected the necessary data much as we did earlier in this chapter with dbConnect().
 				</p>
 
 				<p>
@@ -605,7 +607,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					The <c>keyval()</c> function, for which there is no documentation at this writing, is characterized as a "helper" function in the tutorial. In this case it is clear that the first argument to keyval, "v" is the integer to which the process must be applied, and the second argument, "v^2" is the squaring function that is applied to each argument. The data returned by mapreduce() is functionally equivalent to that returned by lapply(), i.e., a list of the squares of the integers from 1 to 10.
 				</p>
+</subsection>
 
+    <subsection xml:id="chapter-summary">
+        <title>Chapter Summary</title>
 				<p>
 					Obviously there is no point in harnessing the power of a cluster of computers to calculate something that could be done with a pencil and a paper in a few seconds. If, however, the operation was more complex and the list of input data had millions of elements, the use of lapply() would be impractical as it would take your computer quite a long time to finish the job. On the other hand, the second strategy of using mapreduce() could run the job in a fraction of a second, given a sufficient supply of computers and storage.
 				</p>
@@ -622,9 +627,10 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					To be able to tackle the larger data sets, however, we need to be able to connect R with either remote databases or remote computational resources or both. A variety of packages is available to connect R to mature database technologies such as MySQL. In fact, we demonstrated the use of MySQL by installing it on a local machine and then using the RMySQL package to create a table and query it. The more cutting edge technology of Hadoop is just becoming available for R users. This technology, which provides the potential for both massive storage and parallel computational power, promises to make very large datasets available for processing and analysis in R.
 				</p>
 
-				<p>
-					<term>Chapter Challenge</term>
-				</p>
+				</subsection>
+
+    <subsection xml:id="ch14-chapter-challenge">
+        <title>Chapter Challenge</title>
 
 				<p>
 					Hadoop is a software framework designed for use with Apache, which is first and foremost a Linux server application. Yet there are development versions of Hadoop available for Windows and Mac as well. These are what are called single node instances, that is they use a single computer to simulate the existence of a large cluster of computers. See if you can install the appropriate version of Hadoop for your computer’s operating system.

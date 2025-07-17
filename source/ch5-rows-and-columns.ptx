@@ -8,7 +8,7 @@
       <introduction>
 
   				<p>
-					<image source='columns-rows.png'/><em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
+					<image source='columns-rows.png' decorative="yes"/><em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
 				</p>
   </introduction>
 				<p>
@@ -182,7 +182,7 @@
 				</p>
 
 				<p>
-					Each of the four variables has a "mode" or type that is reported by R right after the colon on the line that names the variable:
+					Each of the four variables has a "<idx>mode</idx><term>mode</term>" or type that is reported by R right after the colon on the line that names the variable:
 				</p>
 
 				<p>
@@ -210,7 +210,7 @@
 				</p>
 
 				<p>
-					Next, we will examine another very useful function called <c>summary()</c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
+					Next, we will examine another very useful function called <c><idx>summary()</idx><term>summary()</term></c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
 				</p>
 
 				<p>
@@ -230,7 +230,7 @@
 					<li>
 									<blockquote>
 														<p>
-										"Min." refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
+										"<idx>min.</idx><term>Min.</term>" refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
 									</p>
 									</blockquote>
 					</li>
@@ -238,7 +238,7 @@
 					<li>
 									<blockquote>
 														<p>
-										"1st Qu." refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations.
+										"<idx>1st qu.</idx><term>1st Qu.</term>" refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations.
 									</p>
 									</blockquote>
 					</li>
@@ -271,7 +271,7 @@
 					<li>
 									<blockquote>
 														<p>
-										<term>Median</term> refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile.
+										<idx>median</idx><term>Median</term> refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile.
 									</p>
 									</blockquote>
 					</li>
@@ -279,7 +279,7 @@
 					<li>
 									<blockquote>
 														<p>
-										<term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
+										<idx>mean</idx><term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
 									</p>
 									</blockquote>
 					</li>
@@ -287,7 +287,7 @@
 					<li>
 									<blockquote>
 														<p>
-										• "<term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these quartiles and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
+										• "<idx>3rd. qu.</idx><term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these <idx>quartiles</idx><term>quartiles</term> and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
 									</p>
 									</blockquote>
 					</li>
@@ -295,7 +295,7 @@
 					<li>
 									<blockquote>
 														<p>
-										Finally, "<term>Max</term>" is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
+										Finally, "<idx>max</idx><term>Max</term>" is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
 									</p>
 									</blockquote>
 					</li>
@@ -303,7 +303,7 @@
 				</ul></p>
 
 				<p>
-					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "$" to connect the two labels like this:
+					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "<idx>$</idx><term>$</term>" to connect the two labels like this:
 				</p>
 
 				<p>
@@ -314,7 +314,7 @@
 				</p>
 
 				<p>
-					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we <term>copied</term> all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
+					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we copied all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
 				</p>
 
 				<figure>

@@ -90,6 +90,7 @@
 					<li>
 									<blockquote>
 														<p>
+															<idx>mode</idx>
 										The <term>mode</term>, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most.
 									</p>
 									</blockquote>
@@ -98,6 +99,7 @@
 					<li>
 									<blockquote>
 														<p>
+															<idx>variance</idx>
 										The <term>variance</term>, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
 									</p>
 									</blockquote>
@@ -160,13 +162,16 @@
 				</table>
 
 				<p>
-					This table shows the calculation of the variance, which begins by obtaining the "deviations" from the mean and then "squares" them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of "average squared deviation." Note that it was not a mistake to divide by 4 instead of 5 the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the <term>variance</term>, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice to look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
+					<idx>deviations</idx>
+					<idx>average squared deviation</idx>
+					This table shows the calculation of the variance, which begins by obtaining the "<term>deviations</term>" from the mean and then "squares" them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of "<term>average squared deviation</term>." Note that it was not a mistake to divide by 4 instead of 5 the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the <term>variance</term>, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice to look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
 				</p>
 
 				<p><ul>
 					<li>
 									<blockquote>
 														<p>
+															<idx>standard deviation</idx>
 										The <term>standard deviation</term>, another measure of dispersion, and a cousin to the variance. The standard deviation is simply the square root of the variance, which puts us back in regular units like "years." In the example above, the standard deviation would be about 18.88 years (rounding to two decimal places, which is plenty in this case).
 									</p>
 									</blockquote>
@@ -428,7 +433,8 @@
 				</p>
 
 				<p>
-					A histogram is a specialized type of bar graph designed to show "frequencies." Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
+					<idx>frequencies</idx>
+					A histogram is a specialized type of bar graph designed to show "<term>frequencies</term>." Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
 				</p>
 
 				<p>
@@ -457,11 +463,13 @@
 				</p>
 
 				<p>
-					This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a "reverse-J" distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a Pareto distribution (named after the economist Vilfredo Pareto). We don’t have to worry about why it may be a Pareto distribution at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small to have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is?
+					<idx>Pareto distribution</idx>
+					This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a "reverse-J" distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a <term>Pareto distribution</term> (named after the economist Vilfredo Pareto). We don’t have to worry about why it may be a Pareto distribution at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small to have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is?
 				</p>
 
 				<p>
-					There are lots of other distribution shapes. The most common one that almost everyone has heard of is sometimes called the "bell" curve because it is shaped like a bell. The technical name for this is the normal distribution. The term "normal" was first introduced by Carl Friedrich Gauss (1777-1855), who supposedly called it that in a belief that it was the most typical distribution of data that one might find in natural phenomena. The following histogram depicts the typical bell shape of the normal distribution.
+					<idx>normal distribution</idx>
+					There are lots of other distribution shapes. The most common one that almost everyone has heard of is sometimes called the "bell" curve because it is shaped like a bell. The technical name for this is the <term>normal distribution</term>. The term "normal" was first introduced by Carl Friedrich Gauss (1777-1855), who supposedly called it that in a belief that it was the most typical distribution of data that one might find in natural phenomena. The following histogram depicts the typical bell shape of the normal distribution.
 				</p>
 
 				<figure>
@@ -474,7 +482,10 @@
 				</p>
 
 				<p>
-					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s <c>rnorm()</c> function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the <c>rnorm()</c> command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+
+					<idx>rnorm()</idx>
+					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s <term>rnorm()</term> function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+
 				</p>
 
 				<p>

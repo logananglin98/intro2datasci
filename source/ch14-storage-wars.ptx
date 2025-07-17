@@ -15,11 +15,11 @@
 
 
 				<p>
-					Older technologists who have watched the evolution of technology over recent decades remember a time when storage was expensive and it had to be hoarded like gold. Over the last few years, however, the accelerating trend of Moore’s Law has made data storage almost "too cheap to meter" (as they used to predict about nuclear power). Although this opens many opportunities, it also means that people keep data around for a long time, since it doesn’t make sense to delete anything, and they may keep data around in many different formats. As a result, the world is full of different data formats, some of which are proprietary designed and owned by a single company such as SAS and some of which are open, such as the lowly but infinitely useful "comma separated variable," or CSV format.
+					Older technologists who have watched the evolution of technology over recent decades remember a time when storage was expensive and it had to be hoarded like gold. Over the last few years, however, the accelerating trend of <idx>Moore’s Law</idx><term>Moore’s Law</term> has made data storage almost "too cheap to meter" (as they used to predict about nuclear power). Although this opens many opportunities, it also means that people keep data around for a long time, since it doesn’t make sense to delete anything, and they may keep data around in many different formats. As a result, the world is full of different data formats, some of which are proprietary designed and owned by a single company such as SAS and some of which are open, such as the lowly but infinitely useful "comma separated variable," or CSV format.
 				</p>
 
 				<p>
-					In fact, one of the basic dividing lines in data formats is whether data are human readable or not. Formats that are not human readable, often called binary formats, are very efficient in terms of how much data they can pack in per kilobyte, but are also squirrelly in the sense that it is hard to see what is going on inside of the format. As you might expect, human readable formats are inefficient from a storage standpoint, but easy to diagnose when something goes wrong. For high volume applications, such as credit card processing, the data that is exchanged between systems is almost universally in binary formats. When a data set is archived for later reuse, for example in the case of government data sets available to the public, they are usually available in multiple formats, at least one of which is a human readable format.
+					In fact, one of the basic dividing lines in data formats is whether data are human readable or not. Formats that are not human readable, often called <idx>binary formats</idx><term>binary formats</term>, are very efficient in terms of how much data they can pack in per kilobyte, but are also squirrelly in the sense that it is hard to see what is going on inside of the format. As you might expect, human readable formats are inefficient from a storage standpoint, but easy to diagnose when something goes wrong. For high volume applications, such as credit card processing, the data that is exchanged between systems is almost universally in binary formats. When a data set is archived for later reuse, for example in the case of government data sets available to the public, they are usually available in multiple formats, at least one of which is a human readable format.
 				</p>
 
 				<p>
@@ -27,7 +27,7 @@
 				</p>
 
 				<p>
-					this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the OpenDocument format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on XML, which stands for Extensible markup language. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the W3C consortium, which is responsible for developing and maintaining the many standards and protocols that support the web.
+					this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the <idx>OpenDocument</idx><term>OpenDocument</term> format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on <idx>XML</idx><term>XML</term>, which stands for <idx>Extensible markup language</idx><term>Extensible markup language</term>. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the <idx>W3C consortium</idx><term>W3C consortium</term>, which is responsible for developing and maintaining the many standards and protocols that support the web.
 				</p>
 
 				<p>
@@ -39,7 +39,7 @@
 				</p>
 
 				<p>
-					the data. In this case it guessed right by choosing "tab-delimited." As mentioned above, tab-delimited and comma-delimited are the two most common formats used for interchange between data programs.The next drop down is for "Decimal" and this option accounts for the fact the a dot is used in the U.S. while a comma may be used for the decimal point in Europe and elsewhere. Finally, the "Quote" drop down controls which character is used to contain quoted string/text data. The most common method is double quotes.
+					the data. In this case it guessed right by choosing "<idx>tab-delimited</idx><term>tab-delimited</term>." As mentioned above, tab-delimited and <idx>comma-delimited</idx><term>comma-delimited</term> are the two most common formats used for interchange between data programs.The next drop down is for "Decimal" and this option accounts for the fact the a dot is used in the U.S. while a comma may be used for the decimal point in Europe and elsewhere. Finally, the "Quote" drop down controls which character is used to contain quoted string/text data. The most common method is double quotes.
 				</p>
 
 				<p>
@@ -56,7 +56,7 @@
 				</p>
 
 				<p>
-					The above is a very simple example of a comma-delimited file where the first row contains a "header," i.e. the information about the names of variables. The second and subsequent rows contain actual data. Each field is separated by a comma, and the text strings are enclosed in double quotes. The same file tab-delimited might look like this:
+					The above is a very simple example of a comma-delimited file where the first row contains a "<idx>header</idx><term>header</term>," i.e. the information about the names of variables. The second and subsequent rows contain actual data. Each field is separated by a comma, and the text strings are enclosed in double quotes. The same file tab-delimited might look like this:
 				</p>
 			<pre>
 					Name Age Gender
@@ -77,15 +77,15 @@
 				</p>
 
 				<p>
-					Interestingly, this is one area where Mac and Linux users are at a disadvantage relative to Windows users. This is perhaps because Excel is a Microsoft product, originally written to be native to Windows, and as a result it is easier to create tools that work with Windows. One example noted here is the package called RODBC. The acronym ODBC stands for Open Database Connection, and this is a Windows facility for exchanging data among Windows programs. Although there is a proprietary ODBC driver available for the Mac, most Mac users will want to try a different method for getting access to Excel data.
+					Interestingly, this is one area where Mac and Linux users are at a disadvantage relative to Windows users. This is perhaps because Excel is a Microsoft product, originally written to be native to Windows, and as a result it is easier to create tools that work with Windows. One example noted here is the package called <idx>RODBC</idx><term>RODBC</term>. The acronym <idx>ODBC</idx><term>ODBC</term> stands for Open Database Connection, and this is a Windows facility for exchanging data among Windows programs. Although there is a proprietary ODBC driver available for the Mac, most Mac users will want to try a different method for getting access to Excel data.
 				</p>
 
 				<p>
-					Another Windows-only package for R is called xlsReadWrite. This package provides convenient one-command calls for importing data directly from Excel spreadsheets or exporting it directly to spreadsheets. There are also more detailed commands that allow manipulating individual cells.
+					Another Windows-only package for R is called <idx>xlsReadWrite</idx><term>xlsReadWrite</term>. This package provides convenient one-command calls for importing data directly from Excel spreadsheets or exporting it directly to spreadsheets. There are also more detailed commands that allow manipulating individual cells.
 				</p>
 
 				<p>
-					Two additional packages, xlsx and XLConnect, supposedly will work with the Mac, but at the time of this writing both of these packages had version incompatibilities that made it impossible to install the packages directly into R. Note that the vast majority of packages provide the raw "source code" and so it is theoretically possible, but generally highly time consuming, to "compile" your own copies of these packages to create your own installation.
+					Two additional packages, <idx>xlsx</idx><term>xlsx</term> and <idx>XLConnect</idx><term>XLConnect</term>, supposedly will work with the Mac, but at the time of this writing both of these packages had version incompatibilities that made it impossible to install the packages directly into R. Note that the vast majority of packages provide the raw "source code" and so it is theoretically possible, but generally highly time consuming, to "compile" your own copies of these packages to create your own installation.
 				</p>
 
 				<p>
@@ -116,7 +116,7 @@
 				</p>
 
 				<p>
-					A review of the documentation reveals that the only required argument to this function is the location of the XLS file, and that this location can be a pathname, a web location with http, or an Internet location with ftp (file transfer protocol, a way of sending and receiving files without using a web browser). If you hearken back to
+					A review of the documentation reveals that the only required argument to this function is the location of the XLS file, and that this location can be a pathname, a web location with http, or an Internet location with ftp (<idx>file transfer protocol</idx><term>file transfer protocol</term>, a way of sending and receiving files without using a web browser). If you hearken back to
 				</p>
 
 				<p>
@@ -250,7 +250,7 @@
 				</pre>
 
 				<p>
-					Don’t forget that <c>str_replace()</c> is part of the stringr package, and you will have to use install.packages() and library() to load it if it is not already in place. The two backslashes in the string expression above are called "escape characters" and they force the dot that follows to be treated as a literal dot rather than as a wildcard character. The dot on its own is a wildcard that matches one instance of any character.
+					Don’t forget that <c>str_replace()</c> is part of the stringr package, and you will have to use install.packages() and library() to load it if it is not already in place. The two backslashes in the string expression above are called "<idx>escape characters</idx><term>escape characters</term>" and they force the dot that follows to be treated as a literal dot rather than as a wildcard character. The dot on its own is a wildcard that matches one instance of any character.
 				</p>
 
 				<p>
@@ -342,7 +342,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</ol></p>
 
 				<p>
-					Like most contemporary programming languages, R provides several methods for performing these two tasks. The strategy is the same across most of these methods: a package for R provides a "client" that can connect up to the database server. The R client supports sending commands mostly in SQL, structured query language to the database server. The database server returns a result to the R client, which places it in an R data object (typically a data frame) for use in further processing or visualization.
+					Like most contemporary programming languages, R provides several methods for performing these two tasks. The strategy is the same across most of these methods: a package for R provides a "client" that can connect up to the database server. The R client supports sending commands mostly in <idx>SQL</idx><term>SQL</term>, structured query language to the database server. The database server returns a result to the R client, which places it in an R data object (typically a data frame) for use in further processing or visualization.
 				</p>
 
 				<p>
@@ -353,7 +353,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					<li>
 									<blockquote>
 														<p>
-										RMySQL Connects to MySQL, perhaps the most popular open source database in the world. MySQL is the M in "LAMP" which is the acronym for Linux, Apache, MySQL, and PHP. Together, these four elements provide a complete solution for data driven web applications.
+										RMySQL Connects to <idx>MySQL</idx><term>MySQL</term>, perhaps the most popular open source database in the world. MySQL is the M in "LAMP" which is the acronym for Linux, Apache, MySQL, and PHP. Together, these four elements provide a complete solution for data driven web applications.
 									</p>
 									</blockquote>
 					</li>
@@ -361,7 +361,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					<li>
 									<blockquote>
 														<p>
-										ROracle Connects with the widely used Oracle commercial database package. Oracle is probably the most widely used commercial database package. Ironically, Oracle acquired Sun Microsystems a few years ago and Sun developers predominate in development and control of the open source MySQL system,
+										ROracle Connects with the widely used <idx>Oracle</idx><term>Oracle</term> commercial database package. Oracle is probably the most widely used commercial database package. Ironically, Oracle acquired Sun Microsystems a few years ago and Sun developers predominate in development and control of the open source MySQL system,
 									</p>
 									</blockquote>
 					</li>
@@ -369,7 +369,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					<li>
 									<blockquote>
 														<p>
-										RPostgreSQL Connects with the well-developed, full featured PostgreSQL (sometimes just called Postgres) database system. PostgreSQL is a much more venerable system than MySQL and has a much larger developer community. Unlike MySQL, which is effectively now controlled by Oracle, PostgreSQL has a developer community that is independent of any company and a licensing scheme that allows anybody to modify and reuse the code.
+										RPostgreSQL Connects with the well-developed, full featured <idx>PostgreSQL</idx><term>PostgreSQL</term> (sometimes just called Postgres) database system. PostgreSQL is a much more venerable system than MySQL and has a much larger developer community. Unlike MySQL, which is effectively now controlled by Oracle, PostgreSQL has a developer community that is independent of any company and a licensing scheme that allows anybody to modify and reuse the code.
 									</p>
 									</blockquote>
 					</li>
@@ -377,7 +377,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					<li>
 									<blockquote>
 														<p>
-										RSQlite Connects with SQlite, another open source, independently developed database system. As the name suggests, SQlite has a very light "code footprint" meaning that it is fast and compact.
+										RSQlite Connects with <idx>SQlite</idx><term>SQlite</term>, another open source, independently developed database system. As the name suggests, SQlite has a very light "code footprint" meaning that it is fast and compact.
 									</p>
 									</blockquote>
 					</li>
@@ -385,7 +385,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					<li>
 									<blockquote>
 														<p>
-										RMongo Connects with the MongoDB system, which is the only system here that does not use SQL. Instead, MongoDB uses JavaScript to access data. As such it is well suited for web development applications.
+										RMongo Connects with the <idx>MongoDB</idx><term>MongoDB</term> system, which is the only system here that does not use SQL. Instead, MongoDB uses JavaScript to access data. As such it is well suited for web development applications.
 									</p>
 									</blockquote>
 					</li>
@@ -409,7 +409,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</p>
 
 				<p>
-					Then look for the "MySQL Community Server." The term community in this context refers to the free, open source developer community version of MySQL. Note that there are also commercial versions of SQL developed and marketed by various companies including Oracle.
+					Then look for the "<idx>MySQL Community Server</idx><term>MySQL Community Server</term>." The term community in this context refers to the free, open source developer community version of MySQL. Note that there are also commercial versions of SQL developed and marketed by various companies including Oracle.
 				</p>
 
 				<p>
@@ -503,7 +503,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</p>
 
 				<p>
-					The next step beyond remote databases is toward distributed computing across a "cluster" of computers. This combines the remote
+					The next step beyond remote databases is toward distributed computing across a "<idx>cluster</idx><term>cluster</term>" of computers. This combines the remote
 				</p>
 
 				<p>
@@ -511,7 +511,7 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</p>
 
 				<p>
-					Hadoop is not a single thing, but is rather a combination of pieces of software called a library. Hadoop is developed and maintained by the same people who maintain the Apache open source web server. There are about a dozen different parts of the Hadoop framework, but the Hadoop Distributed Files System (HDFS) and Hadoop MapReduce framework are two of the most important frameworks.
+					<idx>Hadoop</idx> <term>Hadoop</term> is not a single thing, but is rather a combination of pieces of software called a library. Hadoop is developed and maintained by the same people who maintain the Apache open source web server. There are about a dozen different parts of the Hadoop framework, but the <idx>Hadoop Distributed Files System</idx><term>Hadoop Distributed Files System</term> (HDFS) and <idx>Hadoop MapReduce</idx><term>Hadoop MapReduce</term> framework are two of the most important frameworks.
 				</p>
 
 				<p>
@@ -519,11 +519,11 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</p>
 
 				<p>
-					MapReduce is a bit more complicated, but it follows the same logic of trying to divide up work across multiple computers. The term MapReduce is used because there are two big processes involved: map and reduce. For the map operation, a big job is broken up into lots of separate parts. For example, if we wanted to create a search index for all of the files on a company’s intranet servers, we could break up the whole indexing task into a bunch of separate jobs. Each job might take care of indexing the files on one server.
+					<idx>MapReduce</idx><term>MapReduce</term> is a bit more complicated, but it follows the same logic of trying to divide up work across multiple computers. The term MapReduce is used because there are two big processes involved: map and reduce. For the map operation, a big job is broken up into lots of separate parts. For example, if we wanted to create a search index for all of the files on a company’s intranet servers, we could break up the whole indexing task into a bunch of separate jobs. Each job might take care of indexing the files on one server.
 				</p>
 
 				<p>
-					In the end, though, we don’t want dozens or hundreds of different search indices. We want one big one that covers all of the files our company owns. This is where the reduce operation comes in. As all of the individual indexing jobs finish up, a reduce operation combines them into one big job. This combining process works on the basis of a so-called "key." In the search indexing example, some of the small jobs might have found files that contained the word "fish." As each small job finishes, it mentioned whether or not fish appeared in a document and perhaps how many times fish appeared. The reduce operation uses fish as a key to match up the results from all of the different jobs, thus creating an aggregated summary listing all of the documents that contained fish. Later, if anyone searched on the word fish, this list could be used to direct them to documents that contained the word.
+					In the end, though, we don’t want dozens or hundreds of different search indices. We want one big one that covers all of the files our company owns. This is where the reduce operation comes in. As all of the individual indexing jobs finish up, a reduce operation combines them into one big job. This combining process works on the basis of a so-called "<idx>key</idx><term>key</term>." In the search indexing example, some of the small jobs might have found files that contained the word "fish." As each small job finishes, it mentioned whether or not fish appeared in a document and perhaps how many times fish appeared. The reduce operation uses fish as a key to match up the results from all of the different jobs, thus creating an aggregated summary listing all of the documents that contained fish. Later, if anyone searched on the word fish, this list could be used to direct them to documents that contained the word.
 				</p>
 
 				<p>

@@ -75,11 +75,11 @@
                 </p>
 
                 <p>
-                    Before we can start, we need R to be able to find the data. Make sure that you download the data to the spot on your computer that R considers the "working" directory. Use this command to find out what the current working directory is:
+                    Before we can start, we need R to be able to find the data. Make sure that you download the data to the spot on your computer that R considers the "working" directory. Use the <idx><c>getwd()</c></idx><term>getwd()</term> command to find out what the current working directory is:
                 </p>
 
                 <p>
-                    &gt; <idx>getwd()</idx><term>getwd()</term>
+                    &gt; getwd()
                 </p>
 
                 <p>

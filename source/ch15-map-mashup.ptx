@@ -164,7 +164,7 @@
     </p>
 
     <p>
-      &gt; <idx>addPoints</idx><term>addPoints</term>(eventData,col="red",cex=.5)
+      &gt; addPoints(eventData,col="red",cex=.5)
     </p>
 
     <figure>

@@ -2,7 +2,7 @@
 <chapter xml:id="ch15-map-mashUp" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Map MashUp</title>
 
-  <subsection xml:id="ch15-intro-mashup">
+  <section xml:id="ch15-intro-mashup">
     <title>What is a Mashup?</title>
 
     <introduction>
@@ -23,9 +23,9 @@
     <p>
       In this chapter we tackle a similar problem. Using some address data from government records, we call the Google <idx>geocoding</idx><term>geocoding</term> API over the web to find the latitude and longitude of each address. Then we plot these latitudes and longitudes on a map of the U.S. This activities reuses skills we learned in the previous chapter for reading in data files, adds some new skills related to calling web APIs, and introduces us to a new type of data, namely the shapefiles that provide the basis for electronic maps.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-map-data">
+  <section xml:id="ch15-map-data">
     <title>Working with Map Data in R</title>
     <p>
       Let's look at the new stuff first. The Internet is full of <idx>shapefiles</idx><term>shapefiles</term> that contain mapping data. Shapefiles are a partially proprietary, partially open format supported by a California software company called SRI. Shapefile is actually an umbrella term that covers several different file types. Because the R community has provided some packages to help deal with shapefiles, we don't need too much information about the details. The most important thing to know is that shapefiles contain points, polygons, and "<idx>polylines</idx><term>polylines</term>." Everyone knows what a point and a polygon are, but a polyline is a term used by computer scientist to refer to a multi-segment line. In many graphics applications it is much easier to approximate a curved line with many tiny connected straight lines than it is to draw a truly curved line. If you think of a road or a river on a map, you will have a good idea of a polyline.
@@ -182,9 +182,9 @@
     <p>
       Also note that the "projection=NA" parameter in the as.EventData() coercion is just letting the mapping software know that we don't want our point to be transformed according to a mapping projection. If you remember from your Geography class, a projection is a mapping technique to make a curved object like the Earth seem sensible on a flat map. In this example, we've already flattened out the U.S., so there is no need to transform the points.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-data-acquisition">
+  <section xml:id="ch15-data-acquisition">
     <title>Acquiring and Preparing Address Data</title>
     <p>
       Next, we need a source of points to add to our map. This could be anything that we're interested in: the locations of restaurants, crime scenes, colleges, etc. In Google a search for filetype:xls or filetype;csv with appropriate additional search terms can provide interesting data sources. You may also have mailing lists of customers or clients. The most important thing is that we will need street address, city, and state in order to geocode the addresses. For this example, we searched for "housing street address list filetype:csv", and this turned up a data set of small businesses that have contracts with the U.S. Department of Health and Human services. Let's read this in using read.csv():
@@ -281,9 +281,9 @@
     <p>
       This looks pretty good: Our new column, called dhhsAddrs, is character string data, converted from the factor labels of the original Contractor.Address column. Now we need to geocode these.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-geocoding-api">
+  <section xml:id="ch15-geocoding-api">
     <title>Using the Google Geocoding Web API</title>
     <p>
       We will use the Google geocoding application programming interface (API) which is pretty easy to use, does not require an account or application ID, and allows about 2500 address conversions per day. The API can be accessed over the web, using what is called an HTTP GET request. Note that the Terms of Service for the Google geocoding API are very specific about how the interface can be used most notably on the point that the geocodes must be used on Google maps. Make sure you read the Terms of Service before you create any software applications that use the geocoding service. See the link in the bibliography at the end of the chapter. The bibliography has a link to an article with dozens of other geocoding APIs if you disagree with Google's Terms of Service.
@@ -348,9 +348,9 @@
     <p>
       There's tons more data in the JSON object that Google returned, and fortunately there is an R package, called <idx>JSONIO</idx><term>JSONIO</term>, that will extract the data we need from the structure without having to parse it ourselves. In order to get R to send the HTTP GET requests to google, we will also need to use the <idx>RCurl</idx><term>RCurl</term> package. This will give us a single command to send the request and receive the result back, essentially doing all of the quirky steps that a web browser takes care of automatically for us. To get started, install.packages() and library() the two packages we will need RCurl and JSONIO.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-building-functions">
+  <section xml:id="ch15-building-functions">
     <title>Building the Geocoding Functions in R</title>
     <p>
       Next, we will create a new helper function to take the address field and turn it into the URL that we need:
@@ -499,9 +499,9 @@
     <p>
       Perfect! we called our new function Addr2latlng() with the address of the Whitehouse and got back a list with two numeric items containing the latitude and longitude associated with that address. With just a few lines of R code we have harnessed the power of Google's extensive geocoding capability to convert a brief text street address into mapping coordinates.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-final-map">
+  <section xml:id="ch15-final-map">
     <title>Executing the Mashup and Visualizing Results</title>
     <p>
       At this point there isn't too much left to do. We have to create a looping mechanism so that we can process the whole list of addresses in our DHHS data set. We have some small design choices here. It would be possible to attach new fields to the existing dataframe. Instead, the following code keeps everything pretty simple by receiving a list of addresses and returning a new data frame with X, Y, and EID ready to feed into our mapping software:
@@ -618,9 +618,9 @@
     <p>
       If you like conspiracy theories, there is some support in this graph: The vast majority of the companies that have contracts with DHHS are in the Washington, DC area, with a little trickle of additional companies heading up the eastern seaboard as far as Boston and southern New Hampshire. Elsewhere in the country there are a few companies here and there, particularly near the large cities of the east and south east.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-chapter-challenge">
+  <section xml:id="ch15-chapter-challenge">
     <title>Chapter Challenge</title>
     <p>
       Improve the Addr2latlng() function so that it checks for errors returned from the Google API. This will require going to the Google API site, looking more closely at the JSON structure, and reviewing the error codes that Google mentions in the documentation. You may also learn enough that you can repair some of the addresses that failed.
@@ -631,9 +631,9 @@
     <p>
       If you get that far and are still itching for another challenge, try improving the map. One idea for this was mentioned above: you could change the size or color of the dots based on the size of the contract received. An even better (and much harder) idea would be to sum the total dollar amount being given within each state and then color each state according to how much DHHS money it receives. This would require delving into the shapefile data quite substantially so that you could understand how to find the outline of a state and fill it in with a color.
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="ch15-r-functions">
+  <section xml:id="ch15-r-functions">
     <title>R Functions Used in This Chapter</title>
     <p>
       <ul>
@@ -744,9 +744,9 @@
         </li>
       </ul>
     </p>
-  </subsection>
+  </section>
 
-  <subsection xml:id="sources-10">
+  <section xml:id="sources-10">
     <title> Sources </title>
     <p>
       <ul>
@@ -794,5 +794,5 @@
         </li>
       </ul>
     </p>
-  </subsection>
+  </section>
 </chapter>

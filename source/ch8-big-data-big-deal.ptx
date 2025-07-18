@@ -3,7 +3,7 @@
 <chapter xml:id="ch8-big-data-big-deal" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Big Data? Big Deal!</title>
 
-  <subsection xml:id="big-data-big-deal">
+  <section xml:id="big-data-big-deal">
     <title>Big Data? Big Deal!</title>
 
   <introduction>
@@ -131,9 +131,9 @@
 					Putting this all together, we can take a sensible position that high quality data, in abundance, together with tools used by intelligent analysts in a secure environment, may provide worthwhile benefits in the commercial sector, in education, in government, and in other areas. The focus of our efforts as data scientists, however, should not be on achieving the largest possible data sets, but rather on getting the right data and the right amount of data for the purpose we intend. There is no special virtue in having a lot of data if those data are unsuitable to the conclusions that we want to draw. Likewise, simply getting data more quickly does not guarantee that what we get will be highly relevant to our problems. Finally, although it is said that variety is the spice of life, complexity is often a danger to reliability and trustworthiness: the more complex the linkages among our data the more likely it is that problems may crop up in making use of those data or keeping them safe.
 				</p>
 
-			</subsection>
+			</section>
 
-		<subsection xml:id="the-tools-of-data-science">
+		<section xml:id="the-tools-of-data-science">
 			<title>The Tools of Data Science </title>
 
 			<p>
@@ -152,8 +152,8 @@
 				R, SPSS, and SAS grew up as statistics packages, but there are also many general purpose programming languages that incorporate features valuable to data scientists. One very exciting development in programming languages has the odd name of "Processing." <idx>processing</idx><term>Processing</term> is a programming language specifically geared toward creating data visualizations. Like R, Processing is an open source project, so it is freely available at <url href="http://processing.org/">http://processing.org/</url>. Also like R, Processing is a cross-platform program, so it will run happily on Mac, Windows, and Linux. There are lots of books available for learning Processing and the website contains lots of examples for getting started. Besides R, Processing might be one of the most important tools in the data scientist’s toolbox, at least for those who need to use data to draw conclusions and communicate with others.
 			</p>
 
-    </subsection>
-			<subsection xml:id="chapter-challenge-4">
+    </section>
+			<section xml:id="chapter-challenge-4">
 				<title>Chapter Challenge </title>
 
 				<p>
@@ -168,9 +168,9 @@
 					and download a trial version of the "World Programming System" (WPS). WPS can read SAS code, so you could easily look up the code that you would need in order to read in your Data.gov dataset.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-5">
+			<section xml:id="sources-5">
 				<title>Sources </title>
 
 				<p><ul>
@@ -199,6 +199,6 @@
 					</li>
 
 				</ul></p>
-        </subsection>
+        </section>
 
 </chapter>

@@ -3,7 +3,7 @@
 <chapter xml:id="ch11-popularity-contest" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Popularity Contest</title>
 
-  <subsection xml:id="popularity-comparison">
+  <section xml:id="popularity-comparison">
     <title>Popularity Comparison</title>
 
   <introduction>
@@ -577,9 +577,9 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 					Write a function that takes two search strings as arguments and that returns the results of a Poisson rate ratio test on the arrival rates of tweets on the two topics. Your function should first run the necessary Twitter searches, then sort the tweets by ascending time of arrival and calculate the two vectors of time differentials. Use the mean of one of these vectors as the basis for comparison and for each vector, count how many events are at or below the mean. Use this information and the numbers of tweets requested to run the poisson.test() rate comparison.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-7">
+			<section xml:id="sources-7">
 				<title>Sources </title>
 
 				<p>
@@ -668,9 +668,9 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-functions-used-in-this-chapter-2">
+			<section xml:id="r-functions-used-in-this-chapter-2">
 				<title>R Functions Used in this Chapter </title>
 
 				<p><ul>
@@ -878,9 +878,9 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 					</choices>
 				</exercise>
 
-			</subsection>
+			</section>
 
-						<subsection xml:id="r-script-create-vector-of-probabilities-from-delay-times">
+						<section xml:id="r-script-create-vector-of-probabilities-from-delay-times">
 				<title> <term>R Script Create Vector of Probabilities From Delay Times</term> </title>
 
 					<p>
@@ -915,5 +915,5 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 
 
-      		</subsection>
+      		</section>
 </chapter>

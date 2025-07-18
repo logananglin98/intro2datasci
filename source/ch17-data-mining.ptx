@@ -3,7 +3,7 @@
 <chapter xml:id="ch17-data-mining" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hi Ho, Hi Ho, Data Mining We Go</title>
 
-  <subsection xml:id="what-is-data-mining">
+  <section xml:id="what-is-data-mining">
     <title>What is Data Mining?</title>
 
   <introduction>
@@ -48,9 +48,9 @@
                 <p>
                     Step 4 the interpretation of results focuses on making sense out of what the data mining algorithm has produced. This is the most important step from the perspective of the data user, because this is where an actionable conclusion is formed. When we discussed the example of beer and diapers, the interpretation of the association rules that were derived from the grocery purchasing data is what led to the discover of the beer-diapers rule and the use of that rule in reconfiguring the displays in the store.
                 </p>
-			</subsection>
+			</section>
 
-<subsection xml:id="ch17-association-rules">
+<section xml:id="ch17-association-rules">
       <title>Understanding Association Rules</title>
                 <p>
                     Let’s begin by talking a little bit about association rules. Take a look at the figure below with all of the boxes and arrows:
@@ -64,9 +64,9 @@
                 <p>
                     From the figure you can see that each supermarket customer has a grocery cart that contains several items from the larger set of items that the grocery store stocks. The association rules algorithm (also sometimes called affinity analysis) tries out many different propositions, such as "if diapers are purchased, then beer is also purchased." The algorithm uses a dataset of transactions (in the example above, these are the individual carts) to evaluate a long list of these rules for a value called "<idx>support</idx><term>support</term>." Support is the proportion of times that a particular pairing occurs across all shopping carts. The algorithm also evaluates another quantity called "<idx>confidence</idx><term>confidence</term>," which is how frequently a particular pair occurs among all the times when the first item is present. If you look back at the figure again, we had support of 0.67 (the diapers-beer association occurred in two out of the three carts) and confidence of 1.0 ("beer" occurred 100% of the time with "diapers"). In practice, both support and confidence are generally much lower than in this example, but even a rule with low support and smallish confidence might reveal purchasing patterns that grocery store managers could use to guide pricing, coupon offers, or advertising strategies.
                 </p>
-			</subsection>
+			</section>
 
-			<subsection xml:id="ch17-exploring-data">
+			<section xml:id="ch17-exploring-data">
       <title>Exploring Grocery Data with R</title>
                 <p>
                     We can get started with association rules mining very easily using the R package known as "arules." In R-Studio, you can get the arules package ready using the following commands:
@@ -224,8 +224,8 @@
                     There are a couple of other measures that can help us zero in on good association rules such as "lift"and "conviction" but we will put off discussing these until a little later.
                 </p>
 
-			</subsection>
-			<subsection xml:id="ch17-generating-rules">
+			</section>
+			<section xml:id="ch17-generating-rules">
         <title>Generating and Visualizing Rules</title>
 
                 <p>
@@ -704,8 +704,8 @@
                 <p>
                     The key takeaway point here is that using a good visualization tool to examine the results of a data mining activity can enhance the process of sorting through the evidence and making sense of it. If we were to present these results to a store manager (and we would certainly do a little more digging before formulating our final conclusions) we might recommend that recipes could be published along with coupons and popular recipes, such as for homemade soup, might want to have all of the ingredients group together in the store along with signs saying, "Mmmm, homemade soup!"
                 </p>
-			</subsection>
-<subsection xml:id="Chapter-Challenge-ch17">
+			</section>
+<section xml:id="Chapter-Challenge-ch17">
         <title>Chapter Challenge</title>
 
                 <p>
@@ -724,9 +724,9 @@
                     A company called Togaware has created a graphical user interface (GUI) for R called Rattle. At this writing (working with R version 3.0.0), one of Rattle’s components has gotten out of date and will not work with the latest version of R, particularly on the Mac. It is likely, however, that those involved with the Rattle project will soon update it to be compatible again. Using Rattle simplifies many of the processes described earlier in the chapter. Try going to the Togaware site and following the instructions there for installing Rattle for your particular operating system.
                 </p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="sources-12">
+            <section xml:id="sources-12">
                 <title>Sources </title>
 
                 <p><ul>
@@ -780,18 +780,18 @@
 
                 </ul></p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="reference">
+            <section xml:id="reference">
                 <title>Reference </title>
 
                 <p>
                     Michael Hahsler, Kurt Hornik, and Thomas Reutterer (2006) Implications of probabilistic data modeling for mining association rules. In M. Spiliopoulou, R. Kruse, C. Borgelt, A. Nuernberger, and W. Gaul, editors, From Data and Information Analysis to Knowledge Engineering, Studies in Classification, Data Analysis, and Knowledge Organization, pages 598–605. Springer-Verlag.
                 </p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="r-functions-used-in-this-chapter-7">
+            <section xml:id="r-functions-used-in-this-chapter-7">
                 <title>R Functions Used in This Chapter </title>
 
                 <p><ul>
@@ -836,6 +836,6 @@
                     </li>
 
                 </ul></p>
-      </subsection>
+      </section>
 
 </chapter>

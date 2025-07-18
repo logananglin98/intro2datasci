@@ -670,7 +670,7 @@
 			</p>
 
 			<p>
-				Technically, what we have with our created variable now is a time series, and because statisticians like to have convenient methods for dealing with time series, R has a built-in function, called <idx>diff()</idx><term>diff()</term>, that allows us to easily calculate the difference in seconds between each pair of neighboring values. Try it:
+				Technically, what we have with our created variable now is a time series, and because statisticians like to have convenient methods for dealing with time series, R has a built-in function, called <idx><c>diff()</c></idx><term>diff()</term>, that allows us to easily calculate the difference in seconds between each pair of neighboring values. Try it:
 			</p>
 
 			<p>

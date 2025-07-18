@@ -188,7 +188,7 @@
 			</p>
 
 			<p>
-				The <idx>require()</idx><term>require()</term> function on the fourth line above does the same thing as library(), which we learned in the previous chapter, but it also returns the value "FALSE" if the package you requested in the argument "x" has not yet been downloaded. 
+				The <idx><c>require()</c></idx><term>require()</term> function on the fourth line above does the same thing as library(), which we learned in the previous chapter, but it also returns the value "FALSE" if the package you requested in the argument "x" has not yet been downloaded. 
 			</p>
 
 			<p>
@@ -436,7 +436,7 @@
 			</p>
 
 			<p>
-				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the <idx>head()</idx><term>head()</term> function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
+				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the <idx><c>head()</c></idx><term>head()</term> function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
 			</p>
 
 			<p>
@@ -495,7 +495,7 @@
 			</p>
 
 			<p>
-				Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: <idx>as()</idx><term>as()</term>, <idx>lapply()</idx><term>lapply()</term>, <idx>rbind()</idx><term>rbind()</term>, and <idx>do.call()</idx><term>do.call()</term>. The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function "binds" together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
+				Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: <idx><c>as()</c></idx><term>as()</term>, <idx><c>lapply()</c></idx><term>lapply()</term>, <idx><c>rbind()</c></idx><term>rbind()</term>, and <idx><c>do.call()</c></idx><term>do.call()</term>. The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function "binds" together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
 			</p>
 
 			<p>
@@ -567,7 +567,7 @@
 			</p>
 
 			<p>
-				Let’s start to play with the tweetDF dataset that we created before. First, as a matter of convenience, let’s learn the attach() function. The <idx>attach()</idx><term>attach()</term> function saves us some typing by giving one particular dataframe priority over any others that have the same variable names. Normally, if we wanted to access the variables in our dataframe, we would have to use the $ notation, like this:
+				Let’s start to play with the tweetDF dataset that we created before. First, as a matter of convenience, let’s learn the attach() function. The <idx><c>attach()</c></idx><term>attach()</term> function saves us some typing by giving one particular dataframe priority over any others that have the same variable names. Normally, if we wanted to access the variables in our dataframe, we would have to use the $ notation, like this:
 			</p>
 
 			<p>
@@ -595,7 +595,7 @@
 			</p>
 
 			<p>
-				Let’s visualize the creation time of the 500 tweets in our dataset. When working with time codes, the <idx>hist()</idx><term>hist()</term> function requires us to specify the approximate number of categories we want to see in the histogram:
+				Let’s visualize the creation time of the 500 tweets in our dataset. When working with time codes, the <idx><c>hist()</c></idx><term>hist()</term> function requires us to specify the approximate number of categories we want to see in the histogram:
 			</p>
 
 			<p>
@@ -642,7 +642,7 @@
 			</p>
 
 			<p>
-				Working our way from the inside to the outside of the expression above, we want to sort in the order that the tweets were created. We first coerce the variable "created" to integer it will then truly be expressed in the number of seconds since 1970 just in case there are operating system differences in how POSIX dates are sorted. We wrap this inside the order() function. The <idx>order()</idx><term>order()</term> function will provide a list of row indices that reflects the time ordering we want. We use the square brackets notation to address the rows in tweetDF, taking all of the columns by leaving the index after the comma empty.
+				Working our way from the inside to the outside of the expression above, we want to sort in the order that the tweets were created. We first coerce the variable "created" to integer it will then truly be expressed in the number of seconds since 1970 just in case there are operating system differences in how POSIX dates are sorted. We wrap this inside the order() function. The <idx><c>order()</c></idx><term>order()</term> function will provide a list of row indices that reflects the time ordering we want. We use the square brackets notation to address the rows in tweetDF, taking all of the columns by leaving the index after the comma empty.
 			</p>
 
 			<p>
@@ -702,7 +702,7 @@
 			</figure>
 
 			<p>
-				As with earlier commands, we use <idx>as.integer()</idx><term>as.integer()</term> to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
+				As with earlier commands, we use <idx><c>as.integer()</c></idx><term>as.integer()</term> to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
 			</p>
 
 			<p>
@@ -730,7 +730,7 @@
 			</p>
 
 			<p>
-				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the <idx>mfv()</idx><term>mfv()</term> function show that the most commonly occurring time interval between neighboring tweets is zero!
+				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the <term>mfv()</term> function show that the most commonly occurring time interval between neighboring tweets is zero!
 			</p>
 
 			<p>

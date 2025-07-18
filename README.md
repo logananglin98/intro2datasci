@@ -1,6 +1,6 @@
 # Introduction to Data Science Using R
 
-###### Runestone Version 1
+#### Runestone Version 1
 
 ## Bibliographic Information
 

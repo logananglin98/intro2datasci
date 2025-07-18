@@ -269,18 +269,6 @@
 				</p>
 
 				<p>
-					<sage language="r">
-						<input>
-							qpois(ppois(10, lambda=10), lambda=10)
-						</input>
-					</sage>
-				</p>
-
-				<p>
-					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the <idx>poisson.test()</idx><term>poisson.test()</term> function like this:
-				</p>
-
-				<p>
 					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx>qpois()</idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
 				</p>
 

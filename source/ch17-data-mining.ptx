@@ -7,7 +7,7 @@
     <title>What is Data Mining?</title>
 
   <introduction>
-    <p> <em><idx>Data Mining</idx><term>Data Mining</term> is an area of research and practice that is focused on discovering novel patterns in data. As usual, R has lots of possibilities for data mining. In this chapter we will begin experimentation with essential data mining techniques by trying out one of the easiest methods to understand: association rules mining. More beer and diapers please!</em></p>
+    <p> <em><idx>data mining</idx><term>Data Mining</term> is an area of research and practice that is focused on discovering novel patterns in data. As usual, R has lots of possibilities for data mining. In this chapter we will begin experimentation with essential data mining techniques by trying out one of the easiest methods to understand: association rules mining. More beer and diapers please!</em></p>
   </introduction>
                 <p>
                     Data mining is a term that refers to the use of algorithms and computers to discover novel and interesting patterns within data. One famous example that gets mentioned quite frequently is the supermarket that analyzed patterns of purchasing behavior and found that diapers and beer were often purchased together. The supermarket manager decided to put a beer display close to the diaper aisle and supposedly sold more of both products as a result. Another familiar example comes from online merchant sites that say things like, "people who bought that book were also interested in this book." By using an algorithm to look at purchasing patterns, vendors are able to create automatic systems that make these kinds of recommendations.

@@ -303,7 +303,7 @@
 				</ul></p>
 
 				<p>
-					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "<idx>$</idx><term>$</term>" to connect the two labels like this:
+					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "$" to connect the two labels like this:
 				</p>
 
 				<p>

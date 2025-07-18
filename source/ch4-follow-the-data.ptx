@@ -3,7 +3,7 @@
 <chapter xml:id="ch4-follow-the-data" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Follow the Data</title>
 
-      <subsection xml:id="follow-the-data"> 
+      <section xml:id="follow-the-data"> 
         <title>Follow the Data</title>
   <introduction>
 
@@ -84,9 +84,9 @@
 					In the next chapter we look at one of the most common and most useful ways of organizing data, namely in a rectangular structure that has rows and columns. This rectangular arrangement of data appears in spreadsheets and databases that are used for a variety of applications. Understanding how these rows and columns are organized is critical to most tasks in data science.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-3">
+			<section xml:id="sources-3">
 				<title>Sources </title>
 
 				<p><ul>
@@ -107,6 +107,6 @@
 
 				</ul></p>
 
-      </subsection>
+      </section>
 
 </chapter>

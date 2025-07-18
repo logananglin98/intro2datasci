@@ -8,7 +8,7 @@
 
   <introduction>
     				<p><em>
-					From the previous chapter you may remember that <idx>data mining</idx> <term>data mining</term> techniques fall into two large categories: <idx>supervised learning</idx> <term>supervised learning</term> techniques and <idx>unsupervised learning</idx> <term>unsupervised learning</term> techniques. The <idx>association rules mining</idx> <term>association rules mining</term> examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
+					From the previous chapter you may remember that data mining techniques fall into two large categories: <idx>supervised learning</idx> <term>supervised learning</term> techniques and <idx>unsupervised learning</idx> <term>unsupervised learning</term> techniques. The <idx>association rules mining</idx> <term>association rules mining</term> examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
             </em></p>
   </introduction>
 
@@ -21,7 +21,7 @@
 				</p>
 
 				<p>
-					This is the basic strategy of supervised machine learning: Have a substantial number of <idx>training cases</idx><term>training cases</term> that the algorithm can use to discover and mimic the underlying pattern and then use the results of that process on a <idx>test data set</idx><term>test data set</term> in order to find out how well the algorithm and parameters perform in a "cross validation." <idx>Cross validation</idx><term>Cross validation</term>, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
+					This is the basic strategy of supervised machine learning: Have a substantial number of <idx>training cases</idx><term>training cases</term> that the algorithm can use to discover and mimic the underlying pattern and then use the results of that process on a <idx>test data set</idx><term>test data set</term> in order to find out how well the algorithm and parameters perform in a "cross validation." <idx>cross validation</idx><term>Cross validation</term>, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
 				</p>
 
 				<p>
@@ -541,7 +541,7 @@
 				<title>Chapter Challenge </title>
 
 				<p>
-					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>Type I error</idx><term>Type I error</term>, <idx>Type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
+					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
 				</p>
 
 				<p>

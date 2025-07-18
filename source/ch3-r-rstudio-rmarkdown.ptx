@@ -23,7 +23,7 @@
 				</p>
 				
 				<p>
-					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>Syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
+					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
 
 				<p>

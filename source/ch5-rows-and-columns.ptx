@@ -210,7 +210,7 @@
 				</p>
 
 				<p>
-					Next, we will examine another very useful function called <c><idx>summary()</idx><term>summary()</term></c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
+					Next, we will examine another very useful function called <c><idx><c>summary()</c></idx><term>summary()</term></c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
 				</p>
 
 				<p>

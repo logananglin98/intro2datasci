@@ -40,7 +40,7 @@
 				</p>
 
 				<p>
-					A couple of other things to note: The first is the "myVector" in parentheses on the first line of our function. This is the "<idx>argument</idx><term>argument</term>" or input to the function. We have seen arguments before when we called functions like mean() and median(). Next, note the curly braces that are used on the second and final lines. These curly braces hold together all of the code that goes in our function. Finally, look at the return() right near the end of our function. This <idx>return()</idx><term>return()</term> is where we send back the result of what our function accomplished. Later on when we "call" our new function from the R console, the result that we get back will be whatever is in the parentheses in the return().
+					A couple of other things to note: The first is the "myVector" in parentheses on the first line of our function. This is the "<idx>argument</idx><term>argument</term>" or input to the function. We have seen arguments before when we called functions like mean() and median(). Next, note the curly braces that are used on the second and final lines. These curly braces hold together all of the code that goes in our function. Finally, look at the return() right near the end of our function. This <idx><c>return()</c></idx><term>return()</term> is where we send back the result of what our function accomplished. Later on when we "call" our new function from the R console, the result that we get back will be whatever is in the parentheses in the return().
 				</p>
 
 				<p>
@@ -120,7 +120,7 @@
 				</p>
 
 				<p>
-					Pretty easy to see what the new code does, right? We called the <idx>unique()</idx><term>unique()</term> function, and that returned a list of unique values that appeared in tinyData. Basically, unique() took out all of the redundancies in the vector that we passed to it. Now let’s build a little more:
+					Pretty easy to see what the new code does, right? We called the <idx><c>unique()</c></idx><term>unique()</term> function, and that returned a list of unique values that appeared in tinyData. Basically, unique() took out all of the redundancies in the vector that we passed to it. Now let’s build a little more:
 				</p>
 
 				<p>
@@ -202,7 +202,7 @@
 				</p>
 
 				<p>
-					The <idx>which.max()</idx><term>which.max()</term> function finds the index of the element of uniqueCounts that is the largest. Then we use that index to address uniqueValues with square braces. The <idx>square braces</idx><term>square braces</term> let us get at any of the elements of a vector. For example, if we asked for uniqueValues[5], we would get the number 5. If we add this one list of code to our return statement, our function will be finished:
+					The <idx><c>which.max()</c></idx><term>which.max()</term> function finds the index of the element of uniqueCounts that is the largest. Then we use that index to address uniqueValues with square braces. The <idx>square braces</idx><term>square braces</term> let us get at any of the elements of a vector. For example, if we asked for uniqueValues[5], we would get the number 5. If we add this one list of code to our return statement, our function will be finished:
 				</p>
 
 				<p>
@@ -322,7 +322,7 @@
 				</p>
 
 				<p>
-					In the first line, we stuck a bunch of nines on the end of tinyData. Remember that we had no sixes, sevens, or eights. Now when we run MyMode() it says "<idx>NA</idx><term>NA</term>," which is R’s way of saying that something went wrong and you are getting back an empty value. It is probably not obvious why things went whacky until we look at the last command above, tabulate(tinyData). Here we can see what happened: when it was run inside of the MyMode() function, <idx>tabulate()</idx><term>tabulate()</term> generated a longer list than we were expecting, because it added zeroes to cover the sixes, sevens, and eights that were not there. The maximum value, out at the end is 7, and this refers to the number of nines in tinyData. But look at what the unique() function produces:
+					In the first line, we stuck a bunch of nines on the end of tinyData. Remember that we had no sixes, sevens, or eights. Now when we run MyMode() it says "<idx>NA</idx><term>NA</term>," which is R’s way of saying that something went wrong and you are getting back an empty value. It is probably not obvious why things went whacky until we look at the last command above, tabulate(tinyData). Here we can see what happened: when it was run inside of the MyMode() function, <idx><c>tabulate()</c></idx><term>tabulate()</term> generated a longer list than we were expecting, because it added zeroes to cover the sixes, sevens, and eights that were not there. The maximum value, out at the end is 7, and this refers to the number of nines in tinyData. But look at what the unique() function produces:
 				</p>
 
 				<p>
@@ -334,7 +334,7 @@
 				</p>
 
 				<p>
-					There are only six elements in this list, so it doesn’t match up as it should (take another look at the table on the previous page and imagine if the bottom row stuck out further than the row just above it). We can fix this with the addition of the <idx>match()</idx><term>match()</term> function to our code:
+					There are only six elements in this list, so it doesn’t match up as it should (take another look at the table on the previous page and imagine if the bottom row stuck out further than the row just above it). We can fix this with the addition of the <idx><c>match()</c></idx><term>match()</term> function to our code:
 				</p>
 
 				<p>
@@ -400,7 +400,7 @@
 				</p>
 
 				<p>
-					Let’s try out the <idx>mfv()</idx><term>mfv()</term> function. This function returns the "most frequent value" in a vector, which is generally what we want in a mode function:
+					Let’s try out the <idx><c>mfv()</c></idx><term>mfv()</term> function. This function returns the "most frequent value" in a vector, which is generally what we want in a mode function:
 				</p>
 
 				<p>

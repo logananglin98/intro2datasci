@@ -15,7 +15,7 @@
 
 
 				<p>
-					Recall from the last chapter that there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. Von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<idx>Poisson Distribution</idx><term>Poisson Distribution</term>" (named after Simeon Denis Poisson, who published it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
+					Recall from the last chapter that there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. Von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<term>Poisson Distribution</term>" (named after Simeon Denis Poisson, who published it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
 				</p>
 
 				<p>

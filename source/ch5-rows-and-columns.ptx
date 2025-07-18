@@ -68,7 +68,10 @@
 				<p>
 					One other important note: Look how each column contains the same kind of data all the way down. For example, the Age column is all numbers. There’s nothing in the Age column like "Old" or "Young." This is a really valuable way of keeping things organized. After all, we could not run the <c>mean()</c> function on the Age column if it contained a little piece of text, like "Old" or "Young." On a related note, every cell (that is an intersection of a row and a column, for example, Sis’s Age) contains just one piece of information. Although a spreadsheet or a word processing program might allow us to put more than one thing in a cell, a real data handling program will not. Finally, see that every column has the same number of entries, so that the whole forms a nice rectangle. When statisticians and other people who work with databases work with a dataset, they expect this rectangular arrangement.
 				</p>
+</section>
 
+  <section xml:id="creating-vectors-r">
+    <title>Creating Data Vectors in R</title>
 				<p>
 					Now let’s figure out how to get these rows and columns into R. One thing you will quickly learn about R is that there is almost always more than one way to accomplish a goal. Sometimes the quickest or most efficient way is not the easiest to understand. In this case we will build each column one by one and then join them together into a single data frame. This is a bit labor intensive, and not the usual way that we would work with a data set, but it is easy to understand. First, run this command to make the column of names:
 				</p>
@@ -124,7 +127,10 @@
 				<p>
 					<c>myFamWeight &lt;- c(188,136,83,61,44)</c>
 				</p>
+</section>
 
+  <section xml:id="building-data-frame-r">
+    <title>Building a Data Frame</title>
 				<p>
 					Now we are ready to tackle the data.frame. In R, a data.frame is a list of columns, where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
 				</p>
@@ -208,7 +214,10 @@
 				<p>
 					Putting it all together, we have pretty complete information about the myFam dataframe and we are just about ready to do some more work with it. We have seen firsthand that R has some pretty cryptic labels for things as well as some obscure strategies for converting this to that. R was designed for experts, rather than novices, so we will just have to take our lumps so that one day we can be experts too.
 				</p>
+</section>
 
+  <section xml:id="summarizing-with-summary">
+    <title>Summarizing Data with summary()</title>
 				<p>
 					Next, we will examine another very useful function called <c><idx>summary()</idx><term>summary()</term></c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
 				</p>
@@ -301,7 +310,10 @@
 					</li>
 
 				</ul></p>
+</section>
 
+  <section xml:id="accessing-modifying-data">
+    <title>Accessing and Modifying Data Frame Variables</title>
 				<p>
 					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "$" to connect the two labels like this:
 				</p>
@@ -337,7 +349,10 @@
 				<p>
 					If this worked, we would have a pretty weird situation: The variable in the dataframe that contained the family members’ ages would all of a sudden have one more observation than the other variables: no more perfect rectangle! Try it out and see what happens. The result helps to illuminate how R approaches situations like this.
 				</p>
+</section>
 
+  <section xml:id="key-concepts-summary">
+    <title>Key Concepts and Vocabulary</title>
 				<p>
 					So what new skills and knowledge do we have at this point? Here are a few of the key points from this chapter:
 				</p>

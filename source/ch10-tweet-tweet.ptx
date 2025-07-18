@@ -730,7 +730,7 @@
 			</p>
 
 			<p>
-				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the <idx>mfv()</idx><term>mfv()</term> function show that the most commonly occurring time interval between neighboring tweets is zero!
+				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the <term>mfv()</term> function show that the most commonly occurring time interval between neighboring tweets is zero!
 			</p>
 
 			<p>

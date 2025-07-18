@@ -3,7 +3,7 @@
 <chapter xml:id="ch10-tweet-twet" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Tweet, Tweet!</title>
 
-    <subsection xml:id="intro-to-x">
+    <section xml:id="intro-to-x">
     <title>Introduction to X</title>
   <introduction>
 	<figure xml:id="ch10-twitter-bird">
@@ -27,9 +27,9 @@
 					The other great thing about working with twitteR is that we will use many, if not all of the skills that we have developed earlier in the book to put the interface to use.
 				</p>
 
-	</subsection>
+	</section>
 
-		<subsection xml:id="a-token-of-your-esteem-using-oauth">
+		<section xml:id="a-token-of-your-esteem-using-oauth">
 			<title>A Token of Your Esteem: Using OAuth </title>
 
 			<p>
@@ -134,9 +134,9 @@
 				You may notice on the Home-&gt;My applications screen in the <url href="http://dev.twitter.com">https://dev.twitter.com</url> interface that there are additional tabs along the top for different activities and tasks related to OAuth. There is a tab called Apps - details where you can always come back to get your Consumer key and Consumer secret information. Later in the chapter we will come back to the usage of your Consumer key and your Consumer secret but before we get there we have to get the twitteR package ready to go.
 			</p>
 
-		</subsection>
+		</section>
 
-		<subsection xml:id="working-with-x">
+		<section xml:id="working-with-x">
 			<title>Working with X</title>
 
 			<p>
@@ -815,8 +815,8 @@
 				Modify the TweetFrame() function created at the beginning of this chapter to sort the dataframe based on the creation time of the tweets. This will require taking the line of code from a few pages ago that has the order() function in it and adding this to the TweetFrame() function with a few minor modifications. Here’s a hint: Create a temporary dataframe inside the function and don’t attach it while you’re working with it. You’ll need to use the $ notation to access the variable you want to use to order the rows.
 			</p>
 
-    </subsection>
-			<subsection xml:id="sources-6">
+    </section>
+			<section xml:id="sources-6">
 				<title>Sources</title>
 
 				<p><ul>
@@ -902,9 +902,9 @@
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-script-create-vector-of-probabilities-from-arrival-times">
+			<section xml:id="r-script-create-vector-of-probabilities-from-arrival-times">
 				<title>R Script Create Vector of Probabilities From Arrival Times </title>
 
 				<p>
@@ -1189,6 +1189,6 @@
 					</li>
 
 				</ul></p>
-                </subsection>
+                </section>
 
 </chapter>

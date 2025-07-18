@@ -28,7 +28,7 @@
 				</p>
     </section>
 
-<subsection xml:id="importing-text-files">
+<section xml:id="importing-text-files">
         <title>Importing Human-Readable Text Files</title>
 				<p>
 					The first and easiest strategy for getting data into R is to use the data import dialog in R-Studio. In the upper right hand pane of RStudio, the "Workspace" tab gives views of currently available data objects, but also has a set of buttons at the top for managing the work space. One of the choices there is the "Import Dataset" button: This enables a drop down menu where one choice is to import, "From Text File..." If you click this option and choose an appropriate file you will get a screen like this: <image source='import-dataset.png'/> The most important stuff is on the left side. Heading controls whether or not the first line of the text file is treated as containing variable names. The separator drop down gives a choice of different characters that separate the fields/columns in the data. RStudio tries to guess the appropriate choice here based on a scan of the data. In this case it guessed right by choosing "<idx>tab-delimited</idx><term>tab-delimited</term>." As mentioned above, tab-delimited and <idx>comma-delimited</idx><term>comma-delimited</term> are the two most common formats used for interchange between data programs.The next drop down is for "Decimal" and this option accounts for the fact the a dot is used in the U.S. while a comma may be used for the decimal point in Europe and elsewhere. Finally, the "Quote" drop down controls which character is used to contain quoted string/text data. The most common method is double quotes.
@@ -55,10 +55,10 @@
 					"Fred" 22 "M"
 					"Ginger" 21 "F"
 			</pre>
-</subsection>
+</section>
 
-    <subsection xml:id="accessing-binary-files">
-        <title>Accessing Binary Files with Packages</title>
+	<section xml:id="accessing-binary-files">
+		<title>Accessing Binary Files with Packages</title>
 				<p>
 					Files containing comma or tab delimited data are ubiquitous across the Internet, but sometimes we would like to gain direct access to binary files in other formats. There are a variety of packages that one might use to access binary data. A comprehensive access list appears here:
 				</p>
@@ -86,9 +86,9 @@
 				<p>
 					Fortunately, a general purpose data manipulation package called gdata provides essential facilities for importing spreadsheet files. In the example that follows, we will use a function from gdata to read Excel data directly from a website. The gdata package is a kind of "Swiss Army Knife" package containing many different functions for accessing and manipulating data. For example, you may recall that R uses the value "NA" to represent missing data. Frequently, however, it is the case that data sets contain other values, such as 999, to represent missing data. The gdata package has several functions that find and transform these values to be consistent with R’s strategy for handling missing data.
 				</p>
-</subsection>
+</section>
 
-    <subsection xml:id="cleaning-imported-data">
+    <section xml:id="cleaning-imported-data">
         <title>A Practical Example: Cleaning Imported Excel Data</title>
 				<p>
 					Begin by using <c>install.package()</c> and <c>library()</c> functions to prepare the gdata package for use:
@@ -298,9 +298,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					A related lesson is that it is important and valuable to try to automate as many of these steps as possible. So when we saw that numbers had gotten stored as factor labels, we moved immediately to create a general function that would convert these to numbers. Not only does this save a lot of future typing, it prevents mistakes from creeping into our processes.
 				</p>
-</subsection>
+</section>
 
-    <subsection xml:id="querying-external-databases">
+    <section xml:id="querying-external-databases">
         <title>Querying External Databases</title>
 				<p>
 					Now we are ready to consider the other strategy for getting access to data: querying it from external databases. Depending upon your familiarity with computer programming and databases, you may notice that the abstraction is quite a bit different here. Earlier in the chapter we had a file (a rather messy one) that contained a complete copy of the data that we wanted, and we read that file into R and stored it in our local computer’s memory (and possibly later on the hard disk for safekeeping). This is a good and reasonable strategy for small to medium sized datasets, let’s say just for the sake of argument anything up to 100 megabytes.
@@ -396,9 +396,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					</li>
 
 				</ul></p>
-</subsection>
+</section>
 
-    <subsection xml:id="database-demonstration-mysql">
+    <section xml:id="database-demonstration-mysql">
         <title>Database Demonstration with RMySQL</title>
 				<p>
 					For demonstration purposes, we will use RMySQL. This requires installing a copy of MySQL on your computer. Use your web browser to go to this page:
@@ -501,9 +501,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					To emphasize a point made above, the normal motivation for accessing data through MySQL or another database system is that a large database exists on a remote server. Rather than having our own complete copy of those data, we can use dbConnect(), dbGetQuery() and other database functions to access the remote data through SQL. We can also use SQL to specify subsets of the data, to preprocess the data with sorts and other operations, and to create summaries of the data. SQL is also particularly well suited to "joining" data from multiple tables to make new combinations. In the present example, we only used one table, it was a very small table, and we had created it ourselves in R from an Excel source, so none of these were very good motivations for storing our data in MySQL, but this was only a demonstration.
 				</p>
-</subsection>
+</section>
 
-    <subsection xml:id="distributed-computing-hadoop">
+    <section xml:id="distributed-computing-hadoop">
         <title>Distributed Computing with Hadoop and MapReduce</title>
 				<p>
 					The next step beyond remote databases is toward distributed computing across a "<idx>cluster</idx><term>cluster</term>" of computers. This combines the remote
@@ -532,9 +532,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					In short, "map" takes a process that the user specifies and an indication of which data it applies to, and divides the processing into as many separate chunks as possible. As the results of each chunk become available, "reduce" combines them and eventually creates and returns one aggregated result.
 				</p>
-</subsection>
+			</section>
 
-    <subsection xml:id="mapreduce-demonstration-rhadoop">
+    <section xml:id="mapreduce-demonstration-rhadoop">
         <title>MapReduce Demonstration with RHadoop</title>
 				<p>
 					Recently, an organization called RevolutionAnalytics has developed an R interface or "wrapper" for Hadoop that they call RHadoop. This package is still a work in progress in the sense that it does not appear in the standard CRAN package archive, not because there is anything wrong with it, but rather because RevolutionAnalytics wants to continue to develop it without having to provide stable versions for the R community. There is a nice tutorial here:
@@ -607,9 +607,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					The <c>keyval()</c> function, for which there is no documentation at this writing, is characterized as a "helper" function in the tutorial. In this case it is clear that the first argument to keyval, "v" is the integer to which the process must be applied, and the second argument, "v^2" is the squaring function that is applied to each argument. The data returned by mapreduce() is functionally equivalent to that returned by lapply(), i.e., a list of the squares of the integers from 1 to 10.
 				</p>
-</subsection>
+			</section>
 
-    <subsection xml:id="chapter-summary">
+    <section xml:id="chapter-summary">
         <title>Chapter Summary</title>
 				<p>
 					Obviously there is no point in harnessing the power of a cluster of computers to calculate something that could be done with a pencil and a paper in a few seconds. If, however, the operation was more complex and the list of input data had millions of elements, the use of lapply() would be impractical as it would take your computer quite a long time to finish the job. On the other hand, the second strategy of using mapreduce() could run the job in a fraction of a second, given a sufficient supply of computers and storage.
@@ -627,9 +627,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					To be able to tackle the larger data sets, however, we need to be able to connect R with either remote databases or remote computational resources or both. A variety of packages is available to connect R to mature database technologies such as MySQL. In fact, we demonstrated the use of MySQL by installing it on a local machine and then using the RMySQL package to create a table and query it. The more cutting edge technology of Hadoop is just becoming available for R users. This technology, which provides the potential for both massive storage and parallel computational power, promises to make very large datasets available for processing and analysis in R.
 				</p>
 
-				</subsection>
+			</section>
 
-    <subsection xml:id="ch14-chapter-challenge">
+    <section xml:id="ch14-chapter-challenge">
         <title>Chapter Challenge</title>
 
 				<p>
@@ -640,9 +640,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 					As a bonus activity, if you are successful in installing Hadoop, then get a copy of the RHadoop package from RevolutionAnalytics and install that. If you are successful with both, you should be able to run the MapReduce code presented in this chapter.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-9">
+			<section xml:id="sources-9">
 				<title>Sources </title>
 
 				<p><ul>
@@ -704,9 +704,9 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="ch14-r-functions-used-in-this-chapter">
+			<section xml:id="ch14-r-functions-used-in-this-chapter">
 				<title> R Functions Used in this Chapter </title>
 
 				<p><ul>
@@ -819,6 +819,6 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				<p>
 					
 				</p>
-      </subsection>
+			</section>
 
 </chapter>

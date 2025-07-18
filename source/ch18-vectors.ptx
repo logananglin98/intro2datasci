@@ -3,7 +3,7 @@
 <chapter xml:id="ch18-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>What’s Your Vector, Victor</title>
 
-  <subsection xml:id="on-vectors">
+  <section xml:id="on-vectors">
     <title>On Vectors</title>
 
   <introduction>
@@ -39,9 +39,9 @@
 				<p>
 					The position of that piece of cardboard is the <idx>planar separation function</idx><term>planar separation function</term> that divides white points from green points. A support vector machine analysis of this scenario would take the original two dimensional point data and search for a projection into three dimensions that would maximize the spacing between green points and white points. The result of the analysis would be a mathematical description of the position and orientation of the cardboard plane. Given inputs describing a novel data point, the SVM could then map the data into the higher dimensional space and then report whether the point was above the cardboard (a white point) or below the cardboard (a green point). The so called <idx>support vectors</idx><term>support vectors</term> contain the coefficients that map the input data for each case into the high dimensional space.
 				</p>
-			</subsection>
+			</section>
 
-<subsection xml:id="ch18-data-prep">
+<section xml:id="ch18-data-prep">
         <title>Preparing the Data</title>
 				<p>
 					To get started with support vector machines, we can load one of the R packages that supports this technique. We will use the "kernlab" package. Use the commands below:
@@ -218,10 +218,10 @@
 				<p>
 					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx>floor()</idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
 				</p>
-				</subsection>
+				</section>
 
 
-<subsection xml:id="ch18-model-training">
+<section xml:id="ch18-model-training">
         <title>Training and Evaluating the Model</title>
 				<p>
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
@@ -479,8 +479,8 @@
 				<p>
 					This particular record did not have many suspicious keywords, but it did have long strings of capital letters that made it hard to classify (it was a non-spam case, by the way). You can check out a few of them to see if you can spot why each case may have been difficult for the classifier to place.
 				</p>
-</subsection>
-<subsection xml:id="ch18-model-testing">
+</section>
+<section xml:id="ch18-model-testing">
         <title>Testing the Model</title>
 
 				<p>
@@ -535,9 +535,9 @@
 					Overall, it looks like we did a pretty good job. There are a bunch of different ways of calculating the accuracy of the prediction, depending upon what you are most interested in. The simplest way is to sum the 68 + 38 = 106 error cases and divided by the 1534 total cases for an total error rate of about 6.9%. Interestingly, that is a tad better than the 8.5% error rate we got from the k-fold crossvalidation in the run of svm() that created the model we are testing. Keep in mind, though, that we may be more interested in certain kinds of error than other kinds. For example, consider which is worse, an email that gets mistakenly quarantined because it is not really spam, or a spam email that gets through to someone’s inbox? It really depends on the situation, but you can see that you might want to give more consideration to either the 68 misclassification errors or the other set of 38 misclassification errors.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="ch18-chapter-challenge">
+			<section xml:id="ch18-chapter-challenge">
 				<title>Chapter Challenge </title>
 
 				<p>
@@ -548,9 +548,9 @@
 					For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-13">
+			<section xml:id="sources-13">
 				<title>Sources </title>
 
 				<p><ul>
@@ -603,6 +603,6 @@
 					</li>
 
 				</ul></p>
-        </subsection>
+        </section>
 
 </chapter>

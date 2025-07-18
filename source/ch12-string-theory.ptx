@@ -44,7 +44,7 @@
 				</p>
         </section>
 
-  <subsection xml:id="ch12-exploring-data">
+  <section xml:id="ch12-exploring-data">
     <title>Exploring and Preparing the Tweet Data</title>
 
 	<figure>
@@ -122,9 +122,9 @@
 				<p>
 					These commands should yield no additional output. If you get any messages about "The following object(s) are masked from..." you should run search() again and look for other dataframes that should be detached before proceeding. Once you can run attach("tweetDF") without any warnings, you can be sure that the fields in this dataframe are ready to use without interference.
 				</p>
-</subsection>
+</section>
 
-  <subsection xml:id="ch12-basic-string-ops">
+  <section xml:id="ch12-basic-string-ops">
     <title>Basic String Operations: Length, Counting, and Replacing</title>
 				<p>
 					The first and most basic thing to do with strings is to see how long they are. The stringr package gives us the <idx>str_length()</idx><term>str_length()</term> function to accomplish this task:
@@ -269,9 +269,9 @@
 				<p>
 					In this last command, we’ve asked R to report the mean value of the vector of word counts, and we learn that on average a tweet in our dataset has about 14 words in it.
 				</p>
-</subsection>
+</section>
 
-  <subsection xml:id="ch12-parsing-retweets">
+  <section xml:id="ch12-parsing-retweets">
     <title>Parsing with Regular Expressions: Extracting Retweets</title>
 				<p>
 					Next, let’s do a bit of what computer scientists (and others) call "<idx>parsing</idx><term>parsing</term>" Parsing is the process of dividing a larger unit, like a sentence, into smaller units, like words, based on some kind of rule. In many cases, parsing requires careful use of pattern matching. Most computer languages accomplish pattern matching through the use of a strategy called "parsing." A regular expression is a set of symbols used to match patterns. For example, [a-z] is used to match any lowercase letter and the asterisk is used to represent a sequence of zero or more characters. So the regular expression "[az]*" means, "match a sequence of zero or more lowercase characters.
@@ -416,9 +416,9 @@
 				<p>
 					You may also have noticed the very last command. It seems that one of our steps, probably the use of str_match() must have "matrix-ized" our data again, so we use the column trick that appeared earlier in this chapter to flatten the matrix back to a single column of string data.
 				</p>
-</subsection>
+</section>
 
-  <subsection xml:id="ch12-summarizing-patterns">
+  <section xml:id="ch12-summarizing-patterns">
     <title>Summarizing Patterns with Contingency Tables</title>
 				<p>
 					This would be a good point to visualize what we have obtained. Here we introduce two new functions, one which should seem familiar and one that is quite new:
@@ -784,9 +784,9 @@
 				<p>
 					[1] 1 1 1 1 0 1 2 1 1 1
 				</p>
-</subsection>
+</section>
 
-  <subsection xml:id="ch12-final-analysis">
+  <section xml:id="ch12-final-analysis">
     <title>Solving the Mystery: Data Analysis with String Metrics</title>
 				<p>
 					Excellent! We now have a new field on tweetDF that counts up the number of URLs. As a last step in examining our tweet data, let’s look at a contingency table that looks at the number of URLs together with the flag indicating an extra long tweet. Earlier in the chapter, we mentioned that the table() function takes factors as its input. In the command below we have supplied the numurls field to the table() function without coercing it to a factor. Fortunately, the table() function has some built in intelligence that will coerce a numeric variable into a factor. In this case because numurls only takes on the values of 0, 1, or 2, it makes good sense to allow table() to perform this coercion:
@@ -944,9 +944,9 @@
 					Twitter is an excellent source of string data, and although we have not yet done much in analyzing the contents of tweets or their meanings, we have looked at some of the basic features and regularities of the text portion of a tweet. In the next chapter we will become familiar with a few additional text tools and then be in a position to manipulate and analyze text data.
 				</p>
 
-</subsection>
+</section>
 
-  <subsection xml:id="ch12-chapter-challenges">
+  <section xml:id="ch12-chapter-challenges">
     <title>Chapter Challenges</title>
 				<p>
 					Create a function that takes as input a dataframe of tweets and returns as output a list of all of the retweet screennames. As an extra challenge, see if you can reduce that list of screennames to a unique set (i.e., no duplicates) while also generating a count of the number of times that each retweet screenname appeared.
@@ -956,9 +956,9 @@
 					Once you have written that function, it should be a simple matter to copy and modify it to create a new function that extracts a unique list of <em>hashtags</em> from a dataframe of tweets. Recall that hashtags begin with the "#" character and may contain any combination of upper and lowercase characters as well as digits. There is no length limit on hashtags, so you will have to assume that a hashtag ends when there is a space or a punctuation mark such as a comma, semicolon, or period.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-8">
+			<section xml:id="sources-8">
 				<title>Sources </title>
 
 				<p><ul>
@@ -1028,9 +1028,9 @@
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-code-for-tweetframe-function">
+			<section xml:id="r-code-for-tweetframe-function">
 				<title>R Code for TweetFrame() Function </title>
 
 				<p>
@@ -1080,6 +1080,6 @@
 				<p>
 					}
 				</p>
-        </subsection>
+        </section>
 
 </chapter>

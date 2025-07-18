@@ -3,11 +3,9 @@
 <chapter xml:id="ch9-onward-with-rstudio" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Onward with RStudio</title>
 
-  <subsection xml:id="subsec-onward-with-rstudio">
+  <section xml:id="subsec-onward-with-rstudio">
     <title>Onward with RStudio</title>
-  <introduction>
-    <p> Text before the first section. </p>
-  </introduction>
+  <introduction> <p> </p></introduction>
 				<p>
 					When you run R-Studio Cloud, you will see three or four subwindows. Use the File menu to click "New File" and in the sub-menu for "New File" click "R Script." This should give you a screen that looks something like this:
 				</p>
@@ -386,7 +384,9 @@
 				<p>
 					Before we leave this activity, make sure to save your work. Click anywhere in the code window and then click on the File menu and then on Save. You can call the file MyMode, if you like. Note that R adds the "R" extension to the filename so that it is saved as MyMode.R. You can open this file at any time and rerun the MyMode() function in order to define the function in your current working version of R.
 				</p>
-
+			</section>
+			<subsection xml:id="extensions-with-R">
+    <title>Extending R with Packages</title>
 				<p>
 					A couple of other points deserve attention. First, notice that when we created our own function, we had to do some testing and repairs to make sure it ran the way we wanted it to. This is a common situation when working on anything related to computers, including spreadsheets, macros, and pretty much anything else that requires precision and accuracy. Second, we introduced at least four new functions in this exercise, including unique(), tabulate(), match(), and which.max(). Where did these come from and how did we know? R has so many functions that it is very difficult to memorize them all. There’s almost always more than one way to do something, as well. So it can be quite confusing to create a new function, if you don’t know all of the ingredients and there’s no one way to solve a particular problem. This is where the community comes in. Search online and you will find dozens of instances where people have tried to solve similar problems to the one you are solving, and you will also find that they have posted the R code for their solutions. These code fragments are free to borrow and test. In fact, learning from other people’s examples is a great way to expand your horizons and learn new techniques.
 				</p>

@@ -47,11 +47,11 @@
     
 			</p>
    <p> 
-      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College student interns, Elijah Babayemi, Colin Flaherty, Austin Gatewood, and Tristan Razote, who served as the first editors of this work and who helped to make this version more interactive. You can see their contibutions as well as those of others at <url href="https://github.com/pearcej/intro2datasci/forks">github.com/pearcej/intro2datasci/forks</url>.
+      I would like to thank <url href="https://www.berea.edu" visual="www.berea.edu">Berea College</url> for the support for student internships and for the Berea College student interns, Logan Anglin, Elijah Babayemi, Colin Flaherty, Austin Gatewood, Tristan Razote, and Eun Sung Wang, who served as the first editors of this work and who helped to make this version more interactive. You can see their contibutions as well as those of others at <url href="https://github.com/pearcej/intro2datasci/forks">github.com/pearcej/intro2datasci/forks</url>.
     </p>
 
     <p>
-      I would like to thank Dr. Rob Beezer for the creation of <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> which is the authoring platform of this text and for his amazing level of responsiveness in the PreTeXt support channel. Additionally, I am very grateful to Dr. Oscar Levin both for his responsiveness in the Runestone Discord channels and for work in the creation of PreText converter for <url href="https://pandoc.org/" visual="pandoc.org">Pandoc</url> which made adaption much less time consuming.
+      I would like to thank Dr. Rob Beezer for the creation of <url href="https://pretextbook.org/" visual="pretextbook.org">PreTeXt</url> which is the authoring platform of this text and for his amazing level of responsiveness in the PreTeXt support channel. Additionally, I am very grateful to Dr. Oscar Levin both for his responsiveness in the Runestone Discord channels and for work in the creation of PreText converter for <url href="https://pandoc.org/" visual="pandoc.org">Pandoc</url>, which made adaption much less time consuming.
       </p>
 
       <p>
@@ -269,31 +269,25 @@
 
 					<li>
 									<p>
-										<url href="http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons">Wikipedia: Wikipedia: Size comparisons</url>
+										<url href="http://en.wikipedia.org/wiki/Wikipedia:Size_comparisons">Wikipedia: Size comparisons</url>
 									</p>
 					</li>
 
 					<li>
 									<p>
-										<url href="http://en.wikipedia.org/wiki/Statistician">http://en.wikipedia.org/wiki/Statistician</url>
+										<url href="http://en.wikipedia.org/wiki/Statistician">Wikipedia: Statistician</url>
 									</p>
 					</li>
 
 					<li>
 									<p>
-										<url href="http://en.wikipedia.org/wiki/Visualization_(computer_graphics)">http://en.wikipedia.org/wiki/Visualization_(computer_graphics)</url>
+										<url href="http://en.wikipedia.org/wiki/Visualization_(computer_graphics)">Wikipedia: Visualization_(computer_graphics)</url>
 									</p>
 					</li>
 
 					<li>
 									<p>
 										<url href="http://www.khanacademy.org/">Khan Academy</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="http://en.wikipedia.org/wiki/E-Science_librarianship">http://en.wikipedia.org/wiki/E-Science_librarianship</url>
 									</p>
 					</li>
 

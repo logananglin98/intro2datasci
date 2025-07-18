@@ -182,7 +182,7 @@
 				</p>
 
 				<p>
-					Each of the four variables has a "<idx>mode</idx><term>mode</term>" or type that is reported by R right after the colon on the line that names the variable:
+					Each of the four variables has a "<idx>mode (R programming language)</idx><term>mode</term>" or type that is reported by R right after the colon on the line that names the variable:
 				</p>
 
 				<p>
@@ -279,7 +279,7 @@
 					<li>
 									<blockquote>
 														<p>
-										<idx>mean</idx><term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
+										<term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
 									</p>
 									</blockquote>
 					</li>

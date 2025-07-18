@@ -85,6 +85,12 @@
 				[1] 8198359
 				</pre>
 				
+				<sage language ="r">
+					<input>
+						<xi:include href="../code/data_file.r" parse="text"/>
+					</input>
+				</sage>
+
 
 				<p>
 					There’s the nested function call again. The output no longer shows the 16 values that R has sampled from the list of 51. Instead it used those 16 values to calculate the mean and display that for us. If you have a good memory, or merely took the time to look in the last chapter, you will remember that the actual mean of our 51 observations is 6,053,834. So the mean that we got from this one sample of 16 states is really not even close to the true mean value of our 51 observations. Are we worried? Definitely not! We know that when we draw a sample, whether it is gumballs or states, we will never hit the true population mean right on the head. We’re interested not in any one sample, but in what happens over the long haul. So now we’ve got to get R to repeat this process for us, not once, not four times, but four hundred times or four thousand times. Like most programming languages, R has a variety of ways of repeating an activity. One of the easiest ones to use is the replicate() function. To start, let’s just try four replications:

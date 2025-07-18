@@ -27,7 +27,7 @@
 				</p>
 
 				<p>
-					Just as we did in the chapter entitled, "Sample in a Jar," we can use a random number generator in R to illustrate these kinds of differences more concretely. The relevant function for the Poisson distribution is rpois(), "random poisson." The <idx>rpois()</idx><term>rpois()</term> function will generate a stream of random numbers that roughly fit the Poisson distribution. The fit gets better as you ask for a larger and larger sample. The first argument to rpois() is how many random numbers you want to generate and the second number is the average delay between arrivals that you want the random number generator to try to come close to. We can look at a few of these numbers and then use a histogram function to visualize the results:
+					Just as we did in the chapter entitled, "Sample in a Jar," we can use a random number generator in R to illustrate these kinds of differences more concretely. The relevant function for the Poisson distribution is rpois(), "random poisson." The <idx><c>rpois()</c></idx><term>rpois()</term> function will generate a stream of random numbers that roughly fit the Poisson distribution. The fit gets better as you ask for a larger and larger sample. The first argument to rpois() is how many random numbers you want to generate and the second number is the average delay between arrivals that you want the random number generator to try to come close to. We can look at a few of these numbers and then use a histogram function to visualize the results:
 				</p>
 
 				<pre>
@@ -56,7 +56,7 @@
 				</p>
 
 				<p>
-					This is expected because of the random number generator. In the third command we run yet another sample of 100 random data points, this time analyzing them with the <idx>var()</idx><term>var()</term> function (which calculates the variance; see the chapter entitled "Beer, Farms, and Peas"). It is a curious fact of Poisson distributions that the mean and the variance of the "ideal" (i.e., the theoretical) distribution are the same. In practice, for a small sample, they may be different.
+					This is expected because of the random number generator. In the third command we run yet another sample of 100 random data points, this time analyzing them with the <idx><c>var()</c></idx><term>var()</term> function (which calculates the variance; see the chapter entitled "Beer, Farms, and Peas"). It is a curious fact of Poisson distributions that the mean and the variance of the "ideal" (i.e., the theoretical) distribution are the same. In practice, for a small sample, they may be different.
 				</p>
 
 				<p>
@@ -115,7 +115,7 @@
 				</pre>
 
 				<p>
-					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <idx>points()</idx><term>points()</term> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
+					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <idx><c>points()</c></idx><term>points()</term> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
 				</p>
 
 				<pre>
@@ -175,7 +175,7 @@
 				</p>
 
 				<p>
-					This shows why we can’t just rely on one sample for making our judgments. We need to know something about the uncertainty that surrounds a given sample. Fortunately, R gives us additional tools to help us figure this situation out. First of all, even though we had loads of fun programming the DelayProbability() function, there is a quicker way to get information about what we ideally <em>expect</em> from a Poisson distribution. The function <idx>ppois()</idx><term>ppois()</term> gives us the <em>theoretical</em> probability of observing a certain delay time, given a particular mean. For example:
+					This shows why we can’t just rely on one sample for making our judgments. We need to know something about the uncertainty that surrounds a given sample. Fortunately, R gives us additional tools to help us figure this situation out. First of all, even though we had loads of fun programming the DelayProbability() function, there is a quicker way to get information about what we ideally <em>expect</em> from a Poisson distribution. The function <idx><c>ppois()</c></idx><term>ppois()</term> gives us the <em>theoretical</em> probability of observing a certain delay time, given a particular mean. For example:
 				</p>
 
 				<p>
@@ -265,11 +265,7 @@
 				</p>
 
 				<p>
-					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx>qpois()</idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
-				</p>
-
-				<p>
-					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx>qpois()</idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
+					In the first command, we confirm that for a very large random sample of n=100,000 with a desired mean of 10, the actual mean of the random sample is almost exactly 10. Likewise, for another large random sample with a desired mean of 10, the variance is 10. In the next command, we use the inequality test and the sum() function again to learn that the probability of observing a value of 10 or less in a very large sample is about 0.59 (note that the sum() function yielded 58,638 and we divided by 100,000 to get the reported value of 0.58638). Likewise, when we ask for the theoretical distribution with ppois() of observing 10 or less in a sample with a mean of 10, we get a probability of 0.58303, which is darned close to the empirical result from the previous command. Finally, if we ask the <idx><c>qpois()</c></idx><term>qpios()</term> function what is the <em>threshold value</em> for a probability of 0.58303 is in a Poisson sample with mean of 10, we get back the answer: 10. You may see that qpois() does the reverse of what ppois() does. For fun, try this formula on the R command line:
 				</p>
 
 				<p>
@@ -281,7 +277,7 @@
 				</p>
 
 				<p>
-					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the <idx>poisson.test()</idx><term>poisson.test()</term> function like this:
+					Here’s one last point to cap off this thinking. Even with a sample of 100,000 there is some variation in samples. That’s why the 0.58638 from the sum() function above does not exactly match the theoretical 0.58303 from the ppois() function above. We can ask R to tell us how much variation there is around one of these probabilities using the <idx><c>poisson.test()</c></idx><term>poisson.test()</term> function like this:
 				</p>
 
 				<p>
@@ -491,7 +487,7 @@
 
 
 				<p>
-					The sum() function, above, calculates that only 73 out of Oprah’s sample of 500 tweets arrive in an interval of 31 or less. We use 31, the mean of the Lady Gaga sample, because we need to have a common basis of comparison. So for Oprah, the proportion of events that occur in the 31 second time frame is, 73/500 = 0.146, or about 14.6%. That’s a lot lower than the 66.6% of Lady Gaga tweets, for sure, but we need to look at the confidence interval around that value. So the poisson.test() function just above for Oprah reports that the 95% confidence interval runs from about 11.4% to 18.4%. Note that this confidence interval does not overlap at all with the confidence interval for Lady Gaga, so we have a very strong sense that these two rates are statistically quite distinctive in other words, this is a difference that was not caused by the random influences that sampling always creates. We can make a bar graph to summarize these differences. We’ll use the <idx>barplot2()</idx><term>barplot2()</term> function, which is in a package called <idx>gplots()</idx><term>gplots()</term>. If you created the EnsurePackage() function a couple of chapters ago, you can use that. Otherwise make sure to load gplots manually:
+					The sum() function, above, calculates that only 73 out of Oprah’s sample of 500 tweets arrive in an interval of 31 or less. We use 31, the mean of the Lady Gaga sample, because we need to have a common basis of comparison. So for Oprah, the proportion of events that occur in the 31 second time frame is, 73/500 = 0.146, or about 14.6%. That’s a lot lower than the 66.6% of Lady Gaga tweets, for sure, but we need to look at the confidence interval around that value. So the poisson.test() function just above for Oprah reports that the 95% confidence interval runs from about 11.4% to 18.4%. Note that this confidence interval does not overlap at all with the confidence interval for Lady Gaga, so we have a very strong sense that these two rates are statistically quite distinctive in other words, this is a difference that was not caused by the random influences that sampling always creates. We can make a bar graph to summarize these differences. We’ll use the <idx><c>barplot2()</c></idx><term>barplot2()</term> function, which is in a package called <idx><c>gplots()</c></idx><term>gplots()</term>. If you created the EnsurePackage() function a couple of chapters ago, you can use that. Otherwise make sure to load gplots manually:
 				</p>
 
 				<pre>

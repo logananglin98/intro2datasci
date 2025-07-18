@@ -61,7 +61,7 @@
 				</p>
 
 				<p>
-					<idx>sample()</idx>
+					<idx><c>sample()</c></idx>
 					Conveniently, R has a function called <term>sample()</term>, that will draw a random sample from a data set with just a single call. We can try it now with our state data:
 				</p>
 
@@ -258,7 +258,7 @@ summary(SampleMeans)
 				</p>
 
 				<p>
-					<idx>quantile()</idx>
+					<idx><c>quantile()</c></idx>
 					There is a slightly different way of getting the same information from R that will prove more flexible for us in the long run. The <term>quantile()</term> function can show us the same information as the median and the quartiles, like this:
 				</p>
 

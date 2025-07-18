@@ -108,7 +108,7 @@
 				</p>
 
 				<p>
-					We’ve truncated this list to save space, but you can see on the first line "sortweetDF" left over from our work in a previous chapter. The other entries are all function packages that we want to keep active. So let’s <idx>detach()</idx><term>detach()</term> sortweetDF and attach() tweetDF:
+					We’ve truncated this list to save space, but you can see on the first line "sortweetDF" left over from our work in a previous chapter. The other entries are all function packages that we want to keep active. So let’s <idx><c>detach()</c></idx><term>detach()</term> sortweetDF and attach() tweetDF:
 				</p>
 
 				<p>
@@ -127,7 +127,7 @@
   <section xml:id="ch12-basic-string-ops">
     <title>Basic String Operations: Length, Counting, and Replacing</title>
 				<p>
-					The first and most basic thing to do with strings is to see how long they are. The stringr package gives us the <idx>str_length()</idx><term>str_length()</term> function to accomplish this task:
+					The first and most basic thing to do with strings is to see how long they are. The stringr package gives us the <idx><c>str_length()</c></idx><term>str_length()</term> function to accomplish this task:
 				</p>
 
 				<p>
@@ -211,7 +211,7 @@
 				</p>
 
 				<p>
-					The next common task in working with strings is to count the number of words as well as the number of other interesting elements within the text. Counting the words can be accomplished in several ways. One of the simplest ways is to count the separators between the words these are generally spaces. We need to be careful not to over count, if someone has mistakenly typed two spaces between a word, so let’s make sure to take out doubles. The <idx>str_replace_all()</idx><term>str_replace_all()</term> function from stringr can be used to accomplish this:
+					The next common task in working with strings is to count the number of words as well as the number of other interesting elements within the text. Counting the words can be accomplished in several ways. One of the simplest ways is to count the separators between the words these are generally spaces. We need to be careful not to over count, if someone has mistakenly typed two spaces between a word, so let’s make sure to take out doubles. The <idx><c>str_replace_all()</c></idx><term>str_replace_all()</term> function from stringr can be used to accomplish this:
 				</p>
 
 				<p>
@@ -278,7 +278,7 @@
 				</p>
 
 				<p>
-					If we wanted to parse the retweet sequence that appears at the beginning of some of the tweets, we might use a regular expression like this: "RT @[a-z,A-Z]*: ". Each character up to the square bracket is a "literal" that has to match exactly. Then the "[a-z,A-Z]*" lets us match any sequence of uppercase and lowercase characters. Finally, the ": " is another literal that matches the end of the sequence. You can experiment with it freely before you commit to using a particular expression, by asking R to echo the results to the command line, using the function <idx>str_match()</idx><term>str_match()</term> like this:
+					If we wanted to parse the retweet sequence that appears at the beginning of some of the tweets, we might use a regular expression like this: "RT @[a-z,A-Z]*: ". Each character up to the square bracket is a "literal" that has to match exactly. Then the "[a-z,A-Z]*" lets us match any sequence of uppercase and lowercase characters. Finally, the ": " is another literal that matches the end of the sequence. You can experiment with it freely before you commit to using a particular expression, by asking R to echo the results to the command line, using the function <idx><c>str_match()</c></idx><term>str_match()</term> like this:
 				</p>
 
 				<p>
@@ -382,7 +382,7 @@
 				</p>
 
 				<p>
-					For us to be able to make some use of the retweet string we just isolated, we probably should extract just the "screenname" of the individual whose tweet got retweeted. A screenname in Twitter is like a username, it provides a unique identifier for each person who wants to post tweets. An individual who is frequently retweeted by others may be more influential because their postings reach a wider audience, so it could be useful for us to have a listing of all of the screennames without the extraneous stuff. This is easy to do with <idx>str_replace()</idx><term>str_replace()</term>. Note that we used str_replace_all() earlier in the chapter, but we don’t need it here, because we know that we are going to replace just one instance of each string:
+					For us to be able to make some use of the retweet string we just isolated, we probably should extract just the "screenname" of the individual whose tweet got retweeted. A screenname in Twitter is like a username, it provides a unique identifier for each person who wants to post tweets. An individual who is frequently retweeted by others may be more influential because their postings reach a wider audience, so it could be useful for us to have a listing of all of the screennames without the extraneous stuff. This is easy to do with <idx><c>str_replace()</c></idx><term>str_replace()</term>. Note that we used str_replace_all() earlier in the chapter, but we don’t need it here, because we know that we are going to replace just one instance of each string:
 				</p>
 
 				<p>
@@ -718,7 +718,7 @@
 				</p>
 
 				<p>
-					Now we are ready to wrestle with the problem of how to tally up the results of our URL parsing. Unlike the situation with retweets, where there either was or was not a single retweet indication in the text, we have the possibility of zero, one or more URLs within the text of each tweet. Our new object "urlist" is a multi-dimensional object that contains a single null character, one row/column of character data, or one column with more than one row of character data. The key to summarizing this is the <idx>length()</idx><term>length()</term> function, which will happily count up the number of elements in an object that you supply to it:
+					Now we are ready to wrestle with the problem of how to tally up the results of our URL parsing. Unlike the situation with retweets, where there either was or was not a single retweet indication in the text, we have the possibility of zero, one or more URLs within the text of each tweet. Our new object "urlist" is a multi-dimensional object that contains a single null character, one row/column of character data, or one column with more than one row of character data. The key to summarizing this is the <idx><c>length()</c></idx><term>length()</term> function, which will happily count up the number of elements in an object that you supply to it:
 				</p>
 
 				<p>
@@ -762,7 +762,7 @@
 				</p>
 
 				<p>
-					The double brackets notation is designed to reference just a single element or component in a list, so empty double brackets does not work as a shorthand for every element in a list. So what we must do if we want to apply the length() function to each element in urlist() is to loop. We could accomplish this with a for loop, as we did in the last chapter, using an index quantity such as "i" and substituting i into each expression like this: urlist[[i]]. But let’s take this opportunity to learn a new function in R, one that is generally more efficient for looping. The <idx>rapply()</idx><term>rapply()</term> function is part of the "apply" family of functions, and it stands for "recursive apply." Recursive in this case means that the function will dive down into the complex, nested structure of urlist and repetitively run a function for us, in this case the length() function:
+					The double brackets notation is designed to reference just a single element or component in a list, so empty double brackets does not work as a shorthand for every element in a list. So what we must do if we want to apply the length() function to each element in urlist() is to loop. We could accomplish this with a for loop, as we did in the last chapter, using an index quantity such as "i" and substituting i into each expression like this: urlist[[i]]. But let’s take this opportunity to learn a new function in R, one that is generally more efficient for looping. The <idx><c>rapply()</c></idx><term>rapply()</term> function is part of the "apply" family of functions, and it stands for "recursive apply." Recursive in this case means that the function will dive down into the complex, nested structure of urlist and repetitively run a function for us, in this case the length() function:
 				</p>
 
 				<p>

@@ -296,7 +296,7 @@
 					<li>
 									<blockquote>
 														<p>
-										• "<idx>3rd. qu.</idx><term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these <idx>quartiles</idx><term>quartiles</term> and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
+										"<idx>3rd. qu.</idx><term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these <idx>quartiles</idx><term>quartiles</term> and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
 									</p>
 									</blockquote>
 					</li>

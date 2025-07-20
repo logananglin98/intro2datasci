@@ -40,7 +40,7 @@
 				<title>R-Studio </title>
 
 				<p>
-					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>Integrated Development Environment (IDE)</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
+					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>integrated development environment</idx><idx>IDE</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
 				</p>
 
 				<p>
@@ -57,7 +57,7 @@
 				</p>
 
 				<p>
-					R-Markdown files have an <idx>.Rmd</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
+					R-Markdown files have an .<idx>Rmd extension</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
 			</section>

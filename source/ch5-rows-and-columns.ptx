@@ -62,7 +62,7 @@
 				</p>
 
 				<p>
-					So if you ignore the top row, which contains the variable names, each of the remaining rows is an instance or a case. Again, computer scientists may call them instances, and statisticians may call them cases, but either term is fine. The important thing is that each row refers to an actual thing. In this case all of our things are living creatures in a family. You could think of the Name column as "case labels" in that each one of these labels refers to one and only one row in our data. Most of the time when you are working with a large dataset, there is a number used for the case label, and that number is unique for each case (in other words, the same number would never appear in more than one row). Computer scientists sometimes refer to this column of unique numbers as a "<term>key</term>." A key is very useful particularly for matching things up from different data sources, and we will run into this idea again a bit later. For now, though, just take note that the "Dad" row can be distinguished from the "Bro" row, even though they are both Male. Even if we added an "Uncle" row that had the same Age, Gender, and Weight as "Dad" we would still be able to tell the two rows apart because one would have the name "Dad" and the other would have the name "Uncle."
+					So if you ignore the top row, which contains the variable names, each of the remaining rows is an instance or a case. Again, computer scientists may call them instances, and statisticians may call them cases, but either term is fine. The important thing is that each row refers to an actual thing. In this case all of our things are living creatures in a family. You could think of the Name column as "case labels" in that each one of these labels refers to one and only one row in our data. Most of the time when you are working with a large dataset, there is a number used for the case label, and that number is unique for each case (in other words, the same number would never appear in more than one row). Computer scientists sometimes refer to this column of unique numbers as a <idx>key</idx><term>key</term>. A key is very useful particularly for matching things up from different data sources, and we will run into this idea again a bit later. For now, though, just take note that the "Dad" row can be distinguished from the "Bro" row, even though they are both Male. Even if we added an "Uncle" row that had the same Age, Gender, and Weight as "Dad" we would still be able to tell the two rows apart because one would have the name "Dad" and the other would have the name "Uncle."
 				</p>
 
 				<p>
@@ -70,7 +70,7 @@
 				</p>
 </section>
 
-  <section xml:id="creating-vectors-r">
+  <section xml:id="creating-vectors-in-r">
     <title>Creating Data Vectors in R</title>
 				<p>
 					Now let’s figure out how to get these rows and columns into R. One thing you will quickly learn about R is that there is almost always more than one way to accomplish a goal. Sometimes the quickest or most efficient way is not the easiest to understand. In this case we will build each column one by one and then join them together into a single data frame. This is a bit labor intensive, and not the usual way that we would work with a data set, but it is easy to understand. First, run this command to make the column of names:
@@ -78,7 +78,7 @@
 
 				<sage language="r">
 					<input>
-					<c>myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")</c>
+					myFamName &lt;- c("Dad","Mom","Sis","Bro","Dog")
 					</input>
 				</sage>
 
@@ -104,7 +104,7 @@
 
 				<sage language="r">
 					<input>
-					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
+					myFamAge &lt;- c(43, 42, 12, 8, 5)
 					</input>
 				</sage>
 
@@ -129,7 +129,7 @@
 				</p>
 </section>
 
-  <section xml:id="building-data-frame-r">
+  <section xml:id="building-a-data-frame">
     <title>Building a Data Frame</title>
 				<p>
 					Now we are ready to tackle the data.frame. In R, a data.frame is a list of columns, where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
@@ -159,7 +159,7 @@
 
 				<figure>
 	<image source="myFamTable.png"/>
-					<caption>This is an example of a created Data Frame in the console that is printed after running the name of the data frame in teh command line.</caption>
+					<caption>This is an example of a created Data Frame in the console that is printed after running the name of the data frame in the command line.</caption>
 </figure>
 
 				<p>
@@ -167,7 +167,7 @@
 				</p>
 
 				<p>
-					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s <c>str()</c> method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
+					With a small data set like this one, only five rows, it is pretty easy just to take a look at all of the data. But when we get to a bigger data set this won’t be practical. We need to have other ways of summarizing what we have. R’s <idx><c>str()</c></idx> <term><c>str()</c></term> method stands for <term>str</term>ucture and compactly reveals the type of "structure" that R has used to store a data object.
 				</p>
 
 				<figure>
@@ -192,11 +192,11 @@
 				</p>
 
 				<p>
-					<c>$ myFamGend<term>:</term> Factor w/ 2 levels</c>
+					<c>$ myFamGend : Factor w/ 2 levels</c>
 				</p>
 
 				<p>
-					For example, myFamGend is shown as a "Factor." In the terminology that R uses, Factor refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamGend we see that there are two "levels," meaning that there are two different options: female and male.
+					For example, myFamGend is shown as a <idx>factor</idx><term>Factor</term>. In the terminology that R uses, "Factor" refers to a special type of label that can be used to identify and organize groups of cases. R has organized these labels alphabetically and then listed out the first few cases (because our dataframe is so small it actually is showing us all of the cases). For myFamGend we see that there are two "levels," meaning that there are two different options: female and male.
 				</p>
 
 				<p>

@@ -33,7 +33,7 @@
                 </blockquote>
 
                 <p>
-                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x axis</idx><term>x axis</term> - relates to the output values on the <idx>y axis</idx><term>y axis</term>.
+                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x-axis</idx><term>x-axis</term> - relates to the output values on the vertical <idx>y-axis</idx><term>y-axis</term>.
                 </p>
 
                 <p>
@@ -135,7 +135,7 @@
                 </p>
 
                 <p>
-                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y axis at zero on the x axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
+                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y-axis at zero on the x-axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
                 </p>
 
                 <p>

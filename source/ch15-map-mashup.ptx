@@ -638,109 +638,109 @@
     <p>
       <ul>
         <li>
-          <blockquote>
+          
             <p>
               Addr2latlng() A custom function built for this chapter
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               addPoints() Place more points on an existing plot
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               as.character() Coerces data into a character string
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               as.EventData() Coerce a regular dataframe into an EventData object for use with PBSmapping routines.
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               data.frame() Takes individual variables and ties them together
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               for() Runs a loop, iterating a certain number of times depending upon the expression provided in parentheses
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               fromJSON() Takes JSON data as input and provides a regular R dataframe as output
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               function() Creates a new function
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               importShapeFile() Gets shapefile data from a set of ESRI compatible polygon data files
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               MakeGeoURL() Custom helper function built for this chapter
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               paste() Glues strings together
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               plotPolys() Plots a map from shape data
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               rbind() Binds new rows on a dataframe
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               return() Specifies the object that should be returned from a function
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               URLencode() Formats a character string so it can be used in an HTTP request
             </p>
-          </blockquote>
+          
         </li>
       </ul>
     </p>
@@ -751,46 +751,46 @@
     <p>
       <ul>
         <li>
-          <blockquote>
+          
             <p>
               <url href="http://blog.programmableweb.com/2012/06/21/7-free-geocodin">http://blog.programmableweb.com/2012/06/21/7-free-geocodin g-apis-google-bing-yahoo-and-mapquest/</url>
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               <url href="https://developers.google.com/maps/terms">https://developers.google.com/maps/terms</url>
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               <url href="http://en.wikipedia.org/wiki/Open_Mashup_Alliance">http://en.wikipedia.org/wiki/Open_Mashup_Alliance</url>
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               <url href="http://en.wikipedia.org/wiki/Shapefile">http://en.wikipedia.org/wiki/Shapefile</url>
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               <url href="http://www.housingmaps.com/">http://www.housingmaps.com/</url>
             </p>
-          </blockquote>
+          
         </li>
         <li>
-          <blockquote>
+          
             <p>
               <url href="http://www.census.gov/geo/www/cob/cbf_state.html">http://www.census.gov/geo/www/cob/cbf_state.html</url>
             </p>
-          </blockquote>
+          
         </li>
       </ul>
     </p>

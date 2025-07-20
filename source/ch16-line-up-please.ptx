@@ -26,14 +26,14 @@
                     The basis of all these methods is the idea that it is possible to fit a line to a set of data points which represents the effect an "independent" variable is having on a "dependent" variable. It is easy to visualize how this works with one variable changing in step with another variable. Figure one shows a line fitted to a series of points, using the so called "<idx>least squares</idx><term>least squares</term>" method (a relatively simple mathematical method of finding a best fitting line). Note that although the line fits the points fairly well, with an even split (as even as it can be for five points!) of points on either side of the line, none of the points are precisely on the line - the data do not fit the line precisely. As we discuss the concepts in regression analysis further, we will see that understanding these discrepancies is just as important as understanding the line itself. <image source='line-graph.png'/>
                 </p>
 
-                <blockquote>
+                
                                     <p>
                     Figure: A line fitted to some points
                 </p>
-                </blockquote>
+                
 
                 <p>
-                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x axis</idx><term>x axis</term> - relates to the output values on the <idx>y axis</idx><term>y axis</term>.
+                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x-axis</idx><term>x-axis</term> - relates to the output values on the vertical <idx>y-axis</idx><term>y-axis</term>.
                 </p>
 
                 <p>
@@ -135,7 +135,7 @@
                 </p>
 
                 <p>
-                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y axis at zero on the x axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
+                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y-axis at zero on the x-axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
                 </p>
 
                 <p>
@@ -368,27 +368,27 @@
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://en.wikipedia.org/wiki/Australian_rules_football">http://en.wikipedia.org/wiki/Australian_rules_football</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.">http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm. html</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.ddiez.com/teac/r/linear_models.php">http://www.ddiez.com/teac/r/linear_models.php</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
@@ -400,51 +400,51 @@
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         abline() plots a best fitting line on top of a scatterplot
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         attach() makes a data structure the "focus" of attention
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         getwd() show the current working directory for R
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         ifelse() a conditional test that provides one of two possible outputs
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         lm() "linear models" and for this chapter, multiple regression
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         plot() general purpose graphing function, many uses in R summary produces an overview of an output structure
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>

@@ -42,47 +42,47 @@
 
 			<p><ol>
 				<li>
-							<blockquote>
+							
 											<p>
 								Get a Twitter account at Twitter.com if you don’t already have one.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Go to the development page at Twitter (<url href="https://dev.twitter.com">https://dev.twitter.com</url>) and sign in with your Twitter credentials.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Click on "Apps." The location of this may vary over time, but look for it near your profile picture on the top right corner of the screen.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Apply for a permission to have a Developer account. You will need to link your phone number to your account. The purpose for the account will be Educational or Student. Then when prompted only indicate that we will be processing tweets outside of Twitter environment and press no for all others options such as “Using Tweet, Retweet and etc.” Congratulations, now you have a Twitter developer account.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Click on "Create a New Application." Fill in the blanks with some sensible answers. Where it asks for a “website” you can give your own home page. This is a required response, so you will have to have some kind of web page to point to. In contrast, the “Callback URL” can be left blank. Click submit.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Check the checkbox specified to allow your application should be set so that it can be used to sign in with Twitter.
 							</p>
@@ -101,31 +101,31 @@
 								</image>
 							</figure>
 
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								You will get a screen containing a whole bunch of data. Make sure to save it all, but the part that you will really need is the "Consumer key" and the "Consumer Secret," both of which are long strings of letters and numbers. These strings will be used later to get your application running in R. The reason these are such long strings of gibberish is that they are encrypted.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Also take note of the Request Token URL and the Authorize URL. For the most part these are exactly the same across all uses of Twitter, but they may change over time, so you should make sure to stash them away for later. You do not need to click on the “Create my Access Token” button.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Go to the Settings tab and make sure that "Read, Write and Access direct messages" is set.
 							</p>
-							</blockquote>
+							
 				</li>
 
 			</ol></p>
@@ -626,7 +626,7 @@
 			</p>
 
 			<p>
-				Take note of something very important about these data: It doesn’t make much sense to work with a measure of central tendency. Remember a couple of chapters ago when we were looking at the number of people who resided in different U.S. states? In that case it made sense to say that if State A had one million people and State B had three million people, then the average of these two states was two million people. When you’re working with timestamps, it doesn’t make a whole lot of sense to say that one tweet arrived at 7 AM and another arrived at 9 AM so the average is 8 AM. Fortunately, there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<idx>Poisson Distribution</idx><term>Poisson Distribution</term>" (named after Simeon Denis Poisson, who published it about half a century before von Bortkiewicz found a use for it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
+				Take note of something very important about these data: It doesn’t make much sense to work with a measure of central tendency. Remember a couple of chapters ago when we were looking at the number of people who resided in different U.S. states? In that case it made sense to say that if State A had one million people and State B had three million people, then the average of these two states was two million people. When you’re working with timestamps, it doesn’t make a whole lot of sense to say that one tweet arrived at 7 AM and another arrived at 9 AM so the average is 8 AM. Fortunately, there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<idx>Poisson distribution</idx><term>Poisson distribution</term>" (named after Simeon Denis Poisson, who published it about half a century before von Bortkiewicz found a use for it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
 			</p>
 
 			<p>
@@ -821,83 +821,83 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/web/packages/twitteR/twitteR.pdf">http://cran.r-project.org/web/packages/twitteR/twitteR.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/web/packages/twitteR/vignettes/twitte">http://cran.r-project.org/web/packages/twitteR/vignettes/twitte R.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Ladislaus_Bortkiewicz">http://en.wikipedia.org/wiki/Ladislaus_Bortkiewicz</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Poisson_distribution">http://en.wikipedia.org/wiki/Poisson_distribution</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://hashtags.org/">http://hashtags.org/</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.inside-r.org/packages/cran/twitteR/docs/example">http://www.inside-r.org/packages/cran/twitteR/docs/example Oauth</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.khanacademy.org/math/probability/v/poisson-proc">http://www.khanacademy.org/math/probability/v/poisson-proc ess-1</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.khanacademy.org/math/probability/v/poisson-proc">http://www.khanacademy.org/math/probability/v/poisson-proc ess-2</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://support.twitter.com/articles/49309">https://support.twitter.com/articles/49309</url> (hashtags explained)
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.rdatamining.com/examples/text-mining">http://www.rdatamining.com/examples/text-mining</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -1029,163 +1029,163 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										attach() Makes the variables of a dataset available without $
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										as.integer() Coerces data into integers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										detach() Undoes an attach() function
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										diff() Calculates differences between neighboring rows
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										do.call() Calls a function with a variable number of arguments
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										function() Defines a function for later use
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										install.packages() Downloads and prepares a package for use
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										lapply() Applies a function to a list
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										library() Loads a package for use; like require()
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() Calculates the arithmetic mean of a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										hist() Plots a histogram from a list of data
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										median() Finds the statistical center point of a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mfv() Most frequent value; part of the modeest() package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mode() Shows the basic data type of an object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										order() Returns a sorted list of index numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										rbind() Binds rows into a dataframe object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										require() Tests if a package is loaded and loads it if needed
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										searchTwitter() Part of the twitteR package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										str() Describes the structure of a data object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sum() Adds up a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

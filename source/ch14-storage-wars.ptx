@@ -20,7 +20,7 @@
 				</p>
 
 				<p>
-					Another dividing line, as mentioned above is between proprietary and open formats. One of the most common ways of storing and sharing small datasets is as Microsoft Excel spreadsheets. Although this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the <idx>OpenDocument</idx><term>OpenDocument</term> format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on <idx>XML</idx><term>XML</term>, which stands for <idx>Extensible markup language</idx><term>extensible markup language</term>. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the <idx>W3C consortium</idx><term>W3C consortium</term>, which is responsible for developing and maintaining the many standards and protocols that support the web.
+					Another dividing line, as mentioned above is between proprietary and open formats. One of the most common ways of storing and sharing small datasets is as Microsoft Excel spreadsheets. Although this is a proprietary format, owned by Microsoft, it has also become a kind of informal and ubiquitous standard. Dozens of different software applications can read Excel formats (there are several different formats that match different versions of Excel). In contrast, the <idx>OpenDocument</idx><term>OpenDocument</term> format is an open format, managed by a standards consortium, that anyone can use without worrying what the owner might do. OpenDocument format is based on <idx>XML</idx><term>XML</term>, which stands for <idx>extensible markup language</idx><term>extensible markup language</term>. XML is a whole topic in and of itself, but briefly it is a data exchange format designed specifically to work on the Internet and is both human and machine readable. XML is managed by the <idx>W3C Consortium</idx><term>W3C Consortium</term>, which is responsible for developing and maintaining the many standards and protocols that support the web.
 				</p>
 
 				<p>
@@ -312,28 +312,28 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										Allow R to send messages to the large, remote database asking
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
 
-				<blockquote>
+				
 									<p>
 					for summaries, subsets, or samples of the data.
 				</p>
-				</blockquote>
+				
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										Allow R to send computation requests to a distributed data processing system asking for the results of calculations performed on the large remote database.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -348,51 +348,51 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										RMySQL Connects to <idx>MySQL</idx><term>MySQL</term>, perhaps the most popular open source database in the world. MySQL is the M in "LAMP" which is the acronym for Linux, Apache, MySQL, and PHP. Together, these four elements provide a complete solution for data driven web applications.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										ROracle Connects with the widely used <idx>Oracle</idx><term>Oracle</term> commercial database package. Oracle is probably the most widely used commercial database package. Ironically, Oracle acquired Sun Microsystems a few years ago and Sun developers predominate in development and control of the open source MySQL system,
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										RPostgreSQL Connects with the well-developed, full featured <idx>PostgreSQL</idx><term>PostgreSQL</term> (sometimes just called Postgres) database system. PostgreSQL is a much more venerable system than MySQL and has a much larger developer community. Unlike MySQL, which is effectively now controlled by Oracle, PostgreSQL has a developer community that is independent of any company and a licensing scheme that allows anybody to modify and reuse the code.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										RSQlite Connects with <idx>SQlite</idx><term>SQlite</term>, another open source, independently developed database system. As the name suggests, SQlite has a very light "code footprint" meaning that it is fast and compact.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										RMongo Connects with the <idx>MongoDB</idx><term>MongoDB</term> system, which is the only system here that does not use SQL. Instead, MongoDB uses JavaScript to access data. As such it is well suited for web development applications.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										RODBC Connects with ODBC compliant databases, which include Microsoft’s SQLserver, Microsoft Access, and Microsoft Excel, among others. Note that these applications are native to Windows and Windows server, and as such the support for Linux and Mac OS is limited.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -514,11 +514,11 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 				</p>
 
 				<p>
-					<idx>Hadoop</idx> <term>Hadoop</term> is not a single thing, but is rather a combination of pieces of software called a library. Hadoop is developed and maintained by the same people who maintain the Apache open source web server. There are about a dozen different parts of the Hadoop framework, but the <idx>Hadoop Distributed Files System</idx><term>Hadoop Distributed Files System</term> (HDFS) and <idx>Hadoop MapReduce</idx><term>Hadoop MapReduce</term> framework are two of the most important frameworks.
+					<idx>Hadoop</idx> <term>Hadoop</term> is not a single thing, but is rather a combination of pieces of software called a library. Hadoop is developed and maintained by the same people who maintain the Apache open source web server. There are about a dozen different parts of the Hadoop framework, but the <idx>Hadoop distributed files system</idx><term>Hadoop Distributed Files System (HDFS)</term>  and <idx>Hadoop MapReduce</idx><term>Hadoop MapReduce</term> framework are two of the most important frameworks.
 				</p>
 
-				<p>
-					HDFS is easy to explain. Imagine your computer and several other computers at your home or workplace. If we could get them all to work together, we could call them a "cluster" and we could theoretically get more use out of them by taking advantage of all of the storage and computing power they have as a group. Running HDFS, we can treat this cluster of computers as one big hard drive. If we have a really large file too big to fit on any one of the computers HDFS can divide up the file and store its different parts in different storage areas without us having to worry about the details. With a proper configuration of computer hardware, such as an IT department could supply, HDFS can provide an enormous amount of "throughput" (i.e., a very fast capability for reading and writing data) as well as redundancy and failure tolerance.
+				<p><idx>HDFS</idx>
+					<term>HDFS</term> is easy to explain. Imagine your computer and several other computers at your home or workplace. If we could get them all to work together, we could call them a "cluster" and we could theoretically get more use out of them by taking advantage of all of the storage and computing power they have as a group. Running HDFS, we can treat this cluster of computers as one big hard drive. If we have a really large file too big to fit on any one of the computers HDFS can divide up the file and store its different parts in different storage areas without us having to worry about the details. With a proper configuration of computer hardware, such as an IT department could supply, HDFS can provide an enormous amount of "throughput" (i.e., a very fast capability for reading and writing data) as well as redundancy and failure tolerance.
 				</p>
 
 				<p>
@@ -647,59 +647,59 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/doc/manuals/R-data.html">http://cran.r-project.org/doc/manuals/R-data.html</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/doc/manuals/R-data.pdf">http://cran.r-project.org/doc/manuals/R-data.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/web/packages/gdata/gdata.pdf">http://cran.r-project.org/web/packages/gdata/gdata.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://dev.mysql.com/downloads/">http://dev.mysql.com/downloads/</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Comparison_of_relational_databas">http://en.wikipedia.org/wiki/Comparison_of_relational_databas e_management_systems</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Mapreduce">http://en.wikipedia.org/wiki/Mapreduce</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://github.com/RevolutionAnalytics/RHadoop/wiki/Tutorial">https://github.com/RevolutionAnalytics/RHadoop/wiki/Tutorial</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -711,107 +711,107 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										as.numeric() Convert another data type to a number
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										dbConnect() Connect to an SQL database
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										dbGetQuery() Run an SQL query and return the results
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										dbListTables() Show the tables available in a connection
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										dbWriteTable() Send a data table to an SQL systems
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										install.packages() Get the code for an R package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										lapply() Apply a function to elements of a list
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										library() Make an R package available for use
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Numberize() A custom function created in this chapter
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										read.xls() Import data from a binary R file; part of the gdata package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										return() Used in functions to designate the data returned by the function
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										str_replace() Replace a character string with another
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										str_replace_all() Replace multiple instances of a character string with another
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

@@ -217,7 +217,7 @@
                 </p>
 
                 <p>
-                    Now we can prepare to generate some rules with the <idx><c>apriori()</c></idx><term>apriori()</term> command. The term "apriori" refers to the specific algorithm that R will use to scan the data set for appropriate rules. Apriori is a very commonly used algorithm and it is quite efficient at finding rules in transaction data. Rules are in the form of "if <idx>LHS</idx><term>LHS</term> then <idx>RHS</idx><term>RHS</term>." The acronym LHS means "left hand side" and, naturally, RHS means "right hand side." So each rule states that when the thing or things on the left hand side of the equation occur(s), the thing on the right hand side occurs a certain percentage of the time. To reiterate a definition provided earlier in the chapter, support for a rule refers to the frequency of co-occurrence of both members of the pair, i.e., LHS and RHS together. The confidence of a rule refers to the proportion of the time that LHS and RHS occur together versus the total number of appearances of LHS. For example, if Milk and Butter occur together in 10% of the grocery carts (that is "support"), and Milk (by itself, ignoring Butter) occurs in 25% of the carts, then the confidence of the Milk/Butter rule is 0.10/0.25 = 0.40.
+                    Now we can prepare to generate some rules with the <idx><c>apriori()</c></idx><term>apriori()</term> command. The term "apriori" refers to the specific algorithm that R will use to scan the data set for appropriate rules. Apriori is a very commonly used algorithm and it is quite efficient at finding rules in transaction data. Rules are in the form of "if <idx>LHS (left-hand side)</idx><term>LHS</term> then <idx>RHS (right-hand side)</idx><term>RHS</term>." The acronym LHS means "left hand side" and, naturally, RHS means "right hand side." So each rule states that when the thing or things on the left hand side of the equation occur(s), the thing on the right hand side occurs a certain percentage of the time. To reiterate a definition provided earlier in the chapter, support for a rule refers to the frequency of co-occurrence of both members of the pair, i.e., LHS and RHS together. The confidence of a rule refers to the proportion of the time that LHS and RHS occur together versus the total number of appearances of LHS. For example, if Milk and Butter occur together in 10% of the grocery carts (that is "support"), and Milk (by itself, ignoring Butter) occurs in 25% of the carts, then the confidence of the Milk/Butter rule is 0.10/0.25 = 0.40.
                 </p>
 
                 <p>
@@ -731,51 +731,51 @@
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://en.wikipedia.org/wiki/Association_rule_learning">http://en.wikipedia.org/wiki/Association_rule_learning</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://jmlr.csail.mit.edu/papers/volume12/hahsler11a/hahsler11">http://jmlr.csail.mit.edu/papers/volume12/hahsler11a/hahsler11 a.pdf</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://journal.r-project.org/archive/2009-2/RJournal_2009-2_Will">http://journal.r-project.org/archive/2009-2/RJournal_2009-2_Will iams.pdf</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.r-bloggers.com/examples-and-resources-on-associati">http://www.r-bloggers.com/examples-and-resources-on-associati on-rule-mining-with-r/</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://rattle.togaware.com">http://rattle.togaware.com</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.statsoft.com/textbook/association-rules/">http://www.statsoft.com/textbook/association-rules/</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
@@ -796,43 +796,43 @@
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         apriori() Uses the algorithm of the same name to analyze a transaction data set and generate rules.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         itemFrequencyPlot() Shows the relative frequency of commonly occurring items in the spare occurrence matrix.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         inspect() Shows the contents of the data object generated by apriori() that generates the association rules
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         install.packages() Loads package from the CRAN repository
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         summary() Provides an overview of the contents of a data structure.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>

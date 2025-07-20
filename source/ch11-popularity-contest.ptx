@@ -584,27 +584,27 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph">http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph =54</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo">http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo urse/graphscourse.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2">http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -615,51 +615,51 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr">http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr ontcover</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.khanacademy.org/math/probability/v/poisson-process-1">http://www.khanacademy.org/math/probability/v/poisson-process-1</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.khanacademy.org/math/probability/v/poisson-process-2">Khan Academy Poisson Process 2</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Poisson.html">The Poisson Distribution</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/poisson.test.html">Exact Poisson tests</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://stats.stackexchange.com/questions/10926/how-to-calculat">How to calculate confidence interval for count data in R?</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -671,147 +671,147 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										as.integer() Coerces another data type to integer if possible
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										barplot2() Creates a bar graph
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										c() Concatenates items to make a list
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										diff() Calculates time difference on neighboring cases
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										EnsurePackage() Custom function, install() and require() package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										for() Creates a loop, repeating execution of code
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										hist() Creates a frequency histogram
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() Calculates the arithmetic mean
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										order() Provides a list of indices reflecting a new sort order
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										plot() Begins an X-Y plot
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										points() Adds points to a plot started with plot()
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										poisson.test() Confidence intervals for poisson events or ratios
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										qpois() Does the inverse of ppois(): Probability into threshold
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										rpois() Generates random numbers fitting a Poisson distribution
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										TweetFrame() Custom procedure yielding a dataset of tweets
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										ppois() Returns a cumulative probability for particular threshold
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sum() Adds together a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										var() Calculates variance of a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

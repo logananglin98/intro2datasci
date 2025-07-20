@@ -216,10 +216,11 @@
 				</p>
 </section>
 
-  <section xml:id="summarizing-with-summary">
-    <title>Summarizing Data with summary()</title>
+  <section xml:id="summarizing-data">
+    <title>Summarizing Data</title>
 				<p>
-					Next, we will examine another very useful function called <c><idx><c>summary()</c></idx><term>summary()</term></c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
+					Next, we will examine another very useful function called
+					 <idx><c>summary()</c></idx><c>summary()</c> which provides some overlapping information to <c>str()</c> but also goes a little bit further, particularly with numeric variables.
 				</p>
 
 				<p>
@@ -227,8 +228,8 @@
 				</p>
 
 				<figure>
-	<image source="summary-myFam.png"/>
-					<caption>This is an example of what the console outputs when Summary function is performed on an existing data frame.</caption>
+	<image source="summary-myFam.png" />
+					<caption>This is an example of what the console outputs when the <c>summary()</c> function is performed on an existing data frame.</caption>
 </figure>
 
 				<p>
@@ -237,76 +238,82 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
-														<p>
-										"<idx>min.</idx><term>Min.</term>" refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
+								
+				<p>
+				<idx>min</idx><term>Min</term> refers to the minimum or lowest value among all the cases. For this dataframe, 5 is the age of the dog and it is the lowest age of all of the family members.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
-										"<idx>1st qu.</idx><term>1st Qu.</term>" refers to the dividing line at the top of the first quartile. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations.
+										<term>1st Qu</term> refers to the dividing line at the top of the <idx>first quartile</idx><term>first quartile</term>. If we took all the cases and lined them up side by side in order of age (or weight) we could then divide up the whole into four groups, where each group had the same number of observations.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
-
-				<table>
-					<title></title>
-					<tabular>
-					<row header="yes">
-						<cell halign="left"><term>1ST QUARTILE</term></cell>
-						<cell halign="left"><term>2ND QUARTILE</term></cell>
-						<cell halign="left"><term>3RD QUARTILE</term></cell>
-						<cell halign="left"><term>4TH QUARTILE</term></cell>
-					</row>
-					<row class="odd">
-						<cell halign="left">25% of cases with the smallest values here</cell>
-						<cell halign="left">25% of cases just below the median here</cell>
-						<cell halign="left">25% of cases just above the mean here</cell>
-						<cell halign="left">25% of cases with the largest values here</cell>
-					</row>
-					</tabular>
-				</table>
+				<p> In other words, the <idx>four quartiles</idx><term>four quartiles</term> are as follows:
+					<ul>
+						<li>
+							<p>
+								<term>1ST Quartile</term>: 5% of cases with the smallest values are here.
+							</p>
+						</li>
+						<li>
+							<p>
+								<term>2ND Quartile</term>: 25% of cases just below the median are here.
+							</p>
+						</li>
+						<li>
+							<p>
+								<term>3RD Quartile</term>: 25% of cases just above the median are here.
+							</p>
+						</li>
+						<li>
+							<p>
+								<term>4TH Quartile</term>: 25% of cases with the largest values are here.
+							</p>
+						</li>
+					</ul>
+				</p>
 
 				<p>
-					Just like a number line, the smallest cases would be on the left with the largest on the right. If we’re looking at myFamAge, the leftmost group, which contains one quarter of all the cases, would start with five on the low end (the dog) and would have eight on the high end (Bro). So the "first quartile" is the value of age (or another variable) that divides the first quarter of the cases from the other three quarters. Note that if we don’t have a number of cases that divides evenly by four, the value is an approximation.
+					Just like a number line, the smallest cases would be on the left with the largest on the right. If we’re looking at <c>myFamAge</c>, the leftmost group, which contains one quarter of all the cases, would start with five on the low end (the dog) and would have eight on the high end (Bro). So the <term>first quartile</term> is the value of age (or another variable) that divides the first quarter of the cases from the other three quarters. Note that if we don’t have a number of cases that divides evenly by four, the value is an approximation.
 				</p>
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<idx>median</idx><term>Median</term> refers to the value of the case that splits the whole group in half, with half of the cases having higher values and half having lower values. If you think about it a little bit, the median is also the dividing line that separates the second quartile from the third quartile.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<term>Mean</term>, as we have learned before, is the numeric average of all of the values. For instance, the average age in the family is reported as 22.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
-										"<idx>3rd. qu.</idx><term>3rd Qu.</term>" is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these <idx>quartiles</idx><term>quartiles</term> and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
+										<term>3rd Qu</term> is the third quartile. If you remember back to the first quartile and the median, this is the third and final dividing line that splits up all of the cases into four equal sized parts. You may be wondering about these <idx>quartiles</idx><term>quartiles</term> and what they are useful for. Statisticians like them because they give a quick sense of the shape of the distribution. Everyone has the experience of sorting and dividing things up pieces of pizza, playing cards into hands, a bunch of players into teams and it is easy for most people to visualize four equal sized groups and useful to know how high you need to go in age or weight (or another variable) to get to the next dividing line between the groups.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
-										Finally, "<idx>max</idx><term>Max</term>" is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
+										Finally, <idx>max</idx><term>Max</term> is the maximum value and as you might expect displays the highest value among all of the available cases. For example, in this dataframe Dad has the highest weight: 188. Seems like a pretty trim guy.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -359,78 +366,78 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										In R, as in other programs, a vector is a list of elements/things that are all of the same kind, or what R refers to as a mode. For example, a vector of mode "numeric" would contain only numbers.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Statisticians, database experts and others like to work with rectangular datasets where the rows are cases or instances and the columns are variables or attributes.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										In R, one of the typical ways of storing these rectangular structures is in an object known as a dataframe. Technically speaking a dataframe is a list of vectors where each vector has the exact same number of elements as the others (making a nice rectangle).
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										In R, the <c>data.frame()</c> function organizes a set of vectors into a dataframe. A dataframe is a conventional, rectangular shaped data object where each column is a vector of uniform mode and having the same number of elements as the other columns in the dataframe. Data is copied from the original source vectors into new storage space. The variables/columns of the dataframe can be accessed using "$" to connect the name of the dataframe to the name of the variable/column.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <c>str()</c> and <c>summary()</c> functions can be used to reveal the structure and contents of a dataframe (as well as of other data objects stored by R). The <c>str()</c> function shows the structure of a data object, while <c>summary()</c> provides numerical summaries of numeric variables and overviews of non-numeric variables.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										A <term>factor</term> is a labeling system often used to organize groups of cases or observations. In R, as well as in many other software programs, a factor is represented internally with a numeric ID number, but factors also typically have labels like "Male" and "Female" or "Experiment" and "Control." Factors always have "levels," and these are the different groups that the factor signifies. For example, if a factor variable called Gender codes all cases as either "Male" or "Female" or "Other" then that factor has exactly three levels.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<term>Quartiles</term> are a division of a sorted vector into four evenly sized groups. The first quartile contains the lowest-valued elements, for example the lightest weights, whereas the fourth quartile contains the highest-valued items. Because there are four groups, there are three dividing lines that separate them. The middle dividing line that splits the vector exactly in half is the median. The term "first quartile" often refers to the dividing line to the left of the median that splits up the lower two quarters and the value of the first quartile is the value of the element of the vector that sits right at that dividing line. Third quartile is the same idea, but to the right of the median and splitting up the two higher quarters.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<term>Min</term> and <term>max</term> are often used as abbreviations for minimum and maximum and these are the terms used for the highest and lowest values in a vector. Bonus: The "range" of a set of numbers is the maximum minus the minimum.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>mean</term> is the same thing that most people think of as the average. Bonus: The mean and the median are both measures of what statisticians call "central tendency."
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -450,35 +457,35 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Central_tendency">Central Tendency</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Median">Median</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Relational_model">Relational Model</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.burns-stat.com/pages/Tutor/hints_R_begin.html">Impatient R Translation</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -490,43 +497,43 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>c()</c> Concatenates data elements together to create a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										&lt;- Assignment arrow
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>data.frame()</c> Makes a dataframe from separate vectors
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>str()</c> Reports the structure of a data object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>summary()</c> Reports data modes/types and a data overview
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -537,35 +544,35 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										A list
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										A mode
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										A vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										A dataframe
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>

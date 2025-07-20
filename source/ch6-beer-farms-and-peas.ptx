@@ -51,7 +51,7 @@
 					One of the critical distinctions woven throughout the work of these four is between the "sample" of data that you have available to analyze and the larger "population" of possible cases that may or do exist. When Gosset ran batches of beer at the brewery, he knew that it was impractical to run every possible batch of beer with every possible variation in recipe and preparation. Gosset knew that he had to run a few batches, describe what he had found and then generalize or infer what might happen in future batches. This is a fundamental aspect of working with all types and amounts of data: Whatever data you have, there’s always more out there. There’s data that you might have collected by changing the way things are done or the way things are measured. There’s future data that hasn’t been collected yet and might never be collected. There’s even data that we might have gotten using the exact same strategies we did use, but that would have come out subtly different just due to randomness. Whatever data you have, it is just a snapshot or "sample" of what might be out there. This leads us to the conclusion that we can never, ever 100% trust the data we have. We must always hold back and keep in mind that there is always uncertainty in data. A lot of the power and goodness in statistics comes from the capabilities that people like Fisher developed to help us characterize and quantify that uncertainty and for us to know when to guard against putting too much stock in what a sample of data have to say. So remember that while we can always <term>describe</term> the sample of data we have, the real trick is to <term>infer</term> what the data may mean when generalized to the larger population of data that we don’t have. This is the key distinction between descriptive and inferential statistics.
 				</p>
 </section>
-<subsection xml:id="key-descriptive-statistics">
+<section xml:id="key-descriptive-statistics">
     <title>Key Descriptive Statistics</title>
 				<p>
 					We have already encountered several descriptive statistics in previous chapters, but for the sake of practice here they are again, this time with the more detailed definitions:
@@ -196,9 +196,9 @@
 					</li>
 
 				</ul></p>
-</subsection>
+</section>
   
-  <subsection xml:id="importing-census-data">
+  <section xml:id="importing-census-data">
     <title>Importing and Preparing Census Data</title>
 				<p>
 					Now let’s have R calculate some statistics for us:
@@ -364,9 +364,9 @@
 				<p>
 					This would be a great moment to practice your skills from the previous chapter by using the <c>str()</c> and <c>summary()</c> functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation "V1" or “...1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them "V1" or “...1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous "Rows and Columns" chapter for more information on addressing the columns in a dataframe.
 				</p>
-</subsection>
+</section>
   
-  <subsection xml:id="analyzing-population-data">
+  <section xml:id="analyzing-population-data">
     <title>Analyzing the Population Data</title>
 				<p>
 					Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
@@ -474,9 +474,9 @@
 					<idx>Pareto distribution</idx>
 					This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a "reverse-J" distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a <term>Pareto distribution</term> (named after the economist Vilfredo Pareto). We don’t have to worry about why it may be a Pareto distribution at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small to have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is?
 				</p>
-</subsection>
+</section>
   
-  <subsection xml:id="common-data-distributions">
+  <section xml:id="common-data-distributions">
     <title>Understanding Data Distributions</title>
 				<p>
 					<idx>normal distribution</idx>
@@ -519,9 +519,9 @@
 					In the next chapter we will conduct some of these comparisons to see what we can infer about the ways things are in general, based on just a subset of available data, or what statisticians call a sample.
 				</p>
 
-</subsection>
+</section>
   
-  <subsection xml:id="ch6-challenge">
+  <section xml:id="ch6-challenge">
     <title>Chapter Challenge and Questions</title>
 
 				<p>
@@ -579,9 +579,9 @@
 				</ol></p>
 				</p>
 
-</subsection>
+</section>
 
-  <subsection xml:id="ch6-sources">
+  <section xml:id="ch6-sources">
     <title>Sources</title>
 
 				<p><ul>
@@ -659,9 +659,9 @@
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-functions-used-in-this-chapter-1">
+			<section xml:id="r-functions-used-in-this-chapter-1">
 				<title>R Functions Used in This Chapter </title>
 
 				<p><ul>
@@ -715,6 +715,6 @@
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
 </chapter>

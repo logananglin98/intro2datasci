@@ -3,7 +3,7 @@
 <chapter xml:id="ch-sample-in-jar" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Sample in a Jar</title>
 
-<subsection xml:id="sample-in-a-jar">
+<section xml:id="sample-in-a-jar">
   <title>Sample in a Jar</title>
 
   <introduction>
@@ -455,9 +455,9 @@ CutPoint975
 					We’re not statisticians at this point, but the process of reasoning based on sampling distributions is at the heart of inferential statistics, so if you have followed the logic presented in this chapter, you have made excellent progress towards being a competent user of applied statistics.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="chapter-challenge-3">
+			<section xml:id="chapter-challenge-3">
 				<title>Chapter Challenge </title>
 
 				<p>
@@ -468,9 +468,9 @@ CutPoint975
 					to calculate the 2.5% and 97.5% distribution cut points. The data points you collect should represent instances of the same phenomenon. For instance, you could collect the prices of 20 textbooks, or count the number of words in each of 20 paragraphs.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-4">
+			<section xml:id="sources-4">
 				<title>Sources </title>
 
 				<p><ul>
@@ -524,9 +524,9 @@ CutPoint975
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-commands-used-in-this-chapter">
+			<section xml:id="r-commands-used-in-this-chapter">
 				<title>R Commands Used in This Chapter </title>
 
 				<p><ul>
@@ -595,6 +595,6 @@ CutPoint975
 					</li>
 
 				</ul></p>
-        </subsection>
+        </section>
 
 </chapter>

@@ -59,27 +59,27 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>mean</term> (technically the arithmetic mean), a measure of central tendency that is calculated by adding together all of the observations and dividing by the number of observations.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>median</term>, another measure of central tendency, but one that cannot be directly calculated. Instead, you make a sorted list of all of the observations in the sample, then go halfway up that list. Whatever the value of the observation is at the halfway point, that is the median.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>range</term>, which is a measure of "dispersion" how spread out a bunch of numbers in a sample are calculated by subtracting the lowest value from the highest value.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -90,21 +90,21 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 															<idx>mode</idx>
 										The <term>mode</term>, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 															<idx>variance</idx>
 										The <term>variance</term>, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -171,28 +171,28 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 															<idx>standard deviation</idx>
 										The <term>standard deviation</term>, another measure of dispersion, and a cousin to the variance. The standard deviation is simply the square root of the variance, which puts us back in regular units like "years." In the example above, the standard deviation would be about 18.88 years (rounding to two decimal places, which is plenty in this case).
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Standard deviation has a complicated formula, but you can think of it as “the average distance from the mean.” In the example above, the average distance to the mean is about 18.88 years.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Intuitively, you can think about both the standard deviation and the variance as measuring how spread out the data is. When these numbers are 0 or very small compared to the mean, the data is not very spread out.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -402,19 +402,19 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										The <c>mode()</c> function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later chapters how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13<sup>th</sup> power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -545,35 +545,35 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										Histogram
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Pictogram
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Bar Graph
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Bar Chart
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -586,75 +586,75 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Francis_Galton">Francis Galton</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Pareto_distribution">Pareto distribution</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/William_Sealy_Gosset">William Sealy Gosset</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Normal_distribution">Normal Distribution</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html">US Census: State Population Totals and Components of Change: 2010-2019</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.r-tutor.com/sitemap">R Tutorial: Site Map</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -666,51 +666,51 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>mean()</c> Calculate arithmetic mean
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>median()</c> Locate the median
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>mode()</c> Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>var()</c> Calculate the sample variance
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>sd()</c> Calculate the sample standard deviation
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<c>hist()</c> Produces a histogram graphic
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

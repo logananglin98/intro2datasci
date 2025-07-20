@@ -495,51 +495,51 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										function() Creates a new function
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										return() Completes a function by returning a value
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										tabulate() Counts occurrences of integer-valued data in a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										unique() Creates a list of unique values in a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										match() Takes two lists and returns values that are in each
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mfv() Most frequent value (from the modeest package)
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

@@ -410,43 +410,43 @@ CutPoint975
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										Run a statistical process a large number of times and you get a consistent pattern of results.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Taking the means of a large number of samples and plotting them on a histogram shows that the sample means are fairly well normally distributed and that the center of the distribution is very, very close to the mean of the original raw data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										This resulting distribution of sample means can be used as a basis for comparisons. By making cut points at the extreme low and high ends of the distribution, for example 2.5% and 97.5%, we have a way of comparing any new information we get.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										If we get a new sample mean, and we find that it is in the extreme zone defined by our cut points, we can tentatively conclude that the sample that made that mean is a different kind of thing than the samples that made the sampling distribution.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										A shortcut and more accurate way of figuring the cut points involves calculating the "standard error" based on the standard deviation of the original raw data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -475,51 +475,51 @@ CutPoint975
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Central_limit_theorem">http://en.wikipedia.org/wiki/Central_limit_theorem</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Gerolamo_Cardano">http://en.wikipedia.org/wiki/Gerolamo_Cardano</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Jacob_Bernoulli">http://en.wikipedia.org/wiki/Jacob_Bernoulli</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Law_of_large_numbers">http://en.wikipedia.org/wiki/Law_of_large_numbers</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories _by_population</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.khanacademy.org/math/statistics/v/central-limit-th">http://www.khanacademy.org/math/statistics/v/central-limit-th eorem</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -531,67 +531,67 @@ CutPoint975
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										length() The number of elements in a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() The arithmetic mean or average of a set of values
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										quantile() Calculates cut points based on percents/proportions
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sample() Chooses elements at random from a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sd() Calculates standard deviation
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										replicate() Runs an expression/calculation many times
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sqrt() Calculates square root
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										summary() Summarizes contents of a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

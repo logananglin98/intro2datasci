@@ -479,11 +479,11 @@
 					&gt; table(as.factor(rt),as.factor(longtext))
 				</p>
 
-				<blockquote>
+				
 									<p>
 					FALSE TRUE
 				</p>
-				</blockquote>
+				
 
 				<p>
 					EarthTechling 0 1
@@ -963,67 +963,67 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/web/packages/stringr/index.html">http://cran.r-project.org/web/packages/stringr/index.html</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/ASCII">http://en.wikipedia.org/wiki/ASCII</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Unicode">http://en.wikipedia.org/wiki/Unicode</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://had.co.nz/">http://had.co.nz/</url> (Hadley Wickham)
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://mashable.com/2010/08/14/twitter-140-bug/">http://mashable.com/2010/08/14/twitter-140-bug/</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/search.html">http://stat.ethz.ch/R-manual/R-devel/library/base/html/search.html</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/table.html">http://stat.ethz.ch/R-manual/R-devel/library/base/html/table.html</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

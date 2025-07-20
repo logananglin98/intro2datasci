@@ -31,43 +31,43 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										The decline in the price of sensors (like barcode readers) and other technology over recent decades has made it cheaper and easier to collect a lot more data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Similarly, the declining cost of storage has made it practical to keep lots of data hanging around, regardless of its quality or usefulness.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Many people’s attitudes about privacy seem to have accommodated the use of Facebook and other platforms where we reveal lots of information about ourselves.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Researchers have made significant advances in the "machine learning" algorithms that form the basis of many data mining techniques.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										When a data set gets to a certain size (into the range of thousands of rows), conventional tests of statistical significance are meaningless, because even the most tiny and trivial results (or effect sizes, as statisticians call them) are statistically significant.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -78,27 +78,27 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										Garbage in, garbage out: The usefulness of data depends heavily upon how carefully and well it was collected. After data were collected, the quality depends upon how much attention was paid to suitable pre-processing: data cleaning and data screening.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Bigger equals weirder: If you are looking for anomalies, rare events that break the rules, then larger is better. Low frequency events often do not appear until a data collection goes on for a long time and/or encompasses a large enough group of instances to contain one of the bizarre cases.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Linking adds potential: Standalone datasets are inherently limited by whatever variables are available. But if those data can be linked to some other data, all of a sudden new vistas may open up. No guarantees, but the more you can connect records here to other records over there, the more potential findings you have.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -175,27 +175,27 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://aqua.nasa.gov/sites/default/files/references/Wx_Forecasting.pdf">NASA Weather Forecasting Through the Ages</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Big_data">Wikipedia.org: Big_data</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Data.gov">Wikipedia.org: Data.gov</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>

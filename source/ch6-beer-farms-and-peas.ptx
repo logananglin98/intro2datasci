@@ -372,29 +372,18 @@
 					Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
 				</p>
 
-				<p>
-<pre>
-	&gt; mean(USstatePops$...1)
+	<sage language="r">
+	<input>
+	<xi:include href="../code/USstatePops" parse="text"/>
+cat("This is the mean:", mean(USstatePops$...1), "\n")
+cat("This is the median:", median(USstatePops$...1), "\n")
+cat("This is the mode:", mode(sort(table(USstatePops$...1), decreasing = TRUE))[1], "\n")
+cat("This is the variance:", var(USstatePops$...1), "\n")
+cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 
-	[1] 6053834
+	</input>
+	</sage>
 
-	&gt; median(USstatePops$...1)
-
-	[1] 4339367
-
-	&gt; mode(USstatePops$...1)
-
-	[1] "numeric"
-
-	&gt; var(USstatePops$...1)
-
-	[1] 4.656676e+13
-
-	&gt; sd(USstatePops$...1)
-
-	[1] 6823984
-</pre>
-				</p>
 
 				<p>
 					Some great summary information there, but wait, a couple things have gone awry:

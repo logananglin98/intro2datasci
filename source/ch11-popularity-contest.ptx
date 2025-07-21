@@ -62,7 +62,10 @@
 				<p>
 					In the final command, we ask for a histogram of an even larger sample of n=1000. The histogram shows the most common value hanging right around three seconds of delay with a nice tail that points rightwards and out to about 10 seconds of delay. You can think of this as one possible example of what you might observe of the average delay time between tweets was about three seconds. Note how similar the shape of this histogram is to what we observed with real tweets in the last chapter.
 				</p>
+</section>
 
+    <section xml:id="visualizing-arrival-probabilities">
+        <title>Visualizing and Comparing Arrival Probabilities</title>
 				<p>
 					Compare the histogram on the previous page to the one on the next page that was generated with this command:
 				</p>
@@ -137,7 +140,10 @@
 				<p>
 					This plot clearly shows that the green points have a "steeper" profile. We are more likely to have earlier arrivals for the 3-second delay data than we are for the 10-second data. If these were real tweets, the green tweets would be piling in much faster than the red tweets. Here’s a reminder on how to read this plot: Look at a value on the X-axis, for example "5." Then look where the dot is and trace leftward to the Y-axis. For the red dot, the probability value at time (x) equal 4 is about 0.10. So for the red data there is about a 10% chance that the next event will occur within five time units (we’ve been calling them seconds, but they could really be anything, as long as you use the units consistently throughout the whole example). For the green data there is about a 85% chance that the next event will occur within four time units. The fact that the green curve rises more steeply than the red curve means that <em>for these two samples only</em> the green stuff is arriving <em>much more often</em> than the red stuff.
 				</p>
-
+</section>
+    
+    <section xml:id="quantifying-uncertainty-with-confidence-intervals">
+        <title>Quantifying Uncertainty with Confidence Intervals</title>
 				<p>
 					The reason we emphasized the point "for these samples only" is that we know from prior chapters that every sample of data you collect varies by at least a little bit and sometimes by quite a lot. A sample is just a snapshot, after all, and things can and do change from sample to sample. We can illustrate this by running and plotting multiple samples, much as we did in the earlier chapter:
 				</p>
@@ -369,7 +375,10 @@
 				<p>
 					The bolded part of the note above shows how we used the $ notation to get a report of just the bit of output that we wanted from poisson.test(). This output reports the exact same confidence interval that we saw on the previous page, along with a reminder in the final two lines that we are looking at a 95% confidence interval.
 				</p>
+</section>
 
+    <section xml:id="case-study-gaga-vs-oprah">
+        <title>Case Study: Lady Gaga vs. Oprah Winfrey</title>
 				<p>
 					At this point we have all of the knowledge and tools we need to compare two sets of arrival rates. Let’s grab a couple of sets of tweets and extract the information we need. Open the HWK Assignment for this Chapter in R-Studio. First, we will import the dataset GagaData.xlsl into the environment. Name the variable for importing tweetDF.
 				</p>
@@ -565,9 +574,10 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 					With other topics and other comparisons, however, the results will not be as clear cut. After completing the chapter challenge on the next page, we compared the "#obama" hashtag to the "#romney" hashtag. Over samples of 250 tweets each, Obama had 159 events at or under the mean, while Romney had only 128, for a ratio of 1.24 in Obama’s favor. The confidence interval told a different story, however: the lower bound of the confidence interval was 0.978, very close to, but slightly below one. This signifies that we can’t rule out the possibility that the two rates are, in fact, equal and that the slightly higher rate (1.24 to 1) that we observed for Obama in this one sample might have come about due to sampling error. When a confidence interval overlaps the point where we consider something to be a "null result" (in this case a ratio of 1:1) we have to take seriously the possibility that peculiarities of the sample(s) we drew created the observed difference, and that a new set of samples might show the opposite of what we found this time.
 				</p>
 
-				<p>
-					<term>Chapter Challenge</term>
-				</p>
+</section>
+
+    <section xml:id="chapter-challenge-poisson-test">
+        <title>Chapter Challenge</title>			
 
 				<p>
 					Write a function that takes two search strings as arguments and that returns the results of a Poisson rate ratio test on the arrival rates of tweets on the two topics. Your function should first run the necessary Twitter searches, then sort the tweets by ascending time of arrival and calculate the two vectors of time differentials. Use the mean of one of these vectors as the basis for comparison and for each vector, count how many events are at or below the mean. Use this information and the numbers of tweets requested to run the poisson.test() rate comparison.

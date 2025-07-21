@@ -3,7 +3,7 @@
 <chapter xml:id="ch-sample-in-jar" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Sample in a Jar</title>
 
-<subsection xml:id="sample-in-a-jar">
+<section xml:id="sample-in-a-jar">
   <title>Sample in a Jar</title>
 
   <introduction>
@@ -12,7 +12,7 @@
 
 				<p>
 					<idx>sampling distributions</idx>
-					<term>sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
+					<term>Sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
 				</p>
   </introduction>
   
@@ -161,7 +161,10 @@ hist(replicate(4000, mean(sample(USstatePops$...1,size=16,replace=TRUE)), simpli
 	</input>
 </sage>
 				
-
+</section>
+    
+    <section xml:id="visualizing-the-distribution">
+        <title>Visualizing the Distribution and Key Theorems</title>
 				<p>
 					<idx>the law of large numbers</idx>
 					<idx>central limit theorem</idx>
@@ -403,7 +406,11 @@ CutPoint975
 				<p>
 					You will notice again that this value is different from what we calculated with the quantile() function using the empirical distribution. The differences arise because of the randomness in the distribution that we constructed. The value above is an estimate that is based on statistical proofs, whereas the empirical SampleMeans list that we constructed is just one of a nearly infinite range of such lists that we could create. We could easily reduce the discrepancy between the two methods by using a larger sample size and by having more replications included in the sampling distribution.
 				</p>
+  </section>
 
+
+<section xml:id="sample-in-jar-summary">
+    <title>Chapter Summary</title>
 				<p>
 					To summarize, with a data set that includes 51 data points with the numbers of people in states, and a bit of work using R to construct a distribution of sampling means, we have learned the following:
 				</p>
@@ -455,9 +462,9 @@ CutPoint975
 					We’re not statisticians at this point, but the process of reasoning based on sampling distributions is at the heart of inferential statistics, so if you have followed the logic presented in this chapter, you have made excellent progress towards being a competent user of applied statistics.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="chapter-challenge-3">
+			<section xml:id="chapter-challenge-3">
 				<title>Chapter Challenge </title>
 
 				<p>
@@ -468,9 +475,9 @@ CutPoint975
 					to calculate the 2.5% and 97.5% distribution cut points. The data points you collect should represent instances of the same phenomenon. For instance, you could collect the prices of 20 textbooks, or count the number of words in each of 20 paragraphs.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-4">
+			<section xml:id="sources-4">
 				<title>Sources </title>
 
 				<p><ul>
@@ -524,9 +531,9 @@ CutPoint975
 
 				</ul></p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="r-commands-used-in-this-chapter">
+			<section xml:id="r-commands-used-in-this-chapter">
 				<title>R Commands Used in This Chapter </title>
 
 				<p><ul>
@@ -595,6 +602,6 @@ CutPoint975
 					</li>
 
 				</ul></p>
-        </subsection>
+        </section>
 
 </chapter>

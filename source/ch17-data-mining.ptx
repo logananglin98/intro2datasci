@@ -3,11 +3,11 @@
 <chapter xml:id="ch17-data-mining" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Hi Ho, Hi Ho, Data Mining We Go</title>
 
-  <subsection xml:id="what-is-data-mining">
+  <section xml:id="what-is-data-mining">
     <title>What is Data Mining?</title>
 
   <introduction>
-    <p> <em><idx>Data Mining</idx><term>Data Mining</term> is an area of research and practice that is focused on discovering novel patterns in data. As usual, R has lots of possibilities for data mining. In this chapter we will begin experimentation with essential data mining techniques by trying out one of the easiest methods to understand: association rules mining. More beer and diapers please!</em></p>
+    <p> <em><idx>data mining</idx><term>Data Mining</term> is an area of research and practice that is focused on discovering novel patterns in data. As usual, R has lots of possibilities for data mining. In this chapter we will begin experimentation with essential data mining techniques by trying out one of the easiest methods to understand: association rules mining. More beer and diapers please!</em></p>
   </introduction>
                 <p>
                     Data mining is a term that refers to the use of algorithms and computers to discover novel and interesting patterns within data. One famous example that gets mentioned quite frequently is the supermarket that analyzed patterns of purchasing behavior and found that diapers and beer were often purchased together. The supermarket manager decided to put a beer display close to the diaper aisle and supposedly sold more of both products as a result. Another familiar example comes from online merchant sites that say things like, "people who bought that book were also interested in this book." By using an algorithm to look at purchasing patterns, vendors are able to create automatic systems that make these kinds of recommendations.
@@ -48,9 +48,9 @@
                 <p>
                     Step 4 the interpretation of results focuses on making sense out of what the data mining algorithm has produced. This is the most important step from the perspective of the data user, because this is where an actionable conclusion is formed. When we discussed the example of beer and diapers, the interpretation of the association rules that were derived from the grocery purchasing data is what led to the discover of the beer-diapers rule and the use of that rule in reconfiguring the displays in the store.
                 </p>
-			</subsection>
+			</section>
 
-<subsection xml:id="ch17-association-rules">
+<section xml:id="ch17-association-rules">
       <title>Understanding Association Rules</title>
                 <p>
                     Let’s begin by talking a little bit about association rules. Take a look at the figure below with all of the boxes and arrows:
@@ -64,9 +64,9 @@
                 <p>
                     From the figure you can see that each supermarket customer has a grocery cart that contains several items from the larger set of items that the grocery store stocks. The association rules algorithm (also sometimes called affinity analysis) tries out many different propositions, such as "if diapers are purchased, then beer is also purchased." The algorithm uses a dataset of transactions (in the example above, these are the individual carts) to evaluate a long list of these rules for a value called "<idx>support</idx><term>support</term>." Support is the proportion of times that a particular pairing occurs across all shopping carts. The algorithm also evaluates another quantity called "<idx>confidence</idx><term>confidence</term>," which is how frequently a particular pair occurs among all the times when the first item is present. If you look back at the figure again, we had support of 0.67 (the diapers-beer association occurred in two out of the three carts) and confidence of 1.0 ("beer" occurred 100% of the time with "diapers"). In practice, both support and confidence are generally much lower than in this example, but even a rule with low support and smallish confidence might reveal purchasing patterns that grocery store managers could use to guide pricing, coupon offers, or advertising strategies.
                 </p>
-			</subsection>
+			</section>
 
-			<subsection xml:id="ch17-exploring-data">
+			<section xml:id="ch17-exploring-data">
       <title>Exploring Grocery Data with R</title>
                 <p>
                     We can get started with association rules mining very easily using the R package known as "arules." In R-Studio, you can get the arules package ready using the following commands:
@@ -217,15 +217,15 @@
                 </p>
 
                 <p>
-                    Now we can prepare to generate some rules with the <idx>apriori()</idx><term>apriori()</term> command. The term "apriori" refers to the specific algorithm that R will use to scan the data set for appropriate rules. Apriori is a very commonly used algorithm and it is quite efficient at finding rules in transaction data. Rules are in the form of "if <idx>LHS</idx><term>LHS</term> then <idx>RHS</idx><term>RHS</term>." The acronym LHS means "left hand side" and, naturally, RHS means "right hand side." So each rule states that when the thing or things on the left hand side of the equation occur(s), the thing on the right hand side occurs a certain percentage of the time. To reiterate a definition provided earlier in the chapter, support for a rule refers to the frequency of co-occurrence of both members of the pair, i.e., LHS and RHS together. The confidence of a rule refers to the proportion of the time that LHS and RHS occur together versus the total number of appearances of LHS. For example, if Milk and Butter occur together in 10% of the grocery carts (that is "support"), and Milk (by itself, ignoring Butter) occurs in 25% of the carts, then the confidence of the Milk/Butter rule is 0.10/0.25 = 0.40.
+                    Now we can prepare to generate some rules with the <idx><c>apriori()</c></idx><term>apriori()</term> command. The term "apriori" refers to the specific algorithm that R will use to scan the data set for appropriate rules. Apriori is a very commonly used algorithm and it is quite efficient at finding rules in transaction data. Rules are in the form of "if <idx>LHS (left-hand side)</idx><term>LHS</term> then <idx>RHS (right-hand side)</idx><term>RHS</term>." The acronym LHS means "left hand side" and, naturally, RHS means "right hand side." So each rule states that when the thing or things on the left hand side of the equation occur(s), the thing on the right hand side occurs a certain percentage of the time. To reiterate a definition provided earlier in the chapter, support for a rule refers to the frequency of co-occurrence of both members of the pair, i.e., LHS and RHS together. The confidence of a rule refers to the proportion of the time that LHS and RHS occur together versus the total number of appearances of LHS. For example, if Milk and Butter occur together in 10% of the grocery carts (that is "support"), and Milk (by itself, ignoring Butter) occurs in 25% of the carts, then the confidence of the Milk/Butter rule is 0.10/0.25 = 0.40.
                 </p>
 
                 <p>
                     There are a couple of other measures that can help us zero in on good association rules such as "lift"and "conviction" but we will put off discussing these until a little later.
                 </p>
 
-			</subsection>
-			<subsection xml:id="ch17-generating-rules">
+			</section>
+			<section xml:id="ch17-generating-rules">
         <title>Generating and Visualizing Rules</title>
 
                 <p>
@@ -409,7 +409,7 @@
                 </p>
 
                 <p>
-                    Now we are ready to take a closer look at the rules we generated. The <idx>inspect()</idx><term>inspect()</term> command gives us the detailed contents of the dta object generated by apriori():
+                    Now we are ready to take a closer look at the rules we generated. The <idx><c>inspect()</c></idx><term>inspect()</term> command gives us the detailed contents of the dta object generated by apriori():
                 </p>
 
                 <p>
@@ -569,7 +569,7 @@
                 </p>
 
                 <p>
-                    We brought support back to half of one percent and confidence down to 35%. When you run this command you should find that you now generate 357 rules. That is way too many rules to examine manually, so let’s use the arulesViz package to see what we have. We will use the <idx>plot()</idx><term>plot()</term> command that we have also used earlier in the book. You may ask yourself why we needed to library the arulesViz package if we are simply going to use an old command. The answer to this conundrum is that arulesViz has put some plumbing into place so that when plot runs across a data object of type "rules" (as generated by apriori) it will use some of the code that is built into arulesViz to do the work. So by installing arulesViz we have put some custom visualization code in place that can be used by the generic plot() command. The command is very simple:
+                    We brought support back to half of one percent and confidence down to 35%. When you run this command you should find that you now generate 357 rules. That is way too many rules to examine manually, so let’s use the arulesViz package to see what we have. We will use the <idx><c>plot()</c></idx><term>plot()</term> command that we have also used earlier in the book. You may ask yourself why we needed to library the arulesViz package if we are simply going to use an old command. The answer to this conundrum is that arulesViz has put some plumbing into place so that when plot runs across a data object of type "rules" (as generated by apriori) it will use some of the code that is built into arulesViz to do the work. So by installing arulesViz we have put some custom visualization code in place that can be used by the generic plot() command. The command is very simple:
                 </p>
 
                 <p>
@@ -704,8 +704,8 @@
                 <p>
                     The key takeaway point here is that using a good visualization tool to examine the results of a data mining activity can enhance the process of sorting through the evidence and making sense of it. If we were to present these results to a store manager (and we would certainly do a little more digging before formulating our final conclusions) we might recommend that recipes could be published along with coupons and popular recipes, such as for homemade soup, might want to have all of the ingredients group together in the store along with signs saying, "Mmmm, homemade soup!"
                 </p>
-			</subsection>
-<subsection xml:id="Chapter-Challenge-ch17">
+			</section>
+<section xml:id="Chapter-Challenge-ch17">
         <title>Chapter Challenge</title>
 
                 <p>
@@ -724,118 +724,118 @@
                     A company called Togaware has created a graphical user interface (GUI) for R called Rattle. At this writing (working with R version 3.0.0), one of Rattle’s components has gotten out of date and will not work with the latest version of R, particularly on the Mac. It is likely, however, that those involved with the Rattle project will soon update it to be compatible again. Using Rattle simplifies many of the processes described earlier in the chapter. Try going to the Togaware site and following the instructions there for installing Rattle for your particular operating system.
                 </p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="sources-12">
+            <section xml:id="sources-12">
                 <title>Sources </title>
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://en.wikipedia.org/wiki/Association_rule_learning">http://en.wikipedia.org/wiki/Association_rule_learning</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://jmlr.csail.mit.edu/papers/volume12/hahsler11a/hahsler11">http://jmlr.csail.mit.edu/papers/volume12/hahsler11a/hahsler11 a.pdf</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://journal.r-project.org/archive/2009-2/RJournal_2009-2_Will">http://journal.r-project.org/archive/2009-2/RJournal_2009-2_Will iams.pdf</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.r-bloggers.com/examples-and-resources-on-associati">http://www.r-bloggers.com/examples-and-resources-on-associati on-rule-mining-with-r/</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://rattle.togaware.com">http://rattle.togaware.com</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.statsoft.com/textbook/association-rules/">http://www.statsoft.com/textbook/association-rules/</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="reference">
+            <section xml:id="reference">
                 <title>Reference </title>
 
                 <p>
                     Michael Hahsler, Kurt Hornik, and Thomas Reutterer (2006) Implications of probabilistic data modeling for mining association rules. In M. Spiliopoulou, R. Kruse, C. Borgelt, A. Nuernberger, and W. Gaul, editors, From Data and Information Analysis to Knowledge Engineering, Studies in Classification, Data Analysis, and Knowledge Organization, pages 598–605. Springer-Verlag.
                 </p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="r-functions-used-in-this-chapter-7">
+            <section xml:id="r-functions-used-in-this-chapter-7">
                 <title>R Functions Used in This Chapter </title>
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         apriori() Uses the algorithm of the same name to analyze a transaction data set and generate rules.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         itemFrequencyPlot() Shows the relative frequency of commonly occurring items in the spare occurrence matrix.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         inspect() Shows the contents of the data object generated by apriori() that generates the association rules
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         install.packages() Loads package from the CRAN repository
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         summary() Provides an overview of the contents of a data structure.
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
-      </subsection>
+      </section>
 
 </chapter>

@@ -3,12 +3,12 @@
 <chapter xml:id="ch18-vectors" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>What’s Your Vector, Victor</title>
 
-  <subsection xml:id="on-vectors">
+  <section xml:id="on-vectors">
     <title>On Vectors</title>
 
   <introduction>
     				<p><em>
-					From the previous chapter you may remember that <idx>data mining</idx> <term>data mining</term> techniques fall into two large categories: <idx>supervised learning</idx> <term>supervised learning</term> techniques and <idx>unsupervised learning</idx> <term>unsupervised learning</term> techniques. The <idx>association rules mining</idx> <term>association rules mining</term> examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
+					From the previous chapter you may remember that data mining techniques fall into two large categories: <idx>supervised learning</idx> <term>supervised learning</term> techniques and <idx>unsupervised learning</idx> <term>unsupervised learning</term> techniques. The <idx>association rules mining</idx> <term>association rules mining</term> examined in the previous chapter was an unsupervised technique. This means that there was no particular criterion that we were trying to predict, rather we were just looking for patterns that would emerge from the data naturally.
             </em></p>
   </introduction>
 
@@ -21,7 +21,7 @@
 				</p>
 
 				<p>
-					This is the basic strategy of supervised machine learning: Have a substantial number of <idx>training cases</idx><term>training cases</term> that the algorithm can use to discover and mimic the underlying pattern and then use the results of that process on a <idx>test data set</idx><term>test data set</term> in order to find out how well the algorithm and parameters perform in a "cross validation." <idx>Cross validation</idx><term>Cross validation</term>, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
+					This is the basic strategy of supervised machine learning: Have a substantial number of <idx>training cases</idx><term>training cases</term> that the algorithm can use to discover and mimic the underlying pattern and then use the results of that process on a <idx>test data set</idx><term>test data set</term> in order to find out how well the algorithm and parameters perform in a "cross validation." <idx>cross validation</idx><term>Cross validation</term>, in this instance, refers to the process of verifying that the trained algorithm can carry out its prediction or classification task accurately on novel data.
 				</p>
 
 				<p>
@@ -39,9 +39,9 @@
 				<p>
 					The position of that piece of cardboard is the <idx>planar separation function</idx><term>planar separation function</term> that divides white points from green points. A support vector machine analysis of this scenario would take the original two dimensional point data and search for a projection into three dimensions that would maximize the spacing between green points and white points. The result of the analysis would be a mathematical description of the position and orientation of the cardboard plane. Given inputs describing a novel data point, the SVM could then map the data into the higher dimensional space and then report whether the point was above the cardboard (a white point) or below the cardboard (a green point). The so called <idx>support vectors</idx><term>support vectors</term> contain the coefficients that map the input data for each case into the high dimensional space.
 				</p>
-			</subsection>
+			</section>
 
-<subsection xml:id="ch18-data-prep">
+<section xml:id="ch18-data-prep">
         <title>Preparing the Data</title>
 				<p>
 					To get started with support vector machines, we can load one of the R packages that supports this technique. We will use the "kernlab" package. Use the commands below:
@@ -128,7 +128,7 @@
 				</p>
 
 				<p>
-					The <idx>dim() </idx><term> dim() </term> function shows the "dimensions" of the data structure. The output of this dim() function shows that the spam data structure has 4601 rows and 58 columns. If you inspect a few of the column names that emerged from the <idx>str() </idx><term> str() </term> command, you may see that each email is coded with respect to its contents. There is lots of information available about the data set here:
+					The <idx><c>dim()</c></idx><term> dim() </term> function shows the "dimensions" of the data structure. The output of this dim() function shows that the spam data structure has 4601 rows and 58 columns. If you inspect a few of the column names that emerged from the <idx><c>str()</c> </idx><term> str() </term> command, you may see that each email is coded with respect to its contents. There is lots of information available about the data set here:
 				</p>
 
 				<p>
@@ -216,12 +216,12 @@
 				</p>
 
 				<p>
-					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx>floor()</idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
+					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx><c>floor()</c></idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
 				</p>
-				</subsection>
+				</section>
 
 
-<subsection xml:id="ch18-model-training">
+<section xml:id="ch18-model-training">
         <title>Training and Evaluating the Model</title>
 				<p>
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
@@ -413,7 +413,7 @@
 				</p>
 
 				<p>
-					This monster of a command is not as bad as it looks. We are tapping into a new part of the svmOutput object, this time using the <idx>alphaindex()</idx><term>alphaindex()</term> accessor function. Remember that we have 850 support vectors in this output. Now imagine two lists of 850 right next to each other: the first is the list of support vectors themselves, we get at that list with the alpha() accessor function. The second list, lined right up next to the first list, is a set of indices into the original training dataset, trainData. The left hand part of the expression in the command above let’s us access these indices. The right hand part of the expression, where it says alpha(svmOutput)[[1]]&lt;0.05, is a conditional expression that let’s us pick from the index list just those cases with a very small support vector value. You can see the output above, just underneat the command: about 15 indices were returned. Just pick off the first one, 90, and take a look at the individual case it refers to:
+					This monster of a command is not as bad as it looks. We are tapping into a new part of the svmOutput object, this time using the <idx><c>alphaindex()</c></idx><term>alphaindex()</term> accessor function. Remember that we have 850 support vectors in this output. Now imagine two lists of 850 right next to each other: the first is the list of support vectors themselves, we get at that list with the alpha() accessor function. The second list, lined right up next to the first list, is a set of indices into the original training dataset, trainData. The left hand part of the expression in the command above let’s us access these indices. The right hand part of the expression, where it says alpha(svmOutput)[[1]]&lt;0.05, is a conditional expression that let’s us pick from the index list just those cases with a very small support vector value. You can see the output above, just underneat the command: about 15 indices were returned. Just pick off the first one, 90, and take a look at the individual case it refers to:
 				</p>
 
 				<p>
@@ -479,8 +479,8 @@
 				<p>
 					This particular record did not have many suspicious keywords, but it did have long strings of capital letters that made it hard to classify (it was a non-spam case, by the way). You can check out a few of them to see if you can spot why each case may have been difficult for the classifier to place.
 				</p>
-</subsection>
-<subsection xml:id="ch18-model-testing">
+</section>
+<section xml:id="ch18-model-testing">
         <title>Testing the Model</title>
 
 				<p>
@@ -535,74 +535,74 @@
 					Overall, it looks like we did a pretty good job. There are a bunch of different ways of calculating the accuracy of the prediction, depending upon what you are most interested in. The simplest way is to sum the 68 + 38 = 106 error cases and divided by the 1534 total cases for an total error rate of about 6.9%. Interestingly, that is a tad better than the 8.5% error rate we got from the k-fold crossvalidation in the run of svm() that created the model we are testing. Keep in mind, though, that we may be more interested in certain kinds of error than other kinds. For example, consider which is worse, an email that gets mistakenly quarantined because it is not really spam, or a spam email that gets through to someone’s inbox? It really depends on the situation, but you can see that you might want to give more consideration to either the 68 misclassification errors or the other set of 38 misclassification errors.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="ch18-chapter-challenge">
+			<section xml:id="ch18-chapter-challenge">
 				<title>Chapter Challenge </title>
 
 				<p>
-					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>Type I error</idx><term>Type I error</term>, <idx>Type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
+					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
 				</p>
 
 				<p>
 					For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-13">
+			<section xml:id="sources-13">
 				<title>Sources </title>
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cbio.ensmp.fr/~jvert/svn/tutorials/practical/svmbasic/sv">http://cbio.ensmp.fr/~jvert/svn/tutorials/practical/svmbasic/sv mbasic_notes.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/web/packages/kernlab/kernlab.pdf">http://cran.r-project.org/web/packages/kernlab/kernlab.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Confusion_matrix">http://en.wikipedia.org/wiki/Confusion_matrix</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://stackoverflow.com/questions/9480605/what-is-the-relatio">http://stackoverflow.com/questions/9480605/what-is-the-relatio n-between-the-number-of-support-vectors-and-training-data-and</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.louisaslett.com/Courses/Data_Mining/ST4003-Lab7">http://www.louisaslett.com/Courses/Data_Mining/ST4003-Lab7 -Introduction_to_Support_Vector_Machines.pdf</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.jstatsoft.org/v11/i09/paper">http://www.jstatsoft.org/v11/i09/paper</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
-        </subsection>
+        </section>
 
 </chapter>

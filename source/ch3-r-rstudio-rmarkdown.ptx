@@ -23,7 +23,7 @@
 				</p>
 				
 				<p>
-					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>Syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
+					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
 
 				<p>
@@ -40,7 +40,7 @@
 				<title>R-Studio </title>
 
 				<p>
-					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>Integrated Development Environment (IDE)</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
+					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>integrated development environment</idx><idx>IDE</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
 				</p>
 
 				<p>
@@ -57,7 +57,7 @@
 				</p>
 
 				<p>
-					R-Markdown files have an <idx>.Rmd</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
+					R-Markdown files have an .<idx>Rmd extension</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
 			</section>
@@ -142,59 +142,59 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										How to use R in R blocks within R-Studio.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										How to use the "c()" function. Remember that "c" stands for concatenate, which just means to join things together. You can put a list of items inside the parentheses, separated by commas.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That a vector is pretty much the most basic form of data storage in R, and that it consists of a list of items of the same type or mode.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That a vector can be stored in a named location using the assignment arrow (a left pointing arrow made of a dash and a less than symbol, like this: "&lt;-").
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That you can get a report of the data object that is in any named location just by typing that name in a command block.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That you can "run" a function, such as mean(), on a vector of numbers to transform them into something else. (The mean() function calculates the average, which is one of the most basic numeric summaries there is.)
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That sum(), mean(), and range() are all legal functions in R whereas fish() is not.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -223,83 +223,83 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/R_(programming_language)">R (programming language)</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikipedia.org/wiki/Joseph_J._Allaire">Wikipedia: Joseph J. Allaire</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.statmethods.net/interface/packages.html">R-packages</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.youtube.com/watch?v=7sAmqkZ3Be8">Using RStudio as a 'Front End' to the R Console</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/">Welcome to a Little Book of R for Biomedical Statistics!</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://cran.r-project.org/">The Comprehensive R Archive Network</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://en.wikibooks.org/wiki/R_Programming">R Programming</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://stackoverflow.com">Stack Overflow</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="https://stat.ethz.ch">Zürich Seminar for Statistics</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										<url href="http://www.statmethods.net/">Quick-R</url>
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -315,35 +315,35 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										The sum of all values divided by the number of values.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The most frequently occurring value in the data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The halfway point through the data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The distance between the smallest value and the largest value.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -354,43 +354,43 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										c() Concatenates data elements together into a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										&lt;- Assignment arrowe.g. myData &lt;- 5 assigns the value of 5 to myData
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sum() Adds data elements
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										range() Min value and max value
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() The average
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -401,35 +401,35 @@
 
         <p><ul>
           <li>
-                  <blockquote>
+                  
                             <p>
                     R
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     R-Studio
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     R Markdown
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     Console
                   </p>
-                  </blockquote>
+                  
           </li>
 
         </ul></p>

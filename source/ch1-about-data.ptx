@@ -7,7 +7,7 @@
     <title>What is Data?</title>
       <introduction>
 				<p>
-					<idx>Data</idx><term>Data</term> comes from the Latin word, "datum," meaning a "thing given." Although the term "data" has been used since as early as the 1500s, modern usage started in the 1940s and 1950s as practical electronic computers began to input, process, and output data. This chapter discusses the nature of data and introduces key concepts for newcomers without computer science experience.
+					<idx>data</idx><term>Data</term> comes from the Latin word, "datum," meaning a "thing given." Although the term "data" has been used since as early as the 1500s, modern usage started in the 1940s and 1950s as practical electronic computers began to input, process, and output data. This chapter discusses the nature of data and introduces key concepts for newcomers without computer science experience.
 				</p>
 				<p>
 	<image source="data-in-workbook.png" decorative="yes"/>
@@ -24,7 +24,7 @@
 				</p>
 
 				<p>
-					Once we are comfortable with the idea of a "<idx>Bit</idx><term>Bit</term>" as the most basic unit of information, either "yes" or "no," we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of "no" we will start using zero, and instead of "yes" we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word "bit," which is a squashed down version of the phrase "Binary digIT." A single binary digit can be 0 or 1, and that would give us just two options like “yes” or “no” but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
+					Once we are comfortable with the idea of a "<idx>bit</idx><term>Bit</term>" as the most basic unit of information, either "yes" or "no," we can combine bits together to make more complicated structures. First, let’s switch labels just slightly. Instead of "no" we will start using zero, and instead of "yes" we will start using one. So we now have a single digit, albeit one that has only two possible states: zero or one (we’re temporarily making a rule against allowing any of the bigger digits like three or seven). This is in fact the origin of the word "bit," which is a squashed down version of the phrase "Binary digIT." A single binary digit can be 0 or 1, and that would give us just two options like “yes” or “no” but there is nothing stopping us from using more than one binary digit in our messages. Have a look at the example in the table below:
 				</p>
 
 				<table xml:id="two-bit-binary-codebook">
@@ -63,7 +63,7 @@
 				</p>
 
 				<p>
-					When we get up to eight bits which provides 256 different combinations we finally have something of a reasonably useful size to work with.Eight bits is commonly referred to as a "<idx>Byte</idx><term>Byte</term>" this term probably started out as a play on words with the word bit. (Try looking up the word "nibble" online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. 
+					When we get up to eight bits which provides 256 different combinations we finally have something of a reasonably useful size to work with.Eight bits is commonly referred to as a "<idx>byte</idx><term>Byte</term>" this term probably started out as a play on words with the word bit. (Try looking up the word "nibble" online!) A byte offers enough different combinations to encode all of the letters of the alphabet, including capital and small letters. 
 				</p>
 
 				<p>
@@ -97,14 +97,14 @@
 			</p>
 
 			<p>
-				...we can be certain that inside the computer there is a long list of zeroes and ones that represent the text that we just stored. By the way, in order to be able to get our piece of text back later on, we have made a kind of storage label for it (the word "myText" above). Anytime that we want to remember our piece of text or use it for something else, we can use the label "myText" to open up the chunk of computer memory where we have put that long list of binary digits that represent our text. The left-pointing arrow made up out of the less-than character ("&lt;") and the dash character ("-") gives R the command to take what is on the right hand side (the quoted text) and put it into what is on the left hand side (the storage area we have labeled "myText"). Some people call this the <idx>Assignment Arrow</idx><term>Assignment Arrow</term> and it is used in some computer languages to make it clear to the human who writes or reads it which direction the information is flowing.
+				...we can be certain that inside the computer there is a long list of zeroes and ones that represent the text that we just stored. By the way, in order to be able to get our piece of text back later on, we have made a kind of storage label for it (the word "myText" above). Anytime that we want to remember our piece of text or use it for something else, we can use the label "myText" to open up the chunk of computer memory where we have put that long list of binary digits that represent our text. The left-pointing arrow <c>&lt;-</c> made up out of the less-than character ("&lt;") and the dash character ("-") gives R the command to take what is on the right hand side (the quoted text) and put it into what is on the left hand side (the storage area we have labeled "myText"). Some people call this <c>&lt;-</c> the <idx>assignment arrow (<c>&lt;-</c>)</idx><term>Assignment Arrow</term>, and it is used in some computer languages like R to make it clear to the human who writes or reads it which direction the information is flowing.
 			</p>
 
 			<p>
 				From the computer’s standpoint, it is even simpler to store, remember, and manipulate numbers instead of text. Remember that an eight bit byte can hold 256 combinations, so just using that very small amount we could store the numbers from 0 to 255. (Of course, we could have also done 1 to 256, but much of the counting and numbering that goes on in computers starts with zero instead of one.) Really, though, 255 is not much to work with. We couldn’t count the number of houses in most towns or the number of cars in a large parking garage unless we can count higher than 255. If we put together two bytes to make 16 bits we can count from zero up to 65,535, but that is still not enough for some of the really big numbers in the world today (for example, there are more than 200 million cars in the U.S. alone). 
 			</p>
 			<p>
-				Most of the time, if we want to be flexible in representing an <idx>Integer</idx><term>Integer</term> (a number with no decimals), we use four bytes stuck together. Four bytes stuck together is a total of 32 bits, and that allows us to store an integer as high as 4,294,967,295.
+				Most of the time, if we want to be flexible in representing an <idx>integer</idx><term>Integer</term> (a number with no decimals), we use four bytes stuck together. Four bytes stuck together is a total of 32 bits, and that allows us to store an integer as high as 4,294,967,295.
 			</p>
 
 			<p>
@@ -116,7 +116,7 @@
 			</p>
 			
 			<p>
-				In R, a "<idx>Vector</idx><term>Vector</term>" is an ordered list of data elements of the same data type (e.g. all integers or all strings, etc). We can create a vector with R very easily by listing the data elements, separated by commas and inside parentheses: 
+				In R, a "<idx>vector</idx><term>Vector</term>" is an ordered list of data elements of the same data type (e.g. all integers or all strings, etc). We can create a vector with R very easily by listing the data elements, separated by commas and inside parentheses: 
 				<ul marker="">
 					<li>
 						<p>
@@ -171,7 +171,7 @@
 				<li>
 							
 											<p>
-								In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name "myFamAge." Some people might refer to this named list as a "<idx>Variable</idx><term>Variable</term>," because the value of it varies, depending upon which member of the list you are examining.
+								In order to be able to remember where we stored a piece of data, most computer programs, including R, give us a way of labeling a chunk of computer memory. We chose to give the 5-item vector up above the name "myFamAge." Some people might refer to this named list as a "<idx>variable</idx><term>Variable</term>," because the value of it varies, depending upon which member of the list you are examining.
 							</p>
 							
 				</li>

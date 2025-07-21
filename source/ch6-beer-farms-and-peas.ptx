@@ -5,7 +5,7 @@
 
 
 
-  <subsection xml:id="beer-farms-and-peas">
+  <section xml:id="beer-farms-and-peas">
     <title>Beer, Farms, and Peas</title>
   <introduction>
   <figure xml:id="peas-on-x-y-axes">
@@ -50,34 +50,36 @@
 				<p>
 					One of the critical distinctions woven throughout the work of these four is between the "sample" of data that you have available to analyze and the larger "population" of possible cases that may or do exist. When Gosset ran batches of beer at the brewery, he knew that it was impractical to run every possible batch of beer with every possible variation in recipe and preparation. Gosset knew that he had to run a few batches, describe what he had found and then generalize or infer what might happen in future batches. This is a fundamental aspect of working with all types and amounts of data: Whatever data you have, there’s always more out there. There’s data that you might have collected by changing the way things are done or the way things are measured. There’s future data that hasn’t been collected yet and might never be collected. There’s even data that we might have gotten using the exact same strategies we did use, but that would have come out subtly different just due to randomness. Whatever data you have, it is just a snapshot or "sample" of what might be out there. This leads us to the conclusion that we can never, ever 100% trust the data we have. We must always hold back and keep in mind that there is always uncertainty in data. A lot of the power and goodness in statistics comes from the capabilities that people like Fisher developed to help us characterize and quantify that uncertainty and for us to know when to guard against putting too much stock in what a sample of data have to say. So remember that while we can always <term>describe</term> the sample of data we have, the real trick is to <term>infer</term> what the data may mean when generalized to the larger population of data that we don’t have. This is the key distinction between descriptive and inferential statistics.
 				</p>
-
+</section>
+<subsection xml:id="key-descriptive-statistics">
+    <title>Key Descriptive Statistics</title>
 				<p>
 					We have already encountered several descriptive statistics in previous chapters, but for the sake of practice here they are again, this time with the more detailed definitions:
 				</p>
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>mean</term> (technically the arithmetic mean), a measure of central tendency that is calculated by adding together all of the observations and dividing by the number of observations.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>median</term>, another measure of central tendency, but one that cannot be directly calculated. Instead, you make a sorted list of all of the observations in the sample, then go halfway up that list. Whatever the value of the observation is at the halfway point, that is the median.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The <term>range</term>, which is a measure of "dispersion" how spread out a bunch of numbers in a sample are calculated by subtracting the lowest value from the highest value.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -88,19 +90,21 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
+															<idx>mode</idx>
 										The <term>mode</term>, another measure of central tendency. The mode is the value that occurs most often in a sample of data. Like the median, the mode cannot be directly calculated. You just have to count up how many of each number there are and then pick the category that has the most.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
+															<idx>variance</idx>
 										The <term>variance</term>, a measure of dispersion. Like the range, the variance describes how spread out a sample of numbers is. Unlike the range, though, which just uses two numbers to calculate dispersion, the variance is obtained from all of the numbers through a simple calculation that compares each number to the mean. If you remember the ages of the family members from the previous chapter and the mean age of 22, you will be able to make sense out of the following table:
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -160,54 +164,78 @@
 				</table>
 
 				<p>
-					This table shows the calculation of the variance, which begins by obtaining the "deviations" from the mean and then "squares" them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of "average squared deviation." Note that it was not a mistake to divide by 4 instead of 5 the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the <term>variance</term>, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice to look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
+					<idx>deviations</idx>
+					<idx>average squared deviation</idx>
+					This table shows the calculation of the variance, which begins by obtaining the "<term>deviations</term>" from the mean and then "squares" them (multiply each times itself) to take care of the negative deviations (for example, -14 from the mean for Bro). We add up all of the squared deviations and then divide by the number of observations to get a kind of "<term>average squared deviation</term>." Note that it was not a mistake to divide by 4 instead of 5 the reasons for this will become clear later in the book when we examine the concept of degrees of freedom. This result is the <term>variance</term>, a very useful mathematical concept that appears all over the place in statistics. While it is mathematically useful, it is not too nice to look at. For instance, in this example we are looking at the 356.5 squared-years of deviation from the mean. Who measures anything in squared years? Squared feet maybe, but that’s a different discussion. So, to address this weirdness, statisticians have also provided us with:
 				</p>
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
+															<idx>standard deviation</idx>
 										The <term>standard deviation</term>, another measure of dispersion, and a cousin to the variance. The standard deviation is simply the square root of the variance, which puts us back in regular units like "years." In the example above, the standard deviation would be about 18.88 years (rounding to two decimal places, which is plenty in this case).
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Standard deviation has a complicated formula, but you can think of it as “the average distance from the mean.” In the example above, the average distance to the mean is about 18.88 years.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Intuitively, you can think about both the standard deviation and the variance as measuring how spread out the data is. When these numbers are 0 or very small compared to the mean, the data is not very spread out.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
-
+</subsection>
+  
+  <subsection xml:id="importing-census-data">
+    <title>Importing and Preparing Census Data</title>
 				<p>
 					Now let’s have R calculate some statistics for us:
 				</p>
 
 				<p>
-					&gt; var(myFam$myFamAge)
+					<c>&gt; var(myFam$myFamAge)</c>
 				</p>
 
 				<p>
-					[1] 356.5
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							var(myFam$myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					&gt; sd(myFam$myFamAge)
+					<c>&gt; sd(myFam$myFamAge)</c>
 				</p>
-
+				
 				<p>
-					[1] 18.88121
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							sd(myFam$myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -215,19 +243,37 @@
 				</p>
 
 				<p>
-					&gt; var(c(43,42,12,8,5))
+					<c>&gt; var(c(43,42,12,8,5))</c>
 				</p>
 
 				<p>
-					[1] 356.5
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							var(c(43,42,12,8,5))
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					&gt; sd(c(43,42,12,8,5))
+					<c>&gt; sd(c(43,42,12,8,5))</c>
 				</p>
 
 				<p>
-					[1] 18.88121
+					<sage language="r">
+						<input>
+							myFamAge &lt;- c(43, 42, 12, 8, 5)
+							myFamName &lt;- c("Dad", "Mom", "Sis", "Bro", "Dog")
+							myFamGend &lt;- c("Male", "Female", "Female", "Male", "Female")
+							myFamWeight &lt;- c(188, 144, 83, 61, 44)
+							myFam &lt;- data.frame(myFamName, myFamAge, myFamGend, myFamWeight)
+							sd(c(43,42,12,8,5))
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -316,52 +362,28 @@
 				</p>
 
 				<p>
-					This would be a great moment to practice your skills from the previous chapter by using the str() and summary() functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation "V1" or “...1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them "V1" or “...1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous "Rows and Columns" chapter for more information on addressing the columns in a dataframe.
+					This would be a great moment to practice your skills from the previous chapter by using the <c>str()</c> and <c>summary()</c> functions on our new data object called USstatePops. Did you notice anything interesting from the results of these functions? One thing you might have noticed is that there are 51 observations instead of 50. Can you guess why? If not, go back and look at your original data from the spreadsheet or the U.S. Census site. The other thing you may have noticed is that USstatePops is a dataframe, and not a plain vector of numbers. You can actually see this in the output above: In the second command line where we request that R reveal what is stored in USstatePops, it responds with a column topped by the designation "V1" or “...1”. Because we did not give R any information about the numbers it read in from the clipboard, it called them "V1" or “...1”, short for Variable One, by default. So anytime we want to refer to our list of population numbers we actually have to use the name USstatePops$V1. If this sounds unfamiliar, take another look at the previous "Rows and Columns" chapter for more information on addressing the columns in a dataframe.
 				</p>
-
+</subsection>
+  
+  <subsection xml:id="analyzing-population-data">
+    <title>Analyzing the Population Data</title>
 				<p>
 					Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
 				</p>
 
-				<p>
-					&gt; mean(USstatePops$...1)
-				</p>
+	<sage language="r">
+	<input>
+	<xi:include href="../code/USstatePops.r" parse="text"/>
+cat("This is the mean:", mean(USstatePops$...1), "\n")
+cat("This is the median:", median(USstatePops$...1), "\n")
+cat("This is the mode:", mode(sort(table(USstatePops$...1), decreasing = TRUE))[1], "\n")
+cat("This is the variance:", var(USstatePops$...1), "\n")
+cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 
-				<p>
-					[1] 6053834
-				</p>
+	</input>
+	</sage>
 
-				<p>
-					&gt; median(USstatePops$...1)
-				</p>
-
-				<p>
-					[1] 4339367
-				</p>
-
-				<p>
-					&gt; mode(USstatePops$...1)
-				</p>
-
-				<p>
-					[1] "numeric"
-				</p>
-
-				<p>
-					&gt; var(USstatePops$...1)
-				</p>
-
-				<p>
-					[1] 4.656676e+13
-				</p>
-
-				<p>
-					&gt; sd(USstatePops$...1)
-				</p>
-
-				<p>
-					[1] 6823984
-				</p>
 
 				<p>
 					Some great summary information there, but wait, a couple things have gone awry:
@@ -369,19 +391,19 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
-										The mode() function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later chapters how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
+										The <c>mode()</c> function has returned the data type of our vector of numbers instead of the statistical mode. This is weird but true: the basic R package does not have a statistical mode function! This is partly due to the fact that the mode is only useful in a very limited set of situations, but we will find out in later chapters how add-on packages can be used to get new functions in R including one that calculates the statistical mode.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13<sup>th</sup> power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -391,7 +413,7 @@
 				</p>
 
 				<p>
-					hist(USstatePops$...1)
+					<c>hist(USstatePops$...1)</c>
 				</p>
 
 				<p>
@@ -408,7 +430,8 @@
 				</p>
 
 				<p>
-					A histogram is a specialized type of bar graph designed to show "frequencies." Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
+					<idx>frequencies</idx>
+					A histogram is a specialized type of bar graph designed to show "<term>frequencies</term>." Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
 				</p>
 
 				<p>
@@ -420,11 +443,11 @@
 				</p>
 
 				<p>
-					The answer is that the hist() function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the "breaks" parameter, like this:
+					The answer is that the <c>hist()</c> function has an algorithm or recipe for deciding on the number of categories/bars to use by default. The number of observations and the spread of the data and the amount of empty space there would be are all taken into account. Fortunately it is possible and easy to ask R to use more or fewer categories/bars with the "breaks" parameter, like this:
 				</p>
 
 				<p>
-					hist(USstatePops$...1, breaks=20)
+					<c>hist(USstatePops$...1, breaks=20)</c>
 				</p>
 
 				<figure>
@@ -437,11 +460,16 @@
 				</p>
 
 				<p>
-					This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a "reverse-J" distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a Pareto distribution (named after the economist Vilfredo Pareto). We don’t have to worry about why it may be a Pareto distribution at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small to have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is?
+					<idx>Pareto distribution</idx>
+					This gives us five bars per tick mark or about two million for each bar. So the new histogram above shows very much the same pattern as before: 15 states with populations under two million. The pattern that you see here is referred to as a distribution. This is a distribution that starts off tall on the left and swoops downward quickly as it moves to the right. You might call this a "reverse-J" distribution because it looks a little like the shape a J makes, although flipped around vertically. More technically this could be referred to as a <term>Pareto distribution</term> (named after the economist Vilfredo Pareto). We don’t have to worry about why it may be a Pareto distribution at this stage, but we can speculate on why the distribution looks the way it does. First, you can’t have a state with no people in it, or worse yet negative population. It just doesn’t make any sense. So a state has to have at least a few people in it, and if you look through U.S. history every state began as a colony or a territory that had at least a few people in it. On the other hand, what does it take to grow really large in population? You need a lot of land, first of all, and then a good reason for lots of people to move there or lots of people to be born there. So there are lots of limits to growth: Rhode Island is too small to have a bazillion people in it and Alaska, although it has tons of land, is too cold for lots of people to want to move there. So all states probably started small and grew, but it is really difficult to grow really huge. As a result we have a distribution where most of the cases are clustered near the bottom of the scale and just a few push up higher and higher. But as you go higher, there are fewer and fewer states that can get that big, and by the time you are out at the end, just shy of 40 million people, there’s only one state that has managed to get that big. By the way, do you know or can you guess what that humongous state is?
 				</p>
-
+</subsection>
+  
+  <subsection xml:id="common-data-distributions">
+    <title>Understanding Data Distributions</title>
 				<p>
-					There are lots of other distribution shapes. The most common one that almost everyone has heard of is sometimes called the "bell" curve because it is shaped like a bell. The technical name for this is the normal distribution. The term "normal" was first introduced by Carl Friedrich Gauss (1777-1855), who supposedly called it that in a belief that it was the most typical distribution of data that one might find in natural phenomena. The following histogram depicts the typical bell shape of the normal distribution.
+					<idx>normal distribution</idx>
+					There are lots of other distribution shapes. The most common one that almost everyone has heard of is sometimes called the "bell" curve because it is shaped like a bell. The technical name for this is the <term>normal distribution</term>. The term "normal" was first introduced by Carl Friedrich Gauss (1777-1855), who supposedly called it that in a belief that it was the most typical distribution of data that one might find in natural phenomena. The following histogram depicts the typical bell shape of the normal distribution.
 				</p>
 
 				<figure>
@@ -454,23 +482,22 @@
 				</p>
 
 				<p>
-					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s rnorm() function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+
+					<idx><c>rnorm()</c></idx>
+					If you are curious, you might be wondering how R generated the histogram above, and, if you are alert, you might notice that the histogram that appears above has the word "rnorm" in a couple of places. Here’s another of the cool features in R: it is incredibly easy to generate "fake" data to work with when solving problems or giving demonstrations. The data in this histogram were generated by R’s <term>rnorm()</term> function, which generates a random data set that fits the normal distribution (more closely if you generate a lot of data, less closely if you only have a little). Some further explanation of the rnorm() command will make sense if you remember that the state population data we were using had a mean of 6,053,834 and a standard deviation of 6,823,984. The command used to generate this histogram was:
+
 				</p>
 
 				<p>
-					hist(rnorm(51, 6043834, 6823984))
+					<c>hist(rnorm(51, 6043834, 6823984))</c>
 				</p>
 
 				<p>
-					There are two very important new concepts introduced here. The first is a nested function call: The hist() function that generates the graph "surrounds" the rnorm() function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, rnorm(), is run by R first, with the results of that sent directly and immediately into the hist() function.
+					There are two very important new concepts introduced here. The first is a nested function call: The <c>hist()</c> function that generates the graph "surrounds" the <c>rnorm()</c> function that generates the new fake data. (Pay close attention to the parentheses!) The inside function, <c>rnorm()</c>, is run by R first, with the results of that sent directly and immediately into the <c>hist()</c> function.
 				</p>
 
 				<p>
-					The other important thing is the "arguments that" were "passed" to the rnorm() function. "Argument" is a term used by computer scientists to refer to some extra information that is sent to a function to help it know how to do its job. In this case we passed three arguments to rnorm() that it was expecting in this order: the number of observations to generate in the fake dataset, the mean of the distribution, and the standard deviation of the distribution. The rnorm() function used these three numbers to generate 51 random data points that, roughly speaking, fit the normal distribution. So the data shown in the histogram above are an approximation of what the distribution of state populations might look like if,
-				</p>
-
-				<p>
-					instead of being reverse-J-shaped (Pareto distribution), they were normally distributed.
+					The other important thing is the "arguments that" were "passed" to the <c>rnorm()</c> function. "Argument" is a term used by computer scientists to refer to some extra information that is sent to a function to help it know how to do its job. In this case we passed three arguments to <c>rnorm()</c> that it was expecting in this order: the number of observations to generate in the fake dataset, the mean of the distribution, and the standard deviation of the distribution. The <c>rnorm()</c> function used these three numbers to generate 51 random data points that, roughly speaking, fit the normal distribution. So the data shown in the histogram above are an approximation of what the distribution of state populations might look like if, instead of being reverse-J-shaped (Pareto distribution), they were normally distributed.
 				</p>
 
 				<p>
@@ -481,155 +508,15 @@
 					In the next chapter we will conduct some of these comparisons to see what we can infer about the ways things are in general, based on just a subset of available data, or what statisticians call a sample.
 				</p>
 
-				<p>
-					<term>Chapter Challenge</term>
-				</p>
+</subsection>
+  
+  <subsection xml:id="ch6-challenge">
+    <title>Chapter Challenge and Questions</title>
 
 				<p>
-					In this chapter, we used rnorm() to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
-				</p>
+					In this chapter, we used <c>rnorm()</c> to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
 
-				<p>
-					<term>Sources</term>
-				</p>
-
-				<p><ul>
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Francis_Galton">Francis Galton</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Pareto_distribution">Pareto distribution</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/William_Sealy_Gosset">William Sealy Gosset</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Normal_distribution">Normal Distribution</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html">US Census: State Population Totals and Components of Change: 2010-2019</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.r-tutor.com/sitemap">R Tutorial: Site Map</url>
-									</p>
-									</blockquote>
-					</li>
-
-				</ul></p>
-
-			</subsection>
-
-			<subsection xml:id="r-functions-used-in-this-chapter-1">
-				<title>R Functions Used in This Chapter </title>
-
-				<p><ul>
-					<li>
-									<blockquote>
-														<p>
-										mean() Calculate arithmetic mean
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										median() Locate the median
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										mode() Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										var() Calculate the sample variance
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										sd() Calculate the sample standard deviation
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										hist() Produces a histogram graphic
-									</p>
-									</blockquote>
-					</li>
-
-				</ul></p>
-
-			</subsection>
-
-			<subsection xml:id="if-all-else-fails">
-				<title>If All Else Fails </title>
-
-				<p>
+<p>
 					In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
 				</p>
 
@@ -642,43 +529,181 @@
 				</p>
 
 				<p>
-					<term>Question:</term> A bar graph that displays the frequencies of occurrence for a numeric variable is called a
+					Question: A bar graph that displays the frequencies of occurrence for a numeric variable is called a
 				</p>
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										Histogram
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Pictogram
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Bar Graph
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Bar Chart
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
-      </subsection>
+				</p>
+
+</subsection>
+
+  <subsection xml:id="ch6-sources">
+    <title>Sources</title>
+
+				<p><ul>
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Carl Friedrich Gauss</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Francis_Galton">Francis Galton</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Pareto_distribution">Pareto distribution</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Karl_Pearson">Karl Pearson</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Ronald_Fisher">Ronald Fisher</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/William_Sealy_Gosset">William Sealy Gosset</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://en.wikipedia.org/wiki/Normal_distribution">Normal Distribution</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html">US Census: State Population Totals and Components of Change: 2010-2019</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://www.r-tutor.com/sitemap">R Tutorial: Site Map</url>
+									</p>
+									
+					</li>
+
+				</ul></p>
+
+			</subsection>
+
+			<subsection xml:id="r-functions-used-in-this-chapter-1">
+				<title>R Functions Used in This Chapter </title>
+
+				<p><ul>
+					<li>
+									
+														<p>
+										<c>mean()</c> Calculate arithmetic mean
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<c>median()</c> Locate the median
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<c>mode()</c> Tells the data type/mode of a data object.<term> Important note</term>: Surprisingly, this mode() is NOT a statistical mode. In fact, R does not have a standard in-built function to calculate the statistical mode.
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<c>var()</c> Calculate the sample variance
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<c>sd()</c> Calculate the sample standard deviation
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<c>hist()</c> Produces a histogram graphic
+									</p>
+									
+					</li>
+
+				</ul></p>
+
+			</subsection>
 
 </chapter>

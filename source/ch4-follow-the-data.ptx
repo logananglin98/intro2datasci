@@ -3,13 +3,13 @@
 <chapter xml:id="ch4-follow-the-data" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Follow the Data</title>
 
-      <subsection xml:id="follow-the-data"> 
+      <section xml:id="follow-the-data"> 
         <title>Follow the Data</title>
   <introduction>
 
 
 				<p>
-					<image source='graph-unclear.png'/>
+					<image source='graph-unclear.png' decorative="yes"/>
 				</p>
 				
 				<p>
@@ -38,7 +38,7 @@
 				</p>
 
 				<p>
-					Fortunately there is an extensive area of study and practice called "<idx>data modeling</idx><term>data modeling</term>" that provides theories, strategies, and tools to help with the data scientist’s goal of following the data. These ideas started in earnest in the 1970s with the introduction by computer scientist Ed Yourdon of a methodology called Data Flow Diagrams. A more contemporary approach, that is strongly linked with the practice of creating relational databases, is called the entity relationship model. Professionals using this model develop <idx>Entity Relationship Diagrams (ERDs)</idx><term>Entity Relationship Diagrams (ERDs)</term> that describe the structure and movement of data in a system.
+					Fortunately there is an extensive area of study and practice called "<idx>data modeling</idx><term>data modeling</term>" that provides theories, strategies, and tools to help with the data scientist’s goal of following the data. These ideas started in earnest in the 1970s with the introduction by computer scientist Ed Yourdon of a methodology called Data Flow Diagrams. A more contemporary approach, that is strongly linked with the practice of creating relational databases, is called the entity relationship model. Professionals using this model develop <idx>ERD</idx><idx>entity relationship diagram (ERD)</idx><term>Entity Relationship Diagrams (ERDs)</term> that describe the structure and movement of data in a system.
 				</p>
 
 				<p>
@@ -47,19 +47,19 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										Dr. Y is the provider for Mr. X
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										Mr. X’s provider is Dr. Y
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -84,9 +84,9 @@
 					In the next chapter we look at one of the most common and most useful ways of organizing data, namely in a rectangular structure that has rows and columns. This rectangular arrangement of data appears in spreadsheets and databases that are used for a variety of applications. Understanding how these rows and columns are organized is critical to most tasks in data science.
 				</p>
 
-			</subsection>
+			</section>
 
-			<subsection xml:id="sources-3">
+			<section xml:id="sources-3">
 				<title>Sources </title>
 
 				<p><ul>
@@ -107,6 +107,6 @@
 
 				</ul></p>
 
-      </subsection>
+      </section>
 
 </chapter>

@@ -9,7 +9,7 @@
           </em></p>
   </introduction>
   
-  <subsection xml:id="subsec-ch16-intro-linear-modeling">
+  <section xml:id="subsec-ch16-intro-linear-modeling">
     <title>The Basics of Linear Modeling</title>
                 <p><image source='sheep.png'/><term>Sheepdog demonstration, Lone Pine Sanctuary, Brisbane, QLD. Photo credit: Jeff Stanton</term>
                 </p>
@@ -26,14 +26,14 @@
                     The basis of all these methods is the idea that it is possible to fit a line to a set of data points which represents the effect an "independent" variable is having on a "dependent" variable. It is easy to visualize how this works with one variable changing in step with another variable. Figure one shows a line fitted to a series of points, using the so called "<idx>least squares</idx><term>least squares</term>" method (a relatively simple mathematical method of finding a best fitting line). Note that although the line fits the points fairly well, with an even split (as even as it can be for five points!) of points on either side of the line, none of the points are precisely on the line - the data do not fit the line precisely. As we discuss the concepts in regression analysis further, we will see that understanding these discrepancies is just as important as understanding the line itself. <image source='line-graph.png'/>
                 </p>
 
-                <blockquote>
+                
                                     <p>
                     Figure: A line fitted to some points
                 </p>
-                </blockquote>
+                
 
                 <p>
-                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x axis</idx><term>x axis</term> - relates to the output values on the <idx>y axis</idx><term>y axis</term>.
+                    The graph in the figure above shows how the relationship between an input variable - on the horizontal <idx>x-axis</idx><term>x-axis</term> - relates to the output values on the vertical <idx>y-axis</idx><term>y-axis</term>.
                 </p>
 
                 <p>
@@ -43,9 +43,9 @@
                 <p>
                     The mathematical idea that allows us to fit lines of best fit to a set of data points like this is that we can find a position for the line that will minimize the distance the line is from all the points. While the mathematics behind these techniques can be handled by someone with college freshman mathematics the reality is that with even only a few data points, the process of fitting with manual calculations becomes very tedious, very quickly. For this reason, we will not discuss the specifics of how these calculations are done, but move quickly to how it can be done for us, using R.
                 </p>
-  </subsection>
+            </section>
 
-  <subsection xml:id="subsec-ch16-case-study-afl">
+  <section xml:id="subsec-ch16-case-study-afl">
       <title>Case Study: Australian Rules Football Attendance</title>
                 <p>
                     We can use an example to show how to use linear regression on real data. The example concerns attendances at Australian Rules Football matches. For all of you in the U.S., Australian Rules Football is closer to what you think of as rugby and not so much like American football. The data in this example concerns matches/ games at the largest stadium for the sport, the Melbourne Cricket Ground (note: Australian Rules football is a winter sport, cricket is a summer sport). The Melbourne Cricket Ground or MCG is also considered the most prestigious ground to play a football match, due to its long association with Australian Rules Football.
@@ -62,9 +62,9 @@
                 <p>
                     While it isn't necessary to know anything about how the sport is played to understand the example, it is useful to know that the Australian Football League, the premiere organization playing Australian Rules Football, was formerly the Victorian Football League, and although teams from outside the Australian state of Victoria have joined, more than half the teams in the league are Victorian, even though Victoria is only one of six Australian states.
                 </p>
-  </subsection>
+            </section>
 
-  <subsection xml:id="subsec-ch16-data-prep">
+  <section xml:id="subsec-ch16-data-prep">
       <title>Getting and Exploring the Data in R</title>
                 <p>
                     The data is available from OzDasl, a website which provides public domain data sets for analysis, and the MCG attendance data has its own page at <url href="http://www.statsci.org/data/oz/afl.html">http://www.statsci.org/data/oz/afl.html</url>.
@@ -75,11 +75,11 @@
                 </p>
 
                 <p>
-                    Before we can start, we need R to be able to find the data. Make sure that you download the data to the spot on your computer that R considers the "working" directory. Use this command to find out what the current working directory is:
+                    Before we can start, we need R to be able to find the data. Make sure that you download the data to the spot on your computer that R considers the "working" directory. Use the <idx><c>getwd()</c></idx><term>getwd()</term> command to find out what the current working directory is:
                 </p>
 
                 <p>
-                    &gt; <idx>getwd()</idx><term>getwd()</term>
+                    &gt; getwd()
                 </p>
 
                 <p>
@@ -114,9 +114,9 @@
                 <p>
                     We see evidence of a trend in the points on the left hand side of the graph, and a small group of points representing games with very high combined membership but that don’t seem to fit the trend applying to the rest of data. If it wasn't for the four "<idx>outliers</idx><term>outliers</term>" on the right hand side of the plot, we would be left with a plot showing a very strong relationship.
                 </p>
-  </subsection>
+            </section>
   
-  <subsection xml:id="subsec-ch16-single-variable-model">
+  <section xml:id="subsec-ch16-single-variable-model">
     <title>Building a Single-Variable Model</title>
                 <p>
                     As a next step we can use R to create a linear model for MCG attendance using the combined membership as the single explanatory variable using the following R code:
@@ -135,7 +135,7 @@
                 </p>
 
                 <p>
-                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y axis at zero on the x axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
+                    It is important to note that in this model, and in the others that follow, we have added a '-1' term to the specification, which forces the line of best fit to pass through zero on the y-axis at zero on the x-axis (more technically speaking, the <idx>y-intercept</idx><term>y-intercept</term> is forced to be at the origin). In the present model that is essentially saying that if the two teams are so unpopular they don't have any members, no one will go to see their matches, and vice versa. This technique is appropriate in this particular example, because both of the measures have sensible zero points, and we can logically reason that zero on X implies zero on Y. In most other models, particularly for survey data that may not have a sensible zero point (think about rating scales ranging from 1 to 5), it would not be appropriate to force the best fitting line through the origin.
                 </p>
 
                 <p>
@@ -217,9 +217,9 @@
                 <p>
                     While the line of best fit seems to fit the points in the middle, the points on the lower right hand side and also some points towards the top of the graph, appear to be a long way from the line of best fit. <image source='combined-membership-MCG.png'/>
                 </p>
-  </subsection>
+            </section>
   
-  <subsection xml:id="subsec-ch16-multi-variable-model">
+  <section xml:id="subsec-ch16-multi-variable-model">
       <title>Adding a Second Variable to the Model</title>
                 <p>
                     We discussed at the beginning of this chapter the origin of Australian Rules Football in Victoria, where the MCG is located. While most of the teams in the AFL are also Victoria teams, and therefore have a supporter base which can easily access the MCG, a number of the teams are from other states, and their supporters would need to make a significant interstate journey to see their team play at the MCG. For example, the journey from Sydney to Melbourne is around eight hours by car or two by plane, whereas from Perth, where most West Coast's supporter base is located, is close to five hours by air - and two time zones away. Australia is a really huge country.
@@ -316,9 +316,9 @@
                 <p>
                     How can you tell if these slopes or B-weights are actually important contributors to the prediction? You can divide the unstandardized B-weight by its standard error to create a "t value". The lm() command has done this for you and it is reported in the output above. This "t" is the Student's t-test, described in a previous chapter. As a rule of thumb, if this t value has an absolute value (i.e., ignoring the minus sign if there is one) that is larger than about 2, you can be assured that the independent/predictor variable we are talking about is contributing to the prediction of the dependent variable. In this example we can see that Members has a humongous t value of 21.257, showing that it is very important in the prediction. The away.inter variable has a somewhat more modest, but still important value of -4.545 (again, don't worry about the minus sign when judging the magnitude of the t value).
                 </p>
-  </subsection>
+            </section>
   
-  <subsection xml:id="subsec-ch16-conclusion">
+  <section xml:id="subsec-ch16-conclusion">
       <title>Conclusion and Next Steps</title>
                 <p>
                     We can keep on adding variables that we think make a difference. How many variables we end up using depends, apart from our ability to think of new variables to measure, somewhat on what we want to use the model for.
@@ -350,8 +350,8 @@
 
                 
 
-            </subsection>
-<subsection xml:id="subsec-ch16-chapter-challenge">
+            </section>
+<section xml:id="subsec-ch16-chapter-challenge">
                 <title>Chapter Challenge </title>
 
                 <p>
@@ -362,92 +362,92 @@
                     For a super bonus, you could also investigate the meaning of the "Adjusted" r-squared that appears in the output.
                 </p>
 
-				</subsection>	
-            <subsection xml:id="sources-11">
+				</section>	
+            <section xml:id="sources-11">
                 <title>Sources </title>
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://en.wikipedia.org/wiki/Australian_rules_football">http://en.wikipedia.org/wiki/Australian_rules_football</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.">http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm. html</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         <url href="http://www.ddiez.com/teac/r/linear_models.php">http://www.ddiez.com/teac/r/linear_models.php</url>
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
 
-            </subsection>
+            </section>
 
-            <subsection xml:id="r-functions-used-in-this-chapter-6">
+            <section xml:id="r-functions-used-in-this-chapter-6">
                 <title>R Functions Used in This Chapter </title>
 
                 <p><ul>
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         abline() plots a best fitting line on top of a scatterplot
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         attach() makes a data structure the "focus" of attention
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         getwd() show the current working directory for R
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         ifelse() a conditional test that provides one of two possible outputs
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         lm() "linear models" and for this chapter, multiple regression
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                     <li>
-                                    <blockquote>
+                                    
                                                         <p>
                                         plot() general purpose graphing function, many uses in R summary produces an overview of an output structure
                                     </p>
-                                    </blockquote>
+                                    
                     </li>
 
                 </ul></p>
 
-</subsection>
+</section>
 </chapter>

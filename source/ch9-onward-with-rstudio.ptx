@@ -22,19 +22,15 @@
 				</p>
 
 				<p>
-					MyMode &lt;- function(myVector)
-				</p>
+					<sage language="r">
+                        <input>
+                            MyMode &lt;- function(myVector)
+                            {
+                                return(myVector)
+                            }
+                        </input>
+                    </sage>
 
-				<p>
-					{
-				</p>
-
-				<p>
-					return(myVector)
-				</p>
-
-				<p>
-					}
 				</p>
 
 				<p>
@@ -54,15 +50,13 @@
 				</p>
 
 				<p>
-					&gt; tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
-				</p>
+					<sage language="r">
+                        <input>
+                            tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+                            tinyData
+                        </input>
+                    </sage>
 
-				<p>
-					&gt; tinyData
-				</p>
-
-				<p>
-					[1] 1 2 1 2 3 3 3 4 5 4 5
 				</p>
 
 				<p>
@@ -82,11 +76,17 @@
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
-				</p>
-
-				<p>
-					[1] 1 2 1 2 3 3 3 4 5 4 5
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{
+			return(myVector)
+		}
+		tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+		MyMode(tinyData)
+						</input>
+					</sage>
+					
 				</p>
 
 				<p>

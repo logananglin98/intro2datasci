@@ -67,7 +67,7 @@
 				</p>
 
 				<p>
-					There is an old rulebook called "ASCII" the American Standard Code for Information Interchange which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, <url href="http://www.asciitable.com/">http://www.asciitable.com/</url>) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, some people find it fun to practice converting between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s <url href="https://www.youtube.com/watch?v=OCYZTg3jahU">Binary Hand Dance</url> video in which she and her family count in binary on their fingers.
+					There is an old rulebook called "ASCII" the American Standard Code for Information Interchange which matches up patterns of eight bits with the letters of the alphabet, punctuation, and a few other odds and ends. For example the bit pattern 0100 0001 represents the capital letter A and the next higher pattern, 0100 0010, represents capital B. Try looking up an ASCII table online (for example, <url href="http://www.asciitable.com/">http://www.asciitable.com/</url>) and you can find all of the combinations. Note that the codes may not actually be shown in binary because it is so difficult for people to read long strings of ones and zeroes. Instead you may see the equivalent codes shown in hexadecimal (base 16), octal (base 8), or the most familiar form that we all use everyday, base 10. Although you might remember base conversions from high school math class, some people find it fun to practice converting between binary, hexadecimal, and decimal (base 10). You might also enjoy Vi Hart’s <url href="https://vimeo.com/147797330">Binary Hand Dance</url> video in which she and her family count in binary on their fingers.
 				</p>
 
 				<p>
@@ -228,7 +228,7 @@
 
 					<li>
 									<p>
-										<url href="https://www.youtube.com/watch?v=OCYZTg3jahU">Binary Hand Dance by Vi Hart</url>
+										<url href="https://vimeo.com/147797330">Binary Hand Dance by Vi Hart</url>
 									</p>
 					</li>
 

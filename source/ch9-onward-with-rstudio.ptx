@@ -58,11 +58,16 @@
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
+					<c>&gt; MyMode(tinyData)</c>
 				</p>
 
 				<p>
-					Error: could not find function "MyMode"
+					<sage language="r">
+						<input>
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							MyMode(tinyData)
+						</input>
+					</sage>	
 				</p>
 
 				<p>
@@ -87,64 +92,44 @@
 					This did exactly what we expected: it just echoed back the contents of tinyData. You can see from this example how parameters work, too. in the command just above, we passed in tinyData as the input to the function. While the function was working, it took what was in tinyData and copied it into myVector for use inside the function. Now we are ready to add the next command to our function:
 				</p>
 
-				<p>
+				<pre>
 					MyMode &lt;- function(myVector)
-				</p>
-
-				<p>
 					{
-				</p>
-
-				<p>
 					uniqueValues &lt;- unique(myVector)
-				</p>
-
-				<p>
 					return(uniqueValues)
-				</p>
-
-				<p>
 					}
-				</p>
+				</pre>
+				
 
 				<p>
 					<sub>Because we made a few changes, the whole function appears again</sub> above. Later, when the code gets a little more complicated, we will just provide one or two lines to add. Let’s see what this code does. First, don’t forget to select the code and click on the Run button. Then, in the R console, try the MyMode() command again:
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{
+			uniqueValues &lt;- unique(myVector)
+			return(uniqueValues)
+		}
+		tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+		MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
-
-				<p>
-					[1] 1 2 3 4 5
-				</p>
-
+					
 				<p>
 					Pretty easy to see what the new code does, right? We called the <idx><c>unique()</c></idx><term>unique()</term> function, and that returned a list of unique values that appeared in tinyData. Basically, unique() took out all of the redundancies in the vector that we passed to it. Now let’s build a little more:
-				</p>
 
-				<p>
+					<pre>
 					MyMode &lt;- function(myVector)
-				</p>
-
-				<p>
 					{
-				</p>
-
-				<p>
 					uniqueValues &lt;- unique(myVector)
-				</p>
-
-				<p>
 					uniqueCounts &lt;- tabulate(myVector)
-				</p>
-
-				<p>
 					return(uniqueCounts)
-				</p>
-
-				<p>
 					}
+					</pre>
 				</p>
 
 				<p>
@@ -152,11 +137,18 @@
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
-				</p>
-
-				<p>
-					[1] 2 2 3 2 2
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{
+			uniqueValues &lt;- unique(myVector)
+			uniqueCounts &lt;- tabulate(myVector)
+			return(uniqueCounts)
+		}
+		tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+		MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -198,55 +190,61 @@
 				</p>
 
 				<p>
-					uniqueValues[which.max(uniqueCounts)]
+					<c>uniqueValues[which.max(uniqueCounts)]</c>
 				</p>
 
 				<p>
 					The <idx><c>which.max()</c></idx><term>which.max()</term> function finds the index of the element of uniqueCounts that is the largest. Then we use that index to address uniqueValues with square braces. The <idx>square braces</idx><term>square braces</term> let us get at any of the elements of a vector. For example, if we asked for uniqueValues[5], we would get the number 5. If we add this one list of code to our return statement, our function will be finished:
 				</p>
 
-				<p>
+				<pre>
 					MyMode &lt;- function(myVector)
-				</p>
-
-				<p>
 					{
-				</p>
-
-				<p>
 					uniqueValues &lt;- unique(myVector)
-				</p>
-
-				<p>
 					uniqueCounts &lt;- tabulate(myVector)
-				</p>
-
-				<p>
 					return(uniqueValues[which.max(uniqueCounts)])
-				</p>
-
-				<p>
 					}
-				</p>
+				</pre>
 
 				<p>
 					We’re now ready to test out our function. Don’t forget to select the whole thing and run it! Otherwise R will still be remembering our old one. Let’s ask R what tinyData contains, just to remind ourselves, and then we will send tinyData to our MyMode() function:
 				</p>
 
 				<p>
-					&gt; tinyData
+					<c>&gt; tinyData</c>
+				</p>
+				<p>
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{
+			uniqueValues &lt;- unique(myVector)
+			uniqueCounts &lt;- tabulate(myVector)
+			return(uniqueValues[which.max(uniqueCounts)])
+		}
+		tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+		tinyData
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					[1] 1 2 1 2 3 3 3 4 5 4 5
+					<c>&gt; MyMode(tinyData)</c>
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
-				</p>
-
-				<p>
-					[1] 3
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{
+			uniqueValues &lt;- unique(myVector)
+			uniqueCounts &lt;- tabulate(myVector)
+			return(uniqueValues[which.max(uniqueCounts)])
+		}
+		tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+		MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -254,23 +252,48 @@
 				</p>
 
 				<p>
-					&gt; tinyData&lt;-c(tinyData,5,5,5)
+					<c>&gt; tinyData&lt;-c(tinyData,5,5,5)</c>
 				</p>
 
 				<p>
-					&gt; tinyData
+					<c>&gt; tinyData</c>
+				</p>
+				
+				<p>
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					[1] 1 2 1 2 3 3 3 4 5 4 5 5 5 5
+					<c>&gt; MyMode(tinyData)</c>
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
-				</p>
-
-				<p>
-					[1] 5
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData
+							MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -278,19 +301,46 @@
 				</p>
 
 				<p>
-					&gt; tinyData
+					<c>&gt; tinyData</c>
 				</p>
 
 				<p>
-					[1] 1 2 1 2 3 3 3 4 5 4 5 5 5 5 1 1 1
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData &lt;- c(tinyData,1,1,1)
+							tinyData
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
+					<c>&gt; MyMode(tinyData)</c>
 				</p>
 
 				<p>
-					[1] 1
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData &lt;- c(tinyData,1,1,1)
+							tinyData
+							MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -302,23 +352,47 @@
 				</p>
 
 				<p>
-					&gt; tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+					<c>&gt; tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)</c>
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData &lt;- c(tinyData,1,1,1)
+							tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+							MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
-					[1] NA
+					<c>&gt; tabulate(tinyData)</c>
 				</p>
-
+				
 				<p>
-					&gt; tabulate(tinyData)
-				</p>
-
-				<p>
-					[1] 5 2 3 2 5 0 0 0 7
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData &lt;- c(tinyData,1,1,1)
+							tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+							tabulate(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -326,57 +400,62 @@
 				</p>
 
 				<p>
-					&gt; unique(tinyData)
+					<c>&gt; unique(tinyData)</c>
 				</p>
-
+				
 				<p>
-					[1] 1 2 3 4 5 9
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+							{
+								uniqueValues &lt;- unique(myVector)
+								uniqueCounts &lt;- tabulate(myVector)
+								return(uniqueValues[which.max(uniqueCounts)])
+							}
+							tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+							tinyData &lt;- c(tinyData,5,5,5)
+							tinyData &lt;- c(tinyData,1,1,1)
+							tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+							unique(tinyData)
+						</input>
+					</sage>
 				</p>
 
 				<p>
 					There are only six elements in this list, so it doesn’t match up as it should (take another look at the table on the previous page and imagine if the bottom row stuck out further than the row just above it). We can fix this with the addition of the <idx><c>match()</c></idx><term>match()</term> function to our code:
 				</p>
 
-				<p>
+				<pre>
 					MyModeF&lt;-function(myVector)
-				</p>
-
-				<p>
 					{
-				</p>
-
-				<p>
 					uniqueValues &lt;- unique(myVector)
-				</p>
-
-				<p>
 					uniqueCounts &lt;- tabulate( +
-				</p>
-
-				<p>
 					match(myVector,uniqueValues))
-				</p>
-
-				<p>
 					return(uniqueValues[which.max(uniqueCounts)])
-				</p>
-
-				<p>
 					}
-				</p>
+				</pre>
 
 				<p>
 					The new part of the code is in bold. Now instead of tabulating every possible value, including the ones for which we have no data, we only tabulate those items where there is a "match" between the list of unique values and what is in myVector. Now when we ask MyMode() for the mode of tinyData we get the correct result:
 				</p>
 
 				<p>
-					&gt; MyMode(tinyData)
+					<sage language="r">
+						<input>
+							MyMode &lt;- function(myVector)
+		{		
+			uniqueValues &lt;- unique(myVector)
+			uniqueCounts &lt;- tabulate(match(myVector,uniqueValues))
+			return(uniqueValues[which.max(uniqueCounts)])
+		}
+			tinyData &lt;- c(1,2,1,2,3,3,3,4,5,4,5)
+			tinyData &lt;- c(tinyData,5,5,5)
+			tinyData &lt;- c(tinyData,1,1,1)
+			tinyData &lt;- c(tinyData,9,9,9,9,9,9,9)
+			MyMode(tinyData)
+						</input>
+					</sage>
 				</p>
-
-				<p>
-					[1] 9
-				</p>
-
 				<p>
 					Aha, now it works the way it should. After our last addition of seven nines to the data set, the mode of this vector is correctly reported as nine.
 				</p>
@@ -403,73 +482,37 @@
 					Let’s try out the <idx><c>mfv()</c></idx><term>mfv()</term> function. This function returns the "most frequent value" in a vector, which is generally what we want in a mode function:
 				</p>
 
-				<p>
+				<pre>
 					&gt; mfv(tinyData)
-				</p>
-
-				<p>
 					[1] 9
-				</p>
+				</pre>
 
 				<p>
 					So far so good! This seems to do exactly what our MyMode() function did, though it probably uses a different method. In fact, it is easy to see what strategy the authors of this package used just by typing the name of the function at the R command line:
 				</p>
 
-				<p>
+				<pre>
 					&gt; mfv
-				</p>
-
-				<p>
 					function (x, ...)
-				</p>
-
-				<p>
 					{
-				</p>
-
-				<p>
 					f &lt;- factor(x)
-				</p>
-
-				<p>
 					tf &lt;- tabulate(f)
-				</p>
-
-				<p>
 					return(as.numeric(levels(f)[tf == max(tf)]))
-				</p>
-
-				<p>
 					}
-				</p>
-
-				<p>
 					<sub>&lt;environment: namespace:modeest&gt;</sub>
-				</p>
+				</pre>
 
 				<p>
 					This is one of the great things about an open source program: you can easily look under the hood to see how things work. Notice that this is quite different from how we built MyMode(), although it too uses the tabulate() function. The final line, that begins with the word "environment" has importance for more complex feats of programming, as it indicates which variable names mfv() can refer to when it is working. The other aspect of this function which is probably not so obvious is that it will correctly return a list of multiple modes when one exists in the data you send to it:
 				</p>
 
-				<p>
+				<pre>
 					&gt; multiData &lt;- c(1,5,7,7,9,9,10)
-				</p>
-
-				<p>
 					&gt; mfv(multiData)
-				</p>
-
-				<p>
 					[1] 7 9
-				</p>
-
-				<p>
 					&gt; MyMode(multiData)
-				</p>
-
-				<p>
 					[1] 7
-				</p>
+				</pre>
 
 				<p>
 					In the first command line above, we made a small new vector that contains two modes, 7 and 9. Each of these numbers occurs twice, while the other numbers occur only once. When we run mfv() on this vector it correctly reports both 7 and 9 as modes. When we use our function, MyMode(), it only reports the first of the two modes.
@@ -497,7 +540,7 @@
 					<li>
 									
 														<p>
-										function() Creates a new function
+										<c>function()</c> Creates a new function
 									</p>
 									
 					</li>
@@ -505,7 +548,7 @@
 					<li>
 									
 														<p>
-										return() Completes a function by returning a value
+										<c>return()</c> Completes a function by returning a value
 									</p>
 									
 					</li>
@@ -513,7 +556,7 @@
 					<li>
 									
 														<p>
-										tabulate() Counts occurrences of integer-valued data in a vector
+										<c>tabulate()</c> Counts occurrences of integer-valued data in a vector
 									</p>
 									
 					</li>
@@ -521,7 +564,7 @@
 					<li>
 									
 														<p>
-										unique() Creates a list of unique values in a vector
+										<c>unique()</c> Creates a list of unique values in a vector
 									</p>
 									
 					</li>
@@ -529,7 +572,7 @@
 					<li>
 									
 														<p>
-										match() Takes two lists and returns values that are in each
+										<c>match()</c> Takes two lists and returns values that are in each
 									</p>
 									
 					</li>
@@ -537,7 +580,7 @@
 					<li>
 									
 														<p>
-										mfv() Most frequent value (from the modeest package)
+										<c>mfv()</c> Most frequent value (from the modeest package)
 									</p>
 									
 					</li>

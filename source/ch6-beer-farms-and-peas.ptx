@@ -374,7 +374,7 @@
 
 	<sage language="r">
 	<input>
-	<xi:include href="../code/USstatePops" parse="text"/>
+	<xi:include href="../code/USstatePops.r" parse="text"/>
 cat("This is the mean:", mean(USstatePops$...1), "\n")
 cat("This is the median:", median(USstatePops$...1), "\n")
 cat("This is the mode:", mode(sort(table(USstatePops$...1), decreasing = TRUE))[1], "\n")

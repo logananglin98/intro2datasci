@@ -12,7 +12,7 @@
 
 				<p>
 					<idx>sampling distributions</idx>
-					<term>sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
+					<term>Sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
 				</p>
   </introduction>
   
@@ -161,7 +161,10 @@ hist(replicate(4000, mean(sample(USstatePops$...1,size=16,replace=TRUE)), simpli
 	</input>
 </sage>
 				
-
+</section>
+    
+    <section xml:id="visualizing-the-distribution">
+        <title>Visualizing the Distribution and Key Theorems</title>
 				<p>
 					<idx>the law of large numbers</idx>
 					<idx>central limit theorem</idx>
@@ -403,7 +406,11 @@ CutPoint975
 				<p>
 					You will notice again that this value is different from what we calculated with the quantile() function using the empirical distribution. The differences arise because of the randomness in the distribution that we constructed. The value above is an estimate that is based on statistical proofs, whereas the empirical SampleMeans list that we constructed is just one of a nearly infinite range of such lists that we could create. We could easily reduce the discrepancy between the two methods by using a larger sample size and by having more replications included in the sampling distribution.
 				</p>
+  </section>
 
+
+<section xml:id="sample-in-jar-summary">
+    <title>Chapter Summary</title>
 				<p>
 					To summarize, with a data set that includes 51 data points with the numbers of people in states, and a bit of work using R to construct a distribution of sampling means, we have learned the following:
 				</p>

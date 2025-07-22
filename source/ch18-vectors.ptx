@@ -160,17 +160,36 @@
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
 				</p>
 
-				<p>
-					&gt; trainData &lt;spam[randIndex[1:cutPoint2_3],]
-				</p>
+				<sage language="r">
+					<input>
+						# The following lines of code re-do 
+						# the work done in section 18.2
+						# These lines can be ignored.
+						library(kernlab)
+						data(spam)
+						randIndex &lt;- sample(1:dim(spam)[1], dim(spam)[1])
+						cutPoint2_3 &lt;- floor(2 * dim(spam)[1]/3)
+
+						# This line assigns the first 
+						# 3067 rows to a variable called trainData
+						trainData &lt;- spam[randIndex[1:cutPoint2_3],]
+
+						# head() function used to keep output short
+						head(trainData)
+					</input>
+					
+				</sage>
 
 				<p>
 					We make the new data set, called trainData, using the randomized set of indices that we created in the randIndex list, but only using the first 3067 elements of randIndex (The inner expression in square brackets, 1:cutPoint2_3, does the job of selecting the first 3067 elements. From here you should be able to imagine the command for creating the test set:
 				</p>
 
-				<p>
-					&gt; testData &lt;spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
-				</p>
+				<sage language="r">
+					<input>
+						testData &lt;- spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
+						head(testData)
+					</input>
+				</sage>
 
 				<p>
 					The inner expression now selects the rows from 3068 all the way up to 4601 for a total of 1534 rows. So now we have two separate data sets, representing a two-thirds training and one third test breakdown of the original data. We are now in good shape to train our support vector model. The following command generates a model based on the training data set:

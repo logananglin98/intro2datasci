@@ -107,26 +107,26 @@
 					We can look at the same kind of data in terms of the probability of arrival within a certain amount of time. Because rpois() generates delay times directly (rather than us having to calculate them from neighboring arrival times), we will need a slightly different function than the ArrivalProbabilities() that we wrote and used in the previous chapter. We’ll call this function "DelayProbability" (the code is at the end of this chapter):
 				</p>
 
-				<pre>
-					&gt; DelayProbability(rpois(100,10),1,20)
-				</pre>
-
-				<pre>
-					[1] 0.00 0.00 0.00 0.03 0.06 0.09 0.21 0.33 0.48 0.61 0.73 0.82 0.92
-
-					[14] 0.96 0.97 0.98 0.99 1.00 1.00 1.00
-				</pre>
+				<sage language="r">
+                    <input>
+                    <xi:include href="../code/delay-probability.r" parse="text"/>
+DelayProbability(rpois(100,10),1,20)
+                    </input>
+                </sage>
 
 				<p>
 					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <idx><c>points()</c></idx><term>points()</term> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
 				</p>
 
-				<pre>
-					&gt; plot(DelayProbability(rpois(100,10),1,20), col=2)
+				<sage language="r">
+                    <input>
+                    <xi:include href="../code/delay-probability.r" parse="text"/>
+plot(DelayProbability(rpois(100,10),1,20), col=2)
 
-					&gt; points(DelayProbability(rpois(100,3),1,20), col=3)
+points(DelayProbability(rpois(100,3),1,20), col=3)
+					</input>
+                </sage>
 
-				</pre>
 
 				<p>
 					Again, the heart of each of these lines of code is the rpois() function that is generating random Poisson arrival delays for us. Our parameters for increment (1 second) and maximum (20 seconds) are the same for both lines. The first line uses col=2, which gives us red points, and the second gives us col=3, which yields green points:
@@ -582,6 +582,97 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 				<p>
 					Write a function that takes two search strings as arguments and that returns the results of a Poisson rate ratio test on the arrival rates of tweets on the two topics. Your function should first run the necessary Twitter searches, then sort the tweets by ascending time of arrival and calculate the two vectors of time differentials. Use the mean of one of these vectors as the basis for comparison and for each vector, count how many events are at or below the mean. Use this information and the numbers of tweets requested to run the poisson.test() rate comparison.
 				</p>
+
+			</section>
+
+			<section xml:id="sources-7">
+				<title>Sources </title>
+
+				<p>
+					<em><term>Barplots</term></em>
+				</p>
+
+				<p><ul>
+					<li>
+									
+														<p>
+										<url href="http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph">http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph =54</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo">http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo urse/graphscourse.pdf</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2">http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2</url>
+									</p>
+									
+					</li>
+
+				</ul></p>
+
+				<p>
+					<em><term>Poisson Distribution</term></em>
+				</p>
+
+				<p><ul>
+					<li>
+									
+														<p>
+										<url href="http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr">http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr ontcover</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://www.khanacademy.org/math/probability/v/poisson-process-1">http://www.khanacademy.org/math/probability/v/poisson-process-1</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://www.khanacademy.org/math/probability/v/poisson-process-2">Khan Academy Poisson Process 2</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Poisson.html">The Poisson Distribution</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/poisson.test.html">Exact Poisson tests</url>
+									</p>
+									
+					</li>
+
+					<li>
+									
+														<p>
+										<url href="http://stats.stackexchange.com/questions/10926/how-to-calculat">How to calculate confidence interval for count data in R?</url>
+									</p>
+									
+					</li>
+
+				</ul></p>
 
 			</section>
 

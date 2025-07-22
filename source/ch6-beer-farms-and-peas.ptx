@@ -305,7 +305,7 @@
 				</p>
 
 				<figure>
-	<image source="dropdown-general.png" width="60%" height="60%"/>
+	<image source="dropdown-general.png" width="60%" />
 					<caption>Excel interface showing how to change cell formatting to 'General' to remove commas from population data.</caption>
 </figure>
 

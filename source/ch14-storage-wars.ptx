@@ -642,69 +642,6 @@ testFrame$july11pop &lt;-Numberize(testFrame$X.3)
 
 			</section>
 
-			<section xml:id="sources-9">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-									
-														<p>
-										<url href="http://cran.r-project.org/doc/manuals/R-data.html">http://cran.r-project.org/doc/manuals/R-data.html</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://cran.r-project.org/doc/manuals/R-data.pdf">http://cran.r-project.org/doc/manuals/R-data.pdf</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://cran.r-project.org/web/packages/gdata/gdata.pdf">http://cran.r-project.org/web/packages/gdata/gdata.pdf</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://dev.mysql.com/downloads/">http://dev.mysql.com/downloads/</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Comparison_of_relational_databas">http://en.wikipedia.org/wiki/Comparison_of_relational_databas e_management_systems</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Mapreduce">http://en.wikipedia.org/wiki/Mapreduce</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="https://github.com/RevolutionAnalytics/RHadoop/wiki/Tutorial">https://github.com/RevolutionAnalytics/RHadoop/wiki/Tutorial</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
-
-			</section>
 
 			<section xml:id="ch14-r-functions-used-in-this-chapter">
 				<title> R Functions Used in this Chapter </title>

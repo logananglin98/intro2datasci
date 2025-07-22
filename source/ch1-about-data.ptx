@@ -204,49 +204,6 @@
 
 			</section>
 
-			<section xml:id="ch1-sources">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-									<p>
-										<url href="http://en.wikipedia.org/wiki/Claude_Shannon">Claude Shannon</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="http://en.wikipedia.org/wiki/Information_theory">Information theory</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="http://cran.r-project.org/doc/manuals/R-intro.pdf">An Introduction to R</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="https://vimeo.com/147797330">Binary Hand Dance by Vi Hart</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="http://www.asciitable.com/">ASCII Table and Description</url>
-									</p>
-					</li>
-
-					<li>
-									<p>
-										<url href="https://mybinder.org/v2/gh/pearcej/ids-jupyter/master">Jupyter Repository for Introduction to Data Science</url>
-									</p>
-					</li>
-
-				</ul></p>
-
-			</section>
 
 	<section xml:id="test-yourself">
 	<title>Test Yourself</title>

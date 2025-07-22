@@ -451,44 +451,7 @@
 					Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the <c>summary()</c> function on myFam to get descriptive information on your new variable.
 				</p>
 
-				<p>
-					<term>Sources</term>
-				</p>
 
-				<p><ul>
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Central_tendency">Central Tendency</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Median">Median</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Relational_model">Relational Model</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://www.burns-stat.com/pages/Tutor/hints_R_begin.html">Impatient R Translation</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
 
 			</section>
 

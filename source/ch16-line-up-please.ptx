@@ -363,37 +363,6 @@
                 </p>
 
 				</section>	
-            <section xml:id="sources-11">
-                <title>Sources </title>
-
-                <p><ul>
-                    <li>
-                                    
-                                                        <p>
-                                        <url href="http://en.wikipedia.org/wiki/Australian_rules_football">http://en.wikipedia.org/wiki/Australian_rules_football</url>
-                                    </p>
-                                    
-                    </li>
-
-                    <li>
-                                    
-                                                        <p>
-                                        <url href="http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm.">http://stat.ethz.ch/R-manual/R-patched/library/stats/html/lm. html</url>
-                                    </p>
-                                    
-                    </li>
-
-                    <li>
-                                    
-                                                        <p>
-                                        <url href="http://www.ddiez.com/teac/r/linear_models.php">http://www.ddiez.com/teac/r/linear_models.php</url>
-                                    </p>
-                                    
-                    </li>
-
-                </ul></p>
-
-            </section>
 
             <section xml:id="r-functions-used-in-this-chapter-6">
                 <title>R Functions Used in This Chapter </title>

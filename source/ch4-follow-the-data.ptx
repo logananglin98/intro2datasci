@@ -86,27 +86,4 @@
 
 			</section>
 
-			<section xml:id="sources-3">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Data_modeling">Data modeling</url>
-									</p>
-
-					</li>
-
-					<li>
-
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Entity-relationship_diagram">Entity Relationship Diagram</url>
-									</p>
-
-					</li>
-
-				</ul></p>
-
-      </section>
-
 </chapter>

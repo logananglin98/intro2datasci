@@ -477,61 +477,6 @@ CutPoint975
 
 			</section>
 
-			<section xml:id="sources-4">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Central_limit_theorem">http://en.wikipedia.org/wiki/Central_limit_theorem</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Gerolamo_Cardano">http://en.wikipedia.org/wiki/Gerolamo_Cardano</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Jacob_Bernoulli">http://en.wikipedia.org/wiki/Jacob_Bernoulli</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Law_of_large_numbers">http://en.wikipedia.org/wiki/Law_of_large_numbers</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories">http://en.wikipedia.org/wiki/List_of_U.S._states_and_territories _by_population</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://www.khanacademy.org/math/statistics/v/central-limit-th">http://www.khanacademy.org/math/statistics/v/central-limit-th eorem</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
-
-			</section>
 
 			<section xml:id="r-commands-used-in-this-chapter">
 				<title>R Commands Used in This Chapter </title>

@@ -585,49 +585,6 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 			</section>
 
-			<section xml:id="sources-7">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-									
-														<p>
-										<url href="http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr">http://books.google.com/books?id=ZKswvkqhygYC&amp;printsec=fr ontcover</url>
-									</p>
-									
-					</li>
-
-
-
-
-					<li>
-									
-														<p>
-										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/Poisson.html">The Poisson Distribution</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="https://stat.ethz.ch/R-manual/R-patched/library/stats/html/poisson.test.html">Exact Poisson tests</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://stats.stackexchange.com/questions/10926/how-to-calculat">How to calculate confidence interval for count data in R?</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
-
-			</section>
-
 			<section xml:id="r-functions-used-in-this-chapter-2">
 				<title>R Functions Used in this Chapter </title>
 

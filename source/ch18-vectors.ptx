@@ -550,36 +550,4 @@
 
 			</section>
 
-			<section xml:id="sources-13">
-				<title>Sources </title>
-
-				<p><ul>
-
-					<li>
-									
-														<p>
-										<url href="http://cran.r-project.org/web/packages/kernlab/kernlab.pdf">http://cran.r-project.org/web/packages/kernlab/kernlab.pdf</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Confusion_matrix">http://en.wikipedia.org/wiki/Confusion_matrix</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://stackoverflow.com/questions/9480605/what-is-the-relatio">http://stackoverflow.com/questions/9480605/what-is-the-relatio n-between-the-number-of-support-vectors-and-training-data-and</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
-        </section>
-
 </chapter>

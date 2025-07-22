@@ -588,41 +588,6 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 			<section xml:id="sources-7">
 				<title>Sources </title>
 
-				<p>
-					<em><term>Barplots</term></em>
-				</p>
-
-				<p><ul>
-					<li>
-									
-														<p>
-										<url href="http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph">http://addictedtor.free.fr/graphiques/RGraphGallery.php?graph =54</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo">http://biostat.mc.vanderbilt.edu/twiki/pub/Main/StatGraphCo urse/graphscourse.pdf</url>
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										<url href="http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2">http://rgm2.lab.nig.ac.jp/RGM2/func.php?rd_id=gplots:barplot2</url>
-									</p>
-									
-					</li>
-
-				</ul></p>
-
-				<p>
-					<em><term>Poisson Distribution</term></em>
-				</p>
-
 				<p><ul>
 					<li>
 									

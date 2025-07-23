@@ -705,10 +705,88 @@
                     The key takeaway point here is that using a good visualization tool to examine the results of a data mining activity can enhance the process of sorting through the evidence and making sense of it. If we were to present these results to a store manager (and we would certainly do a little more digging before formulating our final conclusions) we might recommend that recipes could be published along with coupons and popular recipes, such as for homemade soup, might want to have all of the ingredients group together in the store along with signs saying, "Mmmm, homemade soup!"
                 </p>
 			</section>
-<section xml:id="Chapter-Challenge-ch17">
-        <title>Chapter Challenge</title>
+<section xml:id="data-mining-test-your-knowledge">
+                <title>Test Your Knowledge</title>
+<exercise label="mc-mining-metric-definition" xml:id="mc-mining-metric-definition">
+        <statement>
+        <p>The chapter states that in the famous "diapers and beer" example, a supermarket might find that "if diapers are purchased, then beer is also purchased." The measure of how frequently beer is purchased specifically in those transactions that contain diapers is called:</p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement>
+                    <p>Confidence</p>
+                </statement>
+                <feedback>
+                    <p>Correct! Confidence is the measure of how often the rule is true when the first item is present. It answers the question, "Among all the times diapers were bought, what percentage of the time was beer also bought?"</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Support</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Support measures how frequently the combination (diapers AND beer) appears across ALL transactions in the entire dataset, not just the ones containing diapers.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Lift</p>
+                </statement>
+                <feedback>
+                    <p>Not quite. Lift is a more advanced metric that measures how much more likely the items are purchased together than if they were independent, indicating how "interesting" or unexpected the rule is.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Data Preparation</p>
+                </statement>
+                <feedback>
+                    <p>No, data preparation is the first step in the data mining process, which involves cleaning and organizing data, not a metric for evaluating a rule.</p>
+                </feedback>
+            </choice>
+    </choices>
+    </exercise>
 
-                <p>
+    <exercise label="mc-mining-process" xml:id="mc-mining-process">
+        <statement>
+        <p>The chapter outlines a four-step process for data mining. Which of these steps is described as typically taking the most amount of time?</p>
+        </statement>
+        <choices>
+            <choice correct="yes">
+                <statement>
+                    <p>Data preparation</p>
+                </statement>
+                <feedback>
+                    <p>That's right! The chapter explicitly states, "...Step 1 [data preparation] usually takes the most amount of time." This involves organizing, cleaning, and recoding data.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Model development</p>
+                </statement>
+                <feedback>
+                    <p>No, while model development is described as the most complex and interesting step, the chapter notes that data preparation is usually the most time-consuming.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Interpretation of results</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. The chapter describes interpretation as the most important step for the data user, but not the one that takes the most time for the data miner.</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>Exploratory data analysis</p>
+                </statement>
+                <feedback>
+                    <p>No, while exploratory analysis is a key step, the chapter identifies data preparation as the one that typically requires the most time.</p>
+                </feedback>
+            </choice>
+    </choices>
+    </exercise>
+<p>
                     Chapter Challenge
                 </p>
 
@@ -723,8 +801,8 @@
                 <p>
                     A company called Togaware has created a graphical user interface (GUI) for R called Rattle. At this writing (working with R version 3.0.0), one of Rattle’s components has gotten out of date and will not work with the latest version of R, particularly on the Mac. It is likely, however, that those involved with the Rattle project will soon update it to be compatible again. Using Rattle simplifies many of the processes described earlier in the chapter. Try going to the Togaware site and following the instructions there for installing Rattle for your particular operating system.
                 </p>
-
             </section>
+
 
             <section xml:id="r-functions-used-in-this-chapter-7">
                 <title>R Functions Used in This Chapter </title>

@@ -537,19 +537,6 @@
 
 	</section>
 
-			<section xml:id="ch18-chapter-challenge">
-				<title>Chapter Challenge </title>
-
-				<p>
-					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
-				</p>
-
-				<p>
-					For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
-				</p>
-
-			</section>
-
 	<section xml:id="vectors-test-yourself">
 	<title>Test Yourself</title>
 
@@ -640,6 +627,16 @@
             </choice>
 		</choices>
     </exercise>
+
+	<p>Chapter Challenge </p>
+
+		<p>
+			Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
+		</p>
+
+		<p>
+			For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
+		</p>
 
     </section>
 

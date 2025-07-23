@@ -85,14 +85,11 @@
                 <p>
                     After downloading the data set from OzDasl into your R working directory, read the data set into R as follows:
                 </p>
-
-                <p>
-                    &gt; attend&lt;-read.delim("afl.txt", header=TRUE)
-                </p>
-
-                <p>
-                    &gt; attach(attend)
-                </p>
+                <sage language="r">
+                    <input parse = "text">
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
+                    </input>
+                </sage>
 
                 <p>
                     We include the optional 'header = TRUE' to designate the first row as the column names, and the 'attach' commands turns each of the named columns into a single column vector.
@@ -101,11 +98,14 @@
                 <p>
                     Once we've read the data into R, we can examine some plots of the data. With many techniques in data science, it can be quite valuable to visualize the data before undertaking a more detailed analysis. One of the variables we might consider is the combined membership of the two teams playing, a proxy for the popularity of the teams playing.
                 </p>
+                <sage language="r">
+                    <input parse = "text">
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
 
-                <p>
-                    &gt; plot(MCG ~ Members, xlab = "Combined membership of teams playing", ylab = "MCG Match Day Attendance" )
-                </p>
-
+plot(MCG ~ Members, xlab = "Combined membership of teams playing", ylab = "MCG Match Day Attendance" )
+                    </input>
+                </sage>
+                
                 <figure>
     <image source="combined-membership-scatter.png"/>
                     <caption>Figure: Scatterplot of membership versus attendance </caption>
@@ -121,14 +121,14 @@
                 <p>
                     As a next step we can use R to create a linear model for MCG attendance using the combined membership as the single explanatory variable using the following R code:
                 </p>
+                <sage language="r">
+                    <input parse = "text">
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
 
-                <p>
-                    &gt; model1 &lt;-lm(MCG ~ Members-1)
-                </p>
-
-                <p>
-                    &gt; summary(model1)
-                </p>
+model1 &lt;-lm(MCG ~ Members-1)
+summary(model1)
+                    </input>
+                </sage>
 
                 <p>
                     There are two steps here because in the first step the lm() command creates a nice big data structure full of output, and we want to hang onto that in the variable called "model1." In the second command we request an overview of the contents of model1.
@@ -142,61 +142,35 @@
                     The second command above, summary(model1), provides the following output:
                 </p>
 
-                <p>
+                <pre>
                     Call:
-                </p>
-
-                <p>
+                
                     lm(formula = MCG ~ Members 1)
-                </p>
-
-                <p>
+                
                     Residuals:
-                </p>
-
-                <p>
+                
                     Min 1Q Median 3Q Max
-                </p>
-
-                <p>
+                
                     -44.961 -6.550 2.954 9.931 29.252
-                </p>
-
-                <p>
+                
                     Coefficients:
-                </p>
-
-                <p>
+                
                     Estimate Std. Error t value Pr(&gt;|t|)
-                </p>
-
-                <p>
+                
                     Members 1.53610 0.08768 17.52 &lt;2e-16 ***
-                </p>
-
-                <p>
+                
                     --
-                </p>
-
-                <p>
+                
                     Signif. codes: 0 '***' 0.001 '**'' 0.01 '*'' 0.05 ''.'' 0.1 '' '' 1
-                </p>
-
-                <p>
+                
                     Residual standard error: 15.65 on 40 degrees of freedom
-                </p>
-
-                <p>
+                
                     Multiple R-squared: 0.8847,
-                </p>
-
-                <p>
+                
                     Adjusted R-squared: 0.8818
-                </p>
-
-                <p>
+                
                     F-statistic: 306.9 on 1 and 40 DF, p-value: &lt; 2.2e-16
-                </p>
+                </pre>
 
                 <p>
                     Wow! That's a lot of information that R has provided for us, and we need to use this information to decide whether we are happy with this model. Being 'happy' with the model can involve many factors, and there is no simple way of deciding. To start with, we will look at the <idx>r-squared</idx><term>r-squared</term> value, also known as the <idx>coefficient of determination</idx><term>coefficient of determination</term>.
@@ -210,9 +184,19 @@
                     In the figure below, we have added a line of best fit based on the model to the x-y plot of MCG attendance against total team membership with this command:
                 </p>
 
-                <p>
+                <pre>
                     &gt; abline(model1)
-                </p>
+                </pre>
+                <sage language="r">
+                    <input parse = "text">
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
+
+plot(MCG ~ Members, xlab = "Combined membership of teams playing", ylab = "MCG Match Day Attendance" )
+
+model1 &lt;-lm(MCG ~ Members-1)
+abline(model1)
+                    </input>
+                </sage>
 
                 <p>
                     While the line of best fit seems to fit the points in the middle, the points on the lower right hand side and also some points towards the top of the graph, appear to be a long way from the line of best fit. <image source='combined-membership-MCG.png'/>
@@ -228,82 +212,43 @@
                 <p>
                     The dataset doesn't have a variable for interstate teams but fortunately there are only four teams that are interstate: Brisbane, Sydney, Adelaide, and West Coast, abbreviated respectively as "Bris", "Syd", "Adel", and "WC". We can make a binary coded variable to indicate these interstate teams with a simple command:
                 </p>
+                <sage language = 'r'>
+                    <input>
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
 
-                <p>
-                    &gt; away.inter &lt;-ifelse(Away=="WC" |
-                </p>
+tmp_file &lt;- tempfile(fileext = ".txt")
+download.file(url = "https://raw.githubusercontent.com/pearcej/intro2datasci/main/code/afl.txt",destfile = tmp_file)
+attend &lt;- read.delim(tmp_file, header=TRUE)
 
-                <p>
-                    Away=="Adel"| Away=="Syd"| Away=="Bris",1,0)
-                </p>
+attach(attend)
+
+away.inter &lt;-ifelse(Away=="WC" |Away=="Adel"| Away=="Syd"| Away=="Bris",1,0)
+                    </input>
+                    
+                </sage>
+                
 
                 <p>
                     The code above checks the values in the column labeled 'Away', and if it finds an exact match with one of the names of an interstate team, it stores a value of 1. Otherwise it stores a value of 0. Note that we use a double equals sign for the exact comparison in R, and the vertical bar is used to represent the logical 'OR' operator. These symbols are similar, although not precisely the same, as symbols used to represent logical operators in programming languages such as C and Java. Having created the new 'Away team is interstate' variable, we can use this variable to create a new linear regression model that includes two independent variables.
                 </p>
+                <sage language = 'r'>
+                    <input>
+                        <xi:include href="../code/afl-attendance.r" parse = "text"/>
 
-                <p>
-                    &gt; model2&lt;-lm(MCG~Members+away.inter-1)
-                </p>
+tmp_file &lt;- tempfile(fileext = ".txt")
+download.file(url = "https://raw.githubusercontent.com/pearcej/intro2datasci/main/code/afl.txt",destfile = tmp_file)
+attend &lt;- read.delim(tmp_file, header=TRUE)
 
-                <p>
-                    &gt; summary(model2)
-                </p>
+attach(attend)
 
-                <p>
-                    Call:
-                </p>
+away.inter &lt;-ifelse(Away=="WC" |Away=="Adel"| Away=="Syd"| Away=="Bris",1,0)
 
-                <p>
-                    lm(formula = MCG ~ Members + away.inter 1)
-                </p>
+model2&lt;-lm(MCG~Members+away.inter-1)
 
-                <p>
-                    Residuals:
-                </p>
-
-                <p>
-                    Min 1Q Median 3Q Max
-                </p>
-
-                <p>
-                    -30.2003 -8.5061 0.0862 8.5411 23.5687
-                </p>
-
-                <p>
-                    Coefficients:
-                </p>
-
-                <p>
-                    Estimate Std. Error t value Pr(&gt;|t|)
-                </p>
-
-                <p>
-                    Members 1.69255 0.07962 21.257 &lt; 2e-16 ***
-                </p>
-
-                <p>
-                    away.inter -22.84122 5.02583 -4.545 5.2e-05 ***
-                </p>
-
-                <p>
-                    --
-                </p>
-
-                <p>
-                    Signif. codes: 0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 '' 1
-                </p>
-
-                <p>
-                    Residual standard error: 12.82 on 39 degrees of freedom
-                </p>
-
-                <p>
-                    Multiple R-squared: 0.9246, Adjusted R-squared: 0.9208
-                </p>
-
-                <p>
-                    F-statistic: 239.2 on 2 and 39 DF, p-value: &lt; 2.2e-16
-                </p>
+summary(model2)
+                    </input>
+                    
+                </sage>
 
                 <p>
                     Note that the r-squared value is now 0.9246, which is quite a bit higher than the 0.8847 that we observed in the previous model. In this new model, the two independent variables working together account for 92.46% of the dependent variable. So together, the total fan base and the status as an away team are doing a really great job of predicting attendance. This result is also intuitive - we would expect that football fans, regardless of how devoted they are to their team, are more likely to come to games if they're a moderate car ride away, compared to a plane journey.

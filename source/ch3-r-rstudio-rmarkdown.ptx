@@ -205,147 +205,56 @@
 
 			</section>
 
-			<section xml:id="chapter-challenge-1">
-				<title>Chapter Challenge </title>
+			<section xml:id="ch3-questions">
+				<title>Questions</title>
+<exercise label="mc-r-characteristic" xml:id="mc-r-characteristic">
+    <statement>
+        <p>According to the chapter, what is a key characteristic of the R language?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>It is a command-line-oriented language that requires precise syntax and a good understanding of the data.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text emphasizes that R is a full programming language that is "command-line" oriented and forces users to know their data.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It is a simple tool, similar to a spreadsheet, where formulas create results like magic.</p>
+            </statement>
+            <feedback>
+                <p>No, the chapter specifically contrasts R with spreadsheets, noting R requires more user understanding and "hides very little."</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It provides very helpful and clear error messages for new users.</p>
+            </statement>
+            <feedback>
+                <p>No, the chapter states that R is "not especially good at giving feedback or error messages that help the user."</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It is a commercial program with high licensing fees, similar to SAS or SPSS.</p>
+            </statement>
+            <feedback>
+                <p>No, the text clearly states that R is a free, open-source program.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
 
-				<p>
+
+<p> Chapter Challenge </p>
+<p>
 					Using logic and online resources to get help if you need it, learn how to use the c() function to add another family member’s age on the end of the myFamAge vector.
 				</p>
 
 				<p>
 					Write and test a new function called MySamplingDistribution() that creates a sampling distribution of means from a numeric input vector. You will need to integrate your knowledge of creating new functions from this chapter with your knowledge of creating sampling distributions from the previous chapter in order to create a working function. Make sure to give careful thought about the parameters you will need to pass to your function and what kind of data object your function will return.
 				</p>
-
-			</section>
-
-			<section xml:id="ch3-questions">
-				<title>Questions</title>
-
-				<p>
-					<term>Question:</term> One common definition for the statistical mode is:
-				</p>
-
-				<p><ol>
-					<li>
-									
-														<p>
-										The sum of all values divided by the number of values.
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										The most frequently occurring value in the data.
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										The halfway point through the data.
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										The distance between the smallest value and the largest value.
-									</p>
-									
-					</li>
-
-				</ol></p>
-
-				<p>
-					<term>R Functions Used in This Chapter</term>
-				</p>
-
-				<p><ul>
-					<li>
-									
-														<p>
-										c() Concatenates data elements together into a vector
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										&lt;- Assignment arrowe.g. myData &lt;- 5 assigns the value of 5 to myData
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										sum() Adds data elements
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										range() Min value and max value
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										mean() The average
-									</p>
-									
-					</li>
-
-				</ul></p>
-</section>
-
-      <section xml:id="ch3-terms">
-        <title>Terms</title>
-
-        <p><ul>
-          <li>
-                  
-                            <p>
-                    R
-                  </p>
-                  
-          </li>
-
-          <li>
-                  
-                            <p>
-                    R-Studio
-                  </p>
-                  
-          </li>
-
-          <li>
-                  
-                            <p>
-                    R Markdown
-                  </p>
-                  
-          </li>
-
-          <li>
-                  
-                            <p>
-                    Console
-                  </p>
-                  
-          </li>
-
-        </ul></p>
-
-      </section>
-
+				</section>
 </chapter>

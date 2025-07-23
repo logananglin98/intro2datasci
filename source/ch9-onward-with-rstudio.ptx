@@ -499,7 +499,7 @@
 					tf &lt;- tabulate(f)
 					return(as.numeric(levels(f)[tf == max(tf)]))
 					}
-					<sub>&lt;environment: namespace:modeest&gt;</sub>
+					&lt;environment: namespace:modeest&gt;
 				</pre>
 
 				<p>

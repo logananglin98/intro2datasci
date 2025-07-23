@@ -444,17 +444,6 @@
 
 			</section>
 
-			<section xml:id="chapter-challenge-2">
-				<title>Chapter Challenge </title>
-
-				<p>
-					Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the <c>summary()</c> function on myFam to get descriptive information on your new variable.
-				</p>
-
-
-
-			</section>
-
 			<section xml:id="r-functions-used-in-this-chapter">
 				<title>R Functions Used in This Chapter </title>
 
@@ -540,4 +529,93 @@
 
 				</ol></p>
       </section>
+<section xml:id="sec-test-yourself-rows-columns">
+	<title>Test Yourself</title>
+<exercise label="mc-metadata" xml:id="mc-metadata">
+    <statement>
+        <p>In a typical rectangular dataset, what is the top row containing the variable names, such as NAME, AGE, and GENDER, technically called?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>A case or instance</p>
+            </statement>
+            <feedback>
+                <p>No, a case or instance refers to an entire row of data for a single thing, like "Dad" or "Mom".</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>A key</p>
+            </statement>
+            <feedback>
+                <p>No, a key is a column of unique numbers or labels used to identify each individual case or row.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>Metadata</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text describes the variable names as "meta data," or data about data.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>A factor</p>
+            </statement>
+            <feedback>
+                <p>No, in R, a factor is a special data type used for categorical variables like "Male" and "Female".</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<exercise label="mc-factor-concept" xml:id="mc-factor-concept">
+    <statement>
+        <p>According to the text, what is a "Factor" in R?</p>
+    </statement>
+		<choices>
+        <choice>
+            <statement>
+                <p>The result of using the `c()` function to combine numbers.</p>
+            </statement>
+            <feedback>
+                <p>No, that creates a numeric vector.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p>A special labeling system with "levels" used to organize groups of cases.</p>
+            </statement>
+            <feedback>
+                <p>Right! The text explains that a Factor is used for labels like "Male" and "Female" and has "levels" representing the different groups.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Another name for a variable or an attribute.</p>
+            </statement>
+            <feedback>
+                <p>No, a Factor is a specific *type* of variable, not just another name for one.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>A data frame that contains only character data.</p>
+            </statement>
+            <feedback>
+                <p>No, a Factor is a type of vector (column) within a data frame, not the data frame itself.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+	<p>
+		Chapter Challenge:
+	</p>
+	<p>
+		Create another variable containing information about family members (for example, each family member’s estimated IQ; you can make up the data). Take that new variable and put it in the existing myFam dataframe. Rerun the <c>summary()</c> function on myFam to get descriptive information on your new variable.
+	</p>
+</section>
 </chapter>

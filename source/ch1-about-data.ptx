@@ -88,7 +88,11 @@
 			</p>
 
 			<p>
-				<c>myText &lt;- "this is a piece of text"</c>
+				<sage language="r">
+					<input>
+						myText &lt;- "this is a piece of text"
+					</input>
+				</sage>
 			</p>
 
 			<p>
@@ -116,7 +120,11 @@
 			</p>
 
 			<p>
-				<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
+				<sage language="r">
+					<input>
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+					</input>
+				</sage>
 			</p>
 
 			<p>

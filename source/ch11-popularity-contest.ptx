@@ -576,14 +576,57 @@ This Poisson test compares the rate of tweet clustering (within 31 seconds) betw
 
 </section>
 
-    <section xml:id="chapter-challenge-poisson-test">
-        <title>Chapter Challenge</title>			
+	<section xml:id="Test-Yourself-Popularity-Contest">
+		<title>Test Yourself</title>
+		<exercise label="mc-poisson-comparison">
+			<statement>
+				<p>When comparing event frequencies (e.g., customer arrivals) between two groups using the Poisson distribution, why is analyzing inter-arrival delays better than counting total events?</p>
+			</statement>
+			<choices>
+				<choice>
+					<statement>
+						<p>Because total counts are always inaccurate for rare events.</p>
+					</statement>
+					<feedback>
+						<p>Not quite. While rare events can be noisy, the key issue is that raw counts ignore timing patterns that reveal true rates.</p>
+					</feedback>
+				</choice>
+				<choice correct="yes">
+					<statement>
+						<p>Because inter-arrival delays account for variability and sampling biases (e.g., clustered arrivals).</p>
+					</statement>
+					<feedback>
+						<p>Correct! The Poisson distribution models delays between events, so analyzing them avoids misinterpreting clustered data as higher frequency.</p>
+					</feedback>
+				</choice>
+				<choice>
+					<statement>
+						<p>Because counting requires larger sample sizes to be statistically valid.</p>
+					</statement>
+					<feedback>
+						<p>Sample size matters for both methods, but the critical advantage of delay analysis is controlling for timing bias.</p>
+					</feedback>
+				</choice>
+				<choice>
+					<statement>
+						<p>Because the Poisson distribution only works with time-based data, not counts.</p>
+					</statement>
+					<feedback>
+						<p>Incorrect. Poisson models counts <em>and</em> delays—but delay analysis better handles real-world variability.</p>
+					</feedback>
+				</choice>
+			</choices>
+		</exercise>
+
+        <subsection xml:id="subsec-chapter-challenge-poisson-test">
+			<title>Chapter Challenge</title>
 
 				<p>
 					Write a function that takes two search strings as arguments and that returns the results of a Poisson rate ratio test on the arrival rates of tweets on the two topics. Your function should first run the necessary Twitter searches, then sort the tweets by ascending time of arrival and calculate the two vectors of time differentials. Use the mean of one of these vectors as the basis for comparison and for each vector, count how many events are at or below the mean. Use this information and the numbers of tweets requested to run the poisson.test() rate comparison.
 				</p>
-
-			</section>
+			
+		</subsection>
+	</section>
 
 			<section xml:id="r-functions-used-in-this-chapter-2">
 				<title>R Functions Used in this Chapter </title>

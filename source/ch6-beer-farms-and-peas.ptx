@@ -553,7 +553,7 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
     </choices>
 </exercise>
 
-<exercise label="mc-descriptive-inferential" xml:id="mc-descriptive-inferential">
+<exercise label="beer-farm-descriptive-inferential" xml:id="beer-farm-descriptive-inferential">
     <statement>
         <p>What is the key distinction between descriptive and inferential statistics?</p>
     </statement>

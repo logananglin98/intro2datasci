@@ -533,6 +533,89 @@
 
 			</section>
 
+			<section xml:id="sec-test-your-knowledge-onward-with-rstudio">
+				<title>Test your knowledge"</title>
+				<exercise label="mc-function-purpose" xml:id="mc-function-purpose">
+    <statement>
+        <p>According to the chapter, what is the primary purpose of writing a "function" in R?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>To create a block of code that can be used over and over again without retyping it.</p>
+            </statement>
+            <feedback>
+                <p>Right! A function is a reusable piece of code designed to perform a specific task.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>To automatically find and install packages that solve a problem.</p>
+            </statement>
+            <feedback>
+                <p>No, packages contain functions, but the purpose of a function itself is reusability, not installation.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>To define the statistical mode for a set of numbers.</p>
+            </statement>
+            <feedback>
+                <p>No, this was the specific goal of the example function `MyMode`, but the general purpose of any function is to be a reusable block of code.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>To pass an argument from one part of a program to another.</p>
+            </statement>
+            <feedback>
+                <p>No, passing an argument is how you provide input *to* a function, but it's not the primary purpose *of* the function.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+<exercise label="mc-function-argument" xml:id="mc-function-argument">
+    <statement>
+        <p>When creating a function in R with the line <code>MyMode &lt;- function(myVector)</code>, what is the role of <code>myVector</code>?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>It is an "argument" that serves as a placeholder for the input data the function will use.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text identifies this as the argument, or input, to the function.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It is the "return" value that the function sends back when it is finished.</p>
+            </statement>
+            <feedback>
+                <p>No, the `return()` statement specifies the output. The argument is the input.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It is the name of the new function being created.</p>
+            </statement>
+            <feedback>
+                <p>No, in this example, the name of the function is `MyMode`.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>It is a new variable that is created in the R environment automatically.</p>
+            </statement>
+            <feedback>
+                <p>No, it is a placeholder that only has meaning inside the function when the function is run.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+			</section>
+
 			<section xml:id="r-commands-used-in-this-chapter-1">
 				<title>R Commands Used in this Chapter </title>
 

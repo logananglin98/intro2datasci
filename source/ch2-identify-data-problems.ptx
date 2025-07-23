@@ -69,5 +69,88 @@
 				</p>
 
   </section>
+<section xml:id ="test-yourself-data-problems">
+	<title>Test Yourself: Identifying Data Problems</title>
+	<exercise label="mc-domain-expert" xml:id="mc-domain-expert">
+    <statement>
+        <p>According to the text, what must a data scientist do to successfully identify a data problem in a specific domain like farming?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Sit in front of a computer all day and work with a program like R.</p>
+            </statement>
+            <feedback>
+                <p>No, the text explicitly states that this impression is a mistake.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Focus only on reading books and watching videos about the domain.</p>
+            </statement>
+            <feedback>
+                <p>No, the text says the best way to gain domain knowledge is to ask subject matter experts.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Immediately begin verifying stories told by professionals.</p>
+            </statement>
+            <feedback>
+                <p>No, the first step is to get the professional to tell the stories; verification comes later.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>Become immersed in the problem domain to think like a subject matter expert.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text emphasizes that a data scientist must learn to think like a farmer to identify a farmer's data problems.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<exercise label="mc-identify-anomalies" xml:id="mc-identify-anomalies">
+    <statement>
+        <p>What is the first step in identifying an anomaly?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Look for the exception cases that are far from the center.</p>
+            </statement>
+            <feedback>
+                <p>No, this is what you do after you have defined the center or typical case.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Focus attention on a small grouping of trees that lost more fruit.</p>
+            </statement>
+            <feedback>
+                <p>No, this is an example of a potential anomaly, not the first step in the process of identifying one.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>Define the central or most typical occurrences.</p>
+            </statement>
+            <feedback>
+                <p>Right! You first need a yardstick for what is "typical" before you can identify what is "unusual".</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Perform a systematic count of lost fruit under a random sample of trees.</p>
+            </statement>
+            <feedback>
+                <p>No, this is a method used to establish what is typical, but defining "typical" is the actual first step.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+  </section>
 
 </chapter>

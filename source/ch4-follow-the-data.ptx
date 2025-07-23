@@ -86,4 +86,47 @@
 
 			</section>
 
+		<section xml:id="sec-test-yourself-follow-the-data">
+			<title>Test Yourself</title>
+<exercise label="mc-contemporary-approach" xml:id="mc-contemporary-approach">
+    <statement>
+        <p>What contemporary approach, strongly linked with relational databases, is used to develop diagrams that describe the structure and movement of data?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>Entity Relationship Diagrams (ERDs)</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text identifies the entity relationship model and its Entity Relationship Diagrams (ERDs) as a contemporary approach.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Data Flow Diagrams</p>
+            </statement>
+            <feedback>
+                <p>No, the text describes this as an older methodology from the 1970s.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Procedure and Code Matrices</p>
+            </statement>
+            <feedback>
+                <p>No, this refers to the content on the paper forms used in the doctor's office, not the modeling approach.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Legacy System Integration</p>
+            </statement>
+            <feedback>
+                <p>No, this is the challenge that data modeling helps solve, not the name of the modeling approach itself.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+		</section>	
+
 </chapter>

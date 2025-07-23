@@ -47,85 +47,41 @@
 					To get started with support vector machines, we can load one of the R packages that supports this technique. We will use the "kernlab" package. Use the commands below:
 				</p>
 
-				<p>
-					&gt; install.packages("kernlab")
-				</p>
-
-				<p>
-					&gt; library(kernlab)
-				</p>
+				<sage language="r">
+					<input>
+					library(kernlab)
+					</input>
+				</sage>
 
 				<p>
 					I found that it was important to use the double quotes in the first command, but not in the second command. The data set that we want to use is built into this package. The data comes from a study of spam emails received by employees at the Hewlett-Packard company. Load the data with the following command:
 				</p>
 
-				<p>
-					&gt; data(spam)
-				</p>
+				<sage language="r">
+					<input>
+					data(spam)
+					</input>
+				</sage>
 
 				<p>
 					This command does not produce any output. We can now inspect the "spam" dataset with the str() command:
 				</p>
 
-				<p>
-					&gt; str(spam)
-				</p>
-
-				<p>
-					'data.frame': 4601 obs. of 58 variables:
-				</p>
-
-				<p>
-					$ make : num 0 0.21 0.06 0 0 0 0 0 0.15 0.06 ...
-				</p>
-
-				<p>
-					$ address : num 0.64 0.28 0 0 0 0 0 0 0 0.12 ...
-				</p>
-
-				<p>
-					$ all : num 0.64 0.5 0.71 0 0 0 0 0 0.46 0.77 ...
-				</p>
-
-				<p>
-					$ num3d : num 0 0 0 0 0 0 0 0 0 0 ...
-				</p>
-
-				<p>
-					.<sub>.. $ charDollar : num 0 0.18 0.184 0 0 0 0.054 0 0.203 0.081 ...</sub>
-				</p>
-
-				<p>
-					$ charHash : num 0 0.048 0.01 0 0 0 0 0 0.022 0 ...
-				</p>
-
-				<p>
-					$ capitalAve : num 3.76 5.11 9.82 3.54 3.54 ...
-				</p>
-
-				<p>
-					$ capitalLong : num 61 101 485 40 40 15 4 11 445 43 ...
-				</p>
-
-				<p>
-					$ capitalTotal : num 278 1028 2259 191 191 ...
-				</p>
-
-				<p>
-					$ type : Factor w/ 2 levels "nonspam","spam": 2 2 2 2 2 2 2 2 2 2 ...
-				</p>
+				<sage language="r">
+					<input>
+					str(spam)
+					</input>
+				</sage>
 
 				<p>
 					Some of the lines of output have been elided from the material above. You can also use the dim() function to get a quick overview of the data structure:
 				</p>
 
-				<p>
-					&gt; dim(spam)
-				</p>
-
-				<p>
-					[1] 4601 58
-				</p>
+				<sage language="r">
+					<input>
+					dim(spam)
+					</input>
+				</sage>
 
 				<p>
 					The <idx><c>dim()</c></idx><term> dim() </term> function shows the "dimensions" of the data structure. The output of this dim() function shows that the spam data structure has 4601 rows and 58 columns. If you inspect a few of the column names that emerged from the <idx><c>str()</c> </idx><term> str() </term> command, you may see that each email is coded with respect to its contents. There is lots of information available about the data set here:
@@ -139,17 +95,11 @@
 					For example, just before "type" at the end of the output of the str() command on the previous page, we see a variable called "capitalTotal." This is the total number of capital letters in the whole email. Right after that is the <idx>criterion variable</idx><term>criterion variable</term>, "type," that indicates whether an email was classified as spam by human experts. Let’s explore this variable a bit more:
 				</p>
 
-				<p>
-					&gt; table(spam$type)
-				</p>
-
-				<p>
-					nonspam spam
-				</p>
-
-				<p>
-					2788 1813
-				</p>
+				<sage language="r">
+					<input>
+						table(spam$type)
+					</input>
+				</sage>
 
 				<p>
 					We use the table function because type is a factor rather than a numeric variable. The output shows us that there are 2788 messages that were classified by human experts as not spam, and 1813 messages that were classified as spam. What a great dataset!
@@ -159,41 +109,29 @@
 					To make the analysis work we need to divide the dataset into a training set and a test set. There is no universal way to do this, but as a rule of thumb, you can use two thirds of the data set to train and the remainder to test. Let’s first generate a randomized index that will let us choose cases for our training and test sets. In the following command, we create a new list/vector variable that samples at random from a list of numbers ranging from 1 to the final element index of the spam data (4601).
 				</p>
 
-				<p>
-					&gt; randIndex &lt;sample(1:dim(spam)[1])
-				</p>
+				<sage language="r">
+					<input>
+						randIndex &lt;- sample(1:dim(spam)[1], dim(spam)[1])
+						summary(randIndex)
+					</input>
+				</sage>
 
-				<p>
-					&gt; summary(randIndex)
-				</p>
 
-				<p>
-					Min. 1st Qu. Median Mean 3rd Qu. Max.
-				</p>
-
-				<p>
-					1 1151 2301 2301 3451 4601
-				</p>
-
-				<p>
-					&gt; length(randIndex)
-				</p>
-
-				<p>
-					[1] 4601
-				</p>
+				<sage language="r">
+					<input>
+						length(randIndex)
+					</input>
+				</sage>
 
 				<p>
 					The output of the summary() and length() commands above show that we have successfully created a list of indices ranging from 1 to 4601 and that the total length of our index list is the same as the number of rows in the spam dataset: 4601. We can confirm that the indices are randomized by looking at the first few cases:
 				</p>
 
-				<p>
-					&gt; head(randIndex)
-				</p>
-
-				<p>
-					[1] 2073 769 4565 955 3541 3357
-				</p>
+				<sage language="r">
+					<input>
+						head(randIndex)
+					</input>
+				</sage>
 
 				<p>
 					It is important to randomize your selection of cases for the training and test sets in order to ensure that there is no systematic bias in the selection of cases. We have no way of knowing how the original dataset was sorted (if at all) in case it was sorted on some variable of interest we do not just want to take the first 2/3rds of the cases as the training set.
@@ -203,17 +141,12 @@
 					Next, let’s calculate the "cut point" that would divide the spam dataset into a two thirds training set and a one third test set:
 				</p>
 
-				<p>
-					&gt; cutPoint2_3 &lt;floor(2 * dim(spam)[1]/3)
-				</p>
-
-				<p>
-					&gt; cutPoint2_3
-				</p>
-
-				<p>
-					[1] 3067
-				</p>
+				<sage language="r">
+					<input>
+						cutPoint2_3 &lt;- floor(2 * dim(spam)[1]/3)
+						cutPoint2_3
+					</input>
+				</sage>
 
 				<p>
 					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx><c>floor()</c></idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
@@ -227,25 +160,46 @@
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
 				</p>
 
-				<p>
-					&gt; trainData &lt;spam[randIndex[1:cutPoint2_3],]
-				</p>
+				<sage language="r">
+					<input>
+						# The following lines of code re-do 
+						# the work done in section 18.2.
+						# These lines can be ignored.
+						library(kernlab)
+						data(spam)
+						randIndex &lt;- sample(1:dim(spam)[1], dim(spam)[1])
+						cutPoint2_3 &lt;- floor(2 * dim(spam)[1]/3)
+
+						# This line assigns the first 
+						# 3067 rows to a variable called trainData
+						trainData &lt;- spam[randIndex[1:cutPoint2_3],]
+
+						# head() function used to keep output short
+						head(trainData)
+					</input>
+					
+				</sage>
 
 				<p>
 					We make the new data set, called trainData, using the randomized set of indices that we created in the randIndex list, but only using the first 3067 elements of randIndex (The inner expression in square brackets, 1:cutPoint2_3, does the job of selecting the first 3067 elements. From here you should be able to imagine the command for creating the test set:
 				</p>
 
-				<p>
-					&gt; testData &lt;spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
-				</p>
+				<sage language="r">
+					<input>
+						testData &lt;- spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
+						head(testData)
+					</input>
+				</sage>
 
 				<p>
 					The inner expression now selects the rows from 3068 all the way up to 4601 for a total of 1534 rows. So now we have two separate data sets, representing a two-thirds training and one third test breakdown of the original data. We are now in good shape to train our support vector model. The following command generates a model based on the training data set:
 				</p>
 
-				<p>
-					&gt; svmOutput &lt;ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",C=5,cross=3, prob.model=TRUE)
-				</p>
+				<sage language="r">
+					<input>
+						svmOutput &lt;- ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",C=5,cross=3, prob.model=TRUE)
+					</input>
+				</sage>
 
 				<p>
 					Using automatic sigma estimation (sigest) for RBF or laplace kernel let’s examine this command in some detail. The first argument, "type ~ .", specifies the model we want to test. Using the word "type" in this expression means that we want to have the "type" variable (i.e., whether the message is spam or non-spam) as the outcome variable that our model predicts. The <idx>tilde character</idx><term>tilde character</term> ("~") in an R expression simply separates the left hand side of the expression from the right hand side. Finally, the dot character (".") is a shorthand that tell R to us all of the other variables in the dataframe to try to predict "type."
@@ -275,49 +229,11 @@
 					Let’s have a look at what our output structure contains:
 				</p>
 
-				<p>
-					&gt; svmOutput
-				</p>
-
-				<p>
-					Support Vector Machine object of class "ksvm"
-				</p>
-
-				<p>
-					SV type: C-svc (classification)
-				</p>
-
-				<p>
-					parameter : cost C = 5
-				</p>
-
-				<p>
-					Gaussian Radial Basis kernel function.
-				</p>
-
-				<p>
-					Hyperparameter : sigma = 0.0287825580201687
-				</p>
-
-				<p>
-					Number of Support Vectors : 953
-				</p>
-
-				<p>
-					Objective Function Value : -1750.51
-				</p>
-
-				<p>
-					Training error : 0.027388
-				</p>
-
-				<p>
-					Cross validation error : 0.076296
-				</p>
-
-				<p>
-					Probability model included.
-				</p>
+				<sage language="r">
+					<input>
+						svmOutput
+					</input>
+				</sage>
 
 				<p>
 					Most of this is technical detail that will not necessarily affect how we use the SVM output, but a few things are worth pointing out. First, the sigma parameter mentioned was estimated for us by the algorithm because we used the "automatic" option. Thank goodness for that as it would have taken a lot of experimentation to choose a reasonable value without the help of the algorithm. Next, note the large number of support vectors. These are the lists of weights that help to project the variables in each row into a higher dimensional space. The "training error" at about 2.7% is quite low. Naturally, the cross-validation error is higher, as a set of parameters never perform as well on subsequent data sets as they do with the original training set. Even so, a 7.6% cross validation error rate is pretty good for a variety of prediction purposes.
@@ -327,12 +243,14 @@
 					We can take a closer look at these support vectors with the following command:
 				</p>
 
-				<p>
-					&gt; hist(alpha(svmOutput)[[1]])
-				</p>
+				<sage language="r">
+					<input>
+						hist(alpha(svmOutput)[[1]])
+					</input>
+				</sage>
 
 				<p>
-					The alpha() accessor reveals the values of the support vectors. Note that these are stored in a nested list, hence the need for the [[1]] expression to access the first list in the list of lists. Because the particular dataset we are using only has two classes (spam or not spam), we only need one set of support vectors. If the "type" criterion variable had more than two levels (e.g., spam, not sure, and not spam), we would need additional support vectors to be able to classify the cases into more than two groups. The histogram output reveals the range of the support vectors from 0 to 5:
+					The <idx>alpha()</idx><term><c>alpha()</c></term> accessor reveals the values of the support vectors. Note that these are stored in a nested list, hence the need for the [[1]] expression to access the first list in the list of lists. Because the particular dataset we are using only has two classes (spam or not spam), we only need one set of support vectors. If the "type" criterion variable had more than two levels (e.g., spam, not sure, and not spam), we would need additional support vectors to be able to classify the cases into more than two groups. The histogram output reveals the range of the support vectors from 0 to 5:
 				</p>
 
 				<figure>
@@ -348,52 +266,19 @@
 					If we increase the cost parameter we can get fewer of these problem points, but at only at the cost of increasing our cross validation error:
 				</p>
 
-				<p>
-					&gt; svmOutput &lt; ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",<term>C=50</term>,cross=3,pro b.model=TRUE)
-				</p>
+				<sage language="r">
+					<input>
+						svmOutput &lt;- ksvm(type ~ ., data=trainData, kernel="rbfdot", kpar="automatic", C=50, cross=3, prob.model=TRUE)
+
+					</input>
+				</sage>
 
 				<p>
-					&gt; svmOutput
+					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: 
 				</p>
-
-				<p>
-					Support Vector Machine object of class "ksvm"
-				</p>
-
-				<p>
-					SV type: C-svc (classification)
-				</p>
-
-				<p>
-					parameter : cost C = 50
-				</p>
-
-				<p>
-					Gaussian Radial Basis kernel function.
-				</p>
-
-				<p>
-					Hyperparameter : sigma = 0.0299992970259353
-				</p>
-
-				<p>
-					Number of Support Vectors : 850
-				</p>
-
-				<p>
-					Objective Function Value : -6894.635
-				</p>
-
-				<p>
-					Training error : 0.008803 Cross validation error: 0.085424
-				</p>
-
-				<p>
-					Probability model included.
-				</p>
-
-				<p>
-					In the first command above, the C=50 is bolded to show what we changed from the earlier command. The output here shows that our training error went way down, to 0.88%, but that our crossvalidation error went up from 7.6% in our earlier model to 8.5% in this model. We can again get a histogram of the support vectors to show what has happened: <image source='histogram-alpha-svmOutput-10.png'/>
+					
+				<p>	
+					<image source='histogram-alpha-svmOutput-10.png'/>
 				</p>
 
 				<p>
@@ -404,77 +289,41 @@
 					We can poke our way into this a little more deeply by looking at a couple of instructive cases. First, let’s find the index numbers of a few of the support vectors that were near zero:
 				</p>
 
-				<p>
-					&gt; alphaindex(svmOutput)[[1]][alpha(svmOutput)[[1]]&lt;0.05]
-				</p>
-
-				<p>
-					[1] 90 98 289 497 634 745 1055 1479 1530 1544 1646 1830 1948 2520 2754
-				</p>
+				<sage language="r">
+					<input>
+						alphaindex(svmOutput)[[1]][alpha(svmOutput)[[1]]&lt;0.05]
+					</input>
+				</sage>
 
 				<p>
 					This monster of a command is not as bad as it looks. We are tapping into a new part of the svmOutput object, this time using the <idx><c>alphaindex()</c></idx><term>alphaindex()</term> accessor function. Remember that we have 850 support vectors in this output. Now imagine two lists of 850 right next to each other: the first is the list of support vectors themselves, we get at that list with the alpha() accessor function. The second list, lined right up next to the first list, is a set of indices into the original training dataset, trainData. The left hand part of the expression in the command above let’s us access these indices. The right hand part of the expression, where it says alpha(svmOutput)[[1]]&lt;0.05, is a conditional expression that let’s us pick from the index list just those cases with a very small support vector value. You can see the output above, just underneat the command: about 15 indices were returned. Just pick off the first one, 90, and take a look at the individual case it refers to:
 				</p>
 
-				<p>
-					&gt; trainData[90,]
-				</p>
-
-				<p>
-					make address all num3d our over remove
-				</p>
-
-				<p>
-					0 0 0 0 0 0 0
-				</p>
-
-				<p>
-					internet order mail receive will
-				</p>
-
-				<p>
-					0 0 0 0 0
-				</p>
-
-				<p>
-					.<sub>..charExclamation charDollar charHash capitalAve</sub>
-				</p>
-
-				<p>
-					1.123 0 0 2.6
-				</p>
-
-				<p>
-					capitalLong capitalTotal
-				</p>
-
-				<p>
-					16 26
-				</p>
-
-				<p>
-					type
-				</p>
-
-				<p>
-					nonspam
-				</p>
+				<sage language="r">
+					<input>
+						trainData[90,]
+					</input>
+				</sage>
 
 				<p>
 					The command requested row 90 from the trainData training set. A few of the lines of the output were left off for ease of reading and almost all of the variables thus left out were zero. Note the very last two lines of the output, where this record is identified as a non-spam email. So this was a very easy case to classify because it has virtually none of the markers that a spam email usually has (for example, as shown above, no mention of internet, order, or mail). You can contrast this case with one of the hard cases by running this command:
 				</p>
 
-				<p>
-					&gt; alphaindex(svmOutput)[[1]][alpha(svmOutput)[[1]]==50]
-				</p>
+				<sage language="r">
+					<input>
+						alphaindex(svmOutput)[[1]][alpha(svmOutput)[[1]]==50]
+					</input>
+				</sage>
 
 				<p>
 					You will get a list of the 92 indices of cases where the support vector was "maxed out" to the level of the cost function (remember C=50 from the latest run of the svm() command). Pick any of those cases and display it, like this:
 				</p>
 
-				<p>
-					&gt; trainData[11,]
-				</p>
+				<sage language="r">
+					<input>
+						trainData[11,]
+					</input>
+				</sage>
 
 				<p>
 					This particular record did not have many suspicious keywords, but it did have long strings of capital letters that made it hard to classify (it was a non-spam case, by the way). You can check out a few of them to see if you can spot why each case may have been difficult for the classifier to place.
@@ -487,40 +336,32 @@
 					The real acid test for our support vector model, however, will be to use the support vectors we generated through this training process to predict the outcomes in a novel data set. Fortunately, because we prepared carefully, we have the testData training set ready to go. The following commands with give us some output known as a "confusion matrix:"
 				</p>
 
-				<p>
-					&gt; svmPred &lt;predict(svmOutput, testData, type="votes")
-				</p>
+				<sage language="r">
+					<input>
+						# The following lines of code re-do 
+						# the work done in section 18.3.
+						# These lines can be ignored.
+						library(kernlab)
+						data(spam)
+						randIndex &lt;- sample(1:dim(spam)[1], dim(spam)[1])
+						cutPoint2_3 &lt;- floor(2 * dim(spam)[1]/3)
+						trainData &lt;- spam[randIndex[1:cutPoint2_3],]
+						testData &lt;- spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
+						svmOutput &lt;- ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",C=5,cross=3, prob.model=TRUE)
 
-				<p>
-					&gt; compTable &lt;data.frame(testData[,58],svmPred[1,])
-				</p>
-
-				<p>
-					&gt; table(compTable)
-				</p>
-
-				<p>
-					svmPred.1...
-				</p>
-
-				<p>
-					testData...58. 0 1
-				</p>
-
-				<p>
-					nonspam 38 854
-				</p>
-
-				<p>
-					spam 574 68
-				</p>
+						# These lines creates a confusion matrix
+						svmPred &lt;- predict(svmOutput, testData, type="votes")
+						compTable &lt;- data.frame(testData[,58],svmPred[1,])
+						table(compTable)
+					</input>
+				</sage>
 
 				<p>
 					The first command in the block above uses our model output from before, namely svmOutput, as the parameters for prediction. It uses the "testData," which the support vectors have never seen before, to generate predictions, and it requests "votes" from the prediction process. We could also look at probabilities and other types of model output, but for a simple analysis of whether the svm is generating good predictions, votes will make our lives easier.
 				</p>
 
 				<p>
-					The output from the predict() command is a two dimensional list. You should use the str() command to examine its structure. basically there are two lists of "vote" values side by side. Both lists are 1534 elements long, corresponding to the 1534 cases in our testData object. The lefthand list has one for a non-spam vote and zero for a spam vote. Because this is a two-class problem, the other list has just the opposite. We can use either one because they are mirror images of each other.
+					The output from the <idx><c>predict()</c></idx><term>predict()</term> command is a two dimensional list. You should use the str() command to examine its structure. basically there are two lists of "vote" values side by side. Both lists are 1534 elements long, corresponding to the 1534 cases in our testData object. The lefthand list has one for a non-spam vote and zero for a spam vote. Because this is a two-class problem, the other list has just the opposite. We can use either one because they are mirror images of each other.
 				</p>
 
 				<p>

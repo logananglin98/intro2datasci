@@ -620,17 +620,58 @@
     </p>
   </section>
 
-  <section xml:id="ch15-chapter-challenge">
-    <title>Chapter Challenge</title>
-    <p>
-      Improve the Addr2latlng() function so that it checks for errors returned from the Google API. This will require going to the Google API site, looking more closely at the JSON structure, and reviewing the error codes that Google mentions in the documentation. You may also learn enough that you can repair some of the addresses that failed.
-    </p>
-    <p>
-      Using some of the parameters on plotPolys() you could adjust the zoom level and look at different parts of the country in more detail. If you remember that the original DHHS data also had the monetary size of the contract in it, it would also be interesting to change the size or color of the dots depending on the amount of money in the Dollars.Obligated field. This would require running addPoints() in a loop and setting the col= or cex= parameters for each new point.
-    </p>
-    <p>
-      If you get that far and are still itching for another challenge, try improving the map. One idea for this was mentioned above: you could change the size or color of the dots based on the size of the contract received. An even better (and much harder) idea would be to sum the total dollar amount being given within each state and then color each state according to how much DHHS money it receives. This would require delving into the shapefile data quite substantially so that you could understand how to find the outline of a state and fill it in with a color.
-    </p>
+  <section xml:id="ch15-chapter-exercises">
+    <title>Test Yourself Map MashUp</title>
+      <exercise label="mc-mashup-geocoding">
+        <statement>
+            <p>What is the primary advantage of using a mashup (like combining address data with Google's geocoding API) compared to analyzing a single dataset?</p>
+        </statement>
+        <choices>
+            <choice>
+                <statement>
+                    <p>It reduces the need for data cleaning since APIs automatically standardize formats.</p>
+                </statement>
+                <feedback>
+                    <p>Not quite. While APIs can help, the chapter emphasizes that mashups <strong>combine complementary data sources</strong> (e.g., addresses + maps) to create new value, not just simplify cleaning.</p>
+                </feedback>
+            </choice>
+            <choice correct="yes">
+                <statement>
+                    <p>It creates a new product with unique value by integrating disparate data sources (e.g., addresses + maps).</p>
+                </statement>
+                <feedback>
+                    <p>Correct! The chapter defines mashups as bringing together different data sources (like Craigslist listings + maps) to transcend the limitations of any single source (Section 15.1).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>It eliminates the need for statistical analysis since visualizations (e.g., maps) replace calculations.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Mashups <strong>augment</strong> analysis (e.g., geocoding enables spatial visualization), but don’t replace statistical methods (Section 15.3–15.5).</p>
+                </feedback>
+            </choice>
+            <choice>
+                <statement>
+                    <p>It guarantees higher data accuracy because Google’s API is more reliable than local datasets.</p>
+                </statement>
+                <feedback>
+                    <p>Nope. The chapter notes that APIs like Google’s have <strong>usage limits</strong> (2,500/day) and legal terms (Section 15.4), but doesn’t claim they’re inherently more accurate.</p>
+                </feedback>
+            </choice>
+        </choices>
+    </exercise>
+
+      <p>Chapter Challenge:</p>
+      <p>
+        Improve the Addr2latlng() function so that it checks for errors returned from the Google API. This will require going to the Google API site, looking more closely at the JSON structure, and reviewing the error codes that Google mentions in the documentation. You may also learn enough that you can repair some of the addresses that failed.
+      </p>
+      <p>
+        Using some of the parameters on plotPolys() you could adjust the zoom level and look at different parts of the country in more detail. If you remember that the original DHHS data also had the monetary size of the contract in it, it would also be interesting to change the size or color of the dots depending on the amount of money in the Dollars.Obligated field. This would require running addPoints() in a loop and setting the col= or cex= parameters for each new point.
+      </p>
+      <p>
+        If you get that far and are still itching for another challenge, try improving the map. One idea for this was mentioned above: you could change the size or color of the dots based on the size of the contract received. An even better (and much harder) idea would be to sum the total dollar amount being given within each state and then color each state according to how much DHHS money it receives. This would require delving into the shapefile data quite substantially so that you could understand how to find the outline of a state and fill it in with a color.
+      </p>
   </section>
 
   <section xml:id="ch15-r-functions">

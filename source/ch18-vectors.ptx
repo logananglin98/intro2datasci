@@ -163,7 +163,7 @@
 				<sage language="r">
 					<input>
 						# The following lines of code re-do 
-						# the work done in section 18.2
+						# the work done in section 18.2.
 						# These lines can be ignored.
 						library(kernlab)
 						data(spam)
@@ -336,40 +336,32 @@
 					The real acid test for our support vector model, however, will be to use the support vectors we generated through this training process to predict the outcomes in a novel data set. Fortunately, because we prepared carefully, we have the testData training set ready to go. The following commands with give us some output known as a "confusion matrix:"
 				</p>
 
-				<p>
-					&gt; svmPred &lt;predict(svmOutput, testData, type="votes")
-				</p>
+				<sage language="r">
+					<input>
+						# The following lines of code re-do 
+						# the work done in section 18.3.
+						# These lines can be ignored.
+						library(kernlab)
+						data(spam)
+						randIndex &lt;- sample(1:dim(spam)[1], dim(spam)[1])
+						cutPoint2_3 &lt;- floor(2 * dim(spam)[1]/3)
+						trainData &lt;- spam[randIndex[1:cutPoint2_3],]
+						testData &lt;- spam[randIndex[(cutPoint2_3+1):dim(spam)[1]],]
+						svmOutput &lt;- ksvm(type ~ ., data=trainData, kernel="rbfdot",kpar="automatic",C=5,cross=3, prob.model=TRUE)
 
-				<p>
-					&gt; compTable &lt;data.frame(testData[,58],svmPred[1,])
-				</p>
-
-				<p>
-					&gt; table(compTable)
-				</p>
-
-				<p>
-					svmPred.1...
-				</p>
-
-				<p>
-					testData...58. 0 1
-				</p>
-
-				<p>
-					nonspam 38 854
-				</p>
-
-				<p>
-					spam 574 68
-				</p>
+						# These lines creates a confusion matrix
+						svmPred &lt;- predict(svmOutput, testData, type="votes")
+						compTable &lt;- data.frame(testData[,58],svmPred[1,])
+						table(compTable)
+					</input>
+				</sage>
 
 				<p>
 					The first command in the block above uses our model output from before, namely svmOutput, as the parameters for prediction. It uses the "testData," which the support vectors have never seen before, to generate predictions, and it requests "votes" from the prediction process. We could also look at probabilities and other types of model output, but for a simple analysis of whether the svm is generating good predictions, votes will make our lives easier.
 				</p>
 
 				<p>
-					The output from the predict() command is a two dimensional list. You should use the str() command to examine its structure. basically there are two lists of "vote" values side by side. Both lists are 1534 elements long, corresponding to the 1534 cases in our testData object. The lefthand list has one for a non-spam vote and zero for a spam vote. Because this is a two-class problem, the other list has just the opposite. We can use either one because they are mirror images of each other.
+					The output from the <idx><c>predict()</c></idx><term>predict()</term> command is a two dimensional list. You should use the str() command to examine its structure. basically there are two lists of "vote" values side by side. Both lists are 1534 elements long, corresponding to the 1534 cases in our testData object. The lefthand list has one for a non-spam vote and zero for a spam vote. Because this is a two-class problem, the other list has just the opposite. We can use either one because they are mirror images of each other.
 				</p>
 
 				<p>

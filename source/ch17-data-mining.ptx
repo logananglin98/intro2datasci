@@ -72,6 +72,15 @@
                     We can get started with association rules mining very easily using the R package known as "arules." In R-Studio, you can get the arules package ready using the following commands:
                 </p>
 
+                <sage language="r">
+                    <input>
+                        # install.packages("arules")
+                        # Runestone already has this package installed.
+
+                        library(arules)
+                    </input>
+                </sage>
+
                 <p>
                     &gt; install.packages("arules")
                 </p>

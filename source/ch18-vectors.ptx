@@ -550,10 +550,10 @@
 
 			</section>
 
-	<section xml:id="on-vectors-test-yourself">
+	<section xml:id="vectors-test-yourself">
 	<title>Test Yourself</title>
 
-		<exercise label="randomizing-data" xml:id="randomizing-data">
+		<exercise label="kernel" xml:id="kernel">
 			<statement>
 
 				<p>What is a kernel in the context of Data Science and Support Vector Machines?</p>
@@ -563,35 +563,35 @@
 
 				<choice>
 					<statement>
-						<p>Most randomize functions also clean data.</p>
+						<p>A subset of the data set aside to guage the accuracy and bias of training data.</p>
 					</statement>
 					<feedback>
-						<p> Incorrect. It is best practice to create functions that do one thing and one thing only.
+						<p> Incorrect. This data is called testing data.
 						</p>
 					</feedback>
 				</choice>
-				<choice correct ="yes">
+				<choice>
 					<statement>
-						<p>The data may be sorted or grouped in some way. This can lead to training data bias.</p>
+						<p>The core part of an operating system that manages system resources and allows software to interact with hardware.</p>
+					</statement>
+					<feedback>
+						<p>While technically correct, this particular kernal is more of a focus in Operating Systems courses. The definition of kernal in this chapter relates to Data Science and SVMs.</p>
+					</feedback>
+				</choice>
+							<choice>
+					<statement>
+						<p>A function that separates data into two or more labels.</p>
+					</statement>
+					<feedback>
+						<p>Incorrect. This is the definition of a separation function.</p>
+					</feedback>
+				</choice>
+				<choice correct="yes">
+					<statement>
+						<p>A mapping function that transforms data into a higher-dimensional space.</p>
 					</statement>
 					<feedback>
 						<p>Correct!</p>
-					</feedback>
-				</choice>
-							<choice>
-					<statement>
-						<p>Randomizing data increases the speed at which the data is processed.</p>
-					</statement>
-					<feedback>
-						<p>Incorrect. Some sorting algorithms have a better time complexity with randomized data, but this isn't the case with dividing data.</p>
-					</feedback>
-				</choice>
-							<choice>
-					<statement>
-						<p>There is no need to randomize data before dividing it into training and testing data.</p>
-					</statement>
-					<feedback>
-						<p>Incorrect. Unless it can be confirmed that there is absolutely no patterns or ordering in the data, randomizing the data is necessary.</p>
 					</feedback>
 				</choice>
 			</choices>

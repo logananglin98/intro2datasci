@@ -464,8 +464,130 @@ CutPoint975
 
 			</section>
 
-			<section xml:id="chapter-challenge-3">
-				<title>Chapter Challenge </title>
+			<section xml:id="sample-in-jar-test-yourself">
+				<title>Test Yourself</title>
+
+				<exercise label="mc-sampling-dist-def" xml:id="mc-sampling-dist-def">
+    <statement>
+        <p>What is a "sampling distribution"?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>A single random sample of data drawn from a larger population.</p>
+            </statement>
+            <feedback>
+                <p>No, a sampling distribution is created from the results of *many* samples, not just one.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>A histogram of the original, raw data population.</p>
+            </statement>
+            <feedback>
+                <p>No, that shows the population's distribution. A sampling distribution shows the distribution of a statistic (like the mean) derived from many samples of that population.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>A distribution made up of a statistic (like the mean) calculated from many repeated samples.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The chapter illustrates this by taking the mean of thousands of samples to create one distribution of those means.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The standard deviation of a population, divided by the sample size.</p>
+            </statement>
+            <feedback>
+                <p>No, that calculation gives you the standard error, which is the standard deviation *of* the sampling distribution, not the distribution itself.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<exercise label="mc-standard-error" xml:id="mc-standard-error">
+    <statement>
+        <p>What is the "standard error of the mean"?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>The average of all the sample means in a sampling distribution.</p>
+            </statement>
+            <feedback>
+                <p>No, the average of the sample means approximates the true population mean, not the standard error.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>A mistake made when calculating the mean of a single sample.</p>
+            </statement>
+            <feedback>
+                <p>No, standard error is a measure of the spread of the entire sampling distribution, not an error in one calculation.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The shortcut for finding the 97.5% cut point of a distribution.</p>
+            </statement>
+            <feedback>
+                <p>No, the standard error is used in the shortcut calculation (mean + 2*standard error), but it is not the cut point itself.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>The standard deviation of a sampling distribution of means.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text explains this "chewy phrase" refers to the standard deviation of the distribution of sample means.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<exercise label="mc-law-large-numbers" xml:id="mc-law-large-numbers">
+    <statement>
+        <p>What does the "law of large numbers" state will happen if you repeat a statistical process (like sampling) a very large number of times?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>The distribution of the results will become perfectly bell-shaped.</p>
+            </statement>
+            <feedback>
+                <p>No, this describes the Central Limit Theorem, which is about the shape of the distribution of sample means.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>The average of the results will converge on a stable value very close to the true value.</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text states that if you run a process a large number of times, it will converge on a stable result, demonstrating this by getting closer to the true state population mean with more replications.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The number of extreme, rare events will increase.</p>
+            </statement>
+            <feedback>
+                <p>No, the law of large numbers implies the average result becomes more stable and predictable, not more extreme.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The R `replicate()` function will start to run more slowly.</p>
+            </statement>
+            <feedback>
+                <p>While this might be a practical side effect of doing more calculations, it is not what the statistical law describes.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<p> Chapter Challenge </p>
 
 				<p>
 					Collect a sample consisting of at least 20 data points and construct a sampling distribution. Calculate the standard error and use this

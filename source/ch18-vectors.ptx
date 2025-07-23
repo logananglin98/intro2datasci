@@ -41,7 +41,7 @@
 				</p>
 			</section>
 
-<section xml:id="ch18-data-prep">
+	<section xml:id="ch18-data-prep">
         <title>Preparing the Data</title>
 				<p>
 					To get started with support vector machines, we can load one of the R packages that supports this technique. We will use the "kernlab" package. Use the commands below:
@@ -151,10 +151,10 @@
 				<p>
 					The first command in this group calculates the two-thirds cut point based on the number of rows in spam (the expression dim(spam)[1] gives the number of rows in the spam dataset). The second command reveals that that cut point is 3067 rows into the data set, which seems very sensible given that there are 4601 rows in total. Note that the <idx><c>floor()</c></idx><term>floor()</term> function chops off any decimal part of the calculation. We want to get rid of any decimal because an index variable needs to be an integer.
 				</p>
-				</section>
+	</section>
 
 
-<section xml:id="ch18-model-training">
+	<section xml:id="ch18-model-training">
         <title>Training and Evaluating the Model</title>
 				<p>
 					Now we are ready to generate our test and training sets from the original spam dataset. First we will build our training set from the first 3067 rows:
@@ -328,8 +328,8 @@
 				<p>
 					This particular record did not have many suspicious keywords, but it did have long strings of capital letters that made it hard to classify (it was a non-spam case, by the way). You can check out a few of them to see if you can spot why each case may have been difficult for the classifier to place.
 				</p>
-</section>
-<section xml:id="ch18-model-testing">
+	</section>
+	<section xml:id="ch18-model-testing">
         <title>Testing the Model</title>
 
 				<p>
@@ -376,19 +376,109 @@
 					Overall, it looks like we did a pretty good job. There are a bunch of different ways of calculating the accuracy of the prediction, depending upon what you are most interested in. The simplest way is to sum the 68 + 38 = 106 error cases and divided by the 1534 total cases for an total error rate of about 6.9%. Interestingly, that is a tad better than the 8.5% error rate we got from the k-fold crossvalidation in the run of svm() that created the model we are testing. Keep in mind, though, that we may be more interested in certain kinds of error than other kinds. For example, consider which is worse, an email that gets mistakenly quarantined because it is not really spam, or a spam email that gets through to someone’s inbox? It really depends on the situation, but you can see that you might want to give more consideration to either the 68 misclassification errors or the other set of 38 misclassification errors.
 				</p>
 
-			</section>
+	</section>
 
-			<section xml:id="ch18-chapter-challenge">
-				<title>Chapter Challenge </title>
+	<section xml:id="vectors-test-yourself">
+	<title>Test Yourself</title>
 
-				<p>
-					Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
-				</p>
+		<exercise label="kernel" xml:id="kernel">
+			<statement>
 
-				<p>
-					For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
-				</p>
+				<p>What is a kernel in the context of Data Science and Support Vector Machines?</p>
 
-			</section>
+			</statement>
+			<choices>
+
+				<choice>
+					<statement>
+						<p>A subset of the data set aside to guage the accuracy and bias of training data.</p>
+					</statement>
+					<feedback>
+						<p> Incorrect. This data is called testing data.
+						</p>
+					</feedback>
+				</choice>
+				<choice>
+					<statement>
+						<p>The core part of an operating system that manages system resources and allows software to interact with hardware.</p>
+					</statement>
+					<feedback>
+						<p>While technically correct, this particular kernal is more of a focus in Operating Systems courses. The definition of kernal in this chapter relates to Data Science and SVMs.</p>
+					</feedback>
+				</choice>
+							<choice>
+					<statement>
+						<p>A function that separates data into two or more labels.</p>
+					</statement>
+					<feedback>
+						<p>Incorrect. This is the definition of a separation function.</p>
+					</feedback>
+				</choice>
+				<choice correct="yes">
+					<statement>
+						<p>A mapping function that transforms data into a higher-dimensional space.</p>
+					</statement>
+					<feedback>
+						<p>Correct!</p>
+					</feedback>
+				</choice>
+			</choices>
+  	    </exercise>
+
+		<exercise label="randomizing-data" xml:id="randomizing-data">
+        <statement>
+
+        	<p>Why should data be randomized before being divided into training data and test data?</p>
+
+        </statement>
+		<choices>
+
+            <choice>
+                <statement>
+                    <p>Most randomize functions also clean data.</p>
+                </statement>
+                <feedback>
+                    <p> Incorrect. It is best practice to create functions that do one thing and one thing only.
+                    </p>
+                </feedback>
+            </choice>
+			<choice correct ="yes">
+                <statement>
+                    <p>The data may be sorted or grouped in some way. This can lead to training data bias.</p>
+                </statement>
+                <feedback>
+                    <p>Correct!</p>
+                </feedback>
+            </choice>
+						<choice>
+                <statement>
+                    <p>Randomizing data increases the speed at which the data is processed.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Some sorting algorithms have a better time complexity with randomized data, but this isn't the case with dividing data.</p>
+                </feedback>
+            </choice>
+						<choice>
+                <statement>
+                    <p>There is no need to randomize data before dividing it into training and testing data.</p>
+                </statement>
+                <feedback>
+                    <p>Incorrect. Unless it can be confirmed that there is absolutely no patterns or ordering in the data, randomizing the data is necessary.</p>
+                </feedback>
+            </choice>
+		</choices>
+    </exercise>
+
+	<p>Chapter Challenge </p>
+
+		<p>
+			Look up the term "<idx>confusion matrix</idx><term>confusion matrix</term>" and then follow-up on some other terms such as <idx>type I error</idx><term>Type I error</term>, <idx>type II error</idx><term>Type II error</term>, <idx>sensitivity</idx><term>sensitivity</term>, and <idx>specificity</idx><term>specificity</term>. Think about how the support vector machine model could be modified to do better at either sensitivity or specificity.
+		</p>
+
+		<p>
+			For a super challenge, try using another dataset with the kernlab svm technology. There is a dataset called promotergene that is built into the kernlab package. You could also load up your own data set and try creating an svm model from that.
+		</p>
+
+    </section>
 
 </chapter>

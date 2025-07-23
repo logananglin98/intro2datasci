@@ -368,6 +368,9 @@
   
   <section xml:id="analyzing-population-data">
     <title>Analyzing the Population Data</title>
+				<p><idx><c>cat()</c></idx>
+					In order to understand the following code, you will probably need to know what the <term>cat()</term> function does. In R, the cat() function (short for "concatenate") is primarily used to display output directly to the console or to a file. Unlike print(), cat() is designed for producing more human-readable output by concatenating its arguments and printing them sequentially. By default, it separates arguments with a space, and you can explicitly add newline characters (\n) to control line breaks.
+				</p>
 				<p>
 					Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
 				</p>
@@ -513,60 +516,101 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
   <section xml:id="ch6-challenge">
     <title>Chapter Challenge and Questions</title>
 
-				<p>
-					In this chapter, we used <c>rnorm()</c> to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution.
+	<exercise label="mc-beer-farm" xml:id="mc-beers-farms-bargraph">
+    <statement>
+        <p>A bar graph that displays the frequencies of occurrence for a numeric variable is called a:</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Pictogram</p>
+            </statement>
+            <feedback>
+                <p>No, a pictogram uses icons or pictures to represent data quantities.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Bar Graph</p>
+            </statement>
+            <feedback>
+                <p>While a histogram is a type of bar graph, "Histogram" is the more specific and correct term for displaying the frequency of a numeric variable.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>Histogram</p>
+            </statement>
+            <feedback>
+                <p>Correct. A histogram is the specific type of bar graph used to show the frequency distribution of a numeric variable.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Bar Chart</p>
+            </statement>
+            <feedback>
+                <p>This is another term for a bar graph, which is generally used for comparing discrete categories rather than showing the frequency distribution of a continuous numeric variable.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
 
-<p>
-					In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
-				</p>
+<exercise label="beer-farm-descriptive-inferential" xml:id="beer-farm-descriptive-inferential">
+    <statement>
+        <p>What is the key distinction between descriptive and inferential statistics?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p>Descriptive statistics use the mean and median, while inferential statistics use the variance and standard deviation.</p>
+            </statement>
+            <feedback>
+                <p>No, all of these are descriptive statistics that can be used as a basis for inference.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Descriptive statistics work on populations, while inferential statistics work on samples.</p>
+            </statement>
+            <feedback>
+                <p>No, it's the other way around. We describe a sample to make an inference about a population.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Descriptive statistics are about pictures like histograms, while inferential statistics are about numbers.</p>
+            </statement>
+            <feedback>
+                <p>No, both fields use numbers and pictures. A histogram is a tool for describing data.</p>
+            </feedback>
+        </choice>
+		<choice correct="yes">
+            <statement>
+                <p>Descriptive statistics summarize a sample of data, while inferential statistics try to generalize from that sample to a larger population.</p>
+            </statement>
+            <feedback>
+                <p>Right! The text explains we describe the sample we have to infer what the larger population we don't have might be like.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+	
+	<p>
+		In this chapter, we used <c>rnorm()</c> to generate random numbers that closely fit a normal distribution. We also learned that the state population data was a "Pareto" distribution. Do some research to find out what R function generates random numbers using the Pareto distribution. Then run that function with the correct parameters to generate 51 random numbers (hint: experiment with different probability values). Create a histogram of these random numbers and describe the shape of the distribution. </p>
+		
+		<p>
+		In case you have difficulty with the read.DIF() or read.table() functions, the code shown below can be copied and pasted (or, in the worst case scenario, typed) into the R console to create the data set used in this chapter.
+	</p>
 
-				<p>
-					V1 &lt;- c(4779736,710231,6392017,2915918,37253956, 5029196,3574097,897934,601723,18801310,9687653, 1360301,1567582,12830632,6483802,3046355,2853118, 4339367,4533372,1328361,5773552,6547629,9883640, 5303925,2967297,5988927,989415,1826341,2700551, 1316470,8791894,2059179,19378102,9535483,672591, 11536504,3751351,3831074,12702379,1052567, 4625364,814180,6346105,25145561,2763885,625741, 8001024,6724540,1852994,5686986,563626)
-				</p>
+	<p>
+		V1 &lt;- c(4779736,710231,6392017,2915918,37253956, 5029196,3574097,897934,601723,18801310,9687653, 1360301,1567582,12830632,6483802,3046355,2853118, 4339367,4533372,1328361,5773552,6547629,9883640, 5303925,2967297,5988927,989415,1826341,2700551, 1316470,8791894,2059179,19378102,9535483,672591, 11536504,3751351,3831074,12702379,1052567, 4625364,814180,6346105,25145561,2763885,625741, 8001024,6724540,1852994,5686986,563626)
+	</p>
 
-				<p>
-					USstatePops &lt;- data.frame(V1)
-				</p>
+	<p>
+		USstatePops &lt;- data.frame(V1)
+	</p>
 
-				<p>
-					Question: A bar graph that displays the frequencies of occurrence for a numeric variable is called a
-				</p>
-
-				<p><ol>
-					<li>
-									
-														<p>
-										Histogram
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										Pictogram
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										Bar Graph
-									</p>
-									
-					</li>
-
-					<li>
-									
-														<p>
-										Bar Chart
-									</p>
-									
-					</li>
-
-				</ol></p>
-				</p>
 
 </section>
 

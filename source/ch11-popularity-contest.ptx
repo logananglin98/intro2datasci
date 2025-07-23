@@ -107,26 +107,26 @@
 					We can look at the same kind of data in terms of the probability of arrival within a certain amount of time. Because rpois() generates delay times directly (rather than us having to calculate them from neighboring arrival times), we will need a slightly different function than the ArrivalProbabilities() that we wrote and used in the previous chapter. We’ll call this function "DelayProbability" (the code is at the end of this chapter):
 				</p>
 
-				<pre>
-					&gt; DelayProbability(rpois(100,10),1,20)
-				</pre>
-
-				<pre>
-					[1] 0.00 0.00 0.00 0.03 0.06 0.09 0.21 0.33 0.48 0.61 0.73 0.82 0.92
-
-					[14] 0.96 0.97 0.98 0.99 1.00 1.00 1.00
-				</pre>
+				<sage language="r">
+                    <input>
+                    <xi:include href="../code/delay-probability.r" parse="text"/>
+DelayProbability(rpois(100,10),1,20)
+                    </input>
+                </sage>
 
 				<p>
 					At the heart of that command is the rpois() function, requesting 100 points with a mean of 10. The other two parameters are the increment, in this case one second, and the maximum delay time, in this case 20 seconds. The output from this function is a sorted list of cumulative probabilities for the times ranging from 1 second to 20 seconds. Of course, what we would really like to do is compare these probabilities to those we would get if the average delay was three seconds instead of ten seconds. We’re going to use two cool tricks for creating this next plot. First, we will use the <idx><c>points()</c></idx><term>points()</term> command to add points to an existing plot. Second, we will use the col= parameter to specify two different colors for the points that we plot. Here’s the code that creates a plot and then adds more points to it:
 				</p>
 
-				<pre>
-					&gt; plot(DelayProbability(rpois(100,10),1,20), col=2)
+				<sage language="r">
+                    <input>
+                    <xi:include href="../code/delay-probability.r" parse="text"/>
+plot(DelayProbability(rpois(100,10),1,20), col=2)
 
-					&gt; points(DelayProbability(rpois(100,3),1,20), col=3)
+points(DelayProbability(rpois(100,3),1,20), col=3)
+					</input>
+                </sage>
 
-				</pre>
 
 				<p>
 					Again, the heart of each of these lines of code is the rpois() function that is generating random Poisson arrival delays for us. Our parameters for increment (1 second) and maximum (20 seconds) are the same for both lines. The first line uses col=2, which gives us red points, and the second gives us col=3, which yields green points:

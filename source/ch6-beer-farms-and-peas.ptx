@@ -368,6 +368,9 @@
   
   <section xml:id="analyzing-population-data">
     <title>Analyzing the Population Data</title>
+				<p><idx><c>cat()</c></idx>
+					In order to understand the following code, you will probably need to know what the <term>cat()</term> function does. In R, the cat() function (short for "concatenate") is primarily used to display output directly to the console or to a file. Unlike print(), cat() is designed for producing more human-readable output by concatenating its arguments and printing them sequentially. By default, it separates arguments with a space, and you can explicitly add newline characters (\n) to control line breaks.
+				</p>
 				<p>
 					Now we’re ready to have some fun with a good sized list of numbers. Here are the basic descriptive statistics on the population of the states:
 				</p>

@@ -7,17 +7,23 @@
     <title>The R Language</title>
         <introduction>
 				<p>
-					<em>"R" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.</em>
+					"<idx>R</idx><term>R</term>" is an open source software programming language designed for statistical computing and graphics. It was developed by volunteers as a service to the community of scientists, researchers, and data scientists and data analysts who now use it. R is free to download and use. Lots of advice and guidance is available online to help users learn R, which is good because it is a powerful and complex language, in reality it is a full featured programming language that is dedicated to understanding data.
 				</p>
 
  				<p>
-					<em>As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text. </em>
+					As an open source program with an active user community, R enjoys constant innovation thanks to the dedicated developers who work on it. One useful innovation was the development of R-Studio, an integrated development environment or IDE for R where one can easily edit code and text as well as run R code and combine the results with text.
+				</p>
 
+				<p>
 	<image source="graph-unclear.png" decorative="yes"/>
 				</p>
   </introduction>
 				<p>
-					If you are new to computers, programming, and/or data science, welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The "R" open source data analysis programming language is immensely powerful, flexible, and especially "extensible" (meaning that people can create new capabilities for it quite easily). At the same time, R is "command line" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
+					If you are new to computers, programming, and/or data science, welcome to an exciting chapter that will open the door to the most powerful free data analytics tool ever created anywhere in the universe, no joke. On the other hand, if you are experienced with spreadsheets, statistical analysis, or accounting software you are probably thinking that this book has now gone off the deep end, never to return to sanity and all that is good and right in user interface design. Both perspectives are reasonable. The "R" open source data analysis programming language is immensely powerful, flexible, and especially "extensible" (meaning that people can create new capabilities for it quite easily). 
+				</p>
+				
+				<p>
+					At the same time, R is "<idx>command line</idx><term>commandline</term>" oriented, meaning that most of the work that one needs to perform is done through carefully crafted text instructions, many of which have tricky <idx>syntax</idx><term>syntax</term> (the punctuation, grammar, and related rules for making a command that works). In addition, R is not especially good at giving feedback or error messages that help the user to repair mistakes or figure out what is wrong when results look funny.
 				</p>
 
 				<p>
@@ -34,11 +40,7 @@
 				<title>R-Studio </title>
 
 				<p>
-					R-Studio is an Integrated Development Environment, abbreviated as IDE. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier.
-				</p>
-
-				<p>
-					Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
+					<idx>R-Studio</idx><term>R-Studio</term> is an <idx>integrated development environment</idx><idx>IDE</idx><term>Integrated Development Environment (IDE)</term>. Every software engineer knows that if you want to get serious about building something out of code, you must use an IDE because it will make your programming so much easier. Before we start that, let’s consider why we need an IDE to work with R. One can run R commands using what is known as the "R console," but the console is an old technology term that dates back to the days when computers were so big that they each occupied their own air conditioned room. Within that room there was often one "master control station" where a computer operator could do just about anything to control the giant computer by typing in commands. That station was known as the console. The term console is now used in many cases to refer to any interface where you can directly type in commands.
 				</p>
 
 				<p>
@@ -50,12 +52,12 @@
 			<section xml:id="r-markdown">
 				<title>R Markdown</title>
 
-				<p><em>
-					R Markdown is a language that many consider to be a key authoring framework for data science. You can use a single R Markdown file to save and execute code as well as to create high quality reports. It can be used to actually run the code and embed the results in your report right alongside the text that you write.</em>
+				<p>
+					<idx>R Markdown</idx><term>R Markdown</term> is a language that many consider to be a key authoring framework for data science. You can use a single R Markdown file to save and execute code as well as to create high quality reports. It can be used to actually run the code and embed the results in your report right alongside the text that you write.
 				</p>
 
 				<p>
-					R-Markdown files have an .Rmd extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
+					R-Markdown files have an .<idx>Rmd extension</idx><term>.Rmd</term> extension. It is this file that contains a combination of R Markdown and R code chunks. The .Rmd file is run by pushing a button in R-Studio labelled "knitr," which stands for "knit R." When this button is pushed, R-Studio executes all of the R code chunks and combines the results with the text in the document. You can use R-Markdown to create a web page, pdf, MS Word document, slide show, and a whole host of other file types. This may sound a bit complicated, but R-Studio makes it pretty easy.
 				</p>
 
 			</section>
@@ -66,15 +68,19 @@
 
 
 				<p>
-					Remember the list of ages of family members from the About Data chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. We mentioned that this was a list of items, all of the same mode, namely "integer." Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. Recalling that “c” stands for concatenate, we can create a vector of integers in r using the "c()" command. Take a look at the screenshot just above.
+					Remember the list of ages of family members from the About Data chapter? No? Well, here it is again: 43, 42, 12, 8, 5, for dad, mom, sis, bro, and the dog, respectively. We mentioned that this was a list of items, all of the same mode, namely "integer." Remember that you can tell that they are OK to be integers because there are no decimal points and therefore nothing after the decimal point. Recalling that “c” stands for concatenate, we can create a vector of integers in R using the "c()" command. Take a look at the screenshot just above.
 				</p>
 
 				<p>
-					This is just about the last time that the whole screenshot from the R console will appear in the book. From here on out we will just look at commands and output.The first command line in the screenshot is exactly what appeared in an earlier chapter:
+					This is just about the last time that the whole screenshot from the R console will appear in the book. From here on out we will just look at commands and output. The first command line in the screenshot is exactly what appeared in an earlier chapter:
 				</p>
 
 				<p>
-					<c>c(43, 42, 12, 8, 5)</c>
+				<sage language="r">
+					<input>
+					c(43, 42, 12, 8, 5)
+					</input>
+				</sage>
 				</p>
 
 				<p>
@@ -82,9 +88,13 @@
 				</p>
 
 				<p>
-					<c>myFamAge &lt;- c(43, 42, 12, 8, 5)</c>
+				<sage language="r">
+					<input>
+					myFamAge &lt;- c(43, 42, 12, 8, 5)
+					</input>
+				</sage>
 				</p>
-
+					
 				<p>
 					We have typed in the same list of numbers, but this time we have assigned it, using the left pointing arrow, into a storage area that we have named "myFamAge." This time, R responds just with an empty command prompt. That’s why the third command line requests a report of what myFamAge contains (Look after the yellow "&gt;". The text in blue is what you should type.) This is a simple but very important tool. Any time you want to know what is in a data object in R, just type the name of the object and R will report it back to you. In the next command we begin to see the power of R:
 				</p>
@@ -92,11 +102,21 @@
 				<p>
 					<c>sum(myFamAge)</c>
 				</p>
+				<p>
+					<sage language="r">
+						<input>
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+						sum(myFamAge)
+						</input>
+					</sage>
+				</p>
 
 				<p>
-					This command asks R to add together all of the numbers in
-					myFamAge, which turns out to be 110 (you can check it yourself
-					if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the "mean" (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called "range," shows the lowest and highest ages in the list. Finally, just for fun, we tried to issue the command "fish(myFamAge)". Pretty much as you might expect, R does not contain a "fish()" function and so we received an error message to that effect. This shows another important principle for working with R: You can freely try things out at any time without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want.
+					The <idx>sum</idx><term>sum</term> command asks R to add together all of the numbers in myFamAge, which turns out to be 110 (you can check it yourself if you want). This is perhaps a bit of a weird thing to do with the ages of family members, but it shows how with a very short and simple command you can unleash quite a bit of processing on your data. In the next line we ask for the "<idx>mean</idx><term>mean</term>" (what non-data people call the average) of all of the ages and this turns out to be 22 years. The command right afterwards, called "<idx>range</idx><term>range</term>," shows the lowest and highest ages in the list. 
+				</p>	
+				
+				<p>
+					Finally, just for fun, we tried to issue the command "fish(myFamAge)". Pretty much as you might expect, R does not contain a "fish()" function and so we received an <idx>error message</idx><term>error message</term> to that effect. This shows another important principle for working with R: You can freely try things out at any time without fear of breaking anything. If R can’t understand what you want to accomplish, or you haven’t quite figured out how to do something, R will calmly respond with an error message and will not make any other changes until you give it a new command. The error messages from R are not always super helpful, but with some strategies that the book will discuss in future chapters you can break down the problem and figure out how to get R to do what you want.
 				</p>
 
 				<p>
@@ -104,7 +124,16 @@
 				</p>
 
 				<p>
-					myRange &lt;- range(myFamAge)
+					<c>myRange &lt;- range(myFamAge)</c>
+				</p>
+				
+				<p>
+					<sage language="r">
+						<input>
+						myFamAge &lt;- c(43, 42, 12, 8, 5)
+						myRange &lt;- range(myFamAge)
+						</input>
+					</sage>
 				</p>
 
 				<p>
@@ -113,59 +142,59 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										How to use R in R blocks within R-Studio.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										How to use the "c()" function. Remember that "c" stands for concatenate, which just means to join things together. You can put a list of items inside the parentheses, separated by commas.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That a vector is pretty much the most basic form of data storage in R, and that it consists of a list of items of the same type or mode.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That a vector can be stored in a named location using the assignment arrow (a left pointing arrow made of a dash and a less than symbol, like this: "&lt;-").
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That you can get a report of the data object that is in any named location just by typing that name in a command block.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That you can "run" a function, such as mean(), on a vector of numbers to transform them into something else. (The mean() function calculates the average, which is one of the most basic numeric summaries there is.)
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										That sum(), mean(), and range() are all legal functions in R whereas fish() is not.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -189,94 +218,6 @@
 
 			</section>
 
-			<section xml:id="ch3-sources">
-				<title>Sources </title>
-
-				<p><ul>
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/R_(programming_language)">R (programming language)</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Joseph_J._Allaire">Wikipedia: Joseph J. Allaire</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.statmethods.net/interface/packages.html">R-packages</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.youtube.com/watch?v=7sAmqkZ3Be8">Using RStudio as a 'Front End' to the R Console</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://a-little-book-of-r-for-biomedical-statistics.readthedocs.org/">Welcome to a Little Book of R for Biomedical Statistics!</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://cran.r-project.org/">The Comprehensive R Archive Network</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikibooks.org/wiki/R_Programming">R Programming</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://stackoverflow.com">Stack Overflow</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="https://stat.ethz.ch">Zürich Seminar for Statistics</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.statmethods.net/">Quick-R</url>
-									</p>
-									</blockquote>
-					</li>
-
-				</ul></p>
-
-			</section>
-
 			<section xml:id="ch3-questions">
 				<title>Questions</title>
 
@@ -286,35 +227,35 @@
 
 				<p><ol>
 					<li>
-									<blockquote>
+									
 														<p>
 										The sum of all values divided by the number of values.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The most frequently occurring value in the data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The halfway point through the data.
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										The distance between the smallest value and the largest value.
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ol></p>
@@ -325,43 +266,43 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										c() Concatenates data elements together into a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										&lt;- Assignment arrowe.g. myData &lt;- 5 assigns the value of 5 to myData
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sum() Adds data elements
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										range() Min value and max value
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() The average
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
@@ -372,35 +313,35 @@
 
         <p><ul>
           <li>
-                  <blockquote>
+                  
                             <p>
                     R
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     R-Studio
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     R Markdown
                   </p>
-                  </blockquote>
+                  
           </li>
 
           <li>
-                  <blockquote>
+                  
                             <p>
                     Console
                   </p>
-                  </blockquote>
+                  
           </li>
 
         </ul></p>

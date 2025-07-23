@@ -3,11 +3,15 @@
 <chapter xml:id="ch10-tweet-twet" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Tweet, Tweet!</title>
 
-    <subsection xml:id="intro-to-x">
+    <section xml:id="intro-to-x">
     <title>Introduction to X</title>
   <introduction>
+	<figure xml:id="ch10-twitter-bird">
+		<image source="twitter-bird.png" decorative = 'yes' width = '50%'/>
+		
+	</figure>
         <p>
-					<em>We’ve come a long way already: Basic skills in controlling R, some exposure to R-studio, knowledge of how to manage add-on packages, experience creating a function, essential descriptive statistics, and a start on sampling distributions and inferential statistics. In this chapter, we use the social media service Twitter to grab some up-to-the minute data and begin manipulating it.</em>
+					We’ve come a long way already: Basic skills in controlling R, some exposure to R-studio, knowledge of how to manage add-on packages, experience creating a function, essential descriptive statistics, and a start on sampling distributions and inferential statistics. In this chapter, we use the social media service Twitter to grab some up-to-the minute data and begin manipulating it.
 				</p>
   </introduction>
 
@@ -16,20 +20,16 @@
 				</p>
 
 				<p>
-					Here’s where the natural extensibility of R comes in. An individual named Jeff Gentry who, at this writing, seems to be a data professional in the financial services industry, created an add-on package for R called twitteR (not sure how it is pronounced, but "twit-are" seems pretty close). The twitteR package provides an extremely simple interface for downloading a list of tweets directly from the Twitter service into R. Using the interface functions in twitteR, it is possible to search through Twitter to obtain a list of tweets on a specific topic. Every tweet contains the text of the posting that the author wrote as well as lots of other useful information such as the time of day when a tweet was posted. Put it all together and
-				</p>
-
-				<p>
-					it makes a fun way of getting up-to-the-minute data on what people are thinking about a wide variety of topics.
+					Here’s where the natural extensibility of R comes in. An individual named Jeff Gentry who, at this writing, seems to be a data professional in the financial services industry, created an add-on package for R called  twitteR(not sure how it is pronounced, but "twit-are" seems pretty close). The twitteR package provides an extremely simple interface for downloading a list of tweets directly from the Twitter service into R. Using the interface functions in twitteR, it is possible to search through Twitter to obtain a list of tweets on a specific topic. Every tweet contains the text of the posting that the author wrote as well as lots of other useful information such as the time of day when a tweet was posted. Put it all together and it makes a fun way of getting up-to-the-minute data on what people are thinking about a wide variety of topics.
 				</p>
 
 				<p>
 					The other great thing about working with twitteR is that we will use many, if not all of the skills that we have developed earlier in the book to put the interface to use.
 				</p>
 
-	</subsection>
+	</section>
 
-		<subsection xml:id="a-token-of-your-esteem-using-oauth">
+		<section xml:id="a-token-of-your-esteem-using-oauth">
 			<title>A Token of Your Esteem: Using OAuth </title>
 
 			<p>
@@ -37,80 +37,95 @@
 			</p>
 
 			<p>
-				In 2013, Twitter completed a transition to a new version of their application programming interface, or API. This new API requires the use of a technique for authorization, a way of proving to Twitter that you are who you are when you search for (or post) tweets from a software application. The folks at Twitter adopted an industry standard for this process known as OAuth. OAuth provides a method for obtaining two pieces of information: a "secret" and a "key" without which it will be difficult if not downright impossible to work with Twitter (as well as twitteR). Here are the steps:
+				In 2013, Twitter completed a transition to a new version of their application programming interface, or API. This new API requires the use of a technique for authorization, a way of proving to Twitter that you are who you are when you search for (or post) tweets from a software application. The folks at Twitter adopted an industry standard for this process known as OAuth. <idx>OAuth</idx><term>OAuth</term> provides a method for obtaining two pieces of information: a "secret" and a "key" without which it will be difficult if not downright impossible to work with Twitter (as well as twitteR). Here are the steps:
 			</p>
 
 			<p><ol>
 				<li>
-							<blockquote>
+							
 											<p>
 								Get a Twitter account at Twitter.com if you don’t already have one.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Go to the development page at Twitter (<url href="https://dev.twitter.com">https://dev.twitter.com</url>) and sign in with your Twitter credentials.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Click on "Apps." The location of this may vary over time, but look for it near your profile picture on the top right corner of the screen.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Apply for a permission to have a Developer account. You will need to link your phone number to your account. The purpose for the account will be Educational or Student. Then when prompted only indicate that we will be processing tweets outside of Twitter environment and press no for all others options such as “Using Tweet, Retweet and etc.” Congratulations, now you have a Twitter developer account.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Click on "Create a New Application." Fill in the blanks with some sensible answers. Where it asks for a “website” you can give your own home page. This is a required response, so you will have to have some kind of web page to point to. In contrast, the “Callback URL” can be left blank. Click submit.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
-								Check the checkbox specified to allow your application should be set so that it can be used to sign in with Twitter. <image source='media/image60.png'/>
+								Check the checkbox specified to allow your application should be set so that it can be used to sign in with Twitter.
 							</p>
-							</blockquote>
+							<figure xml:id="ch10-twitter-enabling">
+								<image source="twitter-enabling.png" width = '100%'>
+								<shortdescription>
+									<p>
+										checkbox to "allow this aplication to be used to sign in with twitter" checked yes.
+									</p>
+								</shortdescription>
+								<description>
+									<p>
+										this image shows a checkbox marked yes with the sentence "allow this aplication to be used to sign in with twitter" next to it. below the checkbox it says "When enabled you application can be used to 'Sign in with Twitter'."
+									</p>
+								</description>
+								</image>
+							</figure>
+
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								You will get a screen containing a whole bunch of data. Make sure to save it all, but the part that you will really need is the "Consumer key" and the "Consumer Secret," both of which are long strings of letters and numbers. These strings will be used later to get your application running in R. The reason these are such long strings of gibberish is that they are encrypted.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Also take note of the Request Token URL and the Authorize URL. For the most part these are exactly the same across all uses of Twitter, but they may change over time, so you should make sure to stash them away for later. You do not need to click on the “Create my Access Token” button.
 							</p>
-							</blockquote>
+							
 				</li>
 
 				<li>
-							<blockquote>
+							
 											<p>
 								Go to the Settings tab and make sure that "Read, Write and Access direct messages" is set.
 							</p>
-							</blockquote>
+							
 				</li>
 
 			</ol></p>
@@ -119,9 +134,9 @@
 				You may notice on the Home-&gt;My applications screen in the <url href="http://dev.twitter.com">https://dev.twitter.com</url> interface that there are additional tabs along the top for different activities and tasks related to OAuth. There is a tab called Apps - details where you can always come back to get your Consumer key and Consumer secret information. Later in the chapter we will come back to the usage of your Consumer key and your Consumer secret but before we get there we have to get the twitteR package ready to go.
 			</p>
 
-		</subsection>
+		</section>
 
-		<subsection xml:id="working-with-x">
+		<section xml:id="working-with-x">
 			<title>Working with X</title>
 
 			<p>
@@ -173,7 +188,11 @@
 			</p>
 
 			<p>
-				The require() function on the fourth line above does the same thing as library(), which we learned in the previous chapter, but it also returns the value "FALSE" if the package you requested in the argument "x" has not yet been downloaded. That same line of code also contains another new feature, the "if" statement. This is what computer scientists call a conditional. It tests the stuff inside the parentheses to see if it evaluates to TRUE or FALSE. If TRUE, the program continues to run the script in between the curly braces (lines 4 and 8). If FALSE, all the stuff in the curly braces is skipped. Also in the third line, in case you are curious, the arguments to the require() function include "x," which is the name of the package that was passed into the function, and "character.only=TRUE" which tells the require() function to expect x to be a character string. Last thing to notice about this third line: there is a "!" character that reverses the results of the logical test. Technically, it is the Boolean function NOT. It requires a bit of mental gyration that when require() returns FALSE, the "!" inverts it to TRUE, and that is when the code in the curly braces runs.
+				The <idx><c>require()</c></idx><term>require()</term> function on the fourth line above does the same thing as library(), which we learned in the previous chapter, but it also returns the value "FALSE" if the package you requested in the argument "x" has not yet been downloaded. 
+			</p>
+
+			<p>
+				That same line of code also contains another new feature, the <idx>if statement</idx><term>"if" statement</term>. This is what computer scientists call a conditional. It tests the stuff inside the parentheses to see if it evaluates to TRUE or FALSE. If TRUE, the program continues to run the script in between the curly braces (lines 4 and 8). If FALSE, all the stuff in the curly braces is skipped. Also in the third line, in case you are curious, the arguments to the require() function include "x," which is the name of the package that was passed into the function, and "character.only=TRUE" which tells the require() function to expect x to be a character string. Last thing to notice about this third line: there is a "!" character that reverses the results of the logical test. Technically, it is the Boolean function NOT. It requires a bit of mental gyration that when require() returns FALSE, the "!" inverts it to TRUE, and that is when the code in the curly braces runs.
 			</p>
 
 			<p>
@@ -221,7 +240,7 @@
 			</p>
 
 			<p>
-				Make sure to save your script file once you have typed this new function in. You can give it any file name that makes sense to you, such as "twitterSupport." Now is also a good time to start the habit of commenting: Comments are human readable messages that software developers leave for themselves and for others, so that everyone can remember what a piece of code is supposed to do. All computer languages have at least one "comment character" that sets off the human readable stuff from the rest of the code. In R, the comment character is #. For now, just put one comment line above each function you created, briefly describing it, like this:
+				Make sure to save your script file once you have typed this new function in. You can give it any file name that makes sense to you, such as "twitterSupport." Now is also a good time to start the habit of commenting: <idx>comments</idx><term>Comments</term> are human readable messages that software developers leave for themselves and for others, so that everyone can remember what a piece of code is supposed to do. All computer languages have at least one "comment character" that sets off the human readable stuff from the rest of the code. In R, the comment character is #. For now, just put one comment line above each function you created, briefly describing it, like this:
 			</p>
 
 			<p>
@@ -257,7 +276,7 @@
 			</p>
 
 			<p>
-				You may get a lot of output from running PrepareTwitter(), because your computer may need to download some or all of these packages. You may notice the warning message above, for example,, about objects being "masked." Generally speaking, this message refers to a variable or function that has become invisible because another variable or function with the same name has been loaded. Usually this is fine: the newer thing works the same as the older thing with the same name.
+				You may get a lot of output from running PrepareTwitter(), because your computer may need to download some or all of these packages. You may notice the warning message above, for example, about objects being "<idx>masked</idx><term>masked</term>." Generally speaking, this message refers to a variable or function that has become invisible because another variable or function with the same name has been loaded. Usually this is fine: the newer thing works the same as the older thing with the same name.
 			</p>
 
 			<p>
@@ -273,7 +292,7 @@
 			</p>
 
 			<p>
-				For Windows users, depending upon which version of operating system software you are using as well as your upgrade history, it may be necessary to provide new SSL certificates. Certificates help to maintain secure communications across the Internet, and most computers keep an up-to-date copy on file, but not all of them do. If you encounter any problems using R to access the Internet, you may need new tokens.
+				For Windows users, depending upon which version of operating system software you are using as well as your upgrade history, it may be necessary to provide new <idx>SSL certificates</idx><term>SSL certificates</term>. Certificates help to maintain secure communications across the Internet, and most computers keep an up-to-date copy on file, but not all of them do. If you encounter any problems using R to access the Internet, you may need new tokens.
 			</p>
 
 			<p>
@@ -377,11 +396,7 @@
 			</p>
 
 			<p>
-				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "hashtags" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specify
-			</p>
-
-			<p>
-				ing the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
+				The twitteR package provides a function called searchTwitter() that allows us to retrieve some recent tweets based on a search term. Twitter users have invented a scheme for organizing their tweets based on subject matter. This system is called "<idx>hashtags</idx><term>hashtags</term>" and is based on the use of the hashmark character (#) followed by a brief text tag. For example, fans of Oprah Winfrey use the tag #oprah to identify their tweets about her. We will use the searchTwitter() function to search for hashtags about global climate change. The website hashtags.org lists a variety of hashtags covering a range of contemporary topics. You can pick any hashtag you like, as long as there are a reasonable number of tweets that can be retrieved. The searchTwitter() function also requires specifying the maximum number of tweets that the call will return. For now we will use 500, although you may find that your request does not return that many. Here’s the command:
 			</p>
 
 			<p>
@@ -409,7 +424,7 @@
 			</p>
 
 			<p>
-				Hmm, this is a type of object that we have not encountered before. In R, a list is an object that contains other data objects, and those objects may be a variety of different modes/types. Contrast this definition with a vector: A vector is also a kind of list, but with the requirement that all of the elements in the vector must be in the same mode/type. Actually, if you dig deeply into the definitions of R data objects, you may realize that we have already encountered one type of list: the dataframe. Remember that the dataframe is a list of vectors, where each vector is exactly the same length. So a dataframe is a particular kind of list, but in general lists do not have those two restrictions that dataframes have (i.e., that each element is a vector and that each vector is the same length).
+				Hmm, this is a type of object that we have not encountered before. In R, a <idx>list</idx><term>list</term> is an object that contains other data objects, and those objects may be a variety of different modes/types. Contrast this definition with a vector: A vector is also a kind of list, but with the requirement that all of the elements in the vector must be in the same mode/type. Actually, if you dig deeply into the definitions of R data objects, you may realize that we have already encountered one type of list: the dataframe. Remember that the dataframe is a list of vectors, where each vector is exactly the same length. So a dataframe is a particular kind of list, but in general lists do not have those two restrictions that dataframes have (i.e., that each element is a vector and that each vector is the same length).
 			</p>
 
 			<p>
@@ -421,32 +436,42 @@
 			</p>
 
 			<p>
-				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the head() function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
+				The output will scroll right off the screen, but a quick glance would show that it is pretty repetitive, with each 20 line block being quite similar. So let’s use the <idx><c>head()</c></idx><term>head()</term> function to just examine the first element of the list. The head() function allows you to just look at the first few elements of a data object. In this case we will look just at the first list element of the tweetList list. The command is:
 			</p>
 
 			<p>
-				str(head(tweetList,1)  This output is also long, but not quite as long.
+				str(head(tweetList,1) 
+			</p>
+			<p> 
+				This output is also long, but not quite as long.
 			</p>
 
-			<figure>
-	<image source="media/image54.png"/>
-				<caption>output from str(head(tweetList,1)</caption>
-</figure>
+			<figure xml:id="ch10-str-head-tweetList">
+				<image source="str-head-tweetList.png" width = '100%'>
+					<shortdescription>
+						<p>
+							The image displays a console output showing the structure of a single tweet object. It details various fields within the tweet, such as text, favorited status, creation date, and screen name, along with associated methods.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+								The image is a screenshot of a console window, likely an R console, displaying the output of the command str(head(tweetlist,1)). This command is used to show the structure of the first element from a list named tweetlist, which appears to contain tweet data. The output indicates that the element is a "Reference class 'status' [package 'twitterR']" object, possessing 10 fields. These fields are text, favorited, replyToSN, created, truncated, replyToSID, id, replyToUID, statusSource, and screenName.
+								Below the fields, a list of 33 methods is shown, with 22 of them highlighted as "possibly relevant." These methods include common operations such as getCreated, getFavorited, getId, getText, getScreenName, and toDataFrame, suggesting functions to access or manipulate the tweet object's data. 
+						</p>
+					</description>
+				</image>
+			</figure>
 
 			<p>
-				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "status" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
+				The output looks pretty messy, but is simpler than it may first appear. Following the line "List of 1," there is a line that begins "$ :Reference class" and then the word ‘status’ in single quotes. In Twitter terminology a "<idx>status</idx><term>status</term>" is a single tweet posting (it supposedly tells us the "status" of the person who posted it). So the author of the R twitteR package has created a new kind of data object, called a ‘status’ that itself contains 10 fields. The fields are then listed out. For each line that begins with "..$" there is a field name and then a mode or data type and then a taste of the data that that field contains.
 			</p>
 
 			<p>
-				So, for example, the first field, called "text" is of type "chr" (which means character/text data) and the field contains the string that starts with, "Get the real facts on gas prices." You can look through the other fields and see if you can make sense of them. There are two other data types in there: "logi" stands for logical and that is the same as TRUE/FALSE; "POSIXct" is a format for storing the calendar date and time. (If you’re curious, POSIX is an old unix style operating system, where the current date and time were stored as the number of seconds elapsed since 12 midnight on January 1, 1970.) You can see in the "created" field that this particular tweet was created on April 5, 2012 one second after 2:10 PM. It does not
+				So, for example, the first field, called "text" is of type "chr" (which means character/text data) and the field contains the string that starts with, "Get the real facts on gas prices." You can look through the other fields and see if you can make sense of them. There are two other data types in there: "<idx>logi</idx><term>logi</term>" stands for logical and that is the same as TRUE/FALSE; "<idx>POSIXct</idx><term>POSIXct</term>" is a format for storing the calendar date and time. (If you’re curious, POSIX is an old unix style operating system, where the current date and time were stored as the number of seconds elapsed since 12 midnight on January 1, 1970.) You can see in the "created" field that this particular tweet was created on April 5, 2012 one second after 2:10 PM. It does not show what time zone, but a little detective work shows that all Twitter postings are coded with "coordinated universal time" or what is usually abbreviated with UTC.
 			</p>
 
 			<p>
-				show what time zone, but a little detective work shows that all Twitter postings are coded with "coordinated universal time" or what is usually abbreviated with UTC.
-			</p>
-
-			<p>
-				One last thing to peek at in this data structure is about seven lines from the end, where it says, "and 33 methods..." In computer science lingo a "method" is an operation/activity/ procedure that works on a particular data object. The idea of a method is at the heart of so-called "object oriented programming." One way to think of it is that the data object is the noun, and the methods are all of the verbs that work with that noun. For example you can see the method "getCreated" in the list: If you use the method getCreated() on a reference object of class ‘status’, the method will return the creation time of the tweet.
+				One last thing to peek at in this data structure is about seven lines from the end, where it says, "and 33 methods..." In computer science lingo a "<idx>method</idx><term>method</term>" is an operation/activity/procedure that works on a particular data object. The idea of a method is at the heart of so-called "object oriented programming." One way to think of it is that the data object is the noun, and the methods are all of the verbs that work with that noun. For example you can see the method "getCreated" in the list: If you use the method getCreated() on a reference object of class ‘status’, the method will return the creation time of the tweet.
 			</p>
 
 			<p>
@@ -470,7 +495,7 @@
 			</p>
 
 			<p>
-				Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: as(), lapply(), rbind(), and do.call(). The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function "binds" together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
+				Happily, we can get some help from R in converting this list into a dataframe. Here we will introduce four powerful new R functions: <idx><c>as()</c></idx><term>as()</term>, <idx><c>lapply()</c></idx><term>lapply()</term>, <idx><c>rbind()</c></idx><term>rbind()</term>, and <idx><c>do.call()</c></idx><term>do.call()</term>. The first of these, as(), performs a type coercion: in other words it changes one type to another type. The second of these, lapply(), applies a function onto all of the elements of a list. In the command below, lapply(tweetList, as.data.frame), applies the as.data.frame() coercion to each element in tweetList. Next, the rbind() function "binds" together the elements that are supplied to it into a row-by-row structure. Finally, the do.call() function executes a function call, but unlike just running the function from the console, allows for a variable number of arguments to be supplied to the function. The whole command we will use looks like this:
 			</p>
 
 			<p>
@@ -518,7 +543,7 @@
 			</p>
 
 			<p>
-				There are three good things about putting this code in a function. First, because we put a comment at the top of the function, we will remember in the future what this code does. Second, if you test this function you will find out that the variable twtList that is created in the code above does not stick around after the function is finished running. This is the result of what computer scientists call "variable scoping." The variable twtList only exists while the TweetFrame() function is running. Once the function is done, twtList evaporates as if it never existed. This helps us to keep our workspace clean and avoid collecting lots of intermediate variables that are not reused.
+				There are three good things about putting this code in a function. First, because we put a comment at the top of the function, we will remember in the future what this code does. Second, if you test this function you will find out that the variable twtList that is created in the code above does not stick around after the function is finished running. This is the result of what computer scientists call "<idx>variable scoping</idx><term>variable scoping</term>." The variable twtList only exists while the TweetFrame() function is running. Once the function is done, twtList evaporates as if it never existed. This helps us to keep our workspace clean and avoid collecting lots of intermediate variables that are not reused.
 			</p>
 
 			<p>
@@ -542,7 +567,7 @@
 			</p>
 
 			<p>
-				Let’s start to play with the tweetDF dataset that we created before. First, as a matter of convenience, let’s learn the attach() function. The attach() function saves us some typing by giving one particular dataframe priority over any others that have the same variable names. Normally, if we wanted to access the variables in our dataframe, we would have to use the $ notation, like this:
+				Let’s start to play with the tweetDF dataset that we created before. First, as a matter of convenience, let’s learn the attach() function. The <idx><c>attach()</c></idx><term>attach()</term> function saves us some typing by giving one particular dataframe priority over any others that have the same variable names. Normally, if we wanted to access the variables in our dataframe, we would have to use the $ notation, like this:
 			</p>
 
 			<p>
@@ -570,7 +595,7 @@
 			</p>
 
 			<p>
-				Let’s visualize the creation time of the 500 tweets in our dataset. When working with time codes, the hist() function requires us to specify the approximate number of categories we want to see in the histogram:
+				Let’s visualize the creation time of the 500 tweets in our dataset. When working with time codes, the <idx><c>hist()</c></idx><term>hist()</term> function requires us to specify the approximate number of categories we want to see in the histogram:
 			</p>
 
 			<p>
@@ -578,11 +603,30 @@
 			</p>
 
 			<p>
-				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. <image source='media/image51.png'/>
+				This command yields the histogram that appears below. If we look along the x-axis (the horizontal), this string of tweets starts at about 4:20 AM and goes until about 10:10 AM, a span of roughly six hours. There are 22 different bars so each bar represents about 16 minutes for casual purposes we’ll call it a quarter of an hour. It looks like there are something like 20 tweets per bar, so we are looking at roughly 80 tweets per hour with the hashtag "#climate". This is obviously a pretty popular topic. This distribution does not really have a discernible shape, although it seems like there might be a bit of a growth trend as time goes on, particularly starting at about 7:40 AM. 
+
+			</p>
+			<figure xml:id="ch10-histogram-created">
+				<image source="histogram-created.png" width = '100%'>
+					<shortdescription>
+						<p>
+							this is a histogram showing the number of tweets made with the hashtag climate between 4:20am and 10:10am.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+							this image is a histogram of tweets containing te hashtag #climate over time from 4:20 AM to 10:10 AM. there are 22 bars representing roughly a quarter of an hour. the distrobution has no real shape, but may show some growth towards the end.
+						</p> 
+					</description>
+					</image>
+			</figure>
+
+			<p>
+				<image source='media/image51.png'/>
 			</p>
 
 			<p>
-				Take note of something very important about these data: It doesn’t make much sense to work with a measure of central tendency. Remember a couple of chapters ago when we were looking at the number of people who resided in different U.S. states? In that case it made sense to say that if State A had one million people and State B had three million people, then the average of these two states was two million people. When you’re working with timestamps, it doesn’t make a whole lot of sense to say that one tweet arrived at 7 AM and another arrived at 9 AM so the average is 8 AM. Fortunately, there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "Poisson Distribution" (named after Simeon Denis Poisson, who published it about half a century before von Bortkiewicz found a use for it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
+				Take note of something very important about these data: It doesn’t make much sense to work with a measure of central tendency. Remember a couple of chapters ago when we were looking at the number of people who resided in different U.S. states? In that case it made sense to say that if State A had one million people and State B had three million people, then the average of these two states was two million people. When you’re working with timestamps, it doesn’t make a whole lot of sense to say that one tweet arrived at 7 AM and another arrived at 9 AM so the average is 8 AM. Fortunately, there’s a whole area of statistics concerned with "arrival" times and similar phenomena, dating back to a famous study by Ladislaus von Bortkiewicz of horsemen who died after being kicked by their horses. von Bortkiewicz studied each of 14 cavalry corps over a period of 20 years, noting when horsemen died each year. The distribution of the "arrival" of kickdeaths turns out to have many similarities to other arrival time data, such as the arrival of buses or subway cars at a station, the arrival of customers at a cash register, or the occurrence of telephone calls at a particular exchange. All of these kinds of events fit what is known as a "<idx>Poisson distribution</idx><term>Poisson distribution</term>" (named after Simeon Denis Poisson, who published it about half a century before von Bortkiewicz found a use for it). Let’s find out if the arrival times of tweets comprise a Poisson distribution.
 			</p>
 
 			<p>
@@ -598,7 +642,7 @@
 			</p>
 
 			<p>
-				Working our way from the inside to the outside of the expression above, we want to sort in the order that the tweets were created. We first coerce the variable "created" to integer it will then truly be expressed in the number of seconds since 1970 just in case there are operating system differences in how POSIX dates are sorted. We wrap this inside the order() function. The order() function will provide a list of row indices that reflects the time ordering we want. We use the square brackets notation to address the rows in tweetDF, taking all of the columns by leaving the index after the comma empty.
+				Working our way from the inside to the outside of the expression above, we want to sort in the order that the tweets were created. We first coerce the variable "created" to integer it will then truly be expressed in the number of seconds since 1970 just in case there are operating system differences in how POSIX dates are sorted. We wrap this inside the order() function. The <idx><c>order()</c></idx><term>order()</term> function will provide a list of row indices that reflects the time ordering we want. We use the square brackets notation to address the rows in tweetDF, taking all of the columns by leaving the index after the comma empty.
 			</p>
 
 			<p>
@@ -626,7 +670,7 @@
 			</p>
 
 			<p>
-				Technically, what we have with our created variable now is a time series, and because statisticians like to have convenient methods for dealing with time series, R has a built-in function, called diff(), that allows us to easily calculate the difference in seconds between each pair of neighboring values. Try it:
+				Technically, what we have with our created variable now is a time series, and because statisticians like to have convenient methods for dealing with time series, R has a built-in function, called <idx><c>diff()</c></idx><term>diff()</term>, that allows us to easily calculate the difference in seconds between each pair of neighboring values. Try it:
 			</p>
 
 			<p>
@@ -638,11 +682,27 @@
 			</p>
 
 			<p>
-				&gt; hist(as.integer(diff(created))) <image source='media/image27.png'/>
+
+				&gt; hist(as.integer(diff(created)))
+
 			</p>
+			<figure xml:id="ch10-histogram-as-integer">
+				<image source="histogram-as-integer.png" width = '100%'>
+					<shortdescription>
+						<p>
+							this is a histogram showing the trend of time between 500 tweets.
+						</p>
+					</shortdescription>
+					<description>
+						<p>
+							this histogram shows the difference in time between 500 tweets over time, and the data follows an exponential decrease showing that as more tweets are made the gap betweeen tem decreases.
+						</p> 
+					</description>
+					</image>
+			</figure>
 
 			<p>
-				As with earlier commands, we use as.integer() to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
+				As with earlier commands, we use <idx><c>as.integer()</c></idx><term>as.integer()</term> to coerce the time differences into plain numbers, otherwise hist() does not know how to handle the time differences. This histogram shows that the majority of tweets in this group come within 50 seconds or less of the previous tweets. A much smaller number of tweets arrive within somewhere between 50 and 100 seconds, and so on down the line. This is typical of a Poisson arrival time distribution. Unlike the raw arrival time data, we could calculate a mean on the time differences:
 			</p>
 
 			<p>
@@ -670,7 +730,7 @@
 			</p>
 
 			<p>
-				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the mfv() function show that the most commonly occurring time interval between neighboring tweets is zero!
+				We use the library() function to make sure that the add on package with the mfv() function is ready to use. The results of the <term>mfv()</term> function show that the most commonly occurring time interval between neighboring tweets is zero!
 			</p>
 
 			<p>
@@ -722,11 +782,21 @@
 			</p>
 
 			<p>
-				And where we have a ratio, we often can think about it as a probability: There is a 29% probability that the next tweet will arrive in 10 seconds or less. You could make a function to create a whole list of these probabilities. Some sample code for such a function appears at the end of the chapter. Some new scripting skills that we have not yet covered (for example, the "for loop") appear in this function, but try making sense out of it to stretch your brain. Output from this function created the plot that appears below. <image source='media/image39.png'/>
+				And where we have a ratio, we often can think about it as a probability: There is a 29% probability that the next tweet will arrive in 10 seconds or less. You could make a function to create a whole list of these probabilities. Some sample code for such a function appears at the end of the chapter. Some new scripting skills that we have not yet covered (for example, the "for loop") appear in this function, but try making sense out of it to stretch your brain. Output from this function created the plot that appears below. 
+
 			</p>
+			<figure xml:id="ch10-graph-plist">
+				<image source="graph-plist.png" width = '100%'>
+					<shortdescription>
+						<p>
+							explained in the following paragraph
+						</p>
+					</shortdescription>
+					</image>
+			</figure>
 
 			<p>
-				This is a classic Poisson distribution of arrival probabilities. The x-axis contains 10 second intervals (so by the time you see the number 5 on the x-axis, we are already up to 50 seconds). This is called a cumulative probability plot and you read it by talking about the probability that the next tweet will arrive in the amount of time indicated on the x-axis or less. For example, the number five on the x-axis corresponds to about a 60% probability on the y-axis, so there is a 60% probability that the next tweet will arrive in 50 seconds or less. Remember that this estimate applies only to the data in this sample!
+				This is a classic Poisson distribution of arrival probabilities. The x-axis contains 10 second intervals (so by the time you see the number 5 on the x-axis, we are already up to 50 seconds). This is called a <idx>cumulative probability plot</idx><term>cumulative probability plot</term> and you read it by talking about the probability that the next tweet will arrive in the amount of time indicated on the x-axis or less. For example, the number five on the x-axis corresponds to about a 60% probability on the y-axis, so there is a 60% probability that the next tweet will arrive in 50 seconds or less. Remember that this estimate applies only to the data in this sample!
 			</p>
 
 			<p>
@@ -745,96 +815,9 @@
 				Modify the TweetFrame() function created at the beginning of this chapter to sort the dataframe based on the creation time of the tweets. This will require taking the line of code from a few pages ago that has the order() function in it and adding this to the TweetFrame() function with a few minor modifications. Here’s a hint: Create a temporary dataframe inside the function and don’t attach it while you’re working with it. You’ll need to use the $ notation to access the variable you want to use to order the rows.
 			</p>
 
-    </subsection>
-			<subsection xml:id="sources-6">
-				<title>Sources</title>
+    </section>
 
-				<p><ul>
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://cran.r-project.org/web/packages/twitteR/twitteR.pdf">http://cran.r-project.org/web/packages/twitteR/twitteR.pdf</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://cran.r-project.org/web/packages/twitteR/vignettes/twitte">http://cran.r-project.org/web/packages/twitteR/vignettes/twitte R.pdf</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Ladislaus_Bortkiewicz">http://en.wikipedia.org/wiki/Ladislaus_Bortkiewicz</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://en.wikipedia.org/wiki/Poisson_distribution">http://en.wikipedia.org/wiki/Poisson_distribution</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://hashtags.org/">http://hashtags.org/</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.inside-r.org/packages/cran/twitteR/docs/example">http://www.inside-r.org/packages/cran/twitteR/docs/example Oauth</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.khanacademy.org/math/probability/v/poisson-proc">http://www.khanacademy.org/math/probability/v/poisson-proc ess-1</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.khanacademy.org/math/probability/v/poisson-proc">http://www.khanacademy.org/math/probability/v/poisson-proc ess-2</url>
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="https://support.twitter.com/articles/49309">https://support.twitter.com/articles/49309</url> (hashtags explained)
-									</p>
-									</blockquote>
-					</li>
-
-					<li>
-									<blockquote>
-														<p>
-										<url href="http://www.rdatamining.com/examples/text-mining">http://www.rdatamining.com/examples/text-mining</url>
-									</p>
-									</blockquote>
-					</li>
-
-				</ul></p>
-
-			</subsection>
-
-			<subsection xml:id="r-script-create-vector-of-probabilities-from-arrival-times">
+			<section xml:id="r-script-create-vector-of-probabilities-from-arrival-times">
 				<title>R Script Create Vector of Probabilities From Arrival Times </title>
 
 				<p>
@@ -959,166 +942,166 @@
 
 				<p><ul>
 					<li>
-									<blockquote>
+									
 														<p>
 										attach() Makes the variables of a dataset available without $
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										as.integer() Coerces data into integers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										detach() Undoes an attach() function
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										diff() Calculates differences between neighboring rows
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										do.call() Calls a function with a variable number of arguments
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										function() Defines a function for later use
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										install.packages() Downloads and prepares a package for use
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										lapply() Applies a function to a list
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										library() Loads a package for use; like require()
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mean() Calculates the arithmetic mean of a vector
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										hist() Plots a histogram from a list of data
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										median() Finds the statistical center point of a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mfv() Most frequent value; part of the modeest() package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										mode() Shows the basic data type of an object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										order() Returns a sorted list of index numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										rbind() Binds rows into a dataframe object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										require() Tests if a package is loaded and loads it if needed
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										searchTwitter() Part of the twitteR package
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										str() Describes the structure of a data object
 									</p>
-									</blockquote>
+									
 					</li>
 
 					<li>
-									<blockquote>
+									
 														<p>
 										sum() Adds up a list of numbers
 									</p>
-									</blockquote>
+									
 					</li>
 
 				</ul></p>
-                </subsection>
+                </section>
 
 </chapter>

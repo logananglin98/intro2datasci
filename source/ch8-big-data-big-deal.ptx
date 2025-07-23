@@ -153,8 +153,8 @@
 			</p>
 
     </section>
-			<section xml:id="chapter-challenge-4">
-				<title>Chapter Challenge </title>
+			<section xml:id="test-your-self-big-data-big-deal">
+				<title>Test Yourself</title>
 
 				<p>
 					Look over the various websites connected with "Data.gov" to find the largest and/or most complex data set that you can. Think about (and perhaps write about) one or more of the ways that those data could potentially be misused by analysts. Download a data set that you find interesting and read it into R to see what you can do with it.
@@ -168,6 +168,120 @@
 					and download a trial version of the "World Programming System" (WPS). WPS can read SAS code, so you could easily look up the code that you would need in order to read in your Data.gov dataset.
 				</p>
 
+				<exercise>
+					<statement>
+						<p>
+							Which of the following has contributed to the increased ease and affordability of collecting and storing large amounts of data?
+						</p>
+					</statement>
+					<choices>
+						<choice>
+							<statement>
+								<p>
+									 Stricter data privacy laws and regulations
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Incorrect. Stricter privacy laws would likely make data collection more difficult, not easier.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									 Increases in sensor prices and increase of storage capacity
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Incorrect. Sensor prices have actually declined, and storage has become cheaper, enabling more extensive data collection and retention.
+								</p>
+							</feedback>
+						</choice>
+						<choice correct="yes">
+							<statement>
+								<p>
+									 Advances in machine learning, lower sensor costs, and cheaper data storage
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									Correct! All of these factors have made it more practical and cost-effective to collect, store, and analyze large volumes of data.
+								</p>
+							</feedback>
+						</choice>
+						<choice>
+							<statement>
+								<p>
+									The elimination of pre-processing requirements for data
+								</p>
+							</statement>
+							<feedback>
+								<p>
+									 Incorrect. Pre-processing, such as cleaning and screening data, is still essential. In fact, its importance is emphasized in the content.
+								</p>
+							</feedback>
+						</choice>
+					</choices>
+				</exercise>
+				<exercise>
+					<statement>
+						<p>
+							What does the phrase "Garbage in, garbage out" imply in the context of data analysis?
+						</p>
+					</statement>
+				<choices>
+					<choice>
+						<statement>
+							<p>
+								Bad data can be fixed automatically by advanced algorithms.
+							</p>
+						</statement>
+						<feedback>
+							<p>
+								Incorrect. While algorithms are powerful, they cannot compensate for poor data quality. High-quality input is essential for meaningful results. 
+							</p>
+						</feedback>
+					</choice>
+					<choice correct="yes">
+						<statement>
+							<p>
+								The quality and care taken during data collection and pre-processing are crucial.
+							</p>
+						</statement>
+						<feedback>
+							<p>
+								Correct! The phrase highlights that the reliability of outcomes depends heavily on how well the data is collected and prepared.
+							</p>
+						</feedback>
+					</choice>
+					<choice>
+						<statement>
+							<p>
+								The source of data is less important than the volume of data
+							</p>
+						</statement>
+						<feedback>
+							<p>
+								Incorrect. Data volume doesn’t compensate for poor quality. The source and how the data is collected are critically important.
+							</p>
+						</feedback>
+					</choice>
+					<choice>
+						<statement>
+							<p>
+								All data, regardless of quality, will produce useful results if the dataset is large enough
+							</p>
+						</statement>
+						<feedback>
+							<p>
+								Incorrect. Large datasets can still produce misleading or meaningless results if the data quality is poor.
+							</p>
+						</feedback>
+					</choice>
+				</choices>
+			</exercise>
 			</section>
 
 

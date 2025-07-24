@@ -6,14 +6,14 @@
   <section xml:id="big-data-big-deal">
     <title>Big Data? Big Deal!</title>
 
-  <introduction>
+
 	<figure xml:id="needle-haystack">
     <caption>Needle in the haystack</caption>
 	<image source="needle-hay.png" decorative="yes" />	</figure>
 				<p>
 					The technology press contains many headlines about big data. What makes data big, and why is this bigness important? In this chapter, we discuss some of the real issues behind these questions. Armed with information from the previous chapter concerning sampling, we can give more thought to how the size of a data set affects what we do with the data.
 				</p>
-  </introduction>
+  
 
 
 

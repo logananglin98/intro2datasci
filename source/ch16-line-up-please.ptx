@@ -296,9 +296,128 @@ summary(model2)
                 
 
             </section>
-<section xml:id="subsec-ch16-chapter-challenge">
-                <title>Chapter Challenge </title>
+<section xml:id="subsec-ch16-test-yourself">
+                <title>Test Yourself</title>
+            <exercise label="mc-r-squared" xml:id="mc-r-squared">
+    <statement>
+        <p>In a linear regression model, what does the R-squared value (coefficient of determination) represent?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>The proportion of variation in the dependent variable that is accounted for by the independent variable(s).</p>
+            </statement>
+            <feedback>
+                <p>Correct! The text explains that an R-squared of .8847 means the independent variable accounts for 88.47% of the variation in the dependent variable.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The slope of the line of best fit.</p>
+            </statement>
+            <feedback>
+                <p>No, the slope is a separate value (the "Estimate" or "B-weight") that shows the direction and magnitude of the relationship.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The number of data points that are outliers.</p>
+            </statement>
+            <feedback>
+                <p>No, R-squared is a measure of the overall fit of the model, not a count of specific points.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>The probability that the model is correct.</p>
+            </statement>
+            <feedback>
+                <p>No, R-squared measures how well the model explains the variation in the data, not the probability of it being true.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
 
+<exercise label="mc-t-value" xml:id="mc-t-value">
+    <statement>
+        <p>According to the chapter, what is a good rule of thumb for deciding if an independent variable is making an important contribution to the model's prediction?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p>Check if the absolute value of its "t value" is larger than about 2.</p>
+            </statement>
+            <feedback>
+                <p>Right! The text explains that the t-value helps determine if a predictor is contributing, using an absolute value greater than 2 as a benchmark.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Check if its "Estimate" (slope) is a positive number.</p>
+            </statement>
+            <feedback>
+                <p>No, the sign of the slope (positive or negative) indicates the direction of the relationship, not its importance or statistical significance.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Check if the model's R-squared value is greater than 0.90.</p>
+            </statement>
+            <feedback>
+                <p>No, a high R-squared value indicates a good overall model fit, but it doesn't tell you about the contribution of each individual variable.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p>Check if the variable is listed first in the summary output.</p>
+            </statement>
+            <feedback>
+                <p>No, the order of variables in the summary output does not indicate their importance.</p>
+            </feedback>
+        </choice>
+    </choices>
+</exercise>
+
+<exercise label="mc-intercept" xml:id="mc-intercept">
+                    <statement>
+                        <p>Under what condition is it appropriate to add `-1` to the model formula to force the line of best fit through the origin (0,0)?</p>
+                    </statement>
+                    <choices>
+                        <choice correct="yes">
+                            <statement>
+                                <p>When it is logical to assume that a value of zero for the independent variable implies a value of zero for the dependent variable.</p>
+                            </statement>
+                            <feedback>
+                                <p>Correct! The chapter uses the example that if teams have zero members, it's logical to assume they will have zero attendance at a game.</p>
+                            </feedback>
+                        </choice>
+                        <choice>
+                            <statement>
+                                <p>It should be done in most models to make them simpler.</p>
+                            </statement>
+                            <feedback>
+                                <p>No, the chapter specifically warns that in most models, especially with survey data, this would not be appropriate.</p>
+                            </feedback>
+                        </choice>
+                        <choice>
+                            <statement>
+                                <p>Whenever you are analyzing data with a large number of outliers.</p>
+                            </statement>
+                            <feedback>
+                                <p>No, the presence of outliers does not determine whether forcing the intercept to zero is appropriate.</p>
+                            </feedback>
+                        </choice>
+                        <choice>
+                            <statement>
+                                <p>Only when there is just one independent variable in the model.</p>
+                            </statement>
+                            <feedback>
+                                <p>No, the logic depends on the nature of the variables, not the number of them.</p>
+                            </feedback>
+                        </choice>
+                    </choices>
+                </exercise>
+                <p>Chapter Challenge </p>
                 <p>
                     We intentionally ignored some of the output of these regression models, for the sake of simplicity. It would be quite valuable for you to understand those missing parts, however. In particular, we ignored the "p-values" associated with the t-tests on the slope/Bweight estimates and we also ignored the overall F-statistic reported at the very bottom of the output. There are tons of great resources on the web for explaining what these are.
                 </p>

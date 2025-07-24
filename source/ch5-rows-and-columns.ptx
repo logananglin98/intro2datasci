@@ -5,12 +5,17 @@
 
       <section xml:id="rows-and-columns">
     <title>Rows and Columns</title>
-      <introduction>
 
-  				<p>
-					<image source='columns-rows.png' decorative="yes"/><em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
+  				<figure>
+					<caption>Rose and collums</caption>
+					<image source='columns-rows.png' decorative="yes"/>
+				</figure>
+				
+				<p>
+					<em>One of the most basic and widely used methods of representing data is to use rows and columns, where each row is a case or instance and each column is a variable and attribute. Most spreadsheets arrange their data in rows and columns, although spreadsheets don’t usually refer to these as cases or variables. R represents rows and columns in an object called a Data Frame.</em>
 				</p>
-  </introduction>
+				
+  
 				<p>
 					Although we live in a three dimensional world, where a box of cereal has height, width, and depth, it is a sad fact of modern life that pieces of paper, chalkboards, whiteboards, and computer screens are still only two dimensional. As a result, most of the statisticians, accountants, computer scientists, and engineers who work with lots of numbers tend to organize them in rows and columns. There’s really no good reason for this other than it makes it easy to fill a rectangular piece of paper with numbers. Rows and columns can be organized any way that you want, but the most common way is to have the rows be "cases" or "instances" and the columns be "attributes" or "variables." Take a look at this nice, two dimensional representation of rows and columns:
 				</p>
@@ -24,31 +29,31 @@
 						<cell halign="left"><term>GENDER</term></cell>
 						<cell halign="left"><term>WEIGHT</term></cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Dad</cell>
 						<cell halign="left">43</cell>
 						<cell halign="left">Male</cell>
 						<cell halign="left">188</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Mom</cell>
 						<cell halign="left">42</cell>
 						<cell halign="left">Female</cell>
 						<cell halign="left">136</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Sis</cell>
 						<cell halign="left">12</cell>
 						<cell halign="left">Female</cell>
 						<cell halign="left">83</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Bro</cell>
 						<cell halign="left">8</cell>
 						<cell halign="left">Male</cell>
 						<cell halign="left">61</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Dog</cell>
 						<cell halign="left">5</cell>
 						<cell halign="left">Female</cell>
@@ -135,12 +140,12 @@
 					Now we are ready to tackle the data.frame. In R, a data.frame is a list of columns, where each element in the list is a vector. Each vector is the same length, which is how we get our nice rectangular row and column setup, and generally each vector also has its own name. The command to make a data frame is very simple:
 				</p>
 
-				<p>
+				
 					<pre>
 						myFam &lt;- data.frame(myFamName, +
 						myFamAge, myFamGend, myFamWeight)
 					</pre>
-				</p>
+				
 
 				<sage language="r">
 					<input>
@@ -158,9 +163,9 @@
 				</p>
 
 				<figure>
-	<image source="myFamTable.png"/>
 					<caption>This is an example of a created Data Frame in the console that is printed after running the name of the data frame in the command line.</caption>
-</figure>
+					<image source="myFamTable.png"/>
+				</figure>
 
 				<p>
 					This looks great. Notice that R has put row numbers in front of each row of our data. These are different from the output line numbers we saw in brackets before, because these are actual "indices" into the data frame. In other words, they are the row numbers that R uses to keep track of which row a particular piece of data is in.
@@ -171,9 +176,9 @@
 				</p>
 
 				<figure>
-	<image source="str-myFam.png"/>
 					<caption>This is an example of what is output in the console after str function was performed on the existing dataframe.</caption>
-</figure>
+					<image source="str-myFam.png"/>
+				</figure>
 
 				<p>
 					Take note that for the first time, the example shows the command prompt "&gt;" in order to differentiate the command from the output that follows. You don’t need to type this: R provides it whenever it is ready to receive new input. From now on in the book, there will be examples of R commands and output that are mixed together, so always be on the lookout for "&gt;" because the command after that is what you have to type.
@@ -228,9 +233,9 @@
 				</p>
 
 				<figure>
-	<image source="summary-myFam.png" />
 					<caption>This is an example of what the console outputs when the <c>summary()</c> function is performed on an existing data frame.</caption>
-</figure>
+					<image source="summary-myFam.png" />
+				</figure>
 
 				<p>
 					In order to fit on the page properly, these columns have been reorganized a bit. The name of a column/variable, sits up above the information that pertains to it, and each block of information is independent of the others (so it is meaningless, for instance, that "Bro: 1" and "Min." happen to be on the same line of output). Notice, as with <c>str()</c>, that the output is quite different depending upon whether we are talking about a Factor, like myFamName or myFamGend, versus a numeric variable like myFamAge and myFamWeight. The columns for the Factors list out a few of the Factor names along with the number of occurrences of cases that are coded with that factor. So for instance, under myFamGend it shows three females and two males. In contrast, for the numeric variables we get five different calculated quantities that help to summarize the variable. There’s no time like the present to start to learn about what these are, so here goes:
@@ -325,21 +330,21 @@
 					Just one more topic to pack in before ending this chapter: How to access the stored variables in our new dataframe. R stores the dataframe as a list of vectors and we can use the name of the dataframe together with the name of a vector to refer to each one using the "$" to connect the two labels like this:
 				</p>
 
-				<p>
+				
 					<pre>
 						&gt; myFam$myFamAge
 						[1] 43 42 12 8 5
 					</pre>
-				</p>
+				
 
 				<p>
 					If you’re alert you might wonder why we went to the trouble of typing out that big long thing with the $ in the middle, when we could have just referred to "myFamAge" as we did earlier when we were setting up the data. Well, this is a very important point. When we created the myFam dataframe, we copied all of the information from the individual vectors that we had before into a brand new storage space. So now that we have created the myFam dataframe, myFam$myFamAge actually refers to a completely separate (but so far identical) vector of values. You can prove this to yourself very easily, and you should, by adding some data to the original vector, myFamAge:
 				</p>
 
 				<figure>
-	<image source="myFamAge.png"/>
 					<caption>This is an example that showcases a new value being added to an independent variable named myFamAge. After, the example prints both myFamAge and myFamAge that was stored in the data frame. The variable have differing values.</caption>
-</figure>
+					<image source="myFamAge.png"/>
+				</figure>
 
 				<p>
 					Look very closely at the five lines above. In the first line, we use the <c>c()</c> command to add the value 11 to the original list of ages that we had stored in myFamAge (perhaps we have adopted an older cat into the family). In the second line we ask R to report what the vector myFamAge now contains. Dutifully, on the third line above, R reports that myFamAge now contains the original five values and the new value of 11 on the end of the list. When we ask R to report myFam$myFamAge, however, we still have the original list of five values only. This shows that the dataframe and its component columns/vectors is now a completely independent piece of data. We must be very careful, if we established a dataframe that we want to use for subsequent analysis, that we don’t make a mistake and keep using some of the original data from which we assembled the dataframe.

@@ -6,7 +6,7 @@
 <section xml:id="sample-in-a-jar">
   <title>Sample in a Jar</title>
 
-  <introduction>
+  
 
 	<image source="jelly-belly.png" width="40%" decorative="yes"/>
 
@@ -14,7 +14,7 @@
 					<idx>sampling distributions</idx>
 					<term>Sampling distributions</term> <em> are the conceptual key to statistical inference. Many approaches to understanding sampling distributions use examples of drawing marbles or gumballs from a large jar to illustrate the influences of randomness on sampling. Using the list of U.S. states illustrates how a non-normal distribution nonetheless has a normal sampling distribution of means.</em>
 				</p>
-  </introduction>
+  
   
 				<p>
 					Imagine a gum ball jar full of gumballs of two different colors, red and blue. The jar was filled from a source that provided 100 red gum balls and 100 blue gum balls, but when these were poured into the jar they got all mixed up. If you drew eight gumballs from the jar at random, what colors would you get? If things worked out perfectly, which they never do, you would get four red and four blue. This is half and half, the same ratio of red and blue that is in the jar as a whole. Of course, it rarely works out this way, does it? Instead of getting four red and four blue you might get three red and five blue or any other mix you can think of. In fact, it would be possible, though perhaps not likely, to get eight red gumballs. The basic situation, though, is that we really don’t know what mix of red and blue we will get with one draw of eight gumballs. That’s uncertainty for you, the forces of randomness affecting our sample of eight gumballs in unpredictable ways.
@@ -31,19 +31,19 @@
 						<cell halign="left"><term>DRAW</term></cell>
 						<cell halign="left"><term>#RED</term></cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">1</cell>
 						<cell halign="left">5</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">2</cell>
 						<cell halign="left">3</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">3</cell>
 						<cell halign="left">6</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">4</cell>
 						<cell halign="left">2</cell>
 					</row>
@@ -145,9 +145,9 @@ mean(replicate(4000, mean(sample(USstatePops$...1,size=16,replace=TRUE)),simplif
 				</p>
 
 				<figure>
-	<image source="graph-replicate.png"/>
 					<caption>Histogram of replicate(4000, mean(sample(USstatePops$V1, size = 16, replace = TRUE)), simplify = = TRUE) </caption>
-</figure>
+					<image source="graph-replicate.png"/>
+				</figure>
 
 				<p>
 					By the way, were you able to figure out the command to generate this histogram on your own? All you had to do was substitute hist() for the outermost mean() in the previous command. In case you struggled, here it is:

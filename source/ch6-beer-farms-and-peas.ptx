@@ -430,10 +430,6 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 				</figure>
 
 				<p>
-					<term>Histogram of USstatePops$...1</term>
-				</p>
-
-				<p>
 					<idx>frequencies</idx>
 					A histogram is a specialized type of bar graph designed to show "<term>frequencies</term>." Frequencies means how often a particular value or range of values occurs in a dataset. This histogram shows a very interesting picture. There are nearly 30 states with populations under five million, another 10 states with populations under 10 million, and then a very small number of states with populations greater than 10 million. Having said all that, how do we glean this kind of information from the graph? First, look along the Y-axis (the vertical axis on the left) for an indication of how often the data occur. The tallest bar is just to the right of this and it is nearly up to the 30 mark. To know what this tall bar represents, look along the X-axis (the horizontal axis at the bottom) and see that there is a tick mark for every two bars. We see scientific notation under each tick mark. The first tick mark is 1e+07, which translates to 10,000,000. So each new bar (or an empty space where a bar would go) goes up by five million in population. With these points in mind it should now be easy to see that there are nearly 30 states with populations under five million.
 				</p>

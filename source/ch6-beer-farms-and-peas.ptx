@@ -7,10 +7,11 @@
 
   <section xml:id="beer-farms-and-peas">
     <title>Beer, Farms, and Peas</title>
-  <introduction>
+
   <figure xml:id="peas-on-x-y-axes">
-          <image source="peas-graph.png"/>
-          <caption>Peas on x-y axes</caption>
+		<caption>Peas on x-y axes</caption>
+        <image source="peas-graph.png"/>
+          
   </figure>
 
 
@@ -18,7 +19,7 @@
 				<p>
 					<em>Many of the simplest and most practical methods for summarizing collections of numbers come to us from four guys who were born in the 1800s at the start of the industrial revolution. A considerable amount of the work they did was focused on solving real world problems in manufacturing and agriculture by using data to describe and draw inferences from what they observed.</em>
 				</p>
-  </introduction>
+  
 				<p>
 					The end of the 1800s and the early 1900s were a time of astonishing progress in mathematics and science. Given enough time, paper, and pencils, scientists and mathematicians of that age imagined that just about any problem facing humankind including the limitations of people themselves could be measured, broken down, analyzed, and rebuilt to become more efficient. Four Englishmen who epitomized both this scientific progress and these idealistic beliefs were Francis Galton, Karl Pearson, William Sealy Gosset, and Ronald Fisher.
 				</p>
@@ -118,43 +119,43 @@
 						<cell halign="left"><term>AGE-MEAN</term></cell>
 						<cell halign="left"><term>(AGEMEAN)</term></cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Dad</cell>
 						<cell halign="left">43</cell>
 						<cell halign="left">43-22=21</cell>
 						<cell halign="left">21*21=441</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Mom</cell>
 						<cell halign="left">42</cell>
 						<cell halign="left">42-22=20</cell>
 						<cell halign="left">20*20=400</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Sis</cell>
 						<cell halign="left">12</cell>
 						<cell halign="left">12-22=-10</cell>
 						<cell halign="left">-10*-10=100</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left">Bro</cell>
 						<cell halign="left">8</cell>
 						<cell halign="left">8-22=-14</cell>
 						<cell halign="left">-14*-14=196</cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left">Dog</cell>
 						<cell halign="left">5</cell>
 						<cell halign="left">5-22=-17</cell>
 						<cell halign="left">-17*-17=289</cell>
 					</row>
-					<row class="even">
+					<row>
 						<cell halign="left"></cell>
 						<cell halign="left"></cell>
 						<cell halign="left"><term>Total:</term></cell>
 						<cell halign="left"><term>1426</term></cell>
 					</row>
-					<row class="odd">
+					<row>
 						<cell halign="left"></cell>
 						<cell halign="left"></cell>
 						<cell halign="left"><term>Total/4:</term></cell>
@@ -208,7 +209,7 @@
 					<c>&gt; var(myFam$myFamAge)</c>
 				</p>
 
-				<p>
+				
 					<sage language="r">
 						<input>
 							myFamAge &lt;- c(43, 42, 12, 8, 5)
@@ -219,13 +220,13 @@
 							var(myFam$myFamAge)
 						</input>
 					</sage>
-				</p>
+				
 
 				<p>
 					<c>&gt; sd(myFam$myFamAge)</c>
 				</p>
 				
-				<p>
+				
 					<sage language="r">
 						<input>
 							myFamAge &lt;- c(43, 42, 12, 8, 5)
@@ -236,7 +237,7 @@
 							sd(myFam$myFamAge)
 						</input>
 					</sage>
-				</p>
+				
 
 				<p>
 					Note that these commands carry on using the data used in the previous chapter, including the use of the $ to address variables within a dataframe. If you do not have the data from the previous chapter you can also do this:
@@ -246,7 +247,7 @@
 					<c>&gt; var(c(43,42,12,8,5))</c>
 				</p>
 
-				<p>
+				
 					<sage language="r">
 						<input>
 							myFamAge &lt;- c(43, 42, 12, 8, 5)
@@ -257,13 +258,13 @@
 							var(c(43,42,12,8,5))
 						</input>
 					</sage>
-				</p>
+				
 
 				<p>
 					<c>&gt; sd(c(43,42,12,8,5))</c>
 				</p>
 
-				<p>
+				
 					<sage language="r">
 						<input>
 							myFamAge &lt;- c(43, 42, 12, 8, 5)
@@ -274,7 +275,7 @@
 							sd(c(43,42,12,8,5))
 						</input>
 					</sage>
-				</p>
+				
 
 				<p>
 					This is a pretty boring example, though, and not very useful for the rest of the chapter, so here’s the next step up in looking at data. We will use the Windows or Mac clipboard to cut and paste a larger data set into R. Go to the U.S. Census website where they have stored population data: <url href="https://www.census.gov/data/tables/time-series/demo/popest/2010s-state-total.html">US Census Bureau: State Population Totals: 2010-2019</url>
@@ -305,27 +306,27 @@
 				</p>
 
 				<figure>
-	<image source="dropdown-general.png" width="60%" />
 					<caption>Excel interface showing how to change cell formatting to 'General' to remove commas from population data.</caption>
-</figure>
+					<image source="dropdown-general.png" width="60%" />
+				</figure>
 
 				<p>
 					Generally, you want to keep the names of columns for the data, however, for the purposes of learning just delete everything and only keep population data for the 50 states (and Washington DC). You should only have the numeric data, occupying a total of 51 lines:
 				</p>
 
 				<figure>
-	<image source="numbers.png"/>
 					<caption>Spreadsheet displaying U.S. state population data in numeric format without labels or commas, ready for import into R.</caption>
-</figure>
+					<image source="numbers.png"/>
+				</figure>
 
 				<p>
 					Then open R Studio Cloud and Exploring Populations Homework. In the bottom right window click on the Upload button:
 				</p>
 
 				<figure>
-	<image source="R-window.png"/>
 					<caption>R Studio interface highlighting the Upload button in the Files pane for uploading datasets.</caption>
-</figure>
+					<image source="R-window.png"/>	
+				</figure>
 
 				<p>
 					Select the XSL file that you downloaded and edited and upload it. It should now appear in the Files window. Next, click on the file and select Import Dataset
@@ -340,18 +341,18 @@
 				</p>
 
 				<figure>
-	<image source="import-excel.png"/>
 					<caption>Import Excel Data window in R Studio, showing settings for importing state population data as a dataframe.</caption>
-</figure>
+					<image source="import-excel.png"/>
+				</figure>
 
 				<p>
 					This is what the Import Excel Data window should look like after:
 				</p>
 
 				<figure>
-	<image source="readxl.png"/>
 					<caption>R Studio import screen showing the final setup before importing the USstatePops dataset using the readxl package.</caption>
-</figure>
+					<image source="readxl.png"/>
+				</figure>
 
 				<p>
 					Nice work, you have successfully uploaded your first data set into R Studio Cloud.
@@ -404,7 +405,7 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 					<li>
 									
 														<p>
-										The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13<sup>th</sup> power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
+										The variance is reported as 4.656676e+13. This is the first time that we have seen the use of scientific notation in R. If you haven’t seen this notation before, the way you interpret it is to imagine 4.656676 multiplied by 10,000,000,000,000 (also known as 10 raised to the 13th power). You can see that this is ten trillion, a huge and unwieldy number, and that is why scientific notation is used. If you would prefer not to type all of that into a calculator, another trick to see what number you are dealing with is just to move the decimal point 13 digits to the right.
 									</p>
 									
 					</li>
@@ -424,9 +425,9 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 				</p>
 
 				<figure>
-	<image source="histogram-US-pop.png"/>
 					<caption>Histogram of USstatePops$V1</caption>
-</figure>
+					<image source="histogram-US-pop.png"/>
+				</figure>
 
 				<p>
 					<term>Histogram of USstatePops$...1</term>
@@ -454,12 +455,12 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 				</p>
 
 				<figure>
-	<image source="histogram-US-pops.png"/>
 					<caption>Histogram of USstatePops$V1 </caption>
-</figure>
+					<image source="histogram-US-pops.png"/>
+				</figure>
 
 				<p>
-					<term>Histogram of USstatePops$...1</term>
+					Histogram of USstatePops$...1
 				</p>
 
 				<p>
@@ -476,9 +477,10 @@ cat("This is the standard deviation:", sd(USstatePops$...1), "\n")
 				</p>
 
 				<figure>
-	<image source="histogram-rnorm.png"/>
 					<caption>Histogram of rnorm(51, 6053834, 6823984) </caption>
-</figure>
+					<image source="histogram-rnorm.png"/>
+									
+				</figure>
 
 				<p>
 					<term>Histogram of rnorm(51, 6053834, 6823984)</term>

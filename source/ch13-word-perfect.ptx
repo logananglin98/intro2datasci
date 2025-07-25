@@ -31,6 +31,12 @@
 					Depending upon where you left off after the previous chapter, you will need to retrieve and pre-process a set of tweets, using some of the code you already developed, as well as some new code. At the end of the previous chapter, we have provided sample code for the TweetFrame() function, that takes a search term and a maximum tweet limit and returns a time-sorted dataframe containing tweets. Although there are a number of comments in that code, there are really only three lines of functional code thanks to the power of the twitteR package to retrieve data from Twitter for us. For the activities below, we are still working with the dataframe that we retrieved in the previous chapter using this command:
 				</p>
 
+				<sage language="r">
+					<input>
+						
+					</input>
+				</sage>
+
 				<p>
 					tweetDF &lt;-TweetFrame("#solar",100)
 				</p>
@@ -38,6 +44,12 @@
 				<p>
 					This yields a dataframe, tweetDF, that contains 100 tweets with the hashtag #solar, presumably mostly about solar energy and related "green" topics. Before beginning our work with the two new R packages, we can improve the quality of our display by taking out a lot of the junk that won’t make sense to show in the word cloud. To accomplish this, we have authored another function that strips out extra spaces, gets rid of all URL strings, takes out the retweet header if one exists in the tweet, removes hashtags, and eliminates references to other people’s Twitter handles. For all of these transformations, we have used string replacement functions from the stringr package that was introduced in the previous chapter. As an example of one of these transformations, consider this command, which appears as the second to last line of the CleanTweet() function:
 				</p>
+
+				<sage language="r">
+					<input>
+						
+					</input>
+				</sage>
 
 				<p>
 					tweets &lt;- str_replace_all(tweets,"@[a-z,A-Z]*","")

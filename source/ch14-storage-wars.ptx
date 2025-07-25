@@ -72,15 +72,15 @@
 				</p>
 
 				<p>
-					Interestingly, this is one area where Mac and Linux users are at a disadvantage relative to Windows users. This is perhaps because Excel is a Microsoft product, originally written to be native to Windows, and as a result it is easier to create tools that work with Windows. One example noted here is the package called <idx>RODBC</idx><term>RODBC</term>. The acronym <idx>ODBC</idx><term>ODBC</term> stands for Open Database Connection, and this is a Windows facility for exchanging data among Windows programs. Although there is a proprietary ODBC driver available for the Mac, most Mac users will want to try a different method for getting access to Excel data.
+					While Excel is a Microsoft product originally designed for Windows, modern R packages provide cross-platform support for reading and writing Excel files on macOS and Linux as well. One example noted here is the package called <idx>RODBC</idx><term>RODBC</term>. The acronym <idx>ODBC</idx><term>ODBC</term> stands for Open Database Connection, and while this was originally Windows-centric, macOS and Linux users can now use ODBC drivers (like unixODBC or Microsoft's ODBC driver) to connect to Excel files.
 				</p>
 
 				<p>
-					Another Windows-only package for R is called <idx>xlsReadWrite</idx><term>xlsReadWrite</term>. This package provides convenient one-command calls for importing data directly from Excel spreadsheets or exporting it directly to spreadsheets. There are also more detailed commands that allow manipulating individual cells.
+					The <idx>readxl</idx><term>readxl</term>. package is now the recommended way to access Excel files from R. It provides fast, reliable access to both .xls and .xlsx formats without any external dependencies. Unlike some older solutions, readxl works equally well on Windows, Mac, and Linux systems.
 				</p>
 
 				<p>
-					Two additional packages, <idx>xlsx</idx><term>xlsx</term> and <idx>XLConnect</idx><term>XLConnect</term>, supposedly will work with the Mac, but at the time of this writing both of these packages had version incompatibilities that made it impossible to install the packages directly into R. Note that the vast majority of packages provide the raw "source code" and so it is theoretically possible, but generally highly time consuming, to "compile" your own copies of these packages to create your own installation.
+					Two additional packages, <idx>xlsx</idx><term>xlsx</term> and <idx>XLConnect</idx><term>XLConnect</term>, work across Windows, macOS, and Linux. These packages require Java, but installation is generally straightforward with modern R versions.
 				</p>
 
 				<p>

@@ -76,7 +76,7 @@
 				</p>
 
 				<p>
-					Another Windows-only package for R is called <idx>xlsReadWrite</idx><term>xlsReadWrite</term>. This package provides convenient one-command calls for importing data directly from Excel spreadsheets or exporting it directly to spreadsheets. There are also more detailed commands that allow manipulating individual cells. However, this package is no longer maintained, and modern alternatives are recommended instead.
+					The <idx>readxl</idx><term>readxl</term>. package is now the recommended way to access Excel files from R. It provides fast, reliable access to both .xls and .xlsx formats without any external dependencies. Unlike some older solutions, readxl works equally well on Windows, Mac, and Linux systems.
 				</p>
 
 				<p>

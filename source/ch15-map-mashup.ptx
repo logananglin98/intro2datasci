@@ -32,87 +32,32 @@
     </p>
 
     <p>
-      The U.S. Census bureau publishes shapefiles at various levels of detail for every part of the country. Search for the term "shapefile" at "site:census.gov" and you will find several pages with listings of different shapefiles. For this exercise, we are using a relatively low detail map of the whole U.S. from <url href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">Cartographic Boundary Files - Shapefile</url>. We downloaded a "zip" file. Unzip this (usually just by double-clicking on it) and you will find several files inside it. The file ending in "shp" is the main shapefile. Another file that will be useful to us ends in "dbf" which contains labels and other information.
+    The U.S. Census Bureau provides shapefiles at various levels of detail for geographic boundaries across the United States. These files are useful for mapping everything from states to voting districts. If you'd like to explore them yourself,  visit the <url href="https://www.census.gov/geographies/mapping-files/time-series/geo/carto-boundary-file.html">Cartographic Boundary Files - Shapefile</url> URL. These downloads typically come as a .zip archive containing several files: the main shapefile (.shp) and supporting files like the .dbf, which includes labels and metadata.
+
+    In this example, we’ve already loaded a simplified shapefile of U.S. congressional districts into the variable <c>usShape</c> for convenience. If you’d prefer to work with it yourself, you can download the same file, unzip it, and load it into R.
     </p>
 
     <p>
-      To get started, we will need two new R packages called <idx>PBSmapping</idx><term>PBSmapping</term> and <idx>maptools</idx><term>maptools</term>. PBSmapping refers not to public broadcasting, but rather to the Pacific Biology Station, whose researchers and technologists kindly bundled up a wide range of the R processing tools that they use to manage map data. The maptools package was developed by Nicholas J. Lewin-Koh (University of Singapore) and others to provide additional tools and some "wrappers" to make PBSmapping functions easier to use. In this chapter we only scratch the surface of the available tools: there could be a whole book just dedicated to R mapping functions alone.
+      To get started, we’ll need two R packages: <idx>ggplot2</idx><c>ggplot2</c> and <idx>sf</idx><c>sf</c>. The <c>sf</c> package, which stands for simple features, provides a standardized and modern approach to handling spatial data in R. Developed by Edzer Pebesma and others, it follows the Simple Features standard (SFA), making spatial data manipulation easier and more consistent. This package has largely replaced older mapping tools like <c>maptools</c>, offering a simpler, more powerful interface for working with geographic data. The <c>ggplot2</c> package, developed by Hadley Wickham, is part of the tidyverse and provides a powerful, layered grammar for creating graphics in R. While not specifically built for mapping, <c>ggplot2</c> works seamlessly with spatial data, especially when combined with the <c>sf</c> package,to produce clear and customizable visualizations. In this chapter, we only scratch the surface of what modern mapping libraries can do; entire books have been written on their capabilities for data visualization.
     </p>
 
-    <p>
-      Before we read in the data we grabbed from the Census Bureau, let's set the working directory in R-Studio so that we don't have to type it out on the command line. Click on the Tools menu and then choose "Set Working Directory." Use the dialog box to designate the folder where you have unzipped the shape data. After that, these commands will load the shape data into R and show us what we have:
-    </p>
+
+    <sage language="r">
+      <input>
+        <xi:include href="../code/usShape.r" parse ="text"/>
+summary(usShape)
+library(ggplot2)
+ggplot(usShape) +
+geom_sf(fill = "lightblue", color = "black") +
+coord_sf(xlim = c(-185, -50), ylim = c(15, 75), expand = FALSE)
+        
+
+      </input>
+    </sage>
+    
 
     <p>
-      &gt; usShape &lt;- importShapefile( +
-    </p>
-
-    <p>
-      "gz_2010_us_040_00_500k",readDBF=TRUE)
-    </p>
-
-    <p>
-      &gt; summary(usShape)
-    </p>
-
-    <p>
-      PolySet
-    </p>
-
-    <p>
-      Records : 90696
-    </p>
-
-    <p>
-      Contours : 574
-    </p>
-
-    <p>
-      Holes : 0
-    </p>
-
-    <p>
-      Events : NA
-    </p>
-
-    <p>
-      On boundary : NA
-    </p>
-
-    <p>
-      Ranges
-    </p>
-
-    <p>
-      X : [-179.14734, 179.77847]
-    </p>
-
-    <p>
-      Y : [17.884813, 71.3525606439998]
-    </p>
-
-    <p>
-      Attributes
-    </p>
-
-    <p>
-      Projection : LL
-    </p>
-
-    <p>
-      Zone : NULL
-    </p>
-
-    <p>
-      Extra columns :
-    </p>
-
-    <p>
-      &gt; plotPolys(usShape)
-    </p>
-
-    <p>
-      This last command gives us a simple plot of the 90,696 shapes that our shapefile contains. Here is the plot:
+      This last command gives us a simple plot of the amount of shapes that our shapefile contains. Here is the plot:
     </p>
 
     <figure>
@@ -122,14 +67,15 @@
     <p>
       This is funny looking! The ranges output from the summary() command gives us a hint as to why. The longitude of the elements in our map range from -179 to nearly 180: this covers pretty much the whole of the planet. The reason is that the map contains shapes for Hawaii and Alaska. Both states have far western longitudes, but the Aleutian peninsula in Alaska extends so far that it crosses over the longitude line where -180 and 180 meet in the Pacific Ocean. As a result, the continental U.S. is super squashed. We can specify a more limited area of the map to consider by using the xlim and ylim parameters. The following command:
     </p>
-
-    <p>
-      &gt; plotPolys(usShape,+
-    </p>
-
-    <p>
-      xlim=c(-130,-60),ylim=c(20,50))
-    </p>
+    <sage language="r">
+      <input>
+        <xi:include href="../code/usShape.r" parse ="text"/>
+library(ggplot2)
+ggplot(usShape) +
+geom_sf(fill = "lightblue", color = "black") +
+coord_sf(xlim = c(-130, -65), ylim = c(20, 55), expand = FALSE)
+      </input>
+    </sage>
 
     <p>
       ...gives a plot that shows the continental U.S. more in its typical proportions.
@@ -139,49 +85,40 @@
       <image source="graph2-US.png"/> So now we have some map data stored away and ready to use. The PBSmapping package gives us the capability of adding points to an existing map. For now, let's demonstrate this with a made up point somewhere in Texas:
     </p>
 
-    <p>
-      &gt; X &lt;-100
-    </p>
+    <sage language = "r">
+      <input>
+        <xi:include href="../code/usShape.r" parse ="text"/>
+library(ggplot2)
 
-    <p>
-      &gt; Y &lt;- 30
-    </p>
+# Create a simple point at (100, 30)
+pointData &lt;- data.frame(EID = 1, X = -100, Y = 30)
+point_sf &lt;- st_as_sf(pointData, coords = c("X", "Y"), crs = 4326)
 
-    <p>
-      &gt; EID &lt;- 1
-    </p>
+# Combine map and point using ggplot2
+ggplot(usShape) +
+geom_sf(fill = "lightblue", color = "black") +
+geom_sf(data = point_sf, color = "red", size = 3) +
+coord_sf(xlim = c(-130, -50), ylim = c(20, 55), expand = FALSE) +
+theme_minimal()
 
-    <p>
-      &gt; pointData &lt;- data.frame(EID,X,Y)
-    </p>
-
-    <p>
-      &gt; eventData &lt;-as.EventData( +
-    </p>
-
-    <p>
-      pointData,projection=NA)
-    </p>
-
-    <p>
-      &gt; addPoints(eventData,col="red",cex=.5)
-    </p>
+      </input>
+    </sage>
 
     <figure>
       <image source="graph-US.png"/>
     </figure>
 
     <p>
-      You have to look carefully, but in southern Texas there is now a little red dot. We began by manually creating a single point specified by X (longitude), Y (latitude), and EID (an identification number) and sticking it into a dataframe. Then we converted the data in that dataframe into an EventData object. This is a custom class of objects specified by the PBSmapping package. The final command above adds the EventData to the plot.
+      You might notice a small red dot in southern Texas. We added that by manually creating a point at a specific longitude and latitude—X = -100, Y = 30. First, we placed this information into a data frame, then converted it into a spatial object using the sf package, which is the modern standard for working with geospatial data in R.
     </p>
 
     <p>
-      The idea of EventData is a little confusing, but if you remember that this package was developed by biologists at the Pacific Biology Station to map sightings of fish and other natural phenomena it makes more sense. In their lingo, an event was some observation of interest that occurred at a particular day, time, and location. The "event id" or EID &lt;1 that we stuck in the data frame was just saying that this was the first point in our list that we wanted to plot. For us it is not an event so much as a location of something we wanted to see on the map.
+      In this case, we used st_as_sf() to turn our data into a spatial feature object. This allowed us to plot the point directly on the map alongside the U.S. congressional district boundaries. Because both the point and the map use the same geographic coordinate system (WGS84), we didn’t need to worry about applying a projection or transformation, the point appears exactly where it should on the map.
     </p>
 
-    <p>
-      Also note that the "projection=NA" parameter in the as.EventData() coercion is just letting the mapping software know that we don't want our point to be transformed according to a mapping projection. If you remember from your Geography class, a projection is a mapping technique to make a curved object like the Earth seem sensible on a flat map. In this example, we've already flattened out the U.S., so there is no need to transform the points.
-    </p>
+    <note>
+      <p>Also note that we didn’t need to transform the point using a mapping projection. Since both the point and the map use geographic coordinates (longitude and latitude) in the WGS84 system, everything aligns correctly without extra steps. If you recall from geography, a projection is a way to represent the curved surface of the Earth on a flat map. But in this case, the map is already using a standard flattened projection, so our point appears in the correct location without needing further adjustment.</p>
+    </note>
   </section>
 
   <section xml:id="ch15-data-acquisition">
